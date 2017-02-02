@@ -113,12 +113,12 @@ void driveTo(float targetPosition, int power) {
   if (targetPosition > 0) {
     int leftAt = power;
     int rightAt = power;
-    while (encoderGet(lencoder) < targetPosition &&
-           encoderGet(rencoder) < targetPosition) {
-      if (encoderGet(lencoder) >= targetPosition) {
+    while (abs(encoderGet(lencoder)) < targetPosition &&
+           abs(encoderGet(rencoder)) < targetPosition) {
+      if (abs(encoderGet(lencoder)) >= targetPosition) {
         leftAt = 0;
       }
-      if (encoderGet(rencoder) >= targetPosition) {
+      if (abs(encoderGet(rencoder)) >= targetPosition) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
