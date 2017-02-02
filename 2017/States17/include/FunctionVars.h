@@ -44,3 +44,4 @@ int driveMotorList[6];
 int liftMotorList[6];
 void stopAfter(void *milliseconds);
 void gyroResetAfter(void *milliseconds);
+void stopDriveAfter(void *milliseconds);

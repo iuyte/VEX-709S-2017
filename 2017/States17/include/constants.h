@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #define OLL 2      // Outside Left Lift
 #define TILLBILL 4 // Top Inside Left Lift and Bottom Inside Left Lift (y-cables to power expander)
 #define ORL 9     // Outside Right Lift
