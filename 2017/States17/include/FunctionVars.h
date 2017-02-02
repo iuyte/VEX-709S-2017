@@ -1,28 +1,6 @@
 #pragma once
 #include "main.h"
-int OLL;
-int TILLBILL;
-int ORL;
-int TIRLBIRL;
-int MLD;
-int TRD;
-int isWall2;
-int TLD;
-int MRD;
-int pot;
-int hangLockLeft;
-int hangLockRight;
-int hangHook;
-int gyroPort;
-int rencPort;
-int lencPort;
-int isLine;
-int lineLight;
-int isWall;
 int liftZero;
-int liftToTaskPos;
-int liftToTaskWait;
-float inchesMultiplier;
 void liftSet(int power);
 void driveSet(int Lpower, int Rpower);
 void liftTo(int pos);

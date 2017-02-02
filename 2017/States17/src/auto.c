@@ -22,9 +22,9 @@ void autonomous() {
   timerReset(0);
   arr[0] = 1000;
   arr[1] = potTop + 50;
-  TaskHandle liftToTask2 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+  TaskHandle liftToTask2 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void*) arr, TASK_PRIORITY_DEFAULT);
   TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT) ;
-  while (digitalRead(isWall) == 1 && timer(0) < 4000) {//Repeats until the button on the robot is pressed or 4 seconds pass
+  while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 4000) {//Repeats until the button on the robot is pressed or 4 seconds pass
     delay(1);
   }
   driveSet(0, 0);//Stops the robot
