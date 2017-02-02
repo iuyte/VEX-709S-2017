@@ -55,6 +55,7 @@ void operatorControl() {
       delay(150);
     }
     driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
-    delay(1);
+    printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
+    delay(20);
 	}
 }
