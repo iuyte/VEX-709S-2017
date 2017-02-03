@@ -19,9 +19,9 @@ void operatorControl() {
   bool prev = joystickGetDigital(1, 7, JOY_DOWN);
   /*
   for (size_t i = 0; i < 6; i++) {
-    motorSet(motorList[i], 100);
+    motorSet(driveMotorList[i], 100);
     delay(500);
-    motorSet(motorList[i], 0);
+    motorSet(driveMotorList[i], 0);
     delay(1000);
   }
   driveSet(100, 100);
@@ -29,7 +29,7 @@ void operatorControl() {
   driveSet(0, 0);
   //*/
   driveSet(100, 100);
-  TaskHandle stopTask = taskCreate(stopAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT + 1);
+  TaskHandle stopTask = taskCreate(stopDriveAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT + 1);
   while (isEnabled()) {
     prev = joystickGetDigital(1, 7, JOY_DOWN);
     if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
@@ -55,6 +55,7 @@ void operatorControl() {
       delay(150);
     }
     driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
-    delay(1);
+    printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
+    delay(20);
 	}
 }

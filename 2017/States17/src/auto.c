@@ -42,19 +42,24 @@ void autonomous() {
   TaskHandle liftToTask4 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void*) arr, TASK_PRIORITY_DEFAULT);
   driveInch(6, 127);
   delay(250);
+  driveInch(-12, 127);
+  turn(-15, 100);
   driveSet(-127, -127);
   timerReset(0);
   while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 2000) {//Repeats until the bumper sensor on the robot is pressed or 3 seconds pass
     delay(1);
   }
-  driveSet(0, 0);//Stops the drive
-  driveSet(127, 127);
-  delay(333);
-  driveSet(127, -127);
+  driveStop();
+  driveInch(12, 127);
+  turn(77, 100);
   delay(333);
   arr[1] = potTop;//Brings the lift to the top
   TaskHandle liftToTask5 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void*) arr, TASK_PRIORITY_DEFAULT);
-  driveSet(0, 0);
+  timerReset(0);
+  while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 2000) {//Repeats until the bumper sensor on the robot is pressed or 3 seconds pass
+    delay(1);
+  }
+  driveStop();
   gyroReset(gyro);
   encoderReset(lencoder);
   encoderReset(rencoder);

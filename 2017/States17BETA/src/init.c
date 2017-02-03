@@ -24,6 +24,10 @@ void initializeIO() {
 void initialize() {
   TaskHandle motorsSafe = taskRunLoop(stopAllPeriodic, 333);
   TaskHandle showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+  TaskHandle idealHandle;
+  useIdeals = false;
+  systemsReset();
+  idealHandle = taskCreate(ideals, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT + 1);
   gyro=gyroInit(gyroPort, 0);
   lencoder = encoderInit(lencPort, lencPort+1, true);
   rencoder = encoderInit(rencPort, rencPort+1, false);

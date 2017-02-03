@@ -1,7 +1,12 @@
-#include "main.h"
 #include "constants.h"
+#include "main.h"
 // The following are my global variables
-
+int liftToTaskPos;
+int liftToTaskWait;
+int idealLift = 0;
+float idealLeftDrive = 0;
+float idealRightDrive = 0;
+bool useIdeals = false;
 // MOTOR PORTS//
 // LIFT//
 
@@ -12,17 +17,21 @@ Encoder lencoder; // Initializes the variable lencoder (Left encoder) to type
 Encoder rencoder; // Initializes the variable rencoder (Right encoder) to type
                   // Encoder
 
-unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int drivemotorList[6] = {TLD, MLD, BLD, TRD, MRD, BRD};
 int liftMotorList[6] = {ORL, OLL, TIRLBIRL, TILLBILL};
+int* systems = (int*) malloc(sizeof(int) * 3);
 
-void timerReset(int number) {
-  startTimes[number] = millis();
-}
+void timerReset(int number) { startTimes[number] = millis(); }
 
 unsigned long timer(int number) {
   unsigned long value = millis() - startTimes[number];
   return value;
+}
+
+void sdrive(int l, int r) {
+  systems[LEFT_DRIVE] = systems[LEFT_DRIVE] + l;
+  systems[RIGHT_DRIVE] = systems[RIGHT_DRIVE] + r;
 }
 
 void liftSet(int power) {
@@ -48,7 +57,7 @@ void lcdDisplayTime(void *parameter) {
     timerReset(8);
     if (isAutonomous()) {
       while (timer(8) <= 15000) {
-          tim = 15000 - timer(8);
+        tim = 15000 - timer(8);
         lcdPrint(uart1, 1, "%lu", tim / 1000);
         lcdPrint(uart1, 2, "Battery: %1.3f", (double)powerLevelMain() / 1000);
         delay(10);
@@ -62,7 +71,7 @@ void lcdDisplayTime(void *parameter) {
           min = 1;
           tim = tim - 60;
         }
-        lcdPrint(uart1, 1, "%d : %lu", min,  tim);
+        lcdPrint(uart1, 1, "%d : %lu", min, tim);
         lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
         delay(10);
       }
@@ -80,11 +89,11 @@ void liftTo(int pos) {
   if (pos > analogReadCalibrated(pot)) {
     liftSet(100);
     while (analogReadCalibrated(pot) < pos - 10)
-      ;
+      delay(1);
   } else if (pos < analogReadCalibrated(pot)) {
     liftSet(-100);
     while (analogReadCalibrated(pot) > pos + 10)
-      ;
+      delay(1);
   }
   liftSet(liftZero);
 }
@@ -112,12 +121,12 @@ void driveTo(float targetPosition, int power) {
   if (targetPosition > 0) {
     int leftAt = power;
     int rightAt = power;
-    while (encoderGet(lencoder) < targetPosition &&
-           encoderGet(rencoder) < targetPosition) {
-      if (encoderGet(lencoder) >= targetPosition) {
+    while (abs(encoderGet(lencoder)) < targetPosition &&
+           abs(encoderGet(rencoder)) < targetPosition) {
+      if (abs(encoderGet(lencoder)) >= targetPosition) {
         leftAt = 0;
       }
-      if (encoderGet(rencoder) >= targetPosition) {
+      if (abs(encoderGet(rencoder)) >= targetPosition) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
@@ -135,6 +144,7 @@ void driveTo(float targetPosition, int power) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
+      delay(1);
     }
     driveSet(power / 2, power / 2);
   }
@@ -157,52 +167,79 @@ void turn(float degrees, int power) {
   int gyroZero = gyroGet(gyro);
   if (degrees > 0) {
     while (gyroGet(gyro) - gyroZero < degrees) {
-      driveSet(power, -power);
+      sdrive(1, -1);
+      delay(5);
     }
-    driveSet(0 - power / 2, power / 2);
   } else if (degrees < 0) {
     while (gyroGet(gyro) - gyroZero > degrees) {
-      driveSet(-power, power);
+      sdrive(1, -1);
+      delay(5);
     }
-    driveSet(power / 2, 0 - power / 2);
   }
-  delay(150);
-  driveSet(0, 0);
 }
 
 void turnTo(float degrees, int power) {
   if (degrees > gyroGet(gyro)) {
     while (gyroGet(gyro) < degrees) {
-      driveSet(power, -power);
+      sdrive(1, -1);
+      delay(5);
     }
-    driveSet(0 - power / 2, power / 2);
-  } else if (degrees <gyroGet(gyro)) {
+  } else if (degrees < gyroGet(gyro)) {
     while (gyroGet(gyro) > degrees) {
-      driveSet(-power, power);
+      sdrive(-1, 1);
+      delay(5);
     }
-    driveSet(power / 2, 0 - power / 2);
   }
-  delay(150);
-  driveSet(0, 0);
 }
 
 void stopDriveAfter(void *milliseconds) {
   timerReset(10);
-  unsigned long* ms = (unsigned long*)milliseconds;
-  while ((unsigned long*)timer(10) < ms)
-    ;
+  unsigned long *ms = (unsigned long *)milliseconds;
+  while ((unsigned long *)timer(10) < ms)
+    delay(1);
   driveSet(0, 0);
   taskDelete(NULL);
 }
 
 void gyroResetAfter(void *milliseconds) {
   timerReset(11);
-  unsigned long* ms = (unsigned long*)milliseconds;
-  while ((unsigned long*)timer(11) < ms) delay(1);
+  unsigned long *ms = (unsigned long *)milliseconds;
+  while ((unsigned long *)timer(11) < ms)
+    delay(1);
   gyroReset(gyro);
   taskDelete(NULL);
 }
 
-void taskAfter(void *milliseconds) {
+void driveStop() { driveSet(0, 0); }
 
+void ideals(void *parameter) {
+  if (useIdeals) {
+    int newL = motorGet(TLD);
+    int newR = motorGet(TRD);
+    int newLift = motorGet(ORL);
+    if (abs(encoderGet(lencoder) < systems[LEFT_DRIVE] - DRIVE_TOLERANCE)) {
+      newL = newL + 1;
+    } else if (abs(encoderGet(lencoder) > systems[LEFT_DRIVE] + DRIVE_TOLERANCE)) {
+      newL = newL - 1;
+    }
+    if (abs(encoderGet(rencoder) < systems[RIGHT_DRIVE] - DRIVE_TOLERANCE)) {
+      newR = newR + 1;
+    } else if (abs(encoderGet(rencoder) > systems[RIGHT_DRIVE] + DRIVE_TOLERANCE)) {
+      newR = newR - 1;
+    }
+    if (analogReadCalibrated(pot) > systems[LIFT] + LIFT_TOLERANCE) {
+      newLift = newLift - 1;
+    } else if (analogReadCalibrated(pot) < systems[LIFT] - LIFT_TOLERANCE) {
+      newLift = newLift - 1;
+    }
+    driveSet(newL, newR);
+    liftSet(newLift);
+  }
+  delay(1);
+}
+
+void systemsReset() {
+  for (size_t i = 0; i < 2; i++) {
+    systems[i] = 0;
+  }
 }

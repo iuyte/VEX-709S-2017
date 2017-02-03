@@ -204,3 +204,7 @@ void gyroResetAfter(void *milliseconds) {
   gyroReset(gyro);
   taskDelete(NULL);
 }
+
+void driveStop() {
+  driveSet(0, 0);
+}
