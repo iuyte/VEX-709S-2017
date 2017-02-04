@@ -18,12 +18,11 @@ void autonomous() {
   delay(400);
   driveInch(-30, 127);//Drives 24/27 inches backward at 63 power
   turn(77, 100);//Turns 83 degrees to the right at 40 power
-  driveSet(-110, -127);//Sets the drive to go backwards at 70 power
-  useIdeals[LEFT_DRIVE] = false;
-  useIdeals[RIGHT_DRIVE] = false;
   TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT) ;
   while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 4000) {//Repeats until the button on the robot is pressed or 4 seconds pass
-    delay(1);
+    systems[LEFT_DRIVE] = systems[LEFT_DRIVE] - 1;
+    systems[RIGHT_DRIVE] = systems[RIGHT_DRIVE] - 1;
+    delay(5);
   }
   driveSet(0, 0);//Stops the robot
   delay(500);//Waits half of a second
