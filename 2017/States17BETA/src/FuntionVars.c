@@ -6,7 +6,7 @@ int liftToTaskWait;
 int idealLift = 0;
 float idealLeftDrive = 0;
 float idealRightDrive = 0;
-bool useIdeals = false;
+bool useIdeals[3] = {false, false, false};
 // MOTOR PORTS//
 // LIFT//
 
@@ -239,7 +239,7 @@ void ideals(void *parameter) {
 }
 
 void systemsReset() {
-  for (size_t i = 0; i < 2; i++) {
-    systems[i] = 0;
-  }
+  systems[LIFT] = analogReadCalibrated(pot);
+  systems[LIFT] = analogReadCalibrated(pot);
+  systems[LIFT] = analogReadCalibrated(pot);
 }
