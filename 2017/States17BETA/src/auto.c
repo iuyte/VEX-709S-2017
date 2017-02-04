@@ -3,7 +3,9 @@
 
 void autonomous() {
   gyroReset(gyro);
-  useIdeals[3] = ;
+  useIdeals[LIFT] = true;
+  useIdeals[LEFT_DRIVE] = true;
+  useIdeals[RIGHT_DRIVE] = true;
   encoderReset(lencoder);
   encoderReset(rencoder);
   driveInch(-4, 100);//Drives 4 inches backward
@@ -48,8 +50,7 @@ void autonomous() {
   driveInch(12, 127);
   turn(77, 100);
   delay(333);
-  arr[1] = potTop;//Brings the lift to the top
-  TaskHandle liftToTask5 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void*) arr, TASK_PRIORITY_DEFAULT);
+  systems[LIFT] = potTop;
   timerReset(0);
   while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 2000) {//Repeats until the bumper sensor on the robot is pressed or 3 seconds pass
     delay(1);

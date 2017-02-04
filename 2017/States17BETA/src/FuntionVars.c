@@ -20,7 +20,7 @@ Encoder rencoder; // Initializes the variable rencoder (Right encoder) to type
 unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int drivemotorList[6] = {TLD, MLD, BLD, TRD, MRD, BRD};
 int liftMotorList[6] = {ORL, OLL, TIRLBIRL, TILLBILL};
-int* systems = (int*) malloc(sizeof(int) * 3);
+int *systems = (int *)malloc(sizeof(int) * 3);
 
 void timerReset(int number) { startTimes[number] = millis(); }
 
@@ -213,20 +213,26 @@ void gyroResetAfter(void *milliseconds) {
 void driveStop() { driveSet(0, 0); }
 
 void ideals(void *parameter) {
-  if (useIdeals) {
-    int newL = motorGet(TLD);
-    int newR = motorGet(TRD);
-    int newLift = motorGet(ORL);
+  int newL = motorGet(TLD);
+  int newR = motorGet(TRD);
+  int newLift = motorGet(ORL);
+  if (useIdeals[LEFT_DRIVE]) {
     if (abs(encoderGet(lencoder) < systems[LEFT_DRIVE] - DRIVE_TOLERANCE)) {
       newL = newL + 1;
-    } else if (abs(encoderGet(lencoder) > systems[LEFT_DRIVE] + DRIVE_TOLERANCE)) {
+    } else if (abs(encoderGet(lencoder) >
+                   systems[LEFT_DRIVE] + DRIVE_TOLERANCE)) {
       newL = newL - 1;
     }
+  }
+  if (useIdeals[RIGHT_DRIVE]) {
     if (abs(encoderGet(rencoder) < systems[RIGHT_DRIVE] - DRIVE_TOLERANCE)) {
       newR = newR + 1;
-    } else if (abs(encoderGet(rencoder) > systems[RIGHT_DRIVE] + DRIVE_TOLERANCE)) {
+    } else if (abs(encoderGet(rencoder) >
+                   systems[RIGHT_DRIVE] + DRIVE_TOLERANCE)) {
       newR = newR - 1;
     }
+  }
+  if (useIdeals[LIFT]) {
     if (analogReadCalibrated(pot) > systems[LIFT] + LIFT_TOLERANCE) {
       newLift = newLift - 1;
     } else if (analogReadCalibrated(pot) < systems[LIFT] - LIFT_TOLERANCE) {
