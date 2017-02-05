@@ -6,7 +6,7 @@ int liftToTaskWait;
 int idealLift = 0;
 float idealLeftDrive = 0;
 float idealRightDrive = 0;
-bool *useIdeals = (bool *)malloc(sizeof(bool) * 2);
+bool useIdeals[2] = {false, false};
 
 // MOTOR PORTS//
 // LIFT//
@@ -21,7 +21,8 @@ Encoder rencoder; // Initializes the variable rencoder (Right encoder) to type
 unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int drivemotorList[6] = {TLD, MLD, BLD, TRD, MRD, BRD};
 int liftMotorList[6] = {ORL, OLL, TIRLBIRL, TILLBILL};
-int *systems = (int *)malloc(sizeof(int) * 3);
+// int *systems = (int *)malloc(sizeof(int) * 3);
+long systems[3] = {0, 0, 0};
 
 void timerReset(int number) { startTimes[number] = millis(); }
 
@@ -57,14 +58,14 @@ void lcdDisplayTime(void *parameter) {
   while (true) {
     timerReset(8);
     if (isAutonomous()) {
-      while (timer(8) <= 15000) {
+      while (timer(8) <= 15000 && isAutonomous()) {
         tim = 15000 - timer(8);
         lcdPrint(uart1, 1, "%lu", tim / 1000);
         lcdPrint(uart1, 2, "Battery: %1.3f", (double)powerLevelMain() / 1000);
         delay(10);
       }
     } else if (isEnabled()) {
-      while (timer(8) <= 105000) {
+      while (timer(8) <= 105000 && isEnabled()) {
         min = 0;
         tim = 105000 - timer(8);
         tim = tim / 1000;
@@ -78,8 +79,43 @@ void lcdDisplayTime(void *parameter) {
       }
     } else {
       while (isEnabled() == false) {
-        lcdSetText(uart1, 1, "  Opmode: Stop  ");
+        FILE *fd5;
+        bool opmd2;
+        if ((fd5 = fopen("autoM", "r")) == NULL) {
+          opmd2 = false;
+        } else {
+          if (fgetc(fd5)) {
+            opmd2 = true;
+          } else {
+            opmd2 = false;
+          }
+        }
+        fclose(fd5);
+        lcdPrint(uart1, 1, "Automode: %d", opmd2);
         lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
+        if (lcdReadButtons(uart1) != 0) {
+          FILE *fd1;
+          bool value;
+          if ((fd1 = fopen("autoM", "r")) == NULL) {
+            fclose(fd1);
+            FILE *fd2 = fopen("autoM", "w");
+            fputc(true, fd2);
+            fclose(fd2);
+            delay(3000);
+          } else {
+            FILE *fd3 = fopen("autoM", "r");
+            value = fgetc(fd3);
+            fclose(fd3);
+            FILE *fd4 = fopen("autoM", "w");
+            if (value) {
+              fputc(false, fd4);
+            } else {
+              fputc(true, fd4);
+            }
+            fclose(fd4);
+            delay(3000);
+          }
+        }
         delay(10);
       }
     }
@@ -217,15 +253,13 @@ void ideals(void *parameter) {
   int newL = motorGet(TLD);
   int newR = motorGet(TRD);
   int newLift = motorGet(ORL);
-  if (useIdeals[LEFT_DRIVE]) {
+  if (useIdeals[DRIVE]) {
     if (abs(encoderGet(lencoder) < systems[LEFT_DRIVE] - DRIVE_TOLERANCE)) {
       newL = newL + 1;
     } else if (abs(encoderGet(lencoder) >
                    systems[LEFT_DRIVE] + DRIVE_TOLERANCE)) {
       newL = newL - 1;
     }
-  }
-  if (useIdeals[RIGHT_DRIVE]) {
     if (abs(encoderGet(rencoder) < systems[RIGHT_DRIVE] - DRIVE_TOLERANCE)) {
       newR = newR + 1;
     } else if (abs(encoderGet(rencoder) >

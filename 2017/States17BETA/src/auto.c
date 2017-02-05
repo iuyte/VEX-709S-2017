@@ -1,7 +1,15 @@
 #include "ethanlib.h"
 #include "constants.h"
 
-void autonomous() {
+void auto1() {
+  useIdeals[LIFT] = true;
+  useIdeals[DRIVE] = true;
+  systems[LEFT_DRIVE] = 24 * inchesMultiplier;
+  systems[RIGHT_DRIVE] = 24 * inchesMultiplier;
+  systems[LIFT] = potHalf;
+}
+
+void auto2() {
   gyroReset(gyro);
   useIdeals[LIFT] = true;
   useIdeals[DRIVE] = true;
@@ -63,4 +71,22 @@ void autonomous() {
   gyroReset(gyro);
   encoderReset(lencoder);
   encoderReset(rencoder);
+}
+
+void autonomous() {
+  FILE *chooser;
+  bool op2;
+  if ((chooser = fopen("autoM", "r")) == NULL) {
+    op2 = false;
+  } else if (fgetc(chooser)){
+    op2 = true;
+  } else {
+    op2 = false;
+  }
+  fclose(chooser);
+  if (op2) {
+    auto2();
+  } else {
+    auto1();
+  }
 }

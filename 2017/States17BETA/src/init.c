@@ -25,7 +25,8 @@ void initialize() {
   TaskHandle motorsSafe = taskRunLoop(stopAllPeriodic, 333);
   TaskHandle showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
   TaskHandle idealHandle;
-  useIdeals = false;
+  useIdeals[LIFT] = false;
+  useIdeals[DRIVE] = false;
   systemsReset();
   idealHandle = taskCreate(ideals, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT + 1);
   gyro=gyroInit(gyroPort, 0);
