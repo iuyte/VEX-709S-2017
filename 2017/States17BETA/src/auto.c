@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "ethanlib.h"
 #include "constants.h"
 
@@ -30,6 +31,40 @@ void auto1() {
   useIdeals[DRIVE] = false;
   TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT) ;
   while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 4000) {//Repeats until the button on the robot is pressed or 4 seconds pass
+=======
+#include "ethanlib.h"
+#include "constants.h"
+
+void auto0() {
+  mutexTake(mutex, -1);
+  useIdeals[LIFT] =false;
+  useIdeals[DRIVE] = true;
+  systems[LEFT_DRIVE] = 100;
+  systems[RIGHT_DRIVE] = 100;
+  systems[LIFT] = potHalf;
+  mutexGive(mutex);
+}
+
+void auto1() {
+  gyroReset(gyro);
+  useIdeals[LIFT] = true;
+  useIdeals[DRIVE] = true;
+  encoderReset(lencoder);
+  encoderReset(rencoder);
+  driveInch(-4, 100);//Drives 4 inches backward
+  driveInch(4, 100);//Drives 4 inches forward
+  // The previous code is intended to drop the intake
+  delay(400);
+  driveInch(28, 127);//Drives 28 inches forward at 63 power
+  systems[LIFT] = potHalf;
+  driveInch(5, 127);
+  delay(400);
+  driveInch(-30, 127);//Drives 24/27 inches backward at 63 power
+  turn(77, 100);//Turns 83 degrees to the right at 40 power
+  useIdeals[DRIVE] = false;
+  TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT) ;
+  while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 && timer(0) < 4000) {//Repeats until the button on the robot is pressed or 4 seconds pass
+>>>>>>> e5141102db8af40aea4118a544d7d9175c9e9efe
     systems[LEFT_DRIVE] = encoderGet(lencoder);
     systems[RIGHT_DRIVE] = encoderGet(rencoder);
     delay(5);
