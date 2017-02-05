@@ -41,6 +41,8 @@ void driveSet(int Lpower, int Rpower) {
   motorSet(BRD, Rpower);
 }
 
+void driveStop() { driveSet(0, 0); }
+
 void lcdDisplayTime(void *parameter) {
   unsigned long tim;
   int min;
@@ -159,6 +161,7 @@ void liftToTask(void *parameters[2]) {
 void driveTo(float targetPosition, int power) {
   encoderReset(rencoder);
   encoderReset(lencoder);
+  power = abs(power);
   if (targetPosition > 0) {
     int leftAt = power;
     int rightAt = power;
@@ -171,8 +174,22 @@ void driveTo(float targetPosition, int power) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
+      delay(5);
     }
-    driveSet(0 - power / 2, 0 - power / 2);
+    leftAt = power / -2;
+    rightAt = power / -2;
+    while (abs(encoderGet(lencoder)) > targetPosition &&
+           abs(encoderGet(rencoder)) > targetPosition) {
+      if (abs(encoderGet(lencoder)) <= targetPosition) {
+        leftAt = 0;
+      }
+      if (abs(encoderGet(rencoder)) <= targetPosition) {
+        rightAt = 0;
+      }
+      driveSet(leftAt, rightAt);
+      delay(5);
+    }
+    //driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < 0) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -185,12 +202,25 @@ void driveTo(float targetPosition, int power) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
-      delay(1);
+      delay(5);
     }
-    driveSet(power / 2, power / 2);
+    //driveSet(power / 2, power / 2);
+    leftAt = power / 2;
+    rightAt = power / 2;
+    while (abs(encoderGet(lencoder)) > abs(targetPosition) &&
+           abs(encoderGet(rencoder)) > abs(targetPosition)) {
+      if (abs(encoderGet(lencoder)) <= abs(targetPosition)) {
+        leftAt = 0;
+      }
+      if (abs(encoderGet(rencoder)) <= abs(targetPosition)) {
+        rightAt = 0;
+      }
+      driveSet(leftAt, rightAt);
+      delay(5);
+    }
   }
   delay(100);
-  driveSet(0, 0);
+  driveStop();
 }
 
 void driveInch(float inches, int power) {
@@ -209,32 +239,55 @@ void turn(float degrees, int power) {
   if (degrees > 0) {
     while (gyroGet(gyro) - gyroZero < degrees) {
       driveSet(power, -power);
+      delay(5);
     }
-    driveSet(0 - power / 2, power / 2);
+    delay(250);
+    //driveSet(0 - power / 2, power / 2);
+    while (gyroGet(gyro) - gyroZero > degrees) {
+      driveSet(power / -2, power / 2);
+      delay(5);
+    }
+
   } else if (degrees < 0) {
     while (gyroGet(gyro) - gyroZero > degrees) {
       driveSet(-power, power);
+      delay(5);
     }
-    driveSet(power / 2, 0 - power / 2);
+    delay(250);
+    //driveSet(power / 2, 0 - power / 2);
+    while (gyroGet(gyro) - gyroZero < degrees) {
+      driveSet(power / 2, power / -2);
+      delay(5);
+    }
   }
-  delay(150);
-  driveSet(0, 0);
+  driveStop();
 }
 
 void turnTo(float degrees, int power) {
   if (degrees > gyroGet(gyro)) {
     while (gyroGet(gyro) < degrees) {
       driveSet(power, -power);
+      delay(5);
     }
-    driveSet(0 - power / 2, power / 2);
+    delay(250);
+    //driveSet(0 - power / 2, power / 2);
+    while (gyroGet(gyro) > degrees) {
+      driveSet(power / -2, power / 2);
+      delay(5);
+    }
   } else if (degrees < gyroGet(gyro)) {
     while (gyroGet(gyro) > degrees) {
       driveSet(-power, power);
+      delay(5);
     }
-    driveSet(power / 2, 0 - power / 2);
+    delay(250);
+    //driveSet(power / 2, 0 - power / 2);
+    while (gyroGet(gyro) < degrees) {
+      driveSet(power / 2, power / -2);
+      delay(5);
+    }
   }
-  delay(150);
-  driveSet(0, 0);
+  driveStop();
 }
 
 void stopDriveAfter(void *milliseconds) {
@@ -254,5 +307,3 @@ void gyroResetAfter(void *milliseconds) {
   gyroReset(gyro);
   taskDelete(NULL);
 }
-
-void driveStop() { driveSet(0, 0); }

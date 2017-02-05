@@ -81,6 +81,12 @@ void auto1() {}
 
 void auto2() {}
 
+void auto3() {}
+
+void auto4() {}
+
+void auto5() {}
+
 void autonomous() {
   FILE *chooser;
   int op2;
@@ -98,6 +104,15 @@ void autonomous() {
     auto1();
     break;
   case 2:
+    auto2();
+    break;
+  case 3:
+    auto2();
+    break;
+  case 4:
+    auto2();
+    break;
+  case 5:
     auto2();
     break;
   }

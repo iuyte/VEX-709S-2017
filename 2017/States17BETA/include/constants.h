@@ -31,7 +31,7 @@
 #define gyroPort 2  // Sets the gyroscope port
 #define isLine 3    // Sets the port for the line sensor
 #define lineLight 2000; // Sets the point where a line is white  if it's less than this
-#define NUMBER_OF_AUTON 2
+#define NUMBER_OF_AUTON 5
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation
