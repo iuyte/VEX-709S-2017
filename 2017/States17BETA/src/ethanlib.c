@@ -6,7 +6,8 @@ int liftToTaskWait;
 int idealLift = 0;
 float idealLeftDrive = 0;
 float idealRightDrive = 0;
-bool useIdeals[3] = {false, false, false};
+bool *useIdeals = (bool *)malloc(sizeof(bool) * 2);
+
 // MOTOR PORTS//
 // LIFT//
 
@@ -246,6 +247,6 @@ void ideals(void *parameter) {
 
 void systemsReset() {
   systems[LIFT] = analogReadCalibrated(pot);
-  systems[LIFT] = analogReadCalibrated(pot);
-  systems[LIFT] = analogReadCalibrated(pot);
+  systems[LEFT_DRIVE] = abs(encoderGet(lencoder));
+  systems[RIGHT_DRIVE] = abs(encoderGet(rencoder));
 }

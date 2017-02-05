@@ -5,7 +5,7 @@
 #define TIRLBIRL 7 // Top Inside Right Lift and Bottom Inside Right Lift
                   // (y-cables to power expander)
 #define liftZero 17
-#define LIFT 2
+#define LIFT 0
 // DRIVE//
 #define TLD 3 // Top Left Drive
 #define MLD 5 // Middle Left Drive
@@ -13,8 +13,9 @@
 #define TRD 8 // Top Right Drive
 #define MRD 6 // Middle Right Drive
 #define BRD 1 // Back Right Drive
-#define LEFT_DRIVE 0
-#define RIGHT_DRIVE 1
+#define LEFT_DRIVE 1
+#define RIGHT_DRIVE 2
+#define DRIVE 1
 // DIGITAL INPUT//
 #define lencPort 8  // Left encoder top port is 8 (means that bottom port is 9)
 #define rencPort 11 // Right encoder top port is 11(means that bottom port is 12)

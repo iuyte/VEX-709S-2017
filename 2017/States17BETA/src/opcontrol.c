@@ -11,7 +11,7 @@
  * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
  */
 
-#include "FunctionVars.h"
+#include "ethanlib.h"
 #include "constants.h"
 
 void operatorControl() {
@@ -28,8 +28,10 @@ void operatorControl() {
   delay(1000);
   driveSet(0, 0);
   //*/
-  driveSet(100, 100);
-  TaskHandle stopTask = taskCreate(stopDriveAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT + 1);
+  //driveSet(100, 100);
+  //TaskHandle stopTask = taskCreate(stopDriveAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT + 1);
+  useIdeals[DRIVE] = false;
+  useIdeals[LIFT] = false;
   while (isEnabled()) {
     prev = joystickGetDigital(1, 7, JOY_DOWN);
     if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
@@ -55,7 +57,7 @@ void operatorControl() {
       delay(150);
     }
     driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
-    printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
+    //printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
     delay(20);
 	}
 }

@@ -10,7 +10,7 @@
  * PROS contains FreeRTOS (http://www.freertos.org) whose source code may be
  * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
  */
-#include "FunctionVars.h"
+#include "ethanlib.h"
 #include "constants.h"
 
 void initializeIO() {
