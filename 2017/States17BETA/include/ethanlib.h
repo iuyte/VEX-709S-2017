@@ -1,5 +1,5 @@
+#pragma once
 #include "main.h"
-int liftZero;
 void liftSet(int power);
 void driveSet(int Lpower, int Rpower);
 void liftTo(int pos);
@@ -23,9 +23,4 @@ void stopAfter(void *milliseconds);
 void gyroResetAfter(void *milliseconds);
 void stopDriveAfter(void *milliseconds);
 void driveStop();
-void ideals(void *parameter);
-bool useIdeals[2];
-float systems[3];
-float systems_pow[3];
-void systemsReset();
 Mutex mutex;

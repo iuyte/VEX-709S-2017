@@ -3,6 +3,10 @@
 // The following are my global variables
 int liftToTaskPos;
 int liftToTaskWait;
+int idealLift = 0;
+float idealLeftDrive = 0;
+float idealRightDrive = 0;
+bool useIdeals[2] = {false, false};
 Mutex mutex;
 // MOTOR PORTS//
 // LIFT//
@@ -17,12 +21,20 @@ Encoder rencoder; // Initializes the variable rencoder (Right encoder) to type
 unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int drivemotorList[6] = {TLD, MLD, BLD, TRD, MRD, BRD};
 int liftMotorList[6] = {ORL, OLL, TIRLBIRL, TILLBILL};
+// int *systems = (int *)malloc(sizeof(int) * 3);
+float systems[3] = {0, 0, 0};
+float systems_pow[3] = {0, 0, 0};
 
 void timerReset(int number) { startTimes[number] = millis(); }
 
 unsigned long timer(int number) {
   unsigned long value = millis() - startTimes[number];
   return value;
+}
+
+void sdrive(int l, int r) {
+  systems[LEFT_DRIVE] = systems[LEFT_DRIVE] + l;
+  systems[RIGHT_DRIVE] = systems[RIGHT_DRIVE] + r;
 }
 
 void liftSet(int power) {
@@ -68,57 +80,73 @@ void lcdDisplayTime(void *parameter) {
       }
     } else {
       while (isEnabled() == false) {
-        // printf("%d", lcdReadButtons(uart1));
         FILE *fd5;
-        int opmd2;
+        bool opmd2;
         if ((fd5 = fopen("autoM", "r")) == NULL) {
-          opmd2 = 0;
+          opmd2 = false;
         } else {
-          opmd2 = fgetc(fd5);
+          if (fgetc(fd5)) {
+            opmd2 = true;
+          } else {
+            opmd2 = false;
+          }
         }
-        fclose(fd5);
-        lcdPrint(uart1, 1, "Auto: %d", opmd2);
+        FILE *fd6;
+        bool opmd1;
+        if ((fd6 = fopen("opcontM", "r")) == NULL) {
+          opmd1 = false;
+        } else {
+          if (fgetc(fd6)) {
+            opmd1 = true;
+          } else {
+            opmd1 = false;
+          }
+        }
+        fclose(fd6);
+        lcdPrint(uart1, 1, "OpCon:%d | Auto:%d", opmd1, opmd2);
         lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
-        if (lcdReadButtons(uart1) == 4) {
+        if (lcdReadButtons(uart1) > 1) {
           FILE *fd1;
-          int value;
+          bool value;
           if ((fd1 = fopen("autoM", "r")) == NULL) {
             fclose(fd1);
             FILE *fd2 = fopen("autoM", "w");
-            fputc(1, fd2);
+            fputc(true, fd2);
             fclose(fd2);
+            delay(500);
           } else {
             value = fgetc(fd1);
             fclose(fd1);
             FILE *fd4 = fopen("autoM", "w");
-            if (value < NUMBER_OF_AUTON) {
-              fputc(value + 1, fd4);
+            if (value) {
+              fputc(false, fd4);
             } else {
-              fputc(NUMBER_OF_AUTON, fd4);
+              fputc(true, fd4);
             }
             fclose(fd4);
+            delay(500);
           }
-          delay(500);
         } else if (lcdReadButtons(uart1) == 1) {
-          FILE *fd1;
-          int value;
-          if ((fd1 = fopen("autoM", "r")) == NULL) {
-            fclose(fd1);
-            FILE *fd2 = fopen("autoM", "w");
-            fputc(0, fd2);
-            fclose(fd2);
+          FILE *fd11;
+          bool value;
+          if ((fd11 = fopen("opcontM", "r")) == NULL) {
+            fclose(fd11);
+            FILE *fd22 = fopen("opcontM", "w");
+            fputc(true, fd22);
+            fclose(fd22);
+            delay(500);
           } else {
-            value = fgetc(fd1);
-            fclose(fd1);
-            FILE *fd4 = fopen("autoM", "w");
-            if (value > 0) {
-              fputc(value - 1, fd4);
+            value = fgetc(fd11);
+            fclose(fd11);
+            FILE *fd44 = fopen("opcontM", "w");
+            if (value) {
+              fputc(false, fd44);
             } else {
-              fputc(value, fd4);
+              fputc(true, fd44);
             }
-            fclose(fd4);
+            fclose(fd44);
+            delay(500);
           }
-          delay(500);
         }
         delay(10);
       }
@@ -208,33 +236,29 @@ void turn(float degrees, int power) {
   int gyroZero = gyroGet(gyro);
   if (degrees > 0) {
     while (gyroGet(gyro) - gyroZero < degrees) {
-      driveSet(power, -power);
+      sdrive(1, -1);
+      delay(5);
     }
-    driveSet(0 - power / 2, power / 2);
   } else if (degrees < 0) {
     while (gyroGet(gyro) - gyroZero > degrees) {
-      driveSet(-power, power);
+      sdrive(1, -1);
+      delay(5);
     }
-    driveSet(power / 2, 0 - power / 2);
   }
-  delay(150);
-  driveSet(0, 0);
 }
 
 void turnTo(float degrees, int power) {
   if (degrees > gyroGet(gyro)) {
     while (gyroGet(gyro) < degrees) {
-      driveSet(power, -power);
+      sdrive(1, -1);
+      delay(5);
     }
-    driveSet(0 - power / 2, power / 2);
   } else if (degrees < gyroGet(gyro)) {
     while (gyroGet(gyro) > degrees) {
-      driveSet(-power, power);
+      sdrive(-1, 1);
+      delay(5);
     }
-    driveSet(power / 2, 0 - power / 2);
   }
-  delay(150);
-  driveSet(0, 0);
 }
 
 void stopDriveAfter(void *milliseconds) {
@@ -256,3 +280,79 @@ void gyroResetAfter(void *milliseconds) {
 }
 
 void driveStop() { driveSet(0, 0); }
+
+void ideals(void *parameter) {
+  while (true) {
+    if (isEnabled()) {
+      mutexTake(mutex, 100);
+      float newL = systems_pow[LEFT_DRIVE];
+      float newR = systems_pow[RIGHT_DRIVE];
+      //float newLift = systems_pow[LIFT];
+      if (useIdeals[DRIVE]) {
+        if (abs(encoderGet(lencoder) < systems[LEFT_DRIVE] - DRIVE_TOLERANCE)) {
+          float takeAway = 0;
+          float diff = abs(encoderGet(lencoder) - systems[LEFT_DRIVE]);
+          for (size_t tak = 0; tak < diff; tak++) {
+            takeAway = takeAway + DRIVE_CHANGER;
+          }
+          newL = newL + takeAway;
+        } else if (abs(encoderGet(lencoder) > systems[LEFT_DRIVE] + DRIVE_TOLERANCE)) {
+          float takeAway = 0;
+          float diff = abs(encoderGet(lencoder) - systems[LEFT_DRIVE]);
+          for (size_t tak = 0; tak < diff; tak++) {
+            takeAway = takeAway + DRIVE_CHANGER;
+          }
+          newL = newL - takeAway;
+        }
+        if (abs(encoderGet(rencoder) < systems[RIGHT_DRIVE] - DRIVE_TOLERANCE)) {
+          float takeAway = 0;
+          float diff = abs(encoderGet(rencoder) - systems[RIGHT_DRIVE]);
+          for (size_t tak = 0; tak < diff; tak++) {
+            takeAway = takeAway + DRIVE_CHANGER;
+          }
+          newR = newR + takeAway;
+        } else if (abs(encoderGet(rencoder) > systems[RIGHT_DRIVE] + DRIVE_TOLERANCE)) {
+          float takeAway = 0;
+          float diff = abs(encoderGet(rencoder) - systems[RIGHT_DRIVE]);
+          for (size_t tak = 0; tak < diff; tak++) {
+            takeAway = takeAway + DRIVE_CHANGER;
+          }
+          newR = newR - takeAway;
+        }
+        driveSet(newL, newR);
+      }
+      /*
+      if (useIdeals[LIFT]) {
+        if (analogReadCalibrated(pot) > systems[LIFT] + LIFT_TOLERANCE) {
+          float takeAway = 0;
+          float diff = abs(analogReadCalibrated(pot) - systems[LIFT]);
+          for (size_t tak = 0; tak < diff; tak++) {
+            takeAway = takeAway + LIFT_CHANGER;
+          }
+          newLift = newLift - takeAway;
+        } else if (analogReadCalibrated(pot) < systems[LIFT] - LIFT_TOLERANCE) {
+          float takeAway = 0;
+          float diff = abs(analogReadCalibrated(pot) - systems[LIFT]);
+          for (size_t tak = 0; tak < diff; tak++) {
+            takeAway = takeAway + LIFT_CHANGER;
+          }
+          newLift = newLift + takeAway;
+        }
+        liftSet(newLift);
+      }
+      */
+      systems_pow[LEFT_DRIVE] = newL;
+      systems_pow[RIGHT_DRIVE] = newR;
+      //systems_pow[LIFT] = newLift;
+      printf(" | %f | - [ %d ] - | %f | \n", systems_pow[LIFT], analogReadCalibrated(pot), systems[LIFT]);
+      mutexGive(mutex);
+    }
+    delay(1);
+  }
+}
+
+void systemsReset() {
+  systems[LIFT] = analogReadCalibrated(pot);
+  systems[LEFT_DRIVE] = abs(encoderGet(lencoder));
+  systems[RIGHT_DRIVE] = abs(encoderGet(rencoder));
+}

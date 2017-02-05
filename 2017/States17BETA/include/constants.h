@@ -13,8 +13,6 @@
 #define TRD 8 // Top Right Drive
 #define MRD 6 // Middle Right Drive
 #define BRD 1 // Back Right Drive
-#define LEFT_DRIVE 1
-#define RIGHT_DRIVE 2
 #define DRIVE 1
 // DIGITAL INPUT//
 #define lencPort 8  // Left encoder top port is 8 (means that bottom port is 9)
@@ -33,12 +31,7 @@
 #define gyroPort 2  // Sets the gyroscope port
 #define isLine 3    // Sets the port for the line sensor
 #define lineLight 2000; // Sets the point where a line is white  if it's less than this
-
-//IDEALS//
-#define DRIVE_TOLERANCE 25
-#define LIFT_TOLERANCE 75
-#define LIFT_CHANGER 0.0001
-#define DRIVE_CHANGER 0.01
+#define NUMBER_OF_AUTON 2
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation

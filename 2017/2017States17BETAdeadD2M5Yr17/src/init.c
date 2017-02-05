@@ -10,7 +10,7 @@
  * PROS contains FreeRTOS (http://www.freertos.org) whose source code may be
  * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
  */
-#include "FunctionVars.h"
+#include "ethanlib.h"
 #include "constants.h"
 
 void initializeIO() {
@@ -22,8 +22,14 @@ void initializeIO() {
 }
 
 void initialize() {
+  mutex = mutexCreate();
   TaskHandle motorsSafe = taskRunLoop(stopAllPeriodic, 333);
   TaskHandle showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+  TaskHandle idealHandle;
+  useIdeals[LIFT] = false;
+  useIdeals[DRIVE] = false;
+  systemsReset();
+  idealHandle = taskCreate(ideals, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
   gyro=gyroInit(gyroPort, 0);
   lencoder = encoderInit(lencPort, lencPort+1, true);
   rencoder = encoderInit(rencPort, rencPort+1, false);

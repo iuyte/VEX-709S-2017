@@ -14,8 +14,9 @@
 #include "ethanlib.h"
 #include "constants.h"
 
-void operatorControl() {
+void teleOp1() {
   bool hangHookSet = true;
+  //bool prev = joystickGetDigital(1, 7, JOY_DOWN);
   /*
   for (size_t i = 0; i < 6; i++) {
     motorSet(driveMotorList[i], 100);
@@ -29,7 +30,10 @@ void operatorControl() {
   //*/
   //driveSet(100, 100);
   //TaskHandle stopTask = taskCreate(stopDriveAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT + 1);
+  useIdeals[DRIVE] = false;
+  useIdeals[LIFT] = false;
   while (isEnabled()) {
+    //prev = joystickGetDigital(1, 7, JOY_DOWN);
     if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
       liftSet(100);
     } else if (joystickGetDigital(1, 6, JOY_DOWN) && analogReadCalibrated(pot) > potBottom) {
@@ -56,4 +60,46 @@ void operatorControl() {
     //printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
     delay(20);
 	}
+}
+
+void teleOp0() {
+  useIdeals[DRIVE] = false;
+  useIdeals[LIFT] = false;
+  systems[LIFT] = potBottom;
+  while (isEnabled()) {
+    mutexTake(mutex, 100);
+    if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
+      liftSet(100);
+    } else if (joystickGetDigital(1, 6, JOY_DOWN) && analogReadCalibrated(pot) > potBottom) {
+      liftSet(-100);
+    } else {
+      liftSet(liftZero);
+    }
+    driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
+    //printf(" | %d | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro), systems[LIFT] );
+    //delay(20);
+    //printf(" | %lu | -- | %lu | \n", systems_pow[LIFT], systems[LIFT]);
+    print("Here\n");
+    mutexGive(mutex);
+    printf(" | %f | - | %d | - | %f | \n", systems_pow[LIFT], analogReadCalibrated(pot), systems[LIFT]);
+    delay(20);
+	}
+}
+
+void operatorControl() {
+  FILE *chooser;
+  bool op2;
+  if ((chooser = fopen("opcontM", "r")) == NULL) {
+    op2 = false;
+  } else if (fgetc(chooser)){
+    op2 = true;
+  } else {
+    op2 = false;
+  }
+  fclose(chooser);
+  if (op2) {
+    teleOp1();
+  } else {
+    teleOp0();
+  }
 }
