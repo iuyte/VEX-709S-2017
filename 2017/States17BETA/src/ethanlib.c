@@ -101,11 +101,10 @@ void lcdDisplayTime(void *parameter) {
             FILE *fd2 = fopen("autoM", "w");
             fputc(true, fd2);
             fclose(fd2);
-            delay(3000);
+            delay(500);
           } else {
-            FILE *fd3 = fopen("autoM", "r");
-            value = fgetc(fd3);
-            fclose(fd3);
+            value = fgetc(fd1);
+            fclose(fd1);
             FILE *fd4 = fopen("autoM", "w");
             if (value) {
               fputc(false, fd4);
@@ -113,7 +112,7 @@ void lcdDisplayTime(void *parameter) {
               fputc(true, fd4);
             }
             fclose(fd4);
-            delay(3000);
+            delay(500);
           }
         }
         delay(10);
