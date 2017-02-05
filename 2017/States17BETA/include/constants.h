@@ -35,8 +35,10 @@
 #define lineLight 2000; // Sets the point where a line is white  if it's less than this
 
 //IDEALS//
-#define DRIVE_TOLERANCE 10
-#define LIFT_TOLERANCE 65
+#define DRIVE_TOLERANCE 25
+#define LIFT_TOLERANCE 75
+#define LIFT_CHANGER 0.0001
+#define DRIVE_CHANGER 0.01
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation

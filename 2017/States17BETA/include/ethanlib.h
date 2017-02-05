@@ -26,5 +26,7 @@ void stopDriveAfter(void *milliseconds);
 void driveStop();
 void ideals(void *parameter);
 bool useIdeals[2];
-int systems[3];
+float systems[3];
+float systems_pow[3];
 void systemsReset();
+Mutex mutex;
