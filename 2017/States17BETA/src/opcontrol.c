@@ -67,45 +67,6 @@ void teleOp0() {
   useIdeals[LIFT] = false;
   systems[LIFT] = potBottom;
   while (isEnabled()) {
-<<<<<<< HEAD
-    //prev = joystickGetDigital(1, 7, JOY_DOWN);
-=======
-    mutexTake(mutex, 100);
->>>>>>> e5141102db8af40aea4118a544d7d9175c9e9efe
-    if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
-      liftSet(100);
-    } else if (joystickGetDigital(1, 6, JOY_DOWN) && analogReadCalibrated(pot) > potBottom) {
-      liftSet(-100);
-    } else {
-      liftSet(liftZero);
-    }
-<<<<<<< HEAD
-    if (joystickGetDigital(1, 5, JOY_UP)) {
-      digitalWrite(hangLockLeft, true);
-    } else if (joystickGetDigital(1, 5, JOY_DOWN)) {
-      digitalWrite(hangLockLeft, false);
-      delay(75);
-    }
-    if (joystickGetDigital(1, 7, JOY_DOWN) && joystickGetDigital(1, 7, JOY_DOWN)) {
-      if (hangHookSet == true) {
-        hangHookSet = false;
-      } else {
-        hangHookSet = true;
-      }
-      digitalWrite(hangHook, hangHookSet);
-      delay(150);
-    }
-    driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
-    //printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
-    delay(20);
-	}
-}
-
-void teleOp0() {
-  useIdeals[DRIVE] = false;
-  useIdeals[LIFT] = false;
-  systems[LIFT] = potBottom;
-  while (isEnabled()) {
     mutexTake(mutex, 100);
     if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
       liftSet(100);
@@ -114,8 +75,6 @@ void teleOp0() {
     } else {
       liftSet(liftZero);
     }
-=======
->>>>>>> e5141102db8af40aea4118a544d7d9175c9e9efe
     driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
     //printf(" | %d | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro), systems[LIFT] );
     //delay(20);
