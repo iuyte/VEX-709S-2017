@@ -2,11 +2,13 @@
 #include "constants.h"
 
 void auto0() {
-  useIdeals[LIFT] = true;
+  mutexTake(mutex, -1);
+  useIdeals[LIFT] =false;
   useIdeals[DRIVE] = true;
-  systems[LEFT_DRIVE] = 24 * inchesMultiplier;
-  systems[RIGHT_DRIVE] = 24 * inchesMultiplier;
+  systems[LEFT_DRIVE] = 100;
+  systems[RIGHT_DRIVE] = 100;
   systems[LIFT] = potHalf;
+  mutexGive(mutex);
 }
 
 void auto1() {
