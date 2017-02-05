@@ -25,6 +25,6 @@ void gyroResetAfter(void *milliseconds);
 void stopDriveAfter(void *milliseconds);
 void driveStop();
 void ideals(void *parameter);
-bool useIdeals[3];
-int* systems;
+bool useIdeals[2];
+int systems[3];
 void systemsReset();

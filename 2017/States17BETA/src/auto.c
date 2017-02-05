@@ -1,7 +1,7 @@
 #include "ethanlib.h"
 #include "constants.h"
 
-void auto1() {
+void auto0() {
   useIdeals[LIFT] = true;
   useIdeals[DRIVE] = true;
   systems[LEFT_DRIVE] = 24 * inchesMultiplier;
@@ -9,7 +9,7 @@ void auto1() {
   systems[LIFT] = potHalf;
 }
 
-void auto2() {
+void auto1() {
   gyroReset(gyro);
   useIdeals[LIFT] = true;
   useIdeals[DRIVE] = true;
@@ -85,8 +85,8 @@ void autonomous() {
   }
   fclose(chooser);
   if (op2) {
-    auto2();
-  } else {
     auto1();
+  } else {
+    auto0();
   }
 }

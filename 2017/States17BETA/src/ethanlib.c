@@ -65,7 +65,7 @@ void lcdDisplayTime(void *parameter) {
         delay(10);
       }
     } else if (isEnabled()) {
-      while (timer(8) <= 105000 && isEnabled()) {
+      while (timer(8) <= 105000 && isEnabled() && isAutonomous() == false) {
         min = 0;
         tim = 105000 - timer(8);
         tim = tim / 1000;
@@ -90,10 +90,21 @@ void lcdDisplayTime(void *parameter) {
             opmd2 = false;
           }
         }
-        fclose(fd5);
-        lcdPrint(uart1, 1, "Automode: %d", opmd2);
+        FILE *fd6;
+        bool opmd1;
+        if ((fd6 = fopen("opcontM", "r")) == NULL) {
+          opmd1 = false;
+        } else {
+          if (fgetc(fd6)) {
+            opmd1 = true;
+          } else {
+            opmd1 = false;
+          }
+        }
+        fclose(fd6);
+        lcdPrint(uart1, 1, "OpCon:%d | Auto:%d", opmd1, opmd2);
         lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
-        if (lcdReadButtons(uart1) != 0) {
+        if (lcdReadButtons(uart1) == 1) {
           FILE *fd1;
           bool value;
           if ((fd1 = fopen("autoM", "r")) == NULL) {
@@ -106,6 +117,27 @@ void lcdDisplayTime(void *parameter) {
             value = fgetc(fd1);
             fclose(fd1);
             FILE *fd4 = fopen("autoM", "w");
+            if (value) {
+              fputc(false, fd4);
+            } else {
+              fputc(true, fd4);
+            }
+            fclose(fd4);
+            delay(500);
+          }
+        } else if (lcdReadButtons(uart1) == 4) {
+          FILE *fd1;
+          bool value;
+          if ((fd1 = fopen("opcontM", "r")) == NULL) {
+            fclose(fd1);
+            FILE *fd2 = fopen("opcontM", "w");
+            fputc(true, fd2);
+            fclose(fd2);
+            delay(500);
+          } else {
+            value = fgetc(fd1);
+            fclose(fd1);
+            FILE *fd4 = fopen("opcontM", "w");
             if (value) {
               fputc(false, fd4);
             } else {
@@ -270,7 +302,7 @@ void ideals(void *parameter) {
     if (analogReadCalibrated(pot) > systems[LIFT] + LIFT_TOLERANCE) {
       newLift = newLift - 1;
     } else if (analogReadCalibrated(pot) < systems[LIFT] - LIFT_TOLERANCE) {
-      newLift = newLift - 1;
+      newLift = newLift + 1;
     }
     driveSet(newL, newR);
     liftSet(newLift);

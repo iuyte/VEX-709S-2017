@@ -14,7 +14,7 @@
 #include "ethanlib.h"
 #include "constants.h"
 
-void operatorControl() {
+void teleOp1() {
   bool hangHookSet = true;
   bool prev = joystickGetDigital(1, 7, JOY_DOWN);
   /*
@@ -60,4 +60,37 @@ void operatorControl() {
     //printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
     delay(20);
 	}
+}
+
+void teleOp0() {
+  useIdeals[DRIVE] = false;
+  useIdeals[LIFT] = true;
+  while (isEnabled()) {
+    if (joystickGetDigital(1, 6, JOY_UP) && systems[LIFT] < potTop) {
+      systems[LIFT] = systems[LIFT] + 1;
+    } else if (joystickGetDigital(1, 6, JOY_DOWN) && systems[LIFT] > potBottom) {
+      systems[LIFT] = systems[LIFT] - 1;
+    }
+    driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
+    //printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
+    delay(20);
+	}
+}
+
+void operatorControl() {
+  FILE *chooser;
+  bool op2;
+  if ((chooser = fopen("opcontM", "r")) == NULL) {
+    op2 = false;
+  } else if (fgetc(chooser)){
+    op2 = true;
+  } else {
+    op2 = false;
+  }
+  fclose(chooser);
+  if (op2) {
+    teleOp1();
+  } else {
+    teleOp0();
+  }
 }
