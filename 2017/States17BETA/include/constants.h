@@ -1,4 +1,5 @@
 #pragma once
+
 #define OLL 2      // Outside Left Lift
 #define TILLBILL 4 // Top Inside Left Lift and Bottom Inside Left Lift (y-cables to power expander)
 #define ORL 9     // Outside Right Lift
@@ -32,6 +33,8 @@
 #define isLine 3    // Sets the port for the line sensor
 #define lineLight 2000; // Sets the point where a line is white  if it's less than this
 #define NUMBER_OF_AUTON 5
+#define TURN_CORRECTION 2.5
+#define ENCO_CORRECTION 3
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation

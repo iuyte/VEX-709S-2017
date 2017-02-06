@@ -107,6 +107,7 @@ void liftToTask(void *parameter) {
 void driveTo(float targetPosition, int power) {
   encoderReset(rencoder);
   encoderReset(lencoder);
+  power = abs(power);
   if (targetPosition > 0) {
     int leftAt = power;
     int rightAt = power;

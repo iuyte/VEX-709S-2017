@@ -22,7 +22,8 @@ void initializeIO() {
 }
 
 void initialize() {
-  mutex = mutexCreate();
+  potMutex = mutexCreate();
+  speakerInit();
   TaskHandle motorsSafe = taskRunLoop(stopAllPeriodic, 333);
   TaskHandle showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
   gyro=gyroInit(gyroPort, 0);
