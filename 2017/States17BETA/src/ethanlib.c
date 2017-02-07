@@ -12,6 +12,9 @@ Encoder lencoder; // Initializes the variable lencoder (Left encoder) to type
                   // Encoder
 Encoder rencoder; // Initializes the variable rencoder (Right encoder) to type
                   // Encoder
+TaskHandle motorsSafe;
+TaskHandle showTime;
+TaskHandle liftToHandle;
 int *arr;
 unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int drivemotorList[6] = {TLD, MLD, BLD, TRD, MRD, BRD};
@@ -40,6 +43,14 @@ void driveSet(int Lpower, int Rpower) {
   motorSet(BRD, Rpower);
 }
 
+void hard_reset() {
+    uint32_t aircr = *((uint32_t *)0xE000ED0C);
+    aircr = (aircr & 0xFFFF) | (0x5FA << 16) | 5;
+    *((volatile uint32_t *)0xE000ED0C) = aircr;
+    asm("DSB");
+    while (1);
+}
+
 void driveStop() { driveSet(0, 0); }
 
 void uptownPlay(void *parameter) {
@@ -56,20 +67,24 @@ void playUp(void *parameter) {
   taskDelete(NULL);
 }
 
+void printButtons(void * parameter) {
+  while (true) printf("%d", lcdReadButtons(uart1));
+}
+
 void lcdDisplayTime(void *parameter) {
   unsigned long tim;
   int min;
   while (true) {
     timerReset(8);
     if (isAutonomous()) {
-      TaskHandle upplayHandle = taskCreate(uptownPlay, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+      //TaskHandle upplayHandle = taskCreate(uptownPlay, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
       while (timer(8) <= 15000 && isAutonomous()) {
         tim = 15000 - timer(8);
         lcdPrint(uart1, 1, "%lu", tim / 1000);
         lcdPrint(uart1, 2, "Battery: %1.3f", (double)powerLevelMain() / 1000);
-        delay(10);
+        delay(20);
       }
-      taskDelete(upplayHandle);
+      //taskDelete(upplayHandle);
     } else if (isEnabled()) {
       while (timer(8) <= 105000 && isEnabled() && isAutonomous() == false) {
         min = 0;
@@ -81,7 +96,7 @@ void lcdDisplayTime(void *parameter) {
         }
         lcdPrint(uart1, 1, "%d : %lu", min, tim);
         lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
-        delay(10);
+        delay(20);
       }
     } else {
       while (isEnabled() == false) {
@@ -333,6 +348,22 @@ void turn(float degrees, int power) {
     //driveSet(power / 2, 0 - power / 2);
     while (gyroGet(gyro) - gyroZero < degrees) {
       driveSet(power / TURN_CORRECTION, power / -TURN_CORRECTION);
+      delay(5);
+    }
+  }
+  driveStop();
+}
+
+void turnNoFix(float degrees, int power) {
+  int gyroZero = gyroGet(gyro);
+  if (degrees > 0) {
+    while (gyroGet(gyro) - gyroZero < degrees) {
+      driveSet(power, -power);
+      delay(5);
+    }
+  } else if (degrees < 0) {
+    while (gyroGet(gyro) - gyroZero > degrees) {
+      driveSet(-power, power);
       delay(5);
     }
   }

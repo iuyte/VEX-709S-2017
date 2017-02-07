@@ -23,9 +23,10 @@ void initializeIO() {
 
 void initialize() {
   potMutex = mutexCreate();
-  speakerInit();
-  TaskHandle motorsSafe = taskRunLoop(stopAllPeriodic, 333);
-  TaskHandle showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+  //speakerInit();
+  //TaskHandle lcdButtonsHandle = taskCreate(printButtons, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
+  motorsSafe = taskRunLoop(stopAllPeriodic, 100);
+  showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
   gyro=gyroInit(gyroPort, 0);
   lencoder = encoderInit(lencPort, lencPort+1, true);
   rencoder = encoderInit(rencPort, rencPort+1, false);
