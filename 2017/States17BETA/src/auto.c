@@ -271,7 +271,7 @@ void autonomous() {
   FILE *chooser;
   int op2;
   if ((chooser = fopen("autoM", "r")) == NULL) {
-    op2 = 0;
+    op2 = DEFAULT_AUTON;
   } else {
     op2 = fgetc(chooser);
   }

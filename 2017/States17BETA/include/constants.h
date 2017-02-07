@@ -35,6 +35,7 @@
 #define NUMBER_OF_AUTON 5
 #define TURN_CORRECTION 2.7
 #define ENCO_CORRECTION 3
+#define DEFAULT_AUTON 1
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation

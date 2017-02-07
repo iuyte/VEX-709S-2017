@@ -104,7 +104,7 @@ void lcdDisplayTime(void *parameter) {
         FILE *fd5;
         int opmd2;
         if ((fd5 = fopen("autoM", "r")) == NULL) {
-          opmd2 = 0;
+          opmd2 = DEFAULT_AUTON;
         } else {
           opmd2 = fgetc(fd5);
         }
