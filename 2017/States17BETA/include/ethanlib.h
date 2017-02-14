@@ -35,3 +35,5 @@ TaskHandle motorsSafe;
 TaskHandle showTime;
 TaskHandle liftToHandle;
 void turnNoFix(float degrees, int power);
+void driveInchAbs(float inches, int power);
+void driveToAbs(float targetPosition, int power);

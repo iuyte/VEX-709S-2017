@@ -1,9 +1,18 @@
 #include "constants.h"
 #include "ethanlib.h"
 
-void auto5() {}
+void auto5() {
+  jerk();
+}
 
-void auto4() {}
+void auto4() {
+  for (size_t k = 0; k < 6; k++) {
+    int mot = driveMotorList[k];
+    motorSet(mot, 127);
+    wait(500);
+    motorStop(mot);
+  }
+}
 
 void auto3() {
   gyroReset(gyro);
@@ -109,12 +118,12 @@ void auto1() {
   jerk();// This is intended to drop and lock the intake
   delay(400);// waits 440 milliseconds for the intake to drop (AND LOCK)
   //GO FORWARD & PICK UP 1-3 STARS (+ intake), BACK UP TO PREVIOUS POSITION
-  driveInchNoFix(38, 127); // Drives 28 inches forward at 63 power
+  driveInchNoFix(22.5, 127); // Drives 32 inches forward at 63 power
   arr[0] = 0;
   arr[1] = potHalf;
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr, TASK_PRIORITY_DEFAULT);
-  driveInch(6, 127);
-  mutexTake(potMutex, 5);
+  driveInch(12, 127); // 6
+  mutexTake(potMutex, -1);
   int j = analogReadCalibrated(pot);
   mutexGive(potMutex);
   while(j < potHalf / 1.5) {
@@ -123,12 +132,13 @@ void auto1() {
     mutexGive(potMutex);
     delay(1);
   }
-  driveInch(-38, 127);  // Drives 24/27 inches backward at 63 power
+  driveInch(-30.5, 127);  // Drives 38 inches backward at 63 power
   //TURN BACK OF ROBOT TO WALL< LIFT UP, HIT WALL, DUMP
-  turn(90, 70);        // Turns 83 degrees to the right at 40 power
+  turnNoFix(6, 127);        // Turns 83 degrees to the right at 40 power
+  turn(86, 55);
   driveSet(-127, -127); // Sets the drive to go backwards at 70 power
   timerReset(0);
-  arr[0] = 600;
+  arr[0] = 300; // 600
   arr[1] = potTop + 50;
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr, TASK_PRIORITY_DEFAULT);
   TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE, (void *)1000, TASK_PRIORITY_DEFAULT);
@@ -149,18 +159,19 @@ void auto1() {
   delay(250);
   liftSet(0);
   turnTo(-60, 70); // Turns left 43/61/55 degrees at 40 power
-  driveInchNoFix(36, 127);
-  arr[0] = 500;
+  driveInchNoFix(25, 127); // 30
+  arr[0] = 600;
   arr[1] = potHalf + 200;
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
   driveInch(6, 127);
   //
   delay(250);
-  driveInch(-12, 127);
+  driveInch(-2, 127);
   turnNoFix(20, 70);
   driveSet(-127, -127);
   timerReset(0);
+  arr[0] = 0;
   arr[1] = potTop; // Brings the lift to the top
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
