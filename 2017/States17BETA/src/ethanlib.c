@@ -4,8 +4,15 @@
 Mutex potMutex;
 // MOTOR PORTS//
 // LIFT//
-const char* uptown[3] =
-{"UptownGi:d=16,o=6,b=125:8e7,8p,8e7,8p,8e7,4p,8d#7,8e7,f#7,p,e7,p,d#7,p,8c#7,8c#7,p,8b,8g#,8b,4p,a,p,g#,p,a,p,b,p,a,p,g#,p,f#,p", "Upto:d=8,o=6,b=125:4e,4e,2e,4p,d#,e,f#,e,d#,c#,4c#,b5,g#5,2b5,4p,a5,g#5,a5,b5,a5,g#5,f#5,4e5,4e,2e,4p,e,d#,e,f#,e,d#,c#,c#,b5,b5,g#5,2b5,p,a5,g#5,a5,b5", "UptonGi:d=4,o=5,b=140:c6,c6,c.6,p,8c6,8b,8c6,8d6,8c6,8b,8a,a,g,g.,p,8f,8e,8f,8g,8f,8e,8d,c,c6,d.6,p,8c6,8b,8c6,8e6,8d6,8c6,8b,a,g,g.,p,8f,8e,8f,g,8a,8b,c6,c6,c.6"};
+const char *uptown[3] = {
+    "UptownGi:d=16,o=6,b=125:8e7,8p,8e7,8p,8e7,4p,8d#7,8e7,f#7,p,e7,p,d#7,p,8c#"
+    "7,8c#7,p,8b,8g#,8b,4p,a,p,g#,p,a,p,b,p,a,p,g#,p,f#,p",
+    "Upto:d=8,o=6,b=125:4e,4e,2e,4p,d#,e,f#,e,d#,c#,4c#,b5,g#5,2b5,4p,a5,g#5,"
+    "a5,b5,a5,g#5,f#5,4e5,4e,2e,4p,e,d#,e,f#,e,d#,c#,c#,b5,b5,g#5,2b5,p,a5,g#5,"
+    "a5,b5",
+    "UptonGi:d=4,o=5,b=140:c6,c6,c.6,p,8c6,8b,8c6,8d6,8c6,8b,8a,a,g,g.,p,8f,8e,"
+    "8f,8g,8f,8e,8d,c,c6,d.6,p,8c6,8b,8c6,8e6,8d6,8c6,8b,a,g,g.,p,8f,8e,8f,g,"
+    "8a,8b,c6,c6,c.6"};
 // INIT SENSORS//
 Gyro gyro;        // Initializes the variable gyro to type Gyro
 Encoder lencoder; // Initializes the variable lencoder (Left encoder) to type
@@ -43,23 +50,23 @@ void driveSet(int Lpower, int Rpower) {
   motorSet(BRD, Rpower);
 }
 
-void hard_reset() {
-    uint32_t aircr = *((uint32_t *)0xE000ED0C);
-    aircr = (aircr & 0xFFFF) | (0x5FA << 16) | 5;
-    *((volatile uint32_t *)0xE000ED0C) = aircr;
-    asm("DSB");
-    while (1);
+void hard_reset(void) {
+  uint32_t aircr = *((uint32_t *)0xE000ED0C);
+  aircr = (aircr & 0xFFFF) | (0x5FA << 16) | 5;
+  *((volatile uint32_t *)0xE000ED0C) = aircr;
+  asm("DSB");
+  while (1)
+    ;
 }
 
-void driveStop() { driveSet(0, 0); }
+void driveStop(void) { driveSet(0, 0); }
 
-void uptownPlay(void *parameter) {
-  speakerPlayArray(uptown);
-}
+void uptownPlay(void *parameter) { speakerPlayArray(uptown); }
 
 void playUp(void *parameter) {
   delay(100);
-  TaskHandle uptownHandle = taskCreate(uptownPlay, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+  TaskHandle uptownHandle = taskCreate(uptownPlay, TASK_DEFAULT_STACK_SIZE,
+                                       NULL, TASK_PRIORITY_DEFAULT);
   while (!isEnabled()) {
     delay(20);
   }
@@ -67,8 +74,9 @@ void playUp(void *parameter) {
   taskDelete(NULL);
 }
 
-void printButtons(void * parameter) {
-  while (true) printf("%d", lcdReadButtons(uart1));
+void printButtons(void *parameter) {
+  while (true)
+    printf("%d", lcdReadButtons(uart1));
 }
 
 void lcdDisplayTime(void *parameter) {
@@ -77,14 +85,15 @@ void lcdDisplayTime(void *parameter) {
   while (true) {
     timerReset(8);
     if (isAutonomous()) {
-      //TaskHandle upplayHandle = taskCreate(uptownPlay, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+      // TaskHandle upplayHandle = taskCreate(uptownPlay,
+      // TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
       while (timer(8) <= 15000 && isAutonomous()) {
         tim = 15000 - timer(8);
         lcdPrint(uart1, 1, "%lu", tim / 1000);
         lcdPrint(uart1, 2, "Battery: %1.3f", (double)powerLevelMain() / 1000);
         delay(20);
       }
-      //taskDelete(upplayHandle);
+      // taskDelete(upplayHandle);
     } else if (isEnabled()) {
       while (timer(8) <= 105000 && isEnabled() && isAutonomous() == false) {
         min = 0;
@@ -159,28 +168,28 @@ void lcdDisplayTime(void *parameter) {
 }
 
 void liftTo(int pos) {
-  if (pos > analogReadCalibrated(pot)) {
+  if (pos > analogReadCalibrated(POT)) {
     liftSet(100);
-    while (analogReadCalibrated(pot) < pos - 10)
+    while (analogReadCalibrated(POT) < pos - 10)
       delay(1);
-  } else if (pos < analogReadCalibrated(pot)) {
+  } else if (pos < analogReadCalibrated(POT)) {
     liftSet(-100);
-    while (analogReadCalibrated(pot) > pos + 10)
+    while (analogReadCalibrated(POT) > pos + 10)
       delay(1);
   }
-  liftSet(liftZero);
+  liftSet(LIFTZERO);
 }
 
 void liftToTask(void *parameters[2]) {
   long unsigned int ms = (long unsigned int)parameters[0];
   delay(ms);
   long liftToTaskPos = (unsigned long)parameters[1];
-  int k = analogReadCalibrated(pot);
+  int k = analogReadCalibrated(POT);
   if (liftToTaskPos > k) {
     liftSet(100);
     while (k < liftToTaskPos - 10) {
       mutexTake(potMutex, 5);
-      k = analogReadCalibrated(pot);
+      k = analogReadCalibrated(POT);
       mutexGive(potMutex);
       delay(1);
     }
@@ -188,12 +197,12 @@ void liftToTask(void *parameters[2]) {
     liftSet(-100);
     while (k > liftToTaskPos + 10) {
       mutexTake(potMutex, 5);
-      k = analogReadCalibrated(pot);
+      k = analogReadCalibrated(POT);
       mutexGive(potMutex);
       delay(1);
     }
   }
-  liftSet(liftZero);
+  liftSet(LIFTZERO);
   taskDelete(NULL);
 }
 
@@ -230,7 +239,7 @@ void driveTo(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    //driveSet(0 - power / 2, 0 - power / 2);
+    // driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < 0) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -245,7 +254,7 @@ void driveTo(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    //driveSet(power / 2, power / 2);
+    // driveSet(power / 2, power / 2);
     driveStop();
     delay(250);
     leftAt = power / ENCO_CORRECTION;
@@ -262,10 +271,9 @@ void driveTo(float targetPosition, int power) {
       delay(5);
     }
   }
-  //delay(100);
+  // delay(100);
   driveStop();
 }
-
 
 void driveToAbs(float targetPosition, int power) {
   power = abs(power);
@@ -299,7 +307,7 @@ void driveToAbs(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    //driveSet(0 - power / 2, 0 - power / 2);
+    // driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < avg) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -314,7 +322,7 @@ void driveToAbs(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    //driveSet(power / 2, power / 2);
+    // driveSet(power / 2, power / 2);
     driveStop();
     delay(250);
     leftAt = power / ENCO_CORRECTION;
@@ -331,10 +339,9 @@ void driveToAbs(float targetPosition, int power) {
       delay(5);
     }
   }
-  //delay(100);
+  // delay(100);
   driveStop();
 }
-
 
 void driveToNoFix(float targetPosition, int power) {
   encoderReset(rencoder);
@@ -355,7 +362,7 @@ void driveToNoFix(float targetPosition, int power) {
       delay(5);
     }
     driveStop();
-    //driveSet(0 - power / 2, 0 - power / 2);
+    // driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < 0) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -370,20 +377,20 @@ void driveToNoFix(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    //driveSet(power / 2, power / 2);
+    // driveSet(power / 2, power / 2);
     driveStop();
   }
-  //delay(100);
+  // delay(100);
   driveStop();
 }
 
 void driveInch(float inches, int power) {
-  inches = inches * inchesMultiplier;
+  inches = inches * INCHESMULTIPLIER;
   driveTo(inches, power);
 }
 
 void driveInchNoFix(float inches, int power) {
-  inches = inches * inchesMultiplier;
+  inches = inches * INCHESMULTIPLIER;
   driveToNoFix(inches, power);
 }
 
@@ -402,9 +409,9 @@ void turn(float degrees, int power) {
     }
     driveStop();
     delay(250);
-    //driveSet(0 - power / 2, power / 2);
+    // driveSet(0 - power / 2, power / 2);
     while (gyroGet(gyro) - gyroZero > degrees) {
-      driveSet(power / -TURN_CORRECTION, power / TURN_CORRECTION);
+      driveSet(power * TURN_CORRECTION, power / TURN_CORRECTION);
       delay(5);
     }
 
@@ -415,9 +422,9 @@ void turn(float degrees, int power) {
     }
     driveStop();
     delay(250);
-    //driveSet(power / 2, 0 - power / 2);
+    // driveSet(power / 2, 0 - power / 2);
     while (gyroGet(gyro) - gyroZero < degrees) {
-      driveSet(power / TURN_CORRECTION, power / -TURN_CORRECTION);
+      driveSet(power * TURN_CORRECTION, power / -TURN_CORRECTION);
       delay(5);
     }
   }
@@ -448,9 +455,9 @@ void turnTo(float degrees, int power) {
     }
     driveStop();
     delay(250);
-    //driveSet(0 - power / 2, power / 2);
+    // driveSet(0 - power / 2, power / 2);
     while (gyroGet(gyro) > degrees) {
-      driveSet(power / -TURN_CORRECTION, power / TURN_CORRECTION);
+      driveSet(power * TURN_CORRECTION, power / TURN_CORRECTION);
       delay(5);
     }
   } else if (degrees < gyroGet(gyro)) {
@@ -460,9 +467,48 @@ void turnTo(float degrees, int power) {
     }
     driveStop();
     delay(250);
-    //driveSet(power / 2, 0 - power / 2);
+    // driveSet(power / 2, 0 - power / 2);
     while (gyroGet(gyro) < degrees) {
-      driveSet(power / TURN_CORRECTION, power / -TURN_CORRECTION);
+      driveSet(power * TURN_CORRECTION, power / -TURN_CORRECTION);
+      delay(5);
+    }
+  }
+  driveStop();
+}
+
+void smartTurn(float degrees, int power) {
+  int gyroZero = gyroGet(gyro);
+  turnNoFix(degrees * SMART_TURN_MULT, power);
+  driveStop();
+  delay(250);
+  // driveSet(0 - power / 2, power / 2);
+  if (degrees > 0) {
+    while (gyroGet(gyro) - gyroZero > degrees + TURN_TOLERANCE) {
+      driveSet(power * -TURN_CORRECTION, power * TURN_CORRECTION);
+      delay(5);
+    }
+  } else if (degrees < 0) {
+    while (gyroGet(gyro) - gyroZero < degrees - TURN_TOLERANCE) {
+      driveSet(power * TURN_CORRECTION, power * -TURN_CORRECTION);
+      delay(5);
+    }
+  }
+  driveStop();
+}
+
+void smartTurnTo(float degrees, int power) {
+  turnNoFix(degrees * SMART_TURN_MULT, power);
+  driveStop();
+  delay(250);
+  // driveSet(0 - power / 2, power / 2);
+  if (degrees > gyroGet(gyro)) {
+    while (gyroGet(gyro) > degrees + TURN_TOLERANCE) {
+      driveSet(power * -TURN_CORRECTION, power * TURN_CORRECTION);
+      delay(5);
+    }
+  } else if (degrees < gyroGet(gyro)) {
+    while (gyroGet(gyro) < degrees - TURN_TOLERANCE) {
+      driveSet(power * TURN_CORRECTION, power * -TURN_CORRECTION);
       delay(5);
     }
   }
@@ -487,14 +533,15 @@ void gyroResetAfter(void *milliseconds) {
   taskDelete(NULL);
 }
 
-void jerk() {
-  //driveInchNoFix(-4, 100);
-  //driveInch(4, 100);
-  driveInchNoFix(4, 100);
-  driveInch(-4, 100);
+void driveInchAbs(float inches, int power) {
+  inches = inches * INCHESMULTIPLIER;
+  driveToAbs(inches, power);
 }
 
-void driveInchAbs(float inches, int power) {
-  inches = inches * inchesMultiplier;
-  driveToAbs(inches, power);
+bool isLine(void) {
+  bool re = false;
+  if (analogReadCalibrated(LINE) >= LINELIGHT) {
+    re = true;
+  }
+  return re;
 }

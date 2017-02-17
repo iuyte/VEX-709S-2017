@@ -5,7 +5,7 @@
 #define ORL 9     // Outside Right Lift
 #define TIRLBIRL 7 // Top Inside Right Lift and Bottom Inside Right Lift
                   // (y-cables to power expander)
-#define liftZero 17
+#define LIFTZERO 17
 #define LIFT 0
 // DRIVE//
 #define TLD 3 // Top Left Drive
@@ -16,26 +16,28 @@
 #define BRD 1 // Back Right Drive
 #define DRIVE 1
 // DIGITAL INPUT//
-#define lencPort 8  // Left encoder top port is 8 (means that bottom port is 9)
-#define rencPort 11 // Right encoder top port is 11(means that bottom port is 12)
+#define LENCPORT 8, 9  // Left encoder top port is 8 (means that bottom port is 9)
+#define RENCPORT 11, 12 // Right encoder top port is 11(means that bottom port is 12)
 #define isWall 1    // Wall bumper port is digital 1
 #define isWall2 10
 // DIGITAL OUTPUT//
-#define hangLockLeft 3  // Left Hang Lock Pnuematic
-#define hangLockRight 2 // Right Hang Lock Pnuematic
-#define hangHook 4      // Hook for hanging pneumatic
+#define HANGLOCKLEFT 3  // Left Hang Lock Pnuematic
+#define HANGLOCKRIGHT 2 // Right Hang Lock Pnuematic
+#define HANGHOOK 4      // Hook for hanging pneumatic
 // ANALOG INPUT//
-#define pot 4 // Potentiometer on lift in analog port 4
-#define potTop 2000
-#define potBottom 10 // when the potentiometer is all the way down, this is it's position
-#define potHalf 550 // When the lift is halfway up
-#define gyroPort 2  // Sets the gyroscope port
-#define isLine 3    // Sets the port for the line sensor
-#define lineLight 2000; // Sets the point where a line is white  if it's less than this
+#define POT 4 // Potentiometer on lift in analog port 4
+#define POTTOP 2000
+#define POTBOTTOM 10 // when the POTentiometer is all the way down, this is it's position
+#define POTHALF 550 // When the lift is halfway up
+#define GYROPORT 2  // Sets the gyroscope port
+#define LINE 1    // Sets the port for the line sensor
+#define LINELIGHT 2000 // Sets the point where a line is white  if it's less than this
 #define NUMBER_OF_AUTON 5
-#define TURN_CORRECTION 2.7
+#define TURN_CORRECTION .3
+#define SMART_TURN_MULT 0.73
+#define TURN_TOLERANCE 4
 #define ENCO_CORRECTION 3
-#define DEFAULT_AUTON 1
+#define DEFAULT_AUTON 2
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation
@@ -51,5 +53,4 @@
 // is equal to
 // 17.90493109783822527399942337940786572887671014580135048412544009,
 // which is the number of degrees necessary to be traveled for 1 inch.
-// Although it has been shortened for pruposes relating to ease of use
-#define inchesMultiplier 17.90493109783822527399942337940786572887671014580135048412544009
+#define INCHESMULTIPLIER 17.90493109783822527399942337940786572887671014580135048412544009

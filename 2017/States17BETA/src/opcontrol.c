@@ -15,7 +15,7 @@
 #include "constants.h"
 
 void operatorControl() {
-  bool hangHookSet = true;
+  bool HANGHOOKSet = true;
   /*
   for (size_t i = 0; i < 6; i++) {
     motorSet(driveMotorList[i], 100);
@@ -30,26 +30,26 @@ void operatorControl() {
   //driveSet(100, 100);
   //TaskHandle stopTask = taskCreate(stopDriveAfter, TASK_DEFAULT_STACK_SIZE, (void*)1000, TASK_PRIORITY_DEFAULT + 1);
   while (isEnabled()) {
-    if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(pot) < potTop) {
+    if (joystickGetDigital(1, 6, JOY_UP) && analogReadCalibrated(POT) < POTTOP) {
       liftSet(100);
-    } else if (joystickGetDigital(1, 6, JOY_DOWN) && analogReadCalibrated(pot) > potBottom) {
+    } else if (joystickGetDigital(1, 6, JOY_DOWN) && analogReadCalibrated(POT) > POTBOTTOM) {
       liftSet(-100);
     } else {
-      liftSet(liftZero);
+      liftSet(LIFTZERO);
     }
     if (joystickGetDigital(1, 5, JOY_UP)) {
-      digitalWrite(hangLockLeft, true);
+      digitalWrite(HANGLOCKLEFT, true);
     } else if (joystickGetDigital(1, 5, JOY_DOWN)) {
-      digitalWrite(hangLockLeft, false);
+      digitalWrite(HANGLOCKLEFT, false);
       delay(75);
     }
     if (joystickGetDigital(1, 7, JOY_DOWN) && joystickGetDigital(1, 7, JOY_DOWN)) {
-      if (hangHookSet == true) {
-        hangHookSet = false;
+      if (HANGHOOKSet == true) {
+        HANGHOOKSet = false;
       } else {
-        hangHookSet = true;
+        HANGHOOKSet = true;
       }
-      digitalWrite(hangHook, hangHookSet);
+      digitalWrite(HANGHOOK, HANGHOOKSet);
       delay(150);
     }
     driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);

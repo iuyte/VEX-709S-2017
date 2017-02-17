@@ -16,9 +16,9 @@
 void initializeIO() {
   pinMode(isWall, INPUT);
   pinMode(isWall2, INPUT);
-  pinMode(hangHook, OUTPUT);
-  pinMode(hangLockLeft, OUTPUT);
-  pinMode(hangLockRight, OUTPUT);
+  pinMode(HANGHOOK, OUTPUT);
+  pinMode(HANGLOCKLEFT, OUTPUT);
+  pinMode(HANGLOCKRIGHT, OUTPUT);
 }
 
 void initialize() {
@@ -27,13 +27,13 @@ void initialize() {
   //TaskHandle lcdButtonsHandle = taskCreate(printButtons, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
   motorsSafe = taskRunLoop(stopAllPeriodic, 100);
   showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
-  gyro=gyroInit(gyroPort, 0);
-  lencoder = encoderInit(lencPort, lencPort+1, true);
-  rencoder = encoderInit(rencPort, rencPort+1, false);
+  gyro=gyroInit(GYROPORT, 0);
+  lencoder = encoderInit(LENCPORT, true);
+  rencoder = encoderInit(RENCPORT, false);
   encoderReset(lencoder);
   encoderReset(rencoder);
-  analogCalibrate(pot);
-  analogCalibrate(isLine);
+  analogCalibrate(POT);
+  analogCalibrate(LINE);
   lcdInit(uart1);
   lcdClear(uart1);
   lcdSetBacklight(uart1, true);

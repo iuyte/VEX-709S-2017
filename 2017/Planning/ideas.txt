@@ -1,0 +1,5 @@
+Summer ideas:
+  -complete position management
+  -rerun through position management
+  -array of checkpoints for turning, so I can save a checkpoint position to a value in an array, then turn relative to that position at any point later in the program
+  -

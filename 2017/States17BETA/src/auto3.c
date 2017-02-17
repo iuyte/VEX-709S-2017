@@ -10,7 +10,7 @@ void auto3() {
   delay(400);
   driveInch(28, 127); // Drives 28 inches forward at 63 power
   arr[0] = 0;
-  arr[1] = potHalf;
+  arr[1] = POTHALF;
   TaskHandle liftToTask1 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
   driveInch(5, 127);
@@ -20,7 +20,7 @@ void auto3() {
   driveSet(-110, -127); // Sets the drive to go backwards at 70 power
   timerReset(0);
   arr[0] = 1000;
-  arr[1] = potTop + 50;
+  arr[1] = POTTOP + 50;
   TaskHandle liftToTask2 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
   TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE,
@@ -33,7 +33,7 @@ void auto3() {
   driveSet(0, 0); // Stops the robot
   delay(500);     // Waits half of a second
   arr[0] = 0;
-  arr[1] = potBottom; // Takes the lift down to the bottom
+  arr[1] = POTBOTTOM; // Takes the lift down to the bottom
   TaskHandle liiftToTask3 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                        (void *)arr, TASK_PRIORITY_DEFAULT);
   delay(1500);
@@ -42,7 +42,7 @@ void auto3() {
   liftSet(0);
   turnTo(-53, 100); // Turns left 43/61/55 degrees at 40 power
   driveInch(34, 127);
-  arr[1] = potHalf + 200;
+  arr[1] = POTHALF + 200;
   TaskHandle liftToTask4 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
   driveInch(6, 127);
@@ -60,7 +60,7 @@ void auto3() {
   driveInch(12, 127);
   turn(77, 100);
   delay(333);
-  arr[1] = potTop; // Brings the lift to the top
+  arr[1] = POTTOP; // Brings the lift to the top
   TaskHandle liftToTask5 = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
   timerReset(0);
