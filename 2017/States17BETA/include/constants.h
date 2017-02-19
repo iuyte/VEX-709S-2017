@@ -27,17 +27,16 @@
 // ANALOG INPUT//
 #define POT 4 // Potentiometer on lift in analog port 4
 #define POTTOP 2000
-#define POTBOTTOM 10 // when the POTentiometer is all the way down, this is it's position
+#define POTBOTTOM 40 // when the POTentiometer is all the way down, this is it's position  // 10
 #define POTHALF 550 // When the lift is halfway up
 #define GYROPORT 2  // Sets the gyroscope port
 #define LINE 1    // Sets the port for the line sensor
-#define LINELIGHT 2000 // Sets the point where a line is white  if it's less than this
-#define NUMBER_OF_AUTON 5
-#define TURN_CORRECTION .3
+#define LINELIGHT 2800 // Sets the point where a line is white  if it's less than this
+#define NUMBER_OF_AUTON 10
+#define TURN_CORRECTION .27 // .3
 #define SMART_TURN_MULT 0.73
-#define TURN_TOLERANCE 4
 #define ENCO_CORRECTION 3
-#define DEFAULT_AUTON 2
+#define DEFAULT_AUTON 7 // Skills is 4, reg is 7, onlycube is 1
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation

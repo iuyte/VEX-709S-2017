@@ -23,6 +23,7 @@ void initializeIO() {
 
 void initialize() {
   potMutex = mutexCreate();
+  timerMutex = mutexCreate();
   //speakerInit();
   //TaskHandle lcdButtonsHandle = taskCreate(printButtons, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
   motorsSafe = taskRunLoop(stopAllPeriodic, 100);
@@ -32,8 +33,8 @@ void initialize() {
   rencoder = encoderInit(RENCPORT, false);
   encoderReset(lencoder);
   encoderReset(rencoder);
+  gyroReset(gyro);
   analogCalibrate(POT);
-  analogCalibrate(LINE);
   lcdInit(uart1);
   lcdClear(uart1);
   lcdSetBacklight(uart1, true);

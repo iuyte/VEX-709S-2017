@@ -1,14 +1,14 @@
-#include "constants.h"
 #include "ethanlib.h"
+#include "constants.h"
 
-void auto0() {
+void auto9() {
   gyroReset(gyro);
   encoderReset(lencoder);
   encoderReset(rencoder);
   jerk();// This is intended to drop and lock the intake
   delay(400);// waits 440 milliseconds for the intake to drop (AND LOCK)
   //GO FORWARD & PICK UP 1-3 STARS (+ intake), BACK UP TO PREVIOUS POSITION
-  driveInchNoFix(16, 127); // Drives 24
+  driveInchNoFix(14, 127); // Drives 24
   arr[0] = 0;
   arr[1] = POTHALF;
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr, TASK_PRIORITY_DEFAULT);
@@ -39,5 +39,19 @@ void auto0() {
     delay(1);
   }
   driveSet(0, 0); // Stops the robot
+  mutexTake(potMutex, -1);
+  j = analogReadCalibrated(POT);
+  mutexGive(potMutex);
+  while(j < POTTOP) {
+    mutexTake(potMutex, 5);
+    j = analogReadCalibrated(POT);
+    mutexGive(potMutex);
+    delay(1);
+  }
+  delay(600);
 
+  driveStop();
+  gyroReset(gyro);
+  encoderReset(lencoder);
+  encoderReset(rencoder);
 }

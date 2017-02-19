@@ -1,7 +1,7 @@
 #include "constants.h"
 #include "ethanlib.h"
 
-void auto4() {
+void auto10() {
   gyroReset(gyro);
   encoderReset(lencoder);
   encoderReset(rencoder);
@@ -24,10 +24,14 @@ void auto4() {
     delay(1);
   }
   driveInch(-22, 127); // Drives 38 inches backward at 63 power
+
   // TURN BACK OF ROBOT TO WALL< LIFT UP, HIT WALL, DUMP
   // turnNoFix(2, 127);        // Turns 83 degrees to the right at 40 power
   // turn(88, 55);
   smartTurn(90, 100);
+
+  delay(3000);
+
   driveSet(-127, -127); // Sets the drive to go backwards at 70 power
   timerReset(0);
   arr[0] = 600; // 300
@@ -54,75 +58,19 @@ void auto4() {
   delay(600);
   // LIFT TO BOTTOM, TURN & DRIVE FORWARD (GET CUBE) LIFT UP
   arr[0] = 0;
-  arr[1] = POTBOTTOM; // Takes the lift down to the bottom
+  arr[1] = POTHALF + 200; // Takes the lift down to the bottom
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr,
                             TASK_PRIORITY_DEFAULT);
   delay(1500);
-  /*
-  liftSet(-52);
-  delay(100);
-  */
-  liftSet(LIFTZERO);
-  smartTurnTo(-35, 127); // -43
-  driveInchNoFix(24, 127); // 25
-  arr[0] = 600;
-  arr[1] = POTHALF + 200;
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr,
-                            TASK_PRIORITY_DEFAULT);
-  driveInch(10, 127);
-  //
-  delay(250);
-  turnNoFix(20, 70);
-  driveSet(-127, -127);
-  timerReset(0);
-  arr[0] = 0;
-  arr[1] = POTTOP; // Brings the lift to the top
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr,
-                            TASK_PRIORITY_DEFAULT);
-  while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 &&
-         timer(0) < 2000) { // Repeats until the bumper sensor on the robot is
-                            // pressed or 3 seconds pass
-    delay(1);
-  }
   driveStop();
   gyroReset(gyro);
   encoderReset(lencoder);
   encoderReset(rencoder);
   /////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////
-  liftTo(POTHALF + 200);
-  smartTurn(27, 90);
 
-  driveInch(50, 127);
-  smartTurn(30, 90);
-  delay(4000);
-  arr[0] = 600;
-  arr[1] = POTTOP + 50; // Brings the lift to the top
-  timerReset(0);
-  driveSet(-127, -127);
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr,
-                            TASK_PRIORITY_DEFAULT);
-  while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 &&
-         timer(0) < 4000) { // Repeats until the bumper sensor on the robot is
-                            // pressed or 3 seconds pass
-    delay(1);
-  }
-  delay(500);
-  driveStop();
-  mutexTake(potMutex, -1);
-  j = analogReadCalibrated(POT);
-  mutexGive(potMutex);
-  while (j < POTTOP) {
-    mutexTake(potMutex, 5);
-    j = analogReadCalibrated(POT);
-    mutexGive(potMutex);
-    delay(1);
-  }
-  delay(600);
-  liftTo(POTHALF + 200);
-
-  for (size_t iii = 0; iii < 2; iii++) {
-    driveInch(50, 127);
+  for (size_t iii = 0; iii < 3; iii++) {
+    driveInch(28, 100);
     delay(4000);
     arr[0] = 1000;
     timerReset(0);
@@ -149,5 +97,5 @@ void auto4() {
     delay(600);
     liftTo(POTHALF + 200);
   }
-  liftTo(POTBOTTOM);
+
 }

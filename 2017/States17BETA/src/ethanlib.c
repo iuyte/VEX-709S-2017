@@ -1,7 +1,10 @@
 #include "constants.h"
 #include "main.h"
 // The following are my global variables
+float TURN_TOLERANCE = 4;
+int blinker = 1;
 Mutex potMutex;
+Mutex timerMutex;
 // MOTOR PORTS//
 // LIFT//
 const char *uptown[3] = {
@@ -22,15 +25,23 @@ Encoder rencoder; // Initializes the variable rencoder (Right encoder) to type
 TaskHandle motorsSafe;
 TaskHandle showTime;
 TaskHandle liftToHandle;
+TaskHandle calibrateHandle;
+TaskHandle AutonHandle;
 int *arr;
 unsigned long startTimes[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int drivemotorList[6] = {TLD, MLD, BLD, TRD, MRD, BRD};
 int liftMotorList[6] = {ORL, OLL, TIRLBIRL, TILLBILL};
 
-void timerReset(int number) { startTimes[number] = millis(); }
+void timerReset(int number) {
+  mutexTake(timerMutex, -1);
+  startTimes[number] = millis();
+  mutexGive(timerMutex);
+}
 
 unsigned long timer(int number) {
+  mutexTake(timerMutex, -1);
   unsigned long value = millis() - startTimes[number];
+  mutexGive(timerMutex);
   return value;
 }
 
@@ -60,6 +71,16 @@ void hard_reset(void) {
 }
 
 void driveStop(void) { driveSet(0, 0); }
+
+void calibrate(void) {
+  encoderReset(lencoder);
+  encoderReset(rencoder);
+  gyroReset(gyro);
+}
+
+void calibrateTask(void *parameter) {
+  calibrate();
+}
 
 void uptownPlay(void *parameter) { speakerPlayArray(uptown); }
 
@@ -109,7 +130,6 @@ void lcdDisplayTime(void *parameter) {
       }
     } else {
       while (isEnabled() == false) {
-        // printf("%d", lcdReadButtons(uart1));
         FILE *fd5;
         int opmd2;
         if ((fd5 = fopen("autoM", "r")) == NULL) {
@@ -160,11 +180,20 @@ void lcdDisplayTime(void *parameter) {
             fclose(fd4);
           }
           delay(500);
+        } else if (lcdReadButtons(uart1) == 2) {
+          lcdSetText(uart1, 1, "Calibrating");
+          lcdSetText(uart1, 2, "Please Wait...");
+          calibrate();
+          wait(1024);
         }
         delay(10);
       }
     }
   }
+}
+
+void printValues(void) {
+  printf(" | %d  | %d | %d | %d | %d | \n", analogReadCalibrated(LINE), encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(POT), gyroGet(gyro) );
 }
 
 void liftTo(int pos) {
@@ -540,7 +569,7 @@ void driveInchAbs(float inches, int power) {
 
 bool isLine(void) {
   bool re = false;
-  if (analogReadCalibrated(LINE) >= LINELIGHT) {
+  if (analogReadCalibrated(LINE) <= LINELIGHT) {
     re = true;
   }
   return re;

@@ -31,5 +31,19 @@ void autonomous() {
   case 5:
     auto5();
     break;
+  case 6:
+    auto6();
+    break;
+  case 7:
+    auto7();
+    break;
+  case 8:
+    auto8();
+    break;
+  case 9:
+    auto9();
+    break;
+  case 10:
+    auto10();
   }
 }

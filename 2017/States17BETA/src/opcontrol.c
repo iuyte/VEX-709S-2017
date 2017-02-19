@@ -37,6 +37,11 @@ void operatorControl() {
     } else {
       liftSet(LIFTZERO);
     }
+    /*
+    if (analogReadCalibrated(POT) < POTBOTTOM) {
+      liftSet(50);
+    }
+    */
     if (joystickGetDigital(1, 5, JOY_UP)) {
       digitalWrite(HANGLOCKLEFT, true);
     } else if (joystickGetDigital(1, 5, JOY_DOWN)) {
@@ -53,7 +58,8 @@ void operatorControl() {
       delay(150);
     }
     driveSet(joystickGetAnalog(1, 3) * 0.8, joystickGetAnalog(1, 2) * 0.8);
-    //printf(" | %d | %d | %d | %d | \n", encoderGet(lencoder), encoderGet(rencoder), analogReadCalibrated(pot), gyroGet(gyro) );
+    if (lcdReadButtons(uart1) == 7) taskDelete(NULL);
+    printValues();
     delay(20);
 	}
 }

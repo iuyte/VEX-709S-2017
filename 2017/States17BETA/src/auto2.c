@@ -50,7 +50,7 @@ void auto2() { // Skills auton
   delay(250);
   liftSet(0);
   smartTurnTo(-50, 70); // -60
-  driveInchNoFix(25, 127); // 25
+  driveInchNoFix(26, 127); // 25
   arr[0] = 600;
   arr[1] = POTHALF + 200;
   gyroReset(gyro);
@@ -75,11 +75,12 @@ void auto2() { // Skills auton
   arr[1] = POTBOTTOM; // Brings the lift to the bottom
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
-  smartTurnTo(0, 90);
+  smartTurnTo(90, 90);
   //driveInch(50, 127);
   driveSet(127, 127);
   while (!isLine()) delay(5);
   driveStop();
+  driveInch(-1, 127);
   arr[1] = POTBOTTOM + (POTHALF * .65); // Brings the lift to a little above the middle
   liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr, TASK_PRIORITY_DEFAULT);
   wait(500);
@@ -104,6 +105,7 @@ void auto2() { // Skills auton
   driveSet(127, 127);
   while (!isLine()) delay(5);
   driveStop();
+  driveInch(-1, 127);
   smartTurnTo(0, 90);
   wait(3000);
 
@@ -122,6 +124,7 @@ void auto2() { // Skills auton
   driveSet(127, 127);
   while (!isLine()) delay(5);
   driveStop();
+  driveInch(-1, 127);
   smartTurnTo(0, 90);
   wait(3000);
   timerReset(0);
@@ -144,7 +147,7 @@ void auto2() { // Skills auton
                                       (void *)arr, TASK_PRIORITY_DEFAULT);
   driveInchNoFix(4, 100);
   driveInch(-5, 127);
-  
+
   ///////////////////////////////////SPACER//////////////////////////////////
   driveStop();
   gyroReset(gyro);

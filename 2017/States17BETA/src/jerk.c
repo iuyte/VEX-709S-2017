@@ -1,13 +1,10 @@
 #include "constants.h"
 #include "ethanlib.h"
+#include "autonomous.h"
 
 void jerk(void) {
-  int jer = 1;
-  if (jer == 0) {
-    driveInchNoFix(4, 100);
-    driveInch(-4, 100);
-  } else if (jer == 1) {
-    float targetPosition = 6 * INCHESMULTIPLIER; // 4
+    float targetPosition = 6 * INCHESMULTIPLIER;
+    gyroReset(gyro);
     encoderReset(rencoder);
     encoderReset(lencoder);
     int power = 100;
@@ -23,38 +20,43 @@ void jerk(void) {
       }
       driveSet(leftAt, rightAt);
       delay(5);
+      printValues();
     }
     driveStop();
     //
     targetPosition = 0;
     leftAt = -100;
     rightAt = -100;
-    while (abs(encoderGet(lencoder)) > 0 &&
-           abs(encoderGet(rencoder)) > 0) {
-      if (abs(encoderGet(lencoder)) <= 0) {
+    while (abs(encoderGet(lencoder)) > 1 &&
+           abs(encoderGet(rencoder)) > 1) {
+      if (abs(encoderGet(lencoder)) <= 1) {
         leftAt = 0;
       }
-      if (abs(encoderGet(rencoder)) <= 0) {
+      if (abs(encoderGet(rencoder)) <= 1) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
       delay(5);
+      printValues();
     }
     driveStop();
     delay(250);
     leftAt = power / ENCO_CORRECTION;
     rightAt = power / ENCO_CORRECTION;
-    while (abs(encoderGet(lencoder)) > abs(targetPosition) &&
-           abs(encoderGet(rencoder)) > abs(targetPosition)) {
-      if (abs(encoderGet(lencoder)) <= abs(targetPosition)) {
+    while (abs(encoderGet(lencoder)) > 1 &&
+           abs(encoderGet(rencoder)) > 1) {
+      if (abs(encoderGet(lencoder)) <= 1) {
         leftAt = 0;
       }
-      if (abs(encoderGet(rencoder)) <= abs(targetPosition)) {
+      if (abs(encoderGet(rencoder)) <= 1) {
         rightAt = 0;
       }
       driveSet(leftAt, rightAt);
       delay(5);
+      printValues();
     }
-  }
   driveStop();
+  TURN_TOLERANCE = 1;
+  //smartTurn(gyroGet(gyro) * -1, 37);
+  TURN_TOLERANCE = 4;
 }
