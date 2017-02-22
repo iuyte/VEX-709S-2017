@@ -45,3 +45,9 @@ void driveToEncDep(int lpos, int rpos, int lpower, int rpower, bool correctionEn
  *starting a task
  */
 void liftToAuto(long wait, int position);
+
+/*
+ *A revised and more successful version
+ *of jerk()
+ */
+void revisedJerk();

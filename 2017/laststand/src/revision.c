@@ -1,5 +1,5 @@
 #include "constants.h"
-#include "encDep.h"
+#include "revision.h"
 
 void check(int checkNum) {
   if (USE_JINX) {
@@ -180,9 +180,10 @@ void driveToEncDep(int lpos, int rpos, int lpower, int rpower,
 void liftToAuto(long wait, int position) {
   mutexTake(potMutex, -1);
   mutexGive(potMutex);
-  arr[0] = wait;
-  arr[1] = position;
+  int *passThis = (int *)malloc(sizeof(int) * 2);
+  passThis[0] = wait;
+  passThis[1] = position;
   TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
-                                     (void *)arr, TASK_PRIORITY_DEFAULT);
+                                     (void *)passThis, TASK_PRIORITY_DEFAULT);
   taskGetState(liftHandle);
 }

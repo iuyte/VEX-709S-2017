@@ -5,3 +5,4 @@ Post-season ideas:
   -relative position of lift such that I can press calibrate button and it will get position and use that as new zero
   -Don't use 0 as a goal for encoder values
   -Add limit switch to bottom of lift
+  -ENUMERATIONS

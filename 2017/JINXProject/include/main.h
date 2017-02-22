@@ -51,6 +51,8 @@
 extern "C" {
 #endif
 
+Gyro gyro;
+
 //#define AUTO_DEBUG
 
 // A function prototype looks exactly like its declaration, but with a semicolon instead of

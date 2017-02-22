@@ -39,7 +39,7 @@ void initializeIO() {
 void initialize() {
   //Sets communication port for JINX data and start task to parse incoming messages.
 
-  
+  gyro = gyroInit(2, 0);
   initJINX(stdout);
   delay(100);
   taskCreate(JINXRun, TASK_DEFAULT_STACK_SIZE, NULL, (TASK_PRIORITY_DEFAULT));

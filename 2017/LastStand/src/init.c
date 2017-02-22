@@ -10,7 +10,7 @@
  * PROS contains FreeRTOS (http://www.freertos.org) whose source code may be
  * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
  */
-#include "encDep.h"
+#include "revision.h"
 #include "constants.h"
 
 
@@ -35,7 +35,6 @@ void initialize() {
   leftarr = (int *)malloc(sizeof(int) * 3);
   rightarr = (int *)malloc(sizeof(int) * 3);
   leftarr[FIX] = rightarr[FIX] = false;
-  arr = (int *)malloc(sizeof(int) * 2);
   motorsSafe = taskRunLoop(stopAllPeriodic, 100);
   gyro=gyroInit(GYROPORT, 0);
   lencoder = encoderInit(LENCPORT, false);

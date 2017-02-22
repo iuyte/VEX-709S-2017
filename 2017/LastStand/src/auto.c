@@ -71,7 +71,7 @@ void autonomous() {
     auto13();
     break;
   case 14:
-    //auto14();
+    auto14();
     break;
   case 15:
     //auto15();

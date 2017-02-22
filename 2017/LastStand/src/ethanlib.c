@@ -116,10 +116,10 @@ void printValues(void) {
     mutexTake(potMutex, -1);
     mutexTake(driveMutex, -1);
     if (timer(0) > 400) {
-      printf("\n | %d  | %d | %d | %d | %d | %d | %d | \n",
+      printf("\n | LINE %d  | LENC %d | RENC %d | LIFT %d | GYRO %d | LDRIV %d | RDRIV %d | TIM %lu | \n",
              analogReadCalibrated(LINE), encoderGet(lencoder),
              encoderGet(rencoder), analogReadCalibrated(POT), gyroGet(gyro),
-             motorGet(TLD), motorGet(TRD));
+             motorGet(TLD), motorGet(TRD), timer(1));
       mutexGive(potMutex);
       mutexGive(driveMutex);
     } else {
@@ -257,27 +257,28 @@ void liftToTask(void *parameters[2]) {
   long unsigned int ms = (long unsigned int)parameters[0];
   mutexTake(potMutex, -1);
   int k = analogReadCalibrated(POT);
-  mutexGive(potMutex);
+  //mutexGive(potMutex);
   delay(ms);
   long liftToTaskPos = (unsigned long)parameters[1];
   if (liftToTaskPos > k) {
     liftSet(127);
     while (k < liftToTaskPos - 10) {
-      mutexTake(potMutex, -1);
+      //mutexTake(potMutex, -1);
       k = analogReadCalibrated(POT);
-      mutexGive(potMutex);
+      //mutexGive(potMutex);
       delay(1);
     }
   } else if (liftToTaskPos < k) {
     liftSet(-127);
     while (k > liftToTaskPos + 10) {
-      mutexTake(potMutex, -1);
+      //mutexTake(potMutex, -1);
       k = analogReadCalibrated(POT);
-      mutexGive(potMutex);
+      //mutexGive(potMutex);
       delay(1);
     }
   }
   liftSet(LIFTZERO);
+  mutexGive(potMutex);
   taskDelete(NULL);
 }
 
@@ -285,6 +286,7 @@ void driveTo(float targetPosition, int power) {
   encoderReset(rencoder);
   encoderReset(lencoder);
   power = abs(power);
+  if (targetPosition == 0) targetPosition = 1;
   if (targetPosition > 0) {
     int leftAt = power;
     int rightAt = power;

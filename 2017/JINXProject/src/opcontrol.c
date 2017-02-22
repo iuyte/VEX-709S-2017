@@ -31,12 +31,11 @@
  */
 void operatorControl() {
 	delay(10000);
-	int num = 0;
 	char outMessage[100];
 
 	while (1) {
-		sprintf(outMessage, "%d", num++);
-		writeJINXData("Counter", outMessage);
+		sprintf(outMessage, "%d", gyroGet(gyro));
+		writeJINXData("Gyro", outMessage);
 
 		delay(2000);
 	}
