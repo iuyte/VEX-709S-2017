@@ -31,7 +31,7 @@
 #define LINE 1    // Sets the port for the line sensor
 #define LINELIGHT 2800 // Sets the point where a line is white  if it's less than this
 #define NUMBER_OF_AUTON 13
-#define TURN_CORRECTION 0.7 - powerLevelMain() / 205000 
+#define TURN_CORRECTION 0.7 - powerLevelMain() / 350000 
 #define SMART_TURN_MULT 0.73
 #define ENCO_CORRECTION 3
 #define DEFAULT_AUTON 14 // Skills is 4, reg is 7, onlycube is 1

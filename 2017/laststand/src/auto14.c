@@ -32,20 +32,9 @@ void auto14() {
 
   delay(3250);
 
-  driveSet(-160, -160); // Sets the drive to go backwards at 127 power
-
-  mutexGive(timerMutex);
-  timerReset(1);
-
-  /*
-  arr[0] = 600; // 300
-  arr[1] = POTTOP;
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)arr, TASK_PRIORITY_DEFAULT);
-  */
+  driveSet(-160, -160);
 
   liftToAuto(600, POTTOP);
-
-  //TaskHandle gyroResetIn = taskCreate(gyroResetAfter, TASK_DEFAULT_STACK_SIZE, (void *)1000, TASK_PRIORITY_DEFAULT);
 
   while ((digitalRead(isWall) == 1 || digitalRead(isWall2)) == 1 &&
          timer(1) < 4000) { // Repeats until the button on the robot is pressed
@@ -55,62 +44,53 @@ void auto14() {
 
   driveStop(); // Stops the robot
 
-  timerReset(1);
-
-  while (!mutexTake(potMutex, 5) && timer(1) < 1500) delay(1);
+  while (analogReadCalibrated(POT) < POTTOP - 50) delay(20);
 
   delay(600);
 
-  //LIFT TO BOTTOM, TURN & DRIVE FORWARD (GET CUBE) LIFT UP
+  liftTo(POTHALF);
 
-  /*
-  arr[0] = 0;
-  arr[1] = POTBOTTOM; // Takes the lift down to the bottom
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
-                                       (void *)arr, TASK_PRIORITY_DEFAULT);
-  */
+  driveSet(100, 100);
+  while (!isLine()) delay(20);
+  driveStop();
 
-  liftTo(POTBOTTOM);
+  delay(3250);
 
-  /*
-  delay(1500);
-  liftSet(-52);
-  delay(250);
-  liftSet(0);
-  */
+  liftToAuto(600, POTTOP);
 
-  smartTurnTo(-39, 127); // -50
-
-  driveInchNoFix(18, 127); // 25
-
-  /*
-  arr[0] = 600;
-  arr[1] = POTHALF + 200;
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
-                                      (void *)arr, TASK_PRIORITY_DEFAULT);
-
-  */
-
-  liftToAuto(600, POTHALF);
-
-  driveInch(10, 127);
-
-  //
-  delay(250);
-  turnNoFix(20, 70);
-  driveSet(-127, -127);
-  timerReset(1);
-  arr[0] = 0;
-  arr[1] = POTTOP; // Brings the lift to the top
-  liftToHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
-                                      (void *)arr, TASK_PRIORITY_DEFAULT);
-  while (digitalRead(isWall) == 1 && digitalRead(isWall2) == 1 &&
-         timer(1) < 2000) { // Repeats until the bumper sensor on the robot is
-                            // pressed or 3 seconds pass
+  driveSet(-160, -160);
+  while ((digitalRead(isWall) == 1 || digitalRead(isWall2)) == 1 &&
+         timer(1) < 4000) { // Repeats until the button on the robot is pressed
+                            // or 4 seconds pass
     delay(1);
   }
+
+  driveStop(); // Stops the robot
+
+
+  while (analogReadCalibrated(POT) < POTTOP - 50) delay(20);
+
+  delay(600);
+
+  liftTo(POTHALF);
+
+  driveSet(100, 100);
+  while (!isLine()) delay(20);
   driveStop();
-  gyroReset(gyro);
-  encoderReset(lencoder);
-  encoderReset(rencoder);
+
+  delay(3250);
+
+  liftToAuto(600, POTTOP);
+
+  driveSet(-160, -160);
+  while ((digitalRead(isWall) == 1 || digitalRead(isWall2)) == 1 &&
+         timer(1) < 4000) { // Repeats until the button on the robot is pressed
+                            // or 4 seconds pass
+    delay(1);
+  }
+
+  driveStop(); // Stops the robot
+
+  driveStop();
+  calibrate();
 }
