@@ -4,9 +4,7 @@
 
 void jerk(void) {
     float targetPosition = 6 * INCHESMULTIPLIER;
-    gyroReset(gyro);
-    encoderReset(rencoder);
-    encoderReset(lencoder);
+    calibrate();
     int power = 100;
     int leftAt = power;
     int rightAt = power;
@@ -25,10 +23,11 @@ void jerk(void) {
     driveStop();
     //
     targetPosition = 0;
+    timerReset(1);
     leftAt = -100;
     rightAt = -100;
     while (abs(encoderGet(lencoder)) > 1 &&
-           abs(encoderGet(rencoder)) > 1) {
+           abs(encoderGet(rencoder)) > 1 && timer(1) < 500) {
       if (abs(encoderGet(lencoder)) <= 1) {
         leftAt = 0;
       }
@@ -44,7 +43,7 @@ void jerk(void) {
     leftAt = power / ENCO_CORRECTION;
     rightAt = power / ENCO_CORRECTION;
     while (abs(encoderGet(lencoder)) > 1 &&
-           abs(encoderGet(rencoder)) > 1) {
+           abs(encoderGet(rencoder)) > 1 && timer(1) < 1000) {
       if (abs(encoderGet(lencoder)) <= 1) {
         leftAt = 0;
       }

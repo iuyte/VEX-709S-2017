@@ -48,6 +48,7 @@ void auto7() {
     mutexGive(potMutex);
     delay(1);
   }
+  /*
   delay(600);
   //LIFT TO BOTTOM, TURN & DRIVE FORWARD (GET CUBE) LIFT UP
   arr[0] = 0;
@@ -79,6 +80,7 @@ void auto7() {
                             // pressed or 3 seconds pass
     delay(1);
   }
+  */
   driveStop();
   gyroReset(gyro);
   encoderReset(lencoder);

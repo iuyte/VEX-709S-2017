@@ -102,6 +102,7 @@ void smartTurnTo(float degrees, int power);
 bool isLine(void);
 float TURN_TOLERANCE;
 int blinker;
+int checknum;
 TaskHandle calibrateHandle;
 /*
  *Performs a reset on all three of
@@ -128,3 +129,19 @@ bool thatDoneYet;
  *to JINX
  */
 void sendValues(void);
+
+Ultrasonic sonic;
+int lcdMode;
+Gyro gyra;
+/*
+ *Sets only the back 4 motors on the drive,
+ *while driveSet uses all 6. Used mainly in
+  *revised turning functions.
+  */
+void driveSetBack(int Lpower, int Rpower);
+
+/*
+ *Returns the average between
+ *the two gyros
+ */
+int rGyros();

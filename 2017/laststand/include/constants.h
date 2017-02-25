@@ -1,4 +1,5 @@
 #pragma once
+#include <Math.h>
 
 #define OLL 2      // Outside Left Lift
 #define TILLBILL 4 // Top Inside Left Lift and Bottom Inside Left Lift (y-cables to power expander)
@@ -25,16 +26,24 @@
 // ANALOG INPUT//
 #define POT 4 // Potentiometer on lift in analog port 4
 #define POTTOP 2000
-#define POTBOTTOM 40 // when the POTentiometer is all the way down, this is it's position  // 10
-#define POTHALF 700 // When the lift is halfway up
+#define POTBOTTOM 50 // when the POTentiometer is all the way down, this is it's position  // 10
+#define POTHALF 800 // When the lift is halfway up
 #define GYROPORT 2  // Sets the gyroscope port
+#define GYRAPORT 5
 #define LINE 1    // Sets the port for the line sensor
-#define LINELIGHT 2800 // Sets the point where a line is white  if it's less than this
-#define NUMBER_OF_AUTON 13
-#define TURN_CORRECTION 0.7 - powerLevelMain() / 350000 
-#define SMART_TURN_MULT 0.73
+#define LINE2 3
+#define LINELIGHT 2850 // Sets the point where a line is white  if it's less than this
+#define sonicPING 3
+#define sonicECHO 2
+#define SONICGET ultrasonicGet(sonic)
+
+//////////////////////////////////////////////////////
+#define NUMBER_OF_AUTON 15
+#define TURN_CORRECTION (1.2 - ((double)powerLevelMain()) / 30000)
+#define SMART_TURN_MULT 0.67
 #define ENCO_CORRECTION 3
 #define DEFAULT_AUTON 14 // Skills is 4, reg is 7, onlycube is 1
+#define MAX_TIME_TO_WALL 3500
 
 #define USE_JINX false
 //Lots of math to get the next value:

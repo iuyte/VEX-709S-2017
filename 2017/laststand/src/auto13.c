@@ -22,7 +22,7 @@ void auto13() {
 
     delay(3250);
 
-    liftToAuto(700, POTTOP + 50);
+    rLiftTo(700, POTTOP + 50);
 
     timerReset(1);
     while ((digitalRead(isWall) == 1 ||
@@ -46,7 +46,7 @@ void auto13() {
 
   delay(3250);
 
-  liftToAuto(700, POTTOP + 50);
+  rLiftTo(700, POTTOP + 50);
 
   timerReset(1);
   while ((digitalRead(isWall) == 1 ||

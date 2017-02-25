@@ -34,11 +34,14 @@ void initialize() {
   isThatDone = mutexCreate();
   leftarr = (int *)malloc(sizeof(int) * 3);
   rightarr = (int *)malloc(sizeof(int) * 3);
+  passThis = (int *)malloc(sizeof(int) * 2);
   leftarr[FIX] = rightarr[FIX] = false;
   motorsSafe = taskRunLoop(stopAllPeriodic, 100);
-  gyro=gyroInit(GYROPORT, 0);
+  gyro=gyroInit(GYROPORT, 198);
+  gyra=gyroInit(GYRAPORT, 197);
   lencoder = encoderInit(LENCPORT, false);
   rencoder = encoderInit(RENCPORT, true);
+  sonic = ultrasonicInit(sonicECHO, sonicPING);
   encoderReset(lencoder);
   encoderReset(rencoder);
   gyroReset(gyro);
