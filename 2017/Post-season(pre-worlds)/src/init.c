@@ -27,6 +27,10 @@ void initialize() {
     delay(100);
   }
 
+  for (size_t j = 1; j < 11; j++) {
+    motorMutexes[j] = mutexCreate();
+  }
+
   potMutex = mutexCreate();
   timerMutex = mutexCreate();
   driveMutex = mutexCreate();
@@ -36,7 +40,8 @@ void initialize() {
   rightarr = (int *)malloc(sizeof(int) * 3);
   passThis = (int *)malloc(sizeof(int) * 2);
   leftarr[FIX] = rightarr[FIX] = false;
-  motorsSafe = taskRunLoop(stopAllPeriodic, 100);
+  //motorsSafe = taskRunLoop(stopAllPeriodic, 100);
+  motorsHandle = taskCreate(motorSlewTask, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT + 1);
   gyro=gyroInit(GYROPORT, 198);
   gyra=gyroInit(GYRAPORT, 197);
   lencoder = encoderInit(LENCPORT, false);

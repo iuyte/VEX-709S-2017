@@ -1,6 +1,7 @@
 #include "MyJinx.h"
 #include "constants.h"
-#include "main.h"
+#include "motorSlew.h"
+
 // The following are my global variables
 float TURN_TOLERANCE = 3;
 long powerTolerance[2] = {2, 127};
@@ -58,34 +59,38 @@ unsigned long timer(int number) {
 
 int rGyros() { return (gyroGet(gyro) + gyroGet(gyra)) / 2; }
 
-void scaleMotorSet(int motorPort, int motorPower) {
-  motorSet(motorPort, motorPower * .8);
+void scalemotorRek(int motorPort, int motorPower) {
+  motorRek(motorPort, motorPower * .8);
 }
 
 void liftSet(int power) {
-  motorSet(OLL, -power * LIFT_CAP);
-  motorSet(ORL, power * LIFT_CAP);
-  motorSet(TIRLBIRL, -power * LIFT_CAP);
-  motorSet(TILLBILL, power * LIFT_CAP);
+  motorRek(OLL, -power * LIFT_CAP);
+  motorRek(ORL, power * LIFT_CAP);
+  motorRek(TIRLBIRL, -power * LIFT_CAP);
+  motorRek(TILLBILL, power * LIFT_CAP);
+}
+
+int getMotor(int motorPort) {
+  return motorReq[motorPort];
 }
 
 void driveSet(int Lpower, int Rpower) {
   mutexTake(driveMutex, -1);
-  motorSet(TLD, Lpower * DRIVE_CAP);
-  motorSet(MLD, Lpower * DRIVE_CAP);
-  motorSet(BLD, -Lpower * DRIVE_CAP);
-  motorSet(TRD, -Rpower * DRIVE_CAP);
-  motorSet(MRD, -Rpower * DRIVE_CAP);
-  motorSet(BRD, Rpower * DRIVE_CAP);
+  motorRek(TLD, Lpower * DRIVE_CAP);
+  motorRek(MLD, Lpower * DRIVE_CAP);
+  motorRek(BLD, -Lpower * DRIVE_CAP);
+  motorRek(TRD, -Rpower * DRIVE_CAP);
+  motorRek(MRD, -Rpower * DRIVE_CAP);
+  motorRek(BRD, Rpower * DRIVE_CAP);
   mutexGive(driveMutex);
 }
 
 void driveSetBack(int Lpower, int Rpower) {
   mutexTake(driveMutex, -1);
-  motorSet(MLD, Lpower * DRIVE_CAP);
-  motorSet(BLD, -Lpower * DRIVE_CAP);
-  motorSet(MRD, -Rpower * DRIVE_CAP);
-  motorSet(BRD, Rpower * DRIVE_CAP);
+  motorRek(MLD, Lpower * DRIVE_CAP);
+  motorRek(BLD, -Lpower * DRIVE_CAP);
+  motorRek(MRD, -Rpower * DRIVE_CAP);
+  motorRek(BRD, Rpower * DRIVE_CAP);
   mutexGive(driveMutex);
 }
 
@@ -135,7 +140,7 @@ void printValues(void) {
       printf("\n | SONC %d | LINE %d | LINE2 %d | LENC %d | RENC %d | LIFT %d | GYRO %d | LDRIV %d | RDRIV %d | TIM %lu | CHECK %d | BUT1 %d | BUT2 %d | TURNCO %f | \n",
              ultrasonicGet(sonic), analogRead(LINE), analogRead(LINE2), encoderGet(lencoder),
              encoderGet(rencoder), analogReadCalibrated(POT), rGyros(),
-             motorGet(TLD), motorGet(TRD), timer(1), checknum, digitalRead(isWall), digitalRead(isWall2), (float)TURN_CORRECTION);
+             getMotor(TLD), getMotor(TRD), timer(1), checknum, digitalRead(isWall), digitalRead(isWall2), (float)TURN_CORRECTION);
       mutexGive(potMutex);
       mutexGive(driveMutex);
     } else {
@@ -146,8 +151,8 @@ void printValues(void) {
         printf("JINX_LIFT POTENTIOMETER_%d\r\n", analogReadCalibrated(POT));
         printf("JINX_LEFT ENCODER_%d\r\n", encoderGet(lencoder));
         printf("JINX_RIGHT ENCODER_%d\r\n", encoderGet(rencoder));
-        printf("JINX_LEFT DRIVE POWER_%d\r\n", motorGet(TLD));
-        printf("JINX_RIGHT DRIVE POWER_%d\r\n", motorGet(TRD));
+        printf("JINX_LEFT DRIVE POWER_%d\r\n", getMotor(TLD));
+        printf("JINX_RIGHT DRIVE POWER_%d\r\n", getMotor(TRD));
         printf("JINX_GYRO_%d\r\n", rGyros());
         mutexGive(potMutex);
         mutexGive(driveMutex);

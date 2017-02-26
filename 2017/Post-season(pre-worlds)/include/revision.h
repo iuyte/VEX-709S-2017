@@ -1,5 +1,6 @@
 #pragma once
 #include "ethanlib.h"
+#include "motorSlew.h"
 #define ENCO_MULTIPLIER .4 // 65
 #define ENCO_TOL 10
 #define VALUE 0

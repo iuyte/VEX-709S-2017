@@ -27,7 +27,7 @@ void leftTo(void *none) {
     while (encoderGet(lencoder) < (target * ENCO_MULTIPLIER * 1.1)) {
       check(3);
       mutexTake(driveMutex, -1);
-      driveSet(power, motorGet(TRD));
+      driveSet(power, getMotor(TRD));
       mutexGive(driveMutex);
       delay(20);
     }
@@ -35,7 +35,7 @@ void leftTo(void *none) {
     while (encoderGet(lencoder) < (target - ENCO_TOL)) {
       check(4);
       mutexTake(driveMutex, -1);
-      driveSet(power * ENCO_MULTIPLIER, motorGet(TRD));
+      driveSet(power * ENCO_MULTIPLIER, getMotor(TRD));
       mutexGive(driveMutex);
       delay(20);
     }
@@ -45,7 +45,7 @@ void leftTo(void *none) {
       check(5);
       while (encoderGet(lencoder) > (target + ENCO_TOL)) {
         mutexTake(driveMutex, -1);
-        driveSet(-power * ENCO_MULTIPLIER * ENCO_MULTIPLIER, motorGet(TRD));
+        driveSet(-power * ENCO_MULTIPLIER * ENCO_MULTIPLIER, getMotor(TRD));
         mutexGive(driveMutex);
         delay(20);
       }
@@ -56,7 +56,7 @@ void leftTo(void *none) {
     while (encoderGet(lencoder) > (target / (ENCO_MULTIPLIER * 1.1))) {
       check(7);
       mutexTake(driveMutex, -1);
-      driveSet(-power, motorGet(TRD));
+      driveSet(-power, getMotor(TRD));
       mutexGive(driveMutex);
       delay(20);
     }
@@ -64,7 +64,7 @@ void leftTo(void *none) {
     while (encoderGet(lencoder) > (target + ENCO_TOL)) {
       check(8);
       mutexTake(driveMutex, -1);
-      driveSet(-power * ENCO_MULTIPLIER, motorGet(TRD));
+      driveSet(-power * ENCO_MULTIPLIER, getMotor(TRD));
       mutexGive(driveMutex);
       delay(20);
     }
@@ -75,14 +75,14 @@ void leftTo(void *none) {
       while (encoderGet(lencoder) < (target - ENCO_TOL)) {
         check(10);
         mutexTake(driveMutex, -1);
-        driveSet(power * ENCO_MULTIPLIER * ENCO_MULTIPLIER, motorGet(TRD));
+        driveSet(power * ENCO_MULTIPLIER * ENCO_MULTIPLIER, getMotor(TRD));
         mutexGive(driveMutex);
         delay(20);
       }
     }
   }
 
-  driveSet(0, motorGet(TRD));
+  driveSet(0, getMotor(TRD));
   check(11);
   mutexGive(isThisDone);
   taskSuspend(NULL);
@@ -100,7 +100,7 @@ void rightTo(void *none) {
     while (encoderGet(rencoder) < (target * ENCO_MULTIPLIER * 1.1)) {
       check(14);
       mutexTake(driveMutex, -1);
-      driveSet(motorGet(TLD), power);
+      driveSet(getMotor(TLD), power);
       mutexGive(driveMutex);
       delay(20);
     }
@@ -108,7 +108,7 @@ void rightTo(void *none) {
     while (encoderGet(rencoder) < (target - ENCO_TOL)) {
       check(15);
       mutexTake(driveMutex, -1);
-      driveSet(motorGet(TLD), power * ENCO_MULTIPLIER);
+      driveSet(getMotor(TLD), power * ENCO_MULTIPLIER);
       mutexGive(driveMutex);
       delay(20);
     }
@@ -119,7 +119,7 @@ void rightTo(void *none) {
       while (encoderGet(rencoder) > (target + ENCO_TOL)) {
         check(17);
         mutexTake(driveMutex, -1);
-        driveSet(motorGet(TLD), -power * ENCO_MULTIPLIER * ENCO_MULTIPLIER);
+        driveSet(getMotor(TLD), -power * ENCO_MULTIPLIER * ENCO_MULTIPLIER);
         mutexGive(driveMutex);
         delay(20);
       }
@@ -130,7 +130,7 @@ void rightTo(void *none) {
     while (encoderGet(rencoder) > (target / (ENCO_MULTIPLIER * 1.1))) {
       check(19);
       mutexTake(driveMutex, -1);
-      driveSet(motorGet(TLD), -power);
+      driveSet(getMotor(TLD), -power);
       mutexGive(driveMutex);
       delay(20);
     }
@@ -138,7 +138,7 @@ void rightTo(void *none) {
     while (encoderGet(rencoder) > (target + ENCO_TOL)) {
       check(20);
       mutexTake(driveMutex, -1);
-      driveSet(motorGet(TLD), power * ENCO_MULTIPLIER);
+      driveSet(getMotor(TLD), power * ENCO_MULTIPLIER);
       mutexGive(driveMutex);
       delay(20);
     }
@@ -149,13 +149,13 @@ void rightTo(void *none) {
       while (encoderGet(rencoder) > (target + ENCO_TOL)) {
         check(22);
         mutexTake(driveMutex, -1);
-        driveSet(motorGet(TLD), power * ENCO_MULTIPLIER * ENCO_MULTIPLIER);
+        driveSet(getMotor(TLD), power * ENCO_MULTIPLIER * ENCO_MULTIPLIER);
         mutexGive(driveMutex);
         delay(20);
       }
     }
   }
-  driveSet(motorGet(TLD), 0);
+  driveSet(getMotor(TLD), 0);
   check(23);
   mutexGive(isThatDone);
   taskSuspend(NULL);
