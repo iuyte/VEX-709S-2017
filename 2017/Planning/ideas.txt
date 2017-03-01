@@ -1,6 +1,7 @@
 Post-season ideas:
   -complete position management
   -rerun through position management
+    +only get edge values, where speed decreases, motors invert, or motors stop
   -array of checkpoints for turning, so I can save a checkpoint position to a value in an array, then turn relative to that position at any point later in the program
   -relative position of lift such that I can press calibrate button and it will get position and use that as new zero
   -Don't use 0 as a goal for encoder values
