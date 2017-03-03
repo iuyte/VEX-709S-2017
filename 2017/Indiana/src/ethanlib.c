@@ -77,10 +77,10 @@ int getMotor(int motorPort) {
 void driveSet(int Lpower, int Rpower) {
   mutexTake(driveMutex, -1);
   motorRek(TLD, Lpower * DRIVE_CAP);
-  //motorRek(MLD, Lpower * DRIVE_CAP);
+  motorRek(MLD, Lpower * DRIVE_CAP);
   motorRek(BLD, -Lpower * DRIVE_CAP);
   motorRek(TRD, -Rpower * DRIVE_CAP);
-  //motorRek(MRD, -Rpower * DRIVE_CAP);
+  motorRek(MRD, -Rpower * DRIVE_CAP);
   motorRek(BRD, Rpower * DRIVE_CAP);
   mutexGive(driveMutex);
 }
@@ -214,7 +214,7 @@ void lcdDisplayTime(void *parameter) {
         }
         fclose(fd5);
         if (lcdMode == 1) {
-          lcdPrint(uart1, 1, "Auto: %d", opmd2);
+          lcdPrint(uart1, 1, "%d Auto: %d", (digitalRead(isWall) && digitalRead(isWall2)), opmd2);
           lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
         } else {
           lcdPrint(uart1, 1, "Gyro %d | US %d", rGyros(), SONICGET);

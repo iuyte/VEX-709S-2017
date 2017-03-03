@@ -44,8 +44,8 @@ void initialize() {
   motorsHandle = taskCreate(motorSlewTask, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT + 1);
   gyro=gyroInit(GYROPORT, 198);
   gyra=gyroInit(GYRAPORT, 197);
-  lencoder = encoderInit(LENCPORT, false);
-  rencoder = encoderInit(RENCPORT, true);
+  lencoder = encoderInit(LENCPORT);
+  rencoder = encoderInit(RENCPORT);
   sonic = ultrasonicInit(sonicECHO, sonicPING);
   encoderReset(lencoder);
   encoderReset(rencoder);
