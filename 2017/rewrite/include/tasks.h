@@ -1,6 +1,7 @@
 #ifndef TASKS_H
 #define TASKS_H
 #include "lib.h"
+#include "extras.h"
 
 TaskHandle rDriveHandle;
 TaskHandle motorsSafe;
@@ -23,7 +24,7 @@ void rightTo(void *none);
  *A task that dumps quickly
  */
 void quickDump(void *none);
-void liftToTask(void *parameters);
+void liftToTask(Foo *parameters);
 
 
 

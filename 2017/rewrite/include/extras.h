@@ -23,6 +23,7 @@ int *leftarr;
 int *rightarr;
 int *passThis;
 int lcdMode;
+typedef struct { int a; int b; } Foo;
 
 void initVars(void);
 void initSensors(void);

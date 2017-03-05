@@ -1,4 +1,5 @@
 #include "lib.h"
+#include "tasks.h"
 
 void check(int um) {
   checknum = um;
@@ -17,17 +18,11 @@ float sgn(float num) {
 void rLiftTo(long wait, int position) {
   mutexTake(potMutex, -1);
   mutexGive(potMutex);
-  //int *pasThis = (int *)malloc(sizeof(int) * 2);
-  //int pasThis[2];
-  //pasThis[0] = wait;
-  //pasThis[1] = position;
-  struct pass {
-    long int dw = wait;
-    long int pos = position;
-  } pasThis;
+  Foo *x = (Foo*)malloc(sizeof(Foo));
+  x->a = wait;
+  x->b = position;
 
-  TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
-                                     (void *)pasThis, TASK_PRIORITY_DEFAULT);
+  TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)x, TASK_PRIORITY_DEFAULT);
   taskGetState(liftHandle);
 }
 
