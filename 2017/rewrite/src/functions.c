@@ -22,8 +22,8 @@ void rLiftTo(long wait, int position) {
   //pasThis[0] = wait;
   //pasThis[1] = position;
   struct pass {
-    int *dw = (int *)wait;
-    int *pos = (int *)position;
+    long int dw = wait;
+    long int pos = position;
   } pasThis;
 
   TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,

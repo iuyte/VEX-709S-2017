@@ -289,7 +289,7 @@ void lcdDisplayTime(void *parameter) {
   }
 }
 
-void liftToTask(void *parameters) {
+void liftToTask(int *parameters) {
   long unsigned int ms = (long unsigned int)parameters.dw;
   delay(ms);
   long liftToTaskPos = (unsigned long)parameters.pos;
