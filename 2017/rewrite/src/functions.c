@@ -17,9 +17,15 @@ float sgn(float num) {
 void rLiftTo(long wait, int position) {
   mutexTake(potMutex, -1);
   mutexGive(potMutex);
-  int *pasThis = (int *)malloc(sizeof(int) * 2);
-  pasThis[0] = wait;
-  pasThis[1] = position;
+  //int *pasThis = (int *)malloc(sizeof(int) * 2);
+  //int pasThis[2];
+  //pasThis[0] = wait;
+  //pasThis[1] = position;
+  struct pass {
+    int *dw = (int *)wait;
+    int *pos = (int *)position;
+  } pasThis;
+
   TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE,
                                      (void *)pasThis, TASK_PRIORITY_DEFAULT);
   taskGetState(liftHandle);

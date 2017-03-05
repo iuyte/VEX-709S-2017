@@ -23,7 +23,7 @@ void rightTo(void *none);
  *A task that dumps quickly
  */
 void quickDump(void *none);
-void liftToTask(void *parameters[2]);
+void liftToTask(void *parameters);
 
 
 

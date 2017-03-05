@@ -289,12 +289,10 @@ void lcdDisplayTime(void *parameter) {
   }
 }
 
-void liftToTask(void *parameters[2]) {
-  long unsigned int ms = (long unsigned int)parameters[0];
-  //mutexTake(potMutex, -1);
-  //int k = analogReadCalibrated(POT);
+void liftToTask(void *parameters) {
+  long unsigned int ms = (long unsigned int)parameters.dw;
   delay(ms);
-  long liftToTaskPos = (unsigned long)parameters[1];
+  long liftToTaskPos = (unsigned long)parameters.pos;
   liftTo(liftToTaskPos);
   taskDelete(NULL);
 }

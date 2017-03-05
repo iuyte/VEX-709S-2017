@@ -1,3 +1,3 @@
 #include "lib.h"
 
-void auto2() {};
+void auto4() {};
