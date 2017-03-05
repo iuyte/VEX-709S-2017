@@ -1,4 +1,3 @@
-#include "constants.h"
 #include "revision.h"
 
 void auto0() {
@@ -32,7 +31,7 @@ void auto0() {
 
   checknum = 2;
 
-  rLiftTo(675, POTTOP); // 650 550 600
+  rLiftTo(735, POTTOP); // 650 550 600 675
 
   checknum = 3;
 
@@ -73,7 +72,7 @@ void auto0() {
   driveStop();
   checknum = 85;
 
-  delay(1500);
+  delay(750);
 
   checknum = 86;
   rLiftTo(500, POTTOP); // 480
@@ -110,7 +109,7 @@ void auto0() {
   driveStop();
   checknum = 155;
 
-  turnNoFix(-6, 40);
+  turnNoFix(-8, 40); // 6
 
   driveSet(100, -100);
   delay(50);
@@ -118,7 +117,7 @@ void auto0() {
 
   check(160);
 
-  delay(1500);
+  delay(750);
 
   rLiftTo(500, POTTOP); // 550
 
@@ -165,12 +164,12 @@ void auto0() {
     driveSet(-158, -158);
     timerReset(1);
     while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-           timer(1) < 1300) { // Repeats until the button on the robot is pressed
-                              // or 4 seconds pass
+           timer(1) <
+               1300) { // Repeats until the button on the robot is pressed
+                       // or 4 seconds pass
       delay(1);
     }
     driveStop();
-
   }
 
   timerReset(4);
@@ -210,10 +209,11 @@ void auto0() {
     driveSet(lpower, rpower);
     delay(50);
   }
-  startp = rGyros() - 6; // 7
+  startp = rGyros() - 8; // 7
   startEnc = encoderGet(lencoder);
   timerReset(3);
-  while (encoderGet(lencoder) - startEnc < 25 * INCHESMULTIPLIER && timer(3) < (MAX_TIME_TO_WALL / 2.5) + 500) { // 23
+  while (encoderGet(lencoder) - startEnc < 25 * INCHESMULTIPLIER &&
+         timer(3) < (MAX_TIME_TO_WALL / 3) + 750) { // 23
     changer = (abs(rGyros() - startp) - tolerance) * 15;
     if (rGyros() - startp > tolerance) {
       lpower = power - changer;
@@ -226,9 +226,12 @@ void auto0() {
     delay(50);
   }
 
-  driveInch(7, 127);
+  driveInch(8, 127);
+
+  turnNoFix(3, 60);
 
   check(24);
+
   rLiftTo(0, POTHALF);
   delay(300);
   driveInch(-5, 100);
@@ -239,7 +242,7 @@ void auto0() {
     if (analogReadCalibrated(POT) <= stp) {
       int jj = getMotor(ORL);
       liftSet(0);
-      driveInchNoFix(-0.5, 90);
+      driveInchNoFix(-0.5, 80);
       liftSet(jj);
       delay(75);
     }
@@ -271,9 +274,9 @@ void auto0() {
   }
   driveStop();
 
-  smartTurnTo(-5, 40); // -3
+  smartTurnTo(-8, 50); // -3, 40 45 too low
 
-  startp = rGyros();
+  startp = rGyros() + 2;
   power = 110;
   lpower = power;
   rpower = power;
@@ -303,13 +306,15 @@ void auto0() {
     driveInch(3, 127);
   check(41);
 
+  turnNoFix(4, 60);
+
   stp = analogReadCalibrated(POT);
-  while (analogReadCalibrated(POT) < (POTHALF * .75)) {
+  while (analogReadCalibrated(POT) < POTHALF) {
     delay(75);
     if (analogReadCalibrated(POT) <= stp) {
       int jj = getMotor(ORL);
       liftSet(0);
-      driveInchNoFix(-0.5, 90);
+      driveInchNoFix(-0.75, 90);
       liftSet(jj);
       delay(75);
     }
@@ -323,6 +328,8 @@ void auto0() {
   check(425);
 
   delay(600);
+
+  turnNoFix(2, 60);
 
   driveSet(-158, -158);
   timerReset(1);
@@ -338,7 +345,7 @@ void auto0() {
 
   fastDumpFromWall();
 
-////////////////// BEGIN \\\\\\\\\\\\\\\\\\\\
+////////////////// BEGIN  \\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\ PART 2 ////////////////////
 
   rLiftTo(0, POTBOTTOM);
@@ -346,41 +353,30 @@ void auto0() {
   driveSet(-100, -100);
   while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
          timer(3) < 675) { // Repeats until the button on the robot is pressed
-                            // or 1 seconds pass
+                           // or 1 seconds pass
     delay(5);
   }
   driveStop();
   check(50);
   calibrate();
 
-  driveInchNoFix(3, 127);
+  delay(750);
 
-  driveSet(70, -70);
+  smartTurn(73, 60); // 67 68 70 72 too little
 
-  int g = rGyros();
-  while (SONICGET > 70 || SONICGET == 0) {
-    g = rGyros();
-    delay(10);
-  }
-  driveSet(-70, 70);
-  delay(100);
+  calibrate();
   driveStop();
 
-  //delay(200);
-  //rTurn((g + 15), 3, 80, true, false);
+  delay(250);
 
-  timerReset(4);
-  driveSet(127, 127);
-  while ((SONICGET < 20 || SONICGET == 0) && timer(4) < 2000) {
-    delay(20);
-  }
+  driveInchNoFix(43, 127); // 38
   rLiftTo(0, POTHALF);
-  driveInchNoFix(8, 127);
+  driveInchNoFix(11, 150);
   driveStop();
 
-  turnTo(20, 80);
+  turnNoFix(-10, 80);
 
-  rLiftTo(0, POTTOP);
+  rLiftTo(400, POTTOP);
   delay(450);
   timerReset(3);
   driveSet(-127, -127);
@@ -391,6 +387,42 @@ void auto0() {
   }
   driveStop();
 
+  liftTo(POTHALF);
+  driveInchNoFix(.5, 127);
+  turnNoFix(-30, 60); // 20
+  rLiftTo(0, POTTOP);
+  delay(200);
+
+  timerReset(3);
+  driveSet(-127, -127);
+  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+         timer(3) < 750) { // Repeats until the button on the robot is pressed
+                           // or 1 seconds pass
+    delay(5);
+  }
+  driveStop();
+
+  liftTo(POTTOP);
+
+  liftTo(POTHALF);
+
+  driveInchNoFix(.5, 127);
+  turnNoFix(-30, 60); // 20
+  rLiftTo(0, POTTOP);
+  delay(200);
+
+  timerReset(3);
+  driveSet(-127, -127);
+  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+         timer(3) < 750) { // Repeats until the button on the robot is pressed
+                           // or 1 seconds pass
+    delay(5);
+  }
+  driveStop();
+
+  liftTo(POTTOP);
+
+  liftTo(POTHALF);
 
   driveStop();
   calibrate();

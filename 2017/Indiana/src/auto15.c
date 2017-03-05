@@ -1,5 +1,4 @@
 #include "revision.h"
-#include "constants.h"
 
 void auto15() {
   calibrate();
@@ -24,7 +23,7 @@ void auto15() {
   driveInch(-32, 127); // -43
 
   // TURN BACK OF ROBOT TO WALL, LIFT UP, HIT WALL, DUMP
-  rTurn(83, 2, 90, true, true); 
+  rTurn(83, 2, 90, true, true);
 
   checknum = 1;
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "ethanlib.h"
 #include "motorSlew.h"
+#include "constants.h"
 #define ENCO_MULTIPLIER .4 // 65
 #define ENCO_TOL 10
 #define VALUE 0
@@ -103,3 +104,16 @@ void rDriveSet(int power, int tolerance);
  *or undefined behavior might occur
  */
  void rDriveStop(void);
+
+ /*
+ struct {
+   bool done(void) {
+     if (millis() >= ms) return true;
+     else return false;
+   };
+   unsigned long ms;
+   void set(unsigned long milliseconds) {
+     ms = millis() + milliseconds;
+   };
+ } alarm;
+ //*/

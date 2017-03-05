@@ -286,13 +286,13 @@ void rTurn(int degrees, int tolerance, int power, bool isAbsolute, bool useAll6)
 void quickDump(void *none) {
   mutexGive(isThisDone);
   mutexTake(isThisDone, -1);
-  rLiftTo(100, POTTOP);
+  rLiftTo(250, POTTOP); // 100
   driveInchNoFix(5, 127);
   timerReset(6);
   driveSet(-127, -127);
   while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
          timer(6) <
-             1300) { // Repeats until the either bumper sensor on the robot is
+             1750) { // Repeats until the either bumper sensor on the robot is
                      // pressed or 1 second passes
     delay(5);
   }
