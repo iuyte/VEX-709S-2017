@@ -1,11 +1,13 @@
-#include "mtrmgr.h"
+#ifndef LIB_H
+#define LIB_H
+#include <Math.h>
 
-typedef struct {
-    Motor TLD;
-    Motor MLD;
-    Motor BLD;
-    Motor TRD;
-    Motor MRD;
-    Motor BRD;
-    void go(int lpower, int rpower);
-} Drive;
+#include "defines.h"
+#include "JINX.h"
+#include "mtrmgr.h"
+#include "functions.h"
+#include "tasks.h"
+#include "extras.h"
+#include "motors.h"
+
+#endif
