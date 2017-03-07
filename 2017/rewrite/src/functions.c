@@ -18,11 +18,16 @@ float sgn(float num) {
 void rLiftTo(long wait, int position) {
   mutexTake(potMutex, -1);
   mutexGive(potMutex);
-  Foo *x = (Foo*)malloc(sizeof(Foo));
-  x->a = wait;
-  x->b = position;
-
-  TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)x, TASK_PRIORITY_DEFAULT);
+  int set;
+  if (vars[0] == 0) set = 0;
+  else if (vars[2] == 0) set = 2;
+  else if (vars[4] == 0) set = 4;
+  vars[set] = wait;
+  vars[set + 1] = position;
+  TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)set, TASK_PRIORITY_DEFAULT);
+  delay(1);
+  vars[set] = 0;
+  vars[(set + 1)] = 0;
   taskGetState(liftHandle);
 }
 

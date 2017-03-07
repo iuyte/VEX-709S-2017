@@ -289,12 +289,15 @@ void lcdDisplayTime(void *parameter) {
   }
 }
 
-void liftToTask(Foo *parameters) {
-  long unsigned int ms = parameters->a;
+void liftToTask(void *parameter) {
+  int set = (int)parameter;
+
+  long unsigned int ms = vars[set];
+  long liftToTaskPos = vars[(set + 1)];
+
   delay(ms);
-  long liftToTaskPos = parameters->b;
   liftTo(liftToTaskPos);
-  free((void *)parameters);
+  free((void *)parameter);
   taskDelete(NULL);
 }
 

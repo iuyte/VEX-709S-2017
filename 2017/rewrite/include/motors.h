@@ -2,12 +2,15 @@
 #define MOTORS_H
 
 #include "lib.h"
+#include "defines.h"
 
 /*
  *Returns the truespeed value for motors.
  *Based on Jess and Jordan's data (Jordan's funtion)
  */
 int trueSpeed(int speed);
+
+int truerSpeed(int speed);
 
 void initMotors(void);
 

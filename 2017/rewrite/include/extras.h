@@ -2,6 +2,7 @@
 #define EXTRAS_H
 
 #include "lib.h"
+#include "motors.h"
 
 Gyro gyro;
 Gyro gyra;
@@ -16,6 +17,7 @@ Mutex isThisDone;
 Mutex isThatDone;
 
 unsigned long startTimes[21];
+long vars[7];
 float TURN_TOLERANCE;
 int blinker;
 int checknum;

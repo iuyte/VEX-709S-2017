@@ -22,12 +22,16 @@ void motorRek(int motorPort, int power) {
   blrsMotorSet(motorPort, power, false);
 }
 
+void motorSetImmediate(unsigned int port, int power) {
+  blrsMotorSet(port, power, true);
+}
+
 void liftSet(int power) {
   power *= LIFT_CAP;
-  motorRek(OLL, power);
-  motorRek(ORL, power);
-  motorRek(TIRLBIRL, power);
-  motorRek(TILLBILL, power);
+  motorSetImmediate(OLL, power);
+  motorSetImmediate(ORL, power);
+  motorSetImmediate(TIRLBIRL, power);
+  motorSetImmediate(TILLBILL, power);
 }
 
 int getMotor(int motorPort) {
@@ -55,3 +59,5 @@ void driveSetBack(int Lpower, int Rpower) {
 }
 
 void driveStop(void) { driveSet(0, 0); }
+
+int truerSpeed(int speed) {return trueSpeed(speed);}

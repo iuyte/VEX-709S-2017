@@ -2,6 +2,7 @@
 #define DEFINES_H
 
 #include "lib.h"
+#include <Math.h>
 
 #define ENCO_MULTIPLIER .4 // 65
 #define ENCO_TOL 10

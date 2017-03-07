@@ -5,8 +5,11 @@ void initVars(void) {
   blinker = 1;
   checknum = 0;
   lcdMode = 1;
-  for (size_t i = 1; i < 22; i++) {
+  for (size_t i = 0; i < 22; i++) {
     startTimes[i] = 0;
+  };
+  for (size_t i = 0; i < 6; i++) {
+    vars[i] = 0;
   };
   if (USE_JINX) {
     initJINX(stdout);
