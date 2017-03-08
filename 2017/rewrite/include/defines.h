@@ -36,7 +36,7 @@
 // ANALOG INPUT//
 #define POT 4 // Potentiometer on lift in analog port 4
 #define POTTOP 2000
-#define POTBOTTOM 50 // when the POTentiometer is all the way down, this is it's position  // 10
+#define POTBOTTOM 30 // when the POTentiometer is all the way down, this is it's position  // 10
 #define POTHALF 650 // When the lift is halfway up // 800
 #define GYROPORT 2  // Sets the gyroscope ports
 #define GYRAPORT 5
@@ -55,7 +55,7 @@
 #define DEFAULT_AUTON 0 // Skills is 4, reg is 7, onlycube is 1
 #define MAX_TIME_TO_WALL 3500
 
-#define MOTOR_DEFAULT_SLEW_RATE 40
+#define MOTOR_DEFAULT_SLEW_RATE 1
 #define MOTOR_FAST_SLEW_RATE 256
 
 #define USE_JINX false
@@ -75,5 +75,24 @@
 // 17.90493109783822527399942337940786572887671014580135048412544009,
 // which is the number of degrees necessary to be traveled for 1 inch.
 #define INCHESMULTIPLIER 17.90493109783822527399942337940786572887671014580135048412544009
+
+#define typeofSpeed gudSpeed
+
+static const unsigned int TrueSpeed[128] =
+{
+  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+  0, 21, 21, 21, 22, 22, 22, 23, 24, 24,
+ 25, 25, 25, 25, 26, 27, 27, 28, 28, 28,
+ 28, 29, 30, 30, 30, 31, 31, 32, 32, 32,
+ 33, 33, 34, 34, 35, 35, 35, 36, 36, 37,
+ 37, 37, 37, 38, 38, 39, 39, 39, 40, 40,
+ 41, 41, 42, 42, 43, 44, 44, 45, 45, 46,
+ 46, 47, 47, 48, 48, 49, 50, 50, 51, 52,
+ 52, 53, 54, 55, 56, 57, 57, 58, 59, 60,
+ 61, 62, 63, 64, 65, 66, 67, 67, 68, 70,
+ 71, 72, 72, 73, 74, 76, 77, 78, 79, 79,
+ 80, 81, 83, 84, 84, 86, 86, 87, 87, 88,
+ 88, 89, 89, 90, 90,127,127,127
+};
 
 #endif

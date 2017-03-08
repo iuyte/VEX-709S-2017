@@ -25,6 +25,10 @@ void initVars(void) {
   rightarr = (int *)malloc(sizeof(int) * 3);
   passThis = (int *)malloc(sizeof(int) * 2);
   leftarr[FIX] = rightarr[FIX] = false;
+  accelX = 0;
+  accelY = 0;
+  prevX = 0;
+  prevY = 0;
 }
 
 void initSensors(void) {

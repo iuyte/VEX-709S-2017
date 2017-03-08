@@ -12,6 +12,12 @@ int trueSpeed(int speed);
 
 int truerSpeed(int speed);
 
+int fakeSpeed(int speed);
+
+int gudSpeed(int speed);
+
+void accelDrive();
+
 void initMotors(void);
 
 /*

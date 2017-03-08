@@ -14,21 +14,18 @@
 #include "lib.h"
 
 void operatorControl() {
+  bool tank=true;
+  bool switchpressed=false;
   while (isEnabled()) {
     if (joystickGetDigital(1, 6, JOY_UP) &&
         analogReadCalibrated(POT) < POTTOP) {
       liftSet(127);
     } else if (joystickGetDigital(1, 6, JOY_DOWN) &&
-               analogReadCalibrated(POT) > POTBOTTOM) {
+               analogReadCalibrated(POT) > POTBOTTOM - 25) {
       liftSet(-127);
     } else {
       liftSet(LIFTZERO);
     }
-    /*
-    if (analogReadCalibrated(POT) < POTBOTTOM) {
-      liftSet(50);
-    }
-    */
 
     if (joystickGetDigital(1, 8, JOY_RIGHT) && false) {
       TaskHandle dumpHandle = taskCreate(quickDump, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
@@ -37,7 +34,17 @@ void operatorControl() {
       taskDelete(dumpHandle);
     }
 
-    driveSet(joystickGetAnalog(1, 3), joystickGetAnalog(1, 2));
+    if (tank) {
+      driveSet(joystickGetAnalog(1, 3), joystickGetAnalog(1, 2));
+    } else {
+      accelDrive();
+      //driveSet(joystickGetAnalog(1, 3) + joystickGetAnalog(1, 1), joystickGetAnalog(1, 3) - joystickGetAnalog(1, 1));
+    }
+
+    if (!switchpressed && joystickGetDigital(1, 7, JOY_LEFT)) {
+      tank=!tank;
+    }
+    switchpressed = joystickGetDigital(1, 7, JOY_LEFT);
 
     if (lcdReadButtons(uart1) == 2) {
       if (lcdMode == 1) {
