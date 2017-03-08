@@ -74,7 +74,7 @@ void accelDrive() {
 
   if (abs(accelX - prevX) > threshold || abs(accelY - prevY) > threshold) {
     if (abs(accelX) > threshold || abs(accelY) > threshold) {
-      if (accelY > 0) {
+      if (accelX > 0) {
         driveSet((((-1 * accelX) + accelY) / divisor),
                  (((-1 * accelX) - accelY) / divisor));
       } else {
