@@ -5,10 +5,10 @@ void initMotors(void) {
 
   int driveRate = 10;
 
-  blrsMotorInit(OLL, true, MOTOR_DEFAULT_SLEW_RATE, typeofSpeed);
-  blrsMotorInit(ORL, false, MOTOR_DEFAULT_SLEW_RATE, typeofSpeed);
-  blrsMotorInit(TILLBILL, false, MOTOR_DEFAULT_SLEW_RATE, typeofSpeed);
-  blrsMotorInit(TIRLBIRL, true, MOTOR_DEFAULT_SLEW_RATE, typeofSpeed);
+  blrsMotorInit(OLL, true, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
+  blrsMotorInit(ORL, false, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
+  blrsMotorInit(TILLBILL, false, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
+  blrsMotorInit(TIRLBIRL, true, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
 
   blrsMotorInit(TRD, true, driveRate, typeofSpeed);
   blrsMotorInit(MRD, true, driveRate, typeofSpeed);
