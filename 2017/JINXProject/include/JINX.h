@@ -82,6 +82,8 @@ int readLine(JINX *inStr);
  */
 void parseMessage(JINX *inStr);
 
+void handleGet(JINX *inStr);
+
 /**
  *ignore: Do not use
  *
