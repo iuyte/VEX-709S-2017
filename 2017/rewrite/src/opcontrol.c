@@ -56,6 +56,25 @@ void operatorControl() {
     } else if (lcdReadButtons(uart1) == 5) {
       calibrate();
     }
+
+    if (joystickGetDigital(1, 8, JOY_UP) && joystickGetDigital(1, 8, JOY_RIGHT)) {
+      int stpL = getMotor(ORL);
+      int stpDl = getMotor(TLD);
+      int stpDr = getMotor(TLD);
+      while (joystickGetDigital(1, 8, JOY_UP) && joystickGetDigital(1, 8, JOY_RIGHT)) {
+        liftSet(0);
+        driveStop();
+        delay(5);
+      }
+      while (!(joystickGetDigital(1, 8, JOY_UP) || joystickGetDigital(1, 8, JOY_RIGHT))) {
+        liftSet(0);
+        driveStop();
+        delay(5);
+      }
+      liftSet(stpL);
+      driveSet(stpDl, stpDr);
+    }
+
     delay(20);
   }
 }

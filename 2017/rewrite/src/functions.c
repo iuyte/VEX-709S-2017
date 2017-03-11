@@ -152,7 +152,8 @@ void printValues(void) {
     mutexTake(potMutex, -1);
     mutexTake(driveMutex, -1);
     if (timer(0) > 400) {
-      printf("\n | SONC %d | LINE %d | LINE2 %d | LENC %d | RENC %d | LIFT %d | GYRO %d | LDRIV %d | RDRIV %d | TIM %lu | CHECK %d | BUT1 %d | BUT2 %d | TURNCO %f | \n",
+      printf("\n | %d | %d | SONC %d | LINE %d | LINE2 %d | LENC %d | RENC %d | LIFT %d | GYRO %d | LDRIV %d | RDRIV %d | TIM %lu | CHECK %d | BUT1 %d | BUT2 %d | TURNCO %f | \n",
+             joystickGetAnalog(1, ACCEL_X), joystickGetAnalog(1, ACCEL_Y),
              ultrasonicGet(sonic), analogRead(LINE), analogRead(LINE2), encoderGet(lencoder),
              encoderGet(rencoder), analogReadCalibrated(POT), rGyros(),
              getMotor(TLD), getMotor(TRD), timer(1), checknum, digitalRead(isWall), digitalRead(isWall2), (float)TURN_CORRECTION);

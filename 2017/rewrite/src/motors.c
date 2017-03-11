@@ -3,7 +3,7 @@
 void initMotors(void) {
   motorManagerInit();
 
-  int driveRate = 0.001;
+  int driveRate = 10;
 
   blrsMotorInit(OLL, true, MOTOR_DEFAULT_SLEW_RATE, typeofSpeed);
   blrsMotorInit(ORL, false, MOTOR_DEFAULT_SLEW_RATE, typeofSpeed);
@@ -19,7 +19,7 @@ void initMotors(void) {
 }
 
 void motorRek(int motorPort, int power) {
-  blrsMotorSet(motorPort, power, true);
+  blrsMotorSet(motorPort, power, false);
 }
 
 void motorSetImmediate(unsigned int port, int power) {
@@ -67,20 +67,17 @@ int gudSpeed(int speed) { return (sgn(speed) * TrueSpeed[abs(speed)]); }
 void accelDrive() {
   prevX = accelX;
   prevY = accelY;
-  accelX = joystickGetAnalog(1, ACCEL_X);
-  accelY = joystickGetAnalog(1, ACCEL_Y);
-  int threshold = 8;
-  int divisor = 0.5;
+  accelX = 0 - joystickGetAnalog(1, ACCEL_X);
+  accelY = 0 - joystickGetAnalog(1, ACCEL_Y);
+  int threshold = 20;
+  int multiplier = 1.1;
 
-  if (abs(accelX - prevX) > threshold || abs(accelY - prevY) > threshold) {
-    if (abs(accelX) > threshold || abs(accelY) > threshold) {
-      if (accelX > 0) {
-        driveSet((((-1 * accelX) + accelY) / divisor),
-                 (((-1 * accelX) - accelY) / divisor));
-      } else {
-        driveSet((((-1 * accelX) - accelY) /divisor),
-                 (((-1 * accelX) + accelY) / divisor));
-      }
-    }
-  }
+  if (abs(accelX) < threshold) accelX = 0;
+  if (abs(accelY) < threshold) accelY = 0;
+
+  accelX *= multiplier;
+  accelY *= (multiplier * 1.25);
+
+  driveSet(accelX - accelY, accelX + accelY);
+
 }
