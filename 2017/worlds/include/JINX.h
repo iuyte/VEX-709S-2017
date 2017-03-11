@@ -89,6 +89,8 @@ void parseMessage(JINX *inStr);
  */
 void JINXRun(void* ignore);
 
+void handleGet(JINX *inStr);
+
 /**
  *@param mode: Desired operator control mode
  *

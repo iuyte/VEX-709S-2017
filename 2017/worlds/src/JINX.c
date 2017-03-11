@@ -139,6 +139,43 @@ int getToken(JINX *inStr, int tokenNum) {
     return 0;
 }
 
+void handleGet(JINX *inStr) {
+    //Get the first token from the sent command
+    getToken(inStr, 1);
+
+    //Host outgoing messages
+    char *message = (char*)malloc(sizeof(char) * (strlen(inStr->token) + 30));
+    if (strcmp(inStr->token, "DEBUG_JINX") == 0) {
+        writeJINXMessage("Asked for Debug");
+        sprintf(message, "%s, %d", inStr->token, DEBUG_JINX);
+    } else {
+        sprintf(message, "%s %s", inStr->token, " was unable to be gotten.");
+    }
+
+    //Free malloc'd string
+    writeJINXMessage(message);
+    free(message);
+    message = NULL;
+}
+
+void parseMessage(JINX *inStr) {
+    //Echo entire recieved message
+    writeJINXMessage(inStr->command);
+    //Set inStr->token to first token (space-delimated word)
+    getToken(inStr, 0);
+
+    if (strcmp(inStr->token, "Option_1") == 0) {
+        //Do option 1
+        writeJINXMessage("Option 1 chosen.");
+    } else if(strcmp(inStr->token, "get") == 0) {
+        //Call another function to handle "get"
+        handleGet(inStr);
+    } else {
+        //Do default
+        writeJINXMessage("No comparison found");
+    }
+}
+
 void JINXRun(void* ignore) {
 	int del = 500;
   JINX inStr;
