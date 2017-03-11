@@ -8,6 +8,7 @@
  *
  */
 #include "mtrmgr.h"
+#include "defines.h"
 
 static Motor motor[10];
 static Mutex mutex[10];
@@ -69,7 +70,7 @@ static void _motorManagerTask(void *none)
                 }
 
                 // Grab mutex if possible, if it's not available (being changed by MotorSet()), skip the motor check.
-                if (!mutexTake(mutex[i], 5))
+                if ((!mutexTake(mutex[i], 5))  || (expandedPowerLevel < 1000))
                     continue;
                 motorSet(i+1, out);
                 mutexGive(mutex[i]);

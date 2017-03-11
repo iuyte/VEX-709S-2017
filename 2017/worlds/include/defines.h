@@ -33,19 +33,24 @@
 #define RENCPORT 6, 7, false // Right encoder top port is 11(means that bottom port is 12)
 #define isWall 5    // Wall bumper port is digital 1
 #define isWall2 4
-// ANALOG INPUT//
-#define POT 4 // Potentiometer on lift in analog port 4
-#define POTTOP 2000
-#define POTBOTTOM 30 // when the POTentiometer is all the way down, this is it's position  // 10
-#define POTHALF 650 // When the lift is halfway up // 800
-#define GYROPORT 2  // Sets the gyroscope ports
-#define GYRAPORT 5
-#define LINE 1    // Sets the port for the line sensor
-#define LINE2 3
-#define LINELIGHT 2850 // Sets the point where a line is white  if it's less than this
 #define sonicPING 3
 #define sonicECHO 2
 #define SONICGET ultrasonicGet(sonic)
+// ANALOG INPUT//
+#define POT 4 // Potentiometer on lift in analog port 4
+
+#define POTTOP 2000
+#define POTBOTTOM 30 // when the POTentiometer is all the way down, this is it's position  // 10
+#define POTHALF 650 // When the lift is halfway up // 800
+
+#define GYROPORT 2  // Sets the gyroscope ports
+#define GYRAPORT 5
+
+#define LINE 1    // Sets the port for the line sensor
+#define LINE2 3
+#define LINELIGHT 2850 // Sets the point where a line is white  if it's less than this
+
+#define expandedPowerLevel analogRead(6)
 
 //////////////////////////////////////////////////////
 #define NUMBER_OF_AUTON 6
