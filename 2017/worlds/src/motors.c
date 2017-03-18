@@ -40,10 +40,10 @@ void driveSet(int Lpower, int Rpower) {
   Lpower *= DRIVE_CAP;
   Rpower *= DRIVE_CAP;
   motorRek(TLD, Lpower);
-  // motorRek(MLD, Lpower);
+  motorRek(MLD, Lpower);
   motorRek(BLD, Lpower);
   motorRek(TRD, Rpower);
-  // motorRek(MRD, Rpower);
+   motorRek(MRD, Rpower);
   motorRek(BRD, Rpower);
 }
 
