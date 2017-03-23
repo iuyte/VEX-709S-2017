@@ -70,7 +70,7 @@ static void _motorManagerTask(void *none)
                 }
 
                 // Grab mutex if possible, if it's not available (being changed by MotorSet()), skip the motor check.
-                if ((!mutexTake(mutex[i], 5))  || (expandedPowerLevel < 1000))
+                if ((!mutexTake(mutex[i], 5))/*  || (expandedPowerLevel < 1000)*/)
                     continue;
                 motorSet(i+1, out);
                 mutexGive(mutex[i]);

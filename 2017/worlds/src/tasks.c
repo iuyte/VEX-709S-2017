@@ -175,8 +175,6 @@ void lcdDisplayTime(void *parameter) {
   while (true) {
     timerReset(8);
     if (isAutonomous()) {
-      // TaskHandle upplayHandle = taskCreate(uptownPlay,
-      // TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
       while (timer(8) <= 15000 && isAutonomous()) {
         tim = 15000 - timer(8);
         if (lcdMode == 1) {
@@ -189,7 +187,6 @@ void lcdDisplayTime(void *parameter) {
         printValues();
         delay(20);
       }
-      // taskDelete(upplayHandle);
     } else if (isEnabled()) {
       while (timer(8) <= 105000 && isEnabled() && isAutonomous() == false) {
         min = 0;
@@ -220,12 +217,17 @@ void lcdDisplayTime(void *parameter) {
           opmd2 = fgetc(fd5);
         }
         fclose(fd5);
+        FILE * isRerun = fopen("isRerun", "r");
+        int rerunIs = fgetc(isRerun);
+        fclose(isRerun);
         if (lcdMode == 1) {
           lcdPrint(uart1, 1, "%d Auto: %d", (digitalRead(isWall) && digitalRead(isWall2)), opmd2);
           lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
-        } else {
+        } else if (lcdMode == 2) {
           lcdPrint(uart1, 1, "Gyro %d | US %d", rGyros(), SONICGET);
           lcdPrint(uart1, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
+        } else if (lcdMode  == 3) {
+          lcdPrint(uart1, 1, "Recording rerun is %s", (rerunIs == 1) ? "ON" : "OFF");
         }
         if (lcdReadButtons(uart1) == 4 && lcdMode == 1) {
           FILE *fd1;
@@ -278,9 +280,25 @@ void lcdDisplayTime(void *parameter) {
         } else if (lcdReadButtons(uart1) == 2) {
           if (lcdMode == 1) {
             lcdMode = 2;
+          } else if (lcdMode == 2) {
+            lcdMode = 3;
           } else {
             lcdMode = 1;
           }
+          delay(200);
+        } else if (lcdReadButtons(uart1) == 1 && lcdMode == 3) {
+          if (taskGetState(rerunHandle) != TASK_SUSPENDED)
+            taskSuspend(rerunHandle);
+          FILE * isRerun = fopen("isRerun", "w");
+          fputc(0, isRerun);
+          fclose(isRerun);
+          delay(200);
+        } else if (lcdReadButtons(uart1) == 4 && lcdMode == 3) {
+          if (taskGetState(rerunHandle) == TASK_SUSPENDED)
+            taskResume(rerunHandle);
+          FILE * isRerun = fopen("isRerun", "w");
+          fputc(1, isRerun);
+          fclose(isRerun);
           delay(200);
         }
         delay(20);

@@ -10,12 +10,14 @@ void initMotors(void) {
   blrsMotorInit(TILLBILL, false, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
   blrsMotorInit(TIRLBIRL, true, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
 
-  blrsMotorInit(TRD, true, driveRate, typeofSpeed);
-  blrsMotorInit(MRD, true, driveRate, typeofSpeed);
-  blrsMotorInit(BRD, false, driveRate, fakeSpeed);
-  blrsMotorInit(TLD, false, driveRate, typeofSpeed);
-  blrsMotorInit(MLD, false, driveRate, typeofSpeed);
+  blrsMotorInit(TLD, false, driveRate, fakeSpeed);
+  blrsMotorInit(MLD, false, driveRate, fakeSpeed);
+
+  blrsMotorInit(TRD, true, driveRate, fakeSpeed);
+  blrsMotorInit(MRD, true, driveRate, fakeSpeed);
+
   blrsMotorInit(BLD, true, driveRate, fakeSpeed);
+  blrsMotorInit(BRD, false, driveRate, fakeSpeed);
 }
 
 void motorRek(int motorPort, int power) {
@@ -43,7 +45,7 @@ void driveSet(int Lpower, int Rpower) {
   motorRek(MLD, Lpower);
   motorRek(BLD, Lpower);
   motorRek(TRD, Rpower);
-   motorRek(MRD, Rpower);
+  motorRek(MRD, Rpower);
   motorRek(BRD, Rpower);
 }
 

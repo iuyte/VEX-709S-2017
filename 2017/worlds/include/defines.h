@@ -53,7 +53,7 @@
 #define expandedPowerLevel analogRead(6)
 
 //////////////////////////////////////////////////////
-#define NUMBER_OF_AUTON 6
+#define NUMBER_OF_AUTON 7
 #define TURN_CORRECTION (1.2 - ((double)powerLevelMain()) / 30000)
 #define SMART_TURN_MULT 0.67
 #define ENCO_CORRECTION 3

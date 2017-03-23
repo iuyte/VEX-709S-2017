@@ -47,6 +47,12 @@ void autonomous() {
   case 6:
     encoderValues();
     break;
+  case 7:
+    replayF();
+    break;
+  case 8:
+      replayC();
+      break;
   }
   while (isAutonomous()) delay(50);
 }

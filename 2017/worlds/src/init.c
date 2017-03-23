@@ -22,6 +22,8 @@ void initialize() {
   initMotors();
   initVars();
   initSensors();
+  rerunInit();
+
   showTime = taskCreate(lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
   setTeamName("709s");
   if (USE_JINX) {

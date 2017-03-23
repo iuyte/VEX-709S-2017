@@ -240,7 +240,6 @@ void driveTo(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    // driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < 0) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -255,7 +254,6 @@ void driveTo(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    // driveSet(power / 2, power / 2);
     driveStop();
     delay(250);
     leftAt = power / ENCO_CORRECTION;
@@ -272,7 +270,6 @@ void driveTo(float targetPosition, int power) {
       delay(5);
     }
   }
-  // delay(100);
   driveStop();
 }
 
@@ -308,7 +305,6 @@ void driveToAbs(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    // driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < avg) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -323,7 +319,6 @@ void driveToAbs(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    // driveSet(power / 2, power / 2);
     driveStop();
     delay(250);
     leftAt = power / ENCO_CORRECTION;
@@ -340,7 +335,6 @@ void driveToAbs(float targetPosition, int power) {
       delay(5);
     }
   }
-  // delay(100);
   driveStop();
 }
 

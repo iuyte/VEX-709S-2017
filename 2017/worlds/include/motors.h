@@ -8,6 +8,9 @@
  *Returns the truespeed value for motors.
  *Based on Jess and Jordan's data (Jordan's funtion)
  */
+
+void motorRek(int motorPort, int power);
+
 int trueSpeed(int speed);
 
 int truerSpeed(int speed);

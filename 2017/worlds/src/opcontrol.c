@@ -38,10 +38,9 @@ void operatorControl() {
       driveSet(joystickGetAnalog(1, 3), joystickGetAnalog(1, 2));
     } else {
       accelDrive();
-      //driveSet(joystickGetAnalog(1, 3) + joystickGetAnalog(1, 1), joystickGetAnalog(1, 3) - joystickGetAnalog(1, 1));
     }
 
-    if (!switchpressed && joystickGetDigital(1, 7, JOY_LEFT)) {
+    if (!switchpressed && joystickGetDigital(1, 7, JOY_LEFT) && false) {
       tank=!tank;
     }
     switchpressed = joystickGetDigital(1, 7, JOY_LEFT);
