@@ -24,14 +24,14 @@ void recordP(void *none) {
   for (size_t lines = 0; lines < 10; lines++) {
     print("\n");
   }
-  while ((rerun = fopen("rerun", "w")) == NULL)
-    ;
   while (!isDriver())
     delay(5);
+  while ((rerun = fopen("rerun", "w")) == NULL)
+    ;
 
   while (!stopButton && isDriver()) {
     fprintf(rerun, "%d %d %d\n", lift.value(), leftDrive.value(), rightDrive.value());
-    printf("toPos(%d, %d, %d);\n", lift.value(), leftDrive.value(), rightDrive.value());
+    printf("toPos(%d, %d, %d);\n\r", lift.value(), leftDrive.value(), rightDrive.value());
     delay(RERUN_DELAY);
   }
   fclose(rerun);
