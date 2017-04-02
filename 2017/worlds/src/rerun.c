@@ -5,15 +5,15 @@ bool isDriver(void) {return (isEnabled() && !isAutonomous());}
 void toPos(int lift, int leftDrive, int rightDrive) {
   goalReached[0] = goalReached[1] = goalReached[2] = false;
   liftToRawTask((void *)lift);
-  leftToTask((void *)leftDrive);
-  rightToTask((void *)rightDrive);
+  leftToTask((void *)&leftDrive);
+  rightToTask((void *)&rightDrive);
   while (!(goalReached[0] && goalReached[1] && goalReached[2]))
     delay(5);
 }
 
 void rerunInit(void) {
-  lift.value = liftGet;
-  leftDrive.value = leftGet;
+  lift.value = &liftGet;
+  leftDrive.value = &leftGet;
   leftDrive.port = TLD;
   rightDrive.port = TRD;
   rerunHandle = taskCreate(recordP, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
@@ -30,6 +30,7 @@ void recordP(void *none) {
     ;
 
   while (!stopButton && isDriver()) {
+    fprintf(rerun, " 0 0 0\n");
     fprintf(rerun, "%d %d %d\n", lift.value(), leftDrive.value(), rightDrive.value());
     printf("toPos(%d, %d, %d);\n\r", lift.value(), leftDrive.value(), rightDrive.value());
     delay(RERUN_DELAY);
@@ -47,6 +48,7 @@ void replayF(void) {
   while (!isAutonomous())
     delay(5);
 
+  calibrate();
   fseek(rerun, 0, SEEK_SET);
   while (isAutonomous()) {
     liftR = fgetc(rerun);
@@ -56,6 +58,7 @@ void replayF(void) {
     rightDriveR = fgetc(rerun);
     fseek(rerun, 1, SEEK_CUR);
     toPos(liftR, leftDriveR, rightDriveR);
+    delay(RERUN_DELAY);
   }
 }
 

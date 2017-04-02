@@ -7,8 +7,10 @@
  * include main.h instead of referencing API.h by name, to better handle any nomenclature
  * changes to this file or its contents.
  *
- * Copyright (c) 2011-2016, Purdue University ACM SIGBots.
+ * Copyright (c) 2011-2017, Purdue University ACM SIGBots.
  * All rights reserved.
+ *
+ * PROS 2.11.1
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -1578,6 +1580,14 @@ void wait(const unsigned long time);
  * @param time the duration of the delay in milliseconds (1 000 milliseconds per second)
  */
 void waitUntil(unsigned long *previousWakeTime, const unsigned long time);
+/**
+ * Enables IWDG watchdog timer which will reset the cortex if it locks up due to static shock
+ * or a misbehaving task preventing the timer to be reset. Not recovering from static shock
+ * will cause the robot to continue moving its motors indefinitely until turned off manually.
+ *
+ * This function should only be called once in initializeIO()
+ */
+void watchdogInit();
 
 // End C++ extern to C
 #ifdef __cplusplus

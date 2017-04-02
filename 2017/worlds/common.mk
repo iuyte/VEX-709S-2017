@@ -6,13 +6,13 @@ MAKE_COMMAND=make
 # Makefile for IFI VeX Cortex Microcontroller (STM32F103VD series)
 DEVICE=VexCortex
 # Libraries to include in the link (use -L and -l) e.g. -lm, -lmyLib
-LIBRARIES=$(ROOT)/firmware/libpros.a -lgcc -lm
+LIBRARIES=$(wildcard $(ROOT)/firmware/*.a) -lgcc -lm
 # Prefix for ARM tools (must be on the path)
 MCUPREFIX=arm-none-eabi-
 # Flags for the assembler
 MCUAFLAGS=-mthumb -mcpu=cortex-m3 -mlittle-endian
 # Flags for the compiler
-MCUCFLAGS=-mthumb -mcpu=cortex-m3 -mlittle-endian
+MCUCFLAGS=-mthumb -mcpu=cortex-m3 -mlittle-endian -mfloat-abi=soft
 # Flags for the linker
 MCULFLAGS=-nostartfiles -Wl,-static -Bfirmware -Wl,-u,VectorTable -Wl,-T -Xlinker firmware/cortex.ld
 # Prepares the elf file by converting it to a binary that java can write

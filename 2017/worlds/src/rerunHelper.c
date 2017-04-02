@@ -20,7 +20,16 @@ void liftToRaw(int pos) {
 }
 
 void liftToRawTask(void *position) {
-  liftToRaw((int)position);
+  int pos = (int)position;
+  mutexTake(potMutex, -1);
+  if (pos > analogReadCalibrated(POT)) {
+    liftSet(127);
+  } else if (pos < analogReadCalibrated(POT)) {
+    liftSet(-127);
+  } else {
+    liftSet(LIFTZERO);
+  }
+  mutexGive(potMutex);
   goalReached[0] = true;
 }
 
@@ -28,20 +37,16 @@ void leftToTask(void *position) {
   int targetPosition = (int)position;
   long avg = encoderGet(lencoder);
   int power = abs(DRIVE_POWER);
+  int leftAt;
   if (targetPosition > avg + DRIVE_TO_TOLERANCE) {
-    int leftAt = power;
-    while (encoderGet(lencoder) < targetPosition) {
-      driveSet(leftAt, getMotor(rightDrive.port));
-      delay(5);
-    }
+    leftAt = power;
+
   } else if (targetPosition < avg - DRIVE_TO_TOLERANCE) {
-    int leftAt = -power;
-    while (encoderGet(lencoder) > targetPosition) {
-      driveSet(leftAt, getMotor(rightDrive.port));
-      delay(5);
-    }
+    leftAt = -power;
+  } else {
+    leftAt = 0;
   }
-  driveSet(0, getMotor(rightDrive.port));
+  driveSet(leftAt, getMotor(rightDrive.port));
   goalReached[1] = true;
 }
 
@@ -49,19 +54,15 @@ void rightToTask(void *position) {
   int targetPosition = (int)position;
   long avg = encoderGet(rencoder);
   int power = abs(DRIVE_POWER);
+  int rightAt;
   if (targetPosition > avg + DRIVE_TO_TOLERANCE) {
-    int rightAt = power;
-    while (encoderGet(rencoder) < targetPosition) {
-      driveSet(getMotor(leftDrive.port), rightAt);
-      delay(5);
-    }
+    rightAt = power;
+
   } else if (targetPosition < avg - DRIVE_TO_TOLERANCE) {
-    int rightAt = -power;
-    while (encoderGet(rencoder) > targetPosition) {
-      driveSet(getMotor(leftDrive.port), rightAt);
-      delay(5);
-    }
+    rightAt = -power;
+  } else {
+    rightAt = 0;
   }
-  driveSet(getMotor(leftDrive.port), 0);
+  driveSet(getMotor(leftDrive.port), rightAt);
   goalReached[2] = true;
 }
