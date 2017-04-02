@@ -58,7 +58,7 @@ void replayF(void) {
     rightDriveR = fgetc(rerun);
     fseek(rerun, 1, SEEK_CUR);
     toPos(liftR, leftDriveR, rightDriveR);
-    delay(RERUN_DELAY);
+    delay((RERUN_DELAY * .85));
   }
 }
 
