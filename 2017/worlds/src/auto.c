@@ -51,8 +51,9 @@ void autonomous() {
     replayF();
     break;
   case 8:
-      replayC();
-      break;
+    replayC();
+    break;
   }
-  while (isAutonomous()) delay(50);
+  while (isAutonomous())
+    delay(50);
 }

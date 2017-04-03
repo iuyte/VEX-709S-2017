@@ -14,7 +14,8 @@ void initVars(void) {
   if (USE_JINX) {
     initJINX(stdout);
     delay(100);
-    taskCreate(JINXRun, TASK_DEFAULT_STACK_SIZE, NULL, (TASK_PRIORITY_DEFAULT));
+    TaskHandle JINXHandle = taskCreate(JINXRun, TASK_DEFAULT_STACK_SIZE, NULL, (TASK_PRIORITY_DEFAULT));
+    printf("%d", (int)JINXHandle);
     delay(100);
   };
   potMutex = mutexCreate();

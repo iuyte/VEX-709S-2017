@@ -63,7 +63,7 @@
 #define MOTOR_DEFAULT_SLEW_RATE 1
 #define MOTOR_FAST_SLEW_RATE 256
 
-static const bool USE_JINX = true;
+static const bool USE_JINX = false;
 //Lots of math to get the next value:
 // Encoders are on a 5/8 gear ratio of actual rotation
 // This means that there are 225 degrees in a rotation

@@ -30,6 +30,7 @@ void liftToRaw(int pos);
 void liftToRawTask(void *position);
 void leftToTask(void *position);
 void rightToTask(void *position);
+bool rerunEnabled;
 
 void toPos(int lift, int leftDrive, int rightDrive);
 void recordP(void *none);

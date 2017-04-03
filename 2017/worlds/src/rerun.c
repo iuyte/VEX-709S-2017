@@ -24,21 +24,26 @@ void recordP(void *none) {
   for (size_t lines = 0; lines < 10; lines++) {
     print("\n");
   }
-  while (!isDriver())
-    delay(5);
-  while ((rerun = fopen("rerun", "w")) == NULL)
-    ;
+  while (1) {
+    if (isDriver() && rerunEnabled) {
+      while (!isDriver())
+        delay(5);
+      while ((rerun = fopen("rerun", "w")) == NULL)
+        ;
 
-  while (!stopButton && isDriver()) {
-    fprintf(rerun, " 0 0 0\n");
-    fprintf(rerun, "%d %d %d\n", lift.value(), leftDrive.value(), rightDrive.value());
-    printf("toPos(%d, %d, %d);\n\r", lift.value(), leftDrive.value(), rightDrive.value());
-    delay(RERUN_DELAY);
+      while (!stopButton && isDriver() && rerunEnabled) {
+        fprintf(rerun, " 0 0 0\n");
+        fprintf(rerun, "%d %d %d\n", lift.value(), leftDrive.value(), rightDrive.value());
+        printf("toPos(%d, %d, %d);\n\r", lift.value(), leftDrive.value(), rightDrive.value());
+        delay(RERUN_DELAY);
+      }
+      fclose(rerun);
+    }
   }
-  fclose(rerun);
 }
 
 void replayF(void) {
+  calibrate();
   FILE *rerun;
   int liftR;
   int leftDriveR;
@@ -63,5 +68,6 @@ void replayF(void) {
 }
 
 void replayC(void) {
+  calibrate();
   toPos(0, 0, 0);
 }

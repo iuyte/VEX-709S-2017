@@ -150,7 +150,6 @@ void calibrate(void) {
 void printValues(void) {
   if (!USE_JINX) {
     mutexTake(potMutex, -1);
-    mutexTake(driveMutex, -1);
     if (timer(0) > 400) {
       printf("\n | %d | %d | SONC %d | LINE %d | LINE2 %d | LENC %d | RENC %d | LIFT %d | GYRO %d | LDRIV %d | RDRIV %d | TIM %lu | CHECK %d | BUT1 %d | BUT2 %d | TURNCO %f | \n",
              joystickGetAnalog(1, ACCEL_X), joystickGetAnalog(1, ACCEL_Y),
@@ -158,7 +157,6 @@ void printValues(void) {
              encoderGet(rencoder), analogReadCalibrated(POT), rGyros(),
              getMotor(TLD), getMotor(TRD), timer(1), checknum, digitalRead(isWall), digitalRead(isWall2), (float)TURN_CORRECTION);
       mutexGive(potMutex);
-      mutexGive(driveMutex);
     } else {
       if (timer(0) > 400) {
         mutexTake(potMutex, -1);
