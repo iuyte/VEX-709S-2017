@@ -29,6 +29,6 @@ void liftToTask(void *parameter);
 
 
 void stopAllPeriodic(void);
-void lcdDisplayTime(void *parameter);
+void lcdDisplayTime(void *none);
 
 #endif
