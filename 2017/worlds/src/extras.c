@@ -42,7 +42,7 @@ void initSensors(void) {
   encoderReset(rencoder);
   gyroReset(gyro);
   analogCalibrate(POT);
-  lcdInit(uart1);
-  lcdClear(uart1);
-  lcdSetBacklight(uart1, true);
+  lcdInit(uart2);
+  lcdClear(uart2);
+  lcdSetBacklight(uart2, true);
 }

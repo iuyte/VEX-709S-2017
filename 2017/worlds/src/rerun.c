@@ -16,7 +16,7 @@ void rerunInit(void) {
   leftDrive.value = &leftGet;
   leftDrive.port = TLD;
   rightDrive.port = TRD;
-  rerunHandle = taskCreate(recordP, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
+  //rerunHandle = taskCreate(recordP, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
 }
 
 void recordP(void *none) {

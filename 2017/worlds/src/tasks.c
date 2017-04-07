@@ -172,17 +172,18 @@ void quickDump(void *none) {
 void lcdDisplayTime(void *none) {
   unsigned long tim;
   int min;
+  lcdMode = 1;
   while (true) {
     timerReset(8);
     if (isAutonomous()) {
       while (timer(8) <= 15000 && isAutonomous()) {
         tim = 15000 - timer(8);
         if (lcdMode == 1) {
-          lcdPrint(uart1, 1, "%lu", tim / 1000);
-          lcdPrint(uart1, 2, "Battery: %1.3f", (double)powerLevelMain() / 1000);
+          lcdPrint(uart2, 1, "%lu", tim / 1000);
+          lcdPrint(uart2, 2, "Battery: %1.3f", (double)powerLevelMain() / 1000);
         } else {
-          lcdPrint(uart1, 1, "Gyro %d | US %d", rGyros(), SONICGET);
-          lcdPrint(uart1, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
+          lcdPrint(uart2, 1, "Gyro %d | US %d", rGyros(), SONICGET);
+          lcdPrint(uart2, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
         }
         printValues();
         delay(20);
@@ -197,11 +198,11 @@ void lcdDisplayTime(void *none) {
           tim = tim - 60;
         }
         if (lcdMode == 1) {
-          lcdPrint(uart1, 1, "%d : %lu", min, tim);
-          lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
+          lcdPrint(uart2, 1, "%d : %lu", min, tim);
+          lcdPrint(uart2, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
         } else {
-          lcdPrint(uart1, 1, "Gyro %d | US %d", rGyros(), SONICGET);
-          lcdPrint(uart1, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
+          lcdPrint(uart2, 1, "Gyro %d | US %d", rGyros(), SONICGET);
+          lcdPrint(uart2, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
         }
         printValues();
         delay(20);
@@ -218,15 +219,15 @@ void lcdDisplayTime(void *none) {
         }
         fclose(fd5);
         if (lcdMode == 1) {
-          lcdPrint(uart1, 1, "%d Auto: %d", (digitalRead(isWall) && digitalRead(isWall2)), opmd2);
-          lcdPrint(uart1, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
+          lcdPrint(uart2, 1, "%d Auto: %d", (digitalRead(isWall) && digitalRead(isWall2)), opmd2);
+          lcdPrint(uart2, 2, "Batt: %1.3f V", (double)powerLevelMain() / 1000);
         } else if (lcdMode == 2) {
-          lcdPrint(uart1, 1, "Gyro %d | US %d", rGyros(), SONICGET);
-          lcdPrint(uart1, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
+          lcdPrint(uart2, 1, "Gyro %d | US %d", rGyros(), SONICGET);
+          lcdPrint(uart2, 2, "L: %d | R: %d", encoderGet(lencoder), encoderGet(rencoder));
         } else if (lcdMode == 3) {
-          lcdPrint(uart1, 1, "Recording rerun is %s", (rerunEnabled == true) ? "ON" : "OFF");
+          lcdPrint(uart2, 1, "Recording rerun is %s", (rerunEnabled == true) ? "ON" : "OFF");
         }
-        if (lcdReadButtons(uart1) == 4 && lcdMode == 1) {
+        if (lcdReadButtons(uart2) == 4 && lcdMode == 1) {
           FILE *fd1;
           int value;
           if ((fd1 = fopen("autoM", "r")) == NULL) {
@@ -249,7 +250,7 @@ void lcdDisplayTime(void *none) {
             fclose(fd4);
           }
           delay(500);
-        } else if (lcdReadButtons(uart1) == 1 && lcdMode == 1) {
+        } else if (lcdReadButtons(uart2) == 1 && lcdMode == 1) {
           FILE *fd1;
           int value;
           if ((fd1 = fopen("autoM", "r")) == NULL) {
@@ -269,12 +270,12 @@ void lcdDisplayTime(void *none) {
             fclose(fd4);
           }
           delay(500);
-        } else if (lcdReadButtons(uart1) == 5 && lcdMode == 2) {
-          lcdSetText(uart1, 1, "Calibrating");
-          lcdSetText(uart1, 2, "Please Wait...");
+        } else if (lcdReadButtons(uart2) == 5 && lcdMode == 2) {
+          lcdSetText(uart2, 1, "Calibrating");
+          lcdSetText(uart2, 2, "Please Wait...");
           calibrate();
           wait(1024);
-        } else if (lcdReadButtons(uart1) == 2) {
+        } else if (lcdReadButtons(uart2) == 2) {
           if (lcdMode == 1) {
             lcdMode = 2;
           } else if (lcdMode == 2) {
@@ -283,13 +284,13 @@ void lcdDisplayTime(void *none) {
             lcdMode = 1;
           }
           delay(200);
-        } else if (lcdReadButtons(uart1) == 1 && lcdMode == 3) {
+        } else if (lcdReadButtons(uart2) == 1 && lcdMode == 3) {
           rerunEnabled = true;
           delay(200);
-        } else if (lcdReadButtons(uart1) == 4 && lcdMode == 3) {
+        } else if (lcdReadButtons(uart2) == 4 && lcdMode == 3) {
           rerunEnabled = false;
           delay(200);
-        }
+        }//*/
         delay(20);
       }
     }

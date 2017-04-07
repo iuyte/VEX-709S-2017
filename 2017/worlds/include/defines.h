@@ -10,6 +10,7 @@
 #define POWER 1
 #define TOLERANCE 0
 #define FIX 2
+#define POWER_CAP 0.8
 
 #define OLL 2      // Outside Left Lift
 #define TILLBILL 4 // Top Inside Left Lift and Bottom Inside Left Lift (y-cables to power expander)
@@ -18,7 +19,6 @@
                   // (y-cables to power expander)
 #define LIFTZERO 17
 #define LIFT 0
-#define LIFT_CAP 0.8
 // DRIVE//
 #define TLD 3 // Top Left Drive
 #define MLD 5 // Middle Left Drive
@@ -27,7 +27,6 @@
 #define MRD 6 // Middle Right Drive
 #define BRD 1 // Back Right Drive
 #define DRIVE 1
-#define DRIVE_CAP 0.8
 // DIGITAL INPUT//
 #define LENCPORT 8, 9, false  // Left encoder top port is 8 (means that bottom port is 9)
 #define RENCPORT 6, 7, false // Right encoder top port is 11(means that bottom port is 12)
@@ -40,7 +39,7 @@
 #define POT 4 // Potentiometer on lift in analog port 4
 
 #define POTTOP 2000
-#define POTBOTTOM 30 // when the POTentiometer is all the way down, this is it's position  // 10
+#define POTBOTTOM 15 // when the POTentiometer is all the way down, this is it's position  // 10
 #define POTHALF 650 // When the lift is halfway up // 800
 
 #define GYROPORT 2  // Sets the gyroscope ports
@@ -81,8 +80,6 @@ static const bool USE_JINX = false;
 // which is the number of degrees necessary to be traveled for 1 inch.
 #define INCHESMULTIPLIER 17.90493109783822527399942337940786572887671014580135048412544009
 
-#define typeofSpeed gudSpeed
-
 static const unsigned int TrueSpeed[128] =
 {
   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -97,7 +94,7 @@ static const unsigned int TrueSpeed[128] =
  61, 62, 63, 64, 65, 66, 67, 67, 68, 70,
  71, 72, 72, 73, 74, 76, 77, 78, 79, 79,
  80, 81, 83, 84, 84, 86, 86, 87, 87, 88,
- 88, 89, 89, 90, 90,127,127,127
+ 88, 89, 89, 90, 90, 127, 127, 127
 };
 
 #endif

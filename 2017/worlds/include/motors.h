@@ -8,16 +8,13 @@
  *Returns the truespeed value for motors.
  *Based on Jess and Jordan's data (Jordan's funtion)
  */
+ int trueSpeedf(int speed);
 
 void motorRek(int motorPort, int power);
 
 int trueSpeed(int speed);
 
-int truerSpeed(int speed);
-
 int fakeSpeed(int speed);
-
-int gudSpeed(int speed);
 
 void accelDrive();
 
