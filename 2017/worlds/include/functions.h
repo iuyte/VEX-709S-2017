@@ -119,5 +119,9 @@ void driveToEncDep(int lpos, int rpos, int lpower, int rpower, bool correctionEn
  */
 void rLiftTo(long wait, int position);
 
+/*
+ *Waits until the lift is at a certain position
+ */
+void wLift(int position);
 
 #endif

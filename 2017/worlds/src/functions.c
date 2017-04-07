@@ -17,7 +17,6 @@ float sgn(float num) {
 
 void rLiftTo(long wait, int position) {
   mutexTake(potMutex, -1);
-  mutexGive(potMutex);
   int set;
   if (vars[0] == 0) {set = 0;}
   else if (vars[2] == 0) {set = 2;}
@@ -30,6 +29,15 @@ void rLiftTo(long wait, int position) {
   vars[set] = 0;
   vars[(set + 1)] = 0;
   taskGetState(liftHandle);
+  mutexGive(potMutex);
+}
+
+void wLift(int position) {
+  if (position > analogCalibrate(POT)) {
+    while (analogReadCalibrated(POT) < position) delay(20);
+  } else {
+    while (analogReadCalibrated(POT) > position) delay(20);
+  }
 }
 
 int trueSpeedf(int speed) {

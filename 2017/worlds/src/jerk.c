@@ -114,4 +114,5 @@ driveStop();
 TURN_TOLERANCE = 1;
 turnNoFix(gyroGet(gyro) * -0.5, 37);
 TURN_TOLERANCE = 4;
+delay(400);
 }
