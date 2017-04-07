@@ -29,7 +29,6 @@ void motorSetImmediate(unsigned int port, int power) {
 }
 
 void liftSet(int power) {
-  power *= LIFT_CAP;
   motorSetImmediate(OLL, power);
   motorSetImmediate(ORL, power);
   motorSetImmediate(TIRLBIRL, power);
@@ -39,8 +38,6 @@ void liftSet(int power) {
 int getMotor(int motorPort) { return blrsMotorGet(motorPort); }
 
 void driveSet(int Lpower, int Rpower) {
-  Lpower *= DRIVE_CAP;
-  Rpower *= DRIVE_CAP;
   motorRek(TLD, Lpower);
   motorRek(MLD, Lpower);
   motorRek(BLD, Lpower);
@@ -50,8 +47,6 @@ void driveSet(int Lpower, int Rpower) {
 }
 
 void driveSetBack(int Lpower, int Rpower) {
-  Lpower *= DRIVE_CAP;
-  Rpower *= DRIVE_CAP;
   motorRek(MLD, Lpower);
   motorRek(BLD, Lpower);
   motorRek(MRD, Rpower);
@@ -64,7 +59,7 @@ int truerSpeed(int speed) { return trueSpeed(speed); }
 
 int fakeSpeed(int speed) { return speed; }
 
-int gudSpeed(int speed) { return (sgn(speed) * TrueSpeed[abs(speed)]); }
+int gudSpeed(int speed) { return (sgn(speed) * TrueSpeed[abs(speed)] * POWER_CAP); }
 
 void accelDrive() {
   prevX = accelX;
