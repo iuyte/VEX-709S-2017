@@ -32,7 +32,7 @@ void rLiftTo(long wait, int position) {
   taskGetState(liftHandle);
 }
 
-int trueSpeed(int speed) {
+int trueSpeedf(int speed) {
   if (speed == 0) {
     return 0;
   }
