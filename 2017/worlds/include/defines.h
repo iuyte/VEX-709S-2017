@@ -56,7 +56,6 @@
 #define TURN_CORRECTION (1.2 - ((double)powerLevelMain()) / 30000)
 #define SMART_TURN_MULT 0.67
 #define ENCO_CORRECTION 3
-#define DEFAULT_AUTON 0 // Skills is 4, reg is 7, onlycube is 1
 #define MAX_TIME_TO_WALL 3500
 
 #define MOTOR_DEFAULT_SLEW_RATE 1

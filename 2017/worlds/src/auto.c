@@ -1,4 +1,7 @@
 #include "lib.h"
+#ifndef DEFAULT_AUTON
+#define DEFAULT_AUTON 2 // Skills is 4, reg is 7, onlycube is 1
+#endif
 
 void encoderValues() {
   int startL = encoderGet(lencoder);
@@ -46,12 +49,6 @@ void autonomous() {
     break;
   case 6:
     encoderValues();
-    break;
-  case 7:
-    replayF();
-    break;
-  case 8:
-    replayC();
     break;
   }
   while (isAutonomous())
