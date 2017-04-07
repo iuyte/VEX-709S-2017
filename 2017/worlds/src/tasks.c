@@ -2,7 +2,7 @@
 
 void leftTo(void *none) {
   check(1);
-  mutexTake(isThisDone, -1);
+  mutexTake(isThisDone, -22);
   if (leftarr[VALUE] == 0)
     leftarr[VALUE] = 1;
   int power = abs((int)leftarr[POWER]);
@@ -169,7 +169,7 @@ void quickDump(void *none) {
   while (1) delay(500);
 }
 
-void lcdDisplayTime(void *parameter) {
+void lcdDisplayTime(void *none) {
   unsigned long tim;
   int min;
   while (true) {
