@@ -1,7 +1,5 @@
 #include "lib.h"
-#ifndef DEFAULT_AUTON
-#define DEFAULT_AUTON 2 // Skills is 4, reg is 7, onlycube is 1
-#endif
+#include "defaultAuton.h"
 
 void encoderValues() {
   int startL = encoderGet(lencoder);

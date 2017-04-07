@@ -1,4 +1,5 @@
 #include "lib.h"
+#include "defaultAuton.h"
 
 void leftTo(void *none) {
   check(1);
