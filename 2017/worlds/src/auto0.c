@@ -345,8 +345,9 @@ void auto0() {
 
   fastDumpFromWall();
 
-////////////////// BEGIN  \\\\\\\\\\\\\\\\\\\
-\\\\\\\\\\\\\\\\\ PART 2 ////////////////////
+/////////////////
+// BEGIN PART 2
+////////////////
 
   rLiftTo(0, POTBOTTOM);
   timerReset(3);

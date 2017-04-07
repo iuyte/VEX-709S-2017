@@ -22,6 +22,7 @@ void rLiftTo(long wait, int position) {
   if (vars[0] == 0) {set = 0;}
   else if (vars[2] == 0) {set = 2;}
   else if (vars[4] == 0) {set = 4;}
+  else {set = 0;}
   vars[set] = wait;
   vars[set + 1] = position;
   TaskHandle liftHandle = taskCreate(liftToTask, TASK_DEFAULT_STACK_SIZE, (void *)set, TASK_PRIORITY_DEFAULT);
