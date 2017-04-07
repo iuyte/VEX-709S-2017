@@ -55,11 +55,7 @@ void driveSetBack(int Lpower, int Rpower) {
 
 void driveStop(void) { driveSet(0, 0); }
 
-int truerSpeed(int speed) { return trueSpeed(speed); }
-
-int fakeSpeed(int speed) { return speed; }
-
-int gudSpeed(int speed) { return (sgn(speed) * TrueSpeed[abs(speed)] * POWER_CAP); }
+int trueSpeed(int speed) { return (sgn(speed) * TrueSpeed[abs(speed)] * POWER_CAP);}
 
 void accelDrive() {
   prevX = accelX;
