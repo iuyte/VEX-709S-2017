@@ -1,12 +1,18 @@
 <html>
 <head>
-<title>Git Commit history</title>
-</head>
-<body style='align: center; background-color: #bfbfbf; width: 100%; margin: 0px;'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
     .body {
         align: center;
-        background-color: #bfbfbf;
+        background-color: #bfbfdf;
+        width: 100%;
+        margin: 0px;
+        font-family: 'Open Sans', sans-serif;
+        background: red;
+        background: -webkit-linear-gradient(red, yellow);
+        background: -o-linear-gradient(red, yellow);
+        background: -moz-linear-gradient(red, yellow);
+        background: linear-gradient(red, yellow);
     }
 
     .commit {
@@ -16,12 +22,13 @@
         align-self: center;
         align-content: center;
         align-items: center;
-        border-color: black;
-        border-style: groove;
+        border-color: #454585;
+        border-style: groove inset;
         border-radius: 25px;
         padding: 20px;
         margin-left: 25%;
         margin-right: 25%;
+        box-shadow: 10px 10px 5px #888888;
     }
 
     .em {
@@ -31,13 +38,28 @@
     .spacer {
         height: 5%;
     }
+
+    .browse {
+       background-color: #454585;
+       color: white;
+       border: 2px solid #454585;
+       border-radius: 4px;
+    }
+
+    .browse:hover {
+       background-color: #bfbfdf;
+       border-color: #9d9dbf;
+       color: black;
+    }
 </style>
-<div class='commit'><h1>80 Commits</h1></div>
+<title>Git Commit history</title>
+</head>
+<body style='align: center; background-color: #bfbfdf; width: 100%; margin: 0px; font-family: 'Open Sans', sans-serif; background: red; background: -webkit-linear-gradient(red, yellow); background: -o-linear-gradient(red, yellow); background: -moz-linear-gradient(red, yellow); background: linear-gradient(red, yellow);'><div class='commit'><h1>80 Commits</h1></div>
 <br>
 <div class='commit'><p><b>DATE:</b>   Sun Apr 9 00:03:24 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 2a9748db2f3d5928f46a7da8629e7feda150cb16</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2a9748db2f3d5928f46a7da8629e7feda150cb16")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2a9748db2f3d5928f46a7da8629e7feda150cb16")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Deleted stray file in root directory</p>
 <b>Files deleted:</b>
 <ul>
@@ -46,7 +68,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 00:02:05 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> c99aa7f32b3873bf7688d5353be633d53a6043fc</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c99aa7f32b3873bf7688d5353be633d53a6043fc")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c99aa7f32b3873bf7688d5353be633d53a6043fc")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Moved gh-pages to master branch, redirects to now pretty git in /2017/Planning/tools/git.html</p>
 <b>Files added:</b>
 <ul>
@@ -61,7 +83,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 23:07:08 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 60f090905023b0d3aadc60ce49900a14a306be31</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/60f090905023b0d3aadc60ce49900a14a306be31")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/60f090905023b0d3aadc60ce49900a14a306be31")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Created git whatchanged to HTML script for ease of access offline & engineering notebook purposes</p>
 <b>Files added:</b>
 <ul>
@@ -80,7 +102,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 01:08:46 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 4c425ed59c7ce0d4ad6db9499825134adc254ed1</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/4c425ed59c7ce0d4ad6db9499825134adc254ed1")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/4c425ed59c7ce0d4ad6db9499825134adc254ed1")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Cube only auton prototype</p>
 <b>Files modified:</b>
 <ul>
@@ -93,7 +115,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 00:18:45 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> c9d28ae00e5f244a01ed6488229a1250c5afc6de</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c9d28ae00e5f244a01ed6488229a1250c5afc6de")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c9d28ae00e5f244a01ed6488229a1250c5afc6de")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Moved definition of DEFAULT_AUTON to defaultAuton.h so all code doesn\'t have to recompile constantly</p>
 <b>Files added:</b>
 <ul>
@@ -107,7 +129,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 00:14:37 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 849257a598f31e29de1492a0514c5445c1122d26</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/849257a598f31e29de1492a0514c5445c1122d26")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/849257a598f31e29de1492a0514c5445c1122d26")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Eliminated rerun and all of it's components from code</p>
 <b>Files modified:</b>
 <ul>
@@ -127,7 +149,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Apr 7 21:59:59 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 41cde2b08e9b5b784479044bdd6fd4a4d9161898</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/41cde2b08e9b5b784479044bdd6fd4a4d9161898")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/41cde2b08e9b5b784479044bdd6fd4a4d9161898")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Going to give up on rerun after prioritization</p>
 <b>Files added:</b>
 <ul>
@@ -147,7 +169,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Apr 7 19:21:15 2017 +0800</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 588745ae3e31d95dfdc1b4ec0174273c51a0b2a2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/588745ae3e31d95dfdc1b4ec0174273c51a0b2a2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/588745ae3e31d95dfdc1b4ec0174273c51a0b2a2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>fixed odd function duplicate, now using extern for rerunEnabled to ensure global-ness</p>
 <b>Files added:</b>
 <ul>
@@ -160,7 +182,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 22:45:33 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>clean up motors.c</p>
 <b>Files modified:</b>
 <ul>
@@ -169,7 +191,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 21:49:56 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 3e484db1f2724d419dfff6417ad73f2ea8f03c93</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3e484db1f2724d419dfff6417ad73f2ea8f03c93")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3e484db1f2724d419dfff6417ad73f2ea8f03c93")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>cleaned up scaling of motor power</p>
 <b>Files modified:</b>
 <ul>
@@ -178,7 +200,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 21:41:58 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> e79067c598c95cb651848d7cab37cf6c87bfd0a8</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e79067c598c95cb651848d7cab37cf6c87bfd0a8")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e79067c598c95cb651848d7cab37cf6c87bfd0a8")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>eliminated warnings</p>
 <b>Files modified:</b>
 <ul>
@@ -188,7 +210,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 21:38:35 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> cae0e714f0fc5fca70618b9b65b7a3713f24d01d</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cae0e714f0fc5fca70618b9b65b7a3713f24d01d")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cae0e714f0fc5fca70618b9b65b7a3713f24d01d")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixed possibly unitialized variable, increased stack size of LCD task</p>
 <b>Files modified:</b>
 <ul>
@@ -198,7 +220,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Apr 5 19:50:45 2017 -0400</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@gmail.com></p>
 <p><b>KEY:</b> e8ddb674d28afec51d4172bb9153dac52aa0cd87</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e8ddb674d28afec51d4172bb9153dac52aa0cd87")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e8ddb674d28afec51d4172bb9153dac52aa0cd87")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>LCD Task fix - needs test</p>
 <b>Files modified:</b>
 <ul>
@@ -208,7 +230,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 2 15:57:10 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 9ed5d3d4f1f11c2fc3840bc93689e673e32b9205</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9ed5d3d4f1f11c2fc3840bc93689e673e32b9205")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9ed5d3d4f1f11c2fc3840bc93689e673e32b9205")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Attempting to fix LCD handleing task, problem with RERUN ON OR OFF?</p>
 <b>Files modified:</b>
 <ul>
@@ -224,7 +246,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 1 19:34:33 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Decreased delay in replayF</p>
 <b>Files modified:</b>
 <ul>
@@ -233,7 +255,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 1 19:31:29 2017 -1200</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> cb6c4b7a219ac9aadc4addb1de04bd6e443919e2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cb6c4b7a219ac9aadc4addb1de04bd6e443919e2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cb6c4b7a219ac9aadc4addb1de04bd6e443919e2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Upgraded PROS kernel to latest, made rerun more fluent</p>
 <b>Files modified:</b>
 <ul>
@@ -246,7 +268,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Mar 24 15:54:34 2017 -0400</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 33b0261d96165fed5df5dc893b6ed5d0ecf2c91b</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/33b0261d96165fed5df5dc893b6ed5d0ecf2c91b")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/33b0261d96165fed5df5dc893b6ed5d0ecf2c91b")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Apparently file did not commit</p>
 <b>Files modified:</b>
 <ul>
@@ -255,7 +277,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Mar 23 21:04:18 2017 -0400</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 7e5da800c87bf65f1d743ccbf5bed44c121536ab</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7e5da800c87bf65f1d743ccbf5bed44c121536ab")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7e5da800c87bf65f1d743ccbf5bed44c121536ab")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixed incorrect rerun.c logic</p>
 <b>Files modified:</b>
 <ul>
@@ -265,7 +287,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Mar 23 18:36:20 2017 -0400</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>created  rerun, untested</p>
 <b>Files added:</b>
 <ul>
@@ -290,7 +312,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 18 12:56:47 2017 -0400</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> c6a9753ff26144683230b8c3eaeb66c6abd63ce0</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c6a9753ff26144683230b8c3eaeb66c6abd63ce0")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c6a9753ff26144683230b8c3eaeb66c6abd63ce0")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Readded 2 drive motors because passive hang works</p>
 <b>Files modified:</b>
 <ul>
@@ -300,7 +322,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 13:20:10 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Made it so robot does not move unless power expander is plugged in</p>
 <b>Files modified:</b>
 <ul>
@@ -310,7 +332,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:52:35 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> d5113a0c47549b770fddfbb5ab47e147083fb85a</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d5113a0c47549b770fddfbb5ab47e147083fb85a")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d5113a0c47549b770fddfbb5ab47e147083fb85a")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixing git problem with LastSTand</p>
 <b>Files modified:</b>
 <ul>
@@ -392,7 +414,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:45:04 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> b3d1f80c17586a0ab55fb27a93245ced831a2db2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b3d1f80c17586a0ab55fb27a93245ced831a2db2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b3d1f80c17586a0ab55fb27a93245ced831a2db2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Switched lift motors to not truespeed</p>
 <b>Files modified:</b>
 <ul>
@@ -402,7 +424,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:40:57 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 3eeee27d63034cc166cc25991dda3e93192ed2d9</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3eeee27d63034cc166cc25991dda3e93192ed2d9")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3eeee27d63034cc166cc25991dda3e93192ed2d9")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixed JINX Support</p>
 <b>Files modified:</b>
 <ul>
@@ -415,7 +437,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:30:02 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 373fc9eff1c4261c110afc2f8cd2774e9beda386</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/373fc9eff1c4261c110afc2f8cd2774e9beda386")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/373fc9eff1c4261c110afc2f8cd2774e9beda386")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Duplicated the rewrite into a worlds project</p>
 <b>Files added:</b>
 <ul>
@@ -456,7 +478,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:28:33 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 65a68a0577de8e278b432415d9dca6258bf2e1b2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/65a68a0577de8e278b432415d9dca6258bf2e1b2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/65a68a0577de8e278b432415d9dca6258bf2e1b2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Precision and bug fixes</p>
 <b>Files modified:</b>
 <ul>
@@ -468,7 +490,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Mar 8 17:25:19 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 3b2b1d5c900dc354bc6bb085caf0beeae14e2898</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3b2b1d5c900dc354bc6bb085caf0beeae14e2898")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3b2b1d5c900dc354bc6bb085caf0beeae14e2898")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Trying to use joystick acceleraometers to drive</p>
 <b>Files modified:</b>
 <ul>
@@ -477,7 +499,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Mar 8 17:25:00 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> f3e5887306b3c37034976c1406ac3cbcc7386a93</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/f3e5887306b3c37034976c1406ac3cbcc7386a93")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/f3e5887306b3c37034976c1406ac3cbcc7386a93")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Trying to use joystick acceleraometers to drive</p>
 <b>Files modified:</b>
 <ul>
@@ -492,7 +514,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Mar 7 06:42:46 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> efd51a2048e6090ff7bbf4962df072ed9effeae3</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/efd51a2048e6090ff7bbf4962df072ed9effeae3")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/efd51a2048e6090ff7bbf4962df072ed9effeae3")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixed  magic, needs testing</p>
 <b>Files modified:</b>
 <ul>
@@ -510,7 +532,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 14:47:26 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> d95384d6234fe00e20bd9971071ef1a6ae6e00c2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d95384d6234fe00e20bd9971071ef1a6ae6e00c2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d95384d6234fe00e20bd9971071ef1a6ae6e00c2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Still fixing magic</p>
 <b>Files modified:</b>
 <ul>
@@ -523,7 +545,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 14:20:56 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> a4a3a2ded632523328d5d2371831d1512c6dc219</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a4a3a2ded632523328d5d2371831d1512c6dc219")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a4a3a2ded632523328d5d2371831d1512c6dc219")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Still attempting to fix magic</p>
 <b>Files modified:</b>
 <ul>
@@ -533,7 +555,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 14:18:58 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 483faf343181ec7cd5385d699c67ac66b39db30c</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/483faf343181ec7cd5385d699c67ac66b39db30c")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/483faf343181ec7cd5385d699c67ac66b39db30c")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Worked on fixing some magic code to be logical</p>
 <b>Files added:</b>
 <ul>
@@ -549,7 +571,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 13:36:17 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 40e5f90d7af260c51b0cffa1dd80d062ed65db62</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/40e5f90d7af260c51b0cffa1dd80d062ed65db62")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/40e5f90d7af260c51b0cffa1dd80d062ed65db62")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixing issue...?</p>
 <b>Files deleted:</b>
 <ul>
@@ -559,7 +581,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 13:29:51 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 57481f427bfdb7e2d7372ccb2f4c821402a72f52</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/57481f427bfdb7e2d7372ccb2f4c821402a72f52")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/57481f427bfdb7e2d7372ccb2f4c821402a72f52")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Working on configuring code to work with the blrslib mtmgr library</p>
 <b>Files added:</b>
 <ul>
@@ -591,7 +613,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 11:12:32 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> e4da363b47436198fd47e5827ecc6724df6faea3</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e4da363b47436198fd47e5827ecc6724df6faea3")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e4da363b47436198fd47e5827ecc6724df6faea3")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>After these changes were made: we placed highest at competition with 44 points prog skills and 42 driver. 86 total.</p>
 <b>Files modified:</b>
 <ul>
@@ -607,7 +629,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Mar 2 20:43:47 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 8940b8090e10982e1b85fe31ec273c79d3854fb2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8940b8090e10982e1b85fe31ec273c79d3854fb2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8940b8090e10982e1b85fe31ec273c79d3854fb2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Autonomous precision work</p>
 <b>Files modified:</b>
 <ul>
@@ -621,7 +643,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Mar 1 15:50:54 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 8c1e8961a79f4dff05d8746ebfc687ce8403abd4</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8c1e8961a79f4dff05d8746ebfc687ce8403abd4")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8c1e8961a79f4dff05d8746ebfc687ce8403abd4")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Nearly confirmed travel to Indiana skills-only competition. Created project. Going to try for last cube as well as 4 stars left in middle of fence</p>
 <b>Files added:</b>
 <ul>
@@ -777,7 +799,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 26 15:17:13 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Implemented a motorSlew task to go easier on motors. This could potentially free up 2 motors for the drive to use</p>
 <b>Files added:</b>
 <ul>
@@ -805,7 +827,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 26 11:54:09 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> e16ce1fdb96a5dcefeaad3d9097bba692261d9b0</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e16ce1fdb96a5dcefeaad3d9097bba692261d9b0")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e16ce1fdb96a5dcefeaad3d9097bba692261d9b0")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>We did well at the competition and won. In addition, we nailed a 77 point skills (35 programming and 42 driver), the highest in the state prior to this being 66. Our fingers are crossed for this to hold</p>
 <b>Files added:</b>
 <ul>
@@ -853,7 +875,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 25 14:25:50 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 67f85e65f4560dd89e3361f2fe82832a1938c1d8</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/67f85e65f4560dd89e3361f2fe82832a1938c1d8")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/67f85e65f4560dd89e3361f2fe82832a1938c1d8")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Final competition preparations & improvements for</p>
 <b>Files added:</b>
 <ul>
@@ -876,7 +898,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 23:32:25 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 6af53e635c48d70d72b4f03e4a8a579f03fecdc9</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/6af53e635c48d70d72b4f03e4a8a579f03fecdc9")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/6af53e635c48d70d72b4f03e4a8a579f03fecdc9")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>skills work. Nothing in particular, except I found out now after about a month that my timer functions dont work. Going to look into it.</p>
 <b>Files modified:</b>
 <ul>
@@ -909,7 +931,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:38:06 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> 913b661f221172823483bec1e103f78e79e50f82</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/913b661f221172823483bec1e103f78e79e50f82")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/913b661f221172823483bec1e103f78e79e50f82")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixing git</p>
 <b>Files added:</b>
 <ul>
@@ -948,7 +970,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:37:08 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> 3a9ed0660e85b661a4d4680c4ea5f01a45db6349</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3a9ed0660e85b661a4d4680c4ea5f01a45db6349")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3a9ed0660e85b661a4d4680c4ea5f01a45db6349")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Fixing weird git upload</p>
 <b>Files added:</b>
 <ul>
@@ -966,7 +988,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:36:31 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> d0dd230861cd1ba7e8c01690ab263bca8d293c76</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d0dd230861cd1ba7e8c01690ab263bca8d293c76")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d0dd230861cd1ba7e8c01690ab263bca8d293c76")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Uploading code that didnt</p>
 <b>Files added:</b>
 <ul>
@@ -998,7 +1020,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:19:17 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> fba518aa32e9ca518dcacbaa3fc1eb252798e3e3</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fba518aa32e9ca518dcacbaa3fc1eb252798e3e3")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fba518aa32e9ca518dcacbaa3fc1eb252798e3e3")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Auton precision  work</p>
 <b>Files added:</b>
 <ul>
@@ -1023,7 +1045,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 14:59:56 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 357490c31f04dfc75b61f79a5444e4acf89d1f68</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/357490c31f04dfc75b61f79a5444e4acf89d1f68")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/357490c31f04dfc75b61f79a5444e4acf89d1f68")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Working on our code for 709s's 'last stand', trying to make a very good skills program so we can be top in NYS and qualify for worlds. My re-engineered code includes my encDep library as well as JINX support (when enabled from constants.h)</p>
 <b>Files added:</b>
 <ul>
@@ -1084,7 +1106,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 19 09:32:01 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 2e77ad68889b69231d5eff153bbeea31d70c67fc</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2e77ad68889b69231d5eff153bbeea31d70c67fc")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2e77ad68889b69231d5eff153bbeea31d70c67fc")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>my code post-states</p>
 <b>Files added:</b>
 <ul>
@@ -1114,7 +1136,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 17 10:44:21 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> d2ec322d54f6891dd980703661b8aa468c1d13d1</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d2ec322d54f6891dd980703661b8aa468c1d13d1")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d2ec322d54f6891dd980703661b8aa468c1d13d1")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Added first - draft skills in auto2.c, moved standard auton to auto0.c, and auto1.c is now standard auton minus the cube</p>
 <b>Files added:</b>
 <ul>
@@ -1137,7 +1159,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 14 21:28:57 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> aa9d3e50a2145046325c6b41de84f81ba2592b1d</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/aa9d3e50a2145046325c6b41de84f81ba2592b1d")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/aa9d3e50a2145046325c6b41de84f81ba2592b1d")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Seperated different autons into respective files for ease of access</p>
 <b>Files added:</b>
 <ul>
@@ -1155,7 +1177,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 14 12:28:36 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 016e583e5f2318aa12181e5e1367fa4e9802d5d1</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/016e583e5f2318aa12181e5e1367fa4e9802d5d1")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/016e583e5f2318aa12181e5e1367fa4e9802d5d1")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Autonomous precision, added function turnNoFix to get within 15 second time, not completely within yet</p>
 <b>Files added:</b>
 <ul>
@@ -1169,7 +1191,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Mon Feb 6 21:21:16 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 85e5c49b4893e4d66d3a1e8797c70485569d7fc3</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/85e5c49b4893e4d66d3a1e8797c70485569d7fc3")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/85e5c49b4893e4d66d3a1e8797c70485569d7fc3")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Worked on auto1() precision</p>
 <b>Files modified:</b>
 <ul>
@@ -1183,7 +1205,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Mon Feb 6 20:48:51 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 7db0b59587d6c4c14656ca0de2b091a0f9b51506</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7db0b59587d6c4c14656ca0de2b091a0f9b51506")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7db0b59587d6c4c14656ca0de2b091a0f9b51506")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>The auto0() kind-of works, so I left it as is, copied code into auto1(), and am working on it from there. New idea: with all these autonomous options, I should be able to make a few more (and more simple) autonomouses. Ideas currently include:\n -Go get cube and dump, \n -beyond the cube, go knock off stars from the fence\n -Get stars and dump, knock from fence\n -Go straight to fence and block opposing alliance from scoring</p>
 <b>Files modified:</b>
 <ul>
@@ -1197,7 +1219,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Mon Feb 6 13:14:38 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> b89cc76c17d89a65df45d144502c6a2b56d0e7b2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b89cc76c17d89a65df45d144502c6a2b56d0e7b2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b89cc76c17d89a65df45d144502c6a2b56d0e7b2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>WOrked on perfecting autonomous</p>
 <b>Files modified:</b>
 <ul>
@@ -1212,7 +1234,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 14:16:47 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 19fb75eab1e2aa6e6602a80574ce78018f93526e</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/19fb75eab1e2aa6e6602a80574ce78018f93526e")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/19fb75eab1e2aa6e6602a80574ce78018f93526e")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br> 1) Added support for as many autonomous programs as I want (and selection) \n 2) Added some stuff to the end of my position-based driving and turning funtions to fix going over values</p>
 <b>Files modified:</b>
 <ul>
@@ -1223,7 +1245,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 13:54:47 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> b79cc4dee672bd7ea67cc6c5b26805e857c9f044</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b79cc4dee672bd7ea67cc6c5b26805e857c9f044")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b79cc4dee672bd7ea67cc6c5b26805e857c9f044")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Gave up on 'position management' to opt for simply better code for moving to a certain gyro or encoder position, created new BETA after renaming old code DEAD and dating, added all improvements to new BETA code</p>
 <b>Files added:</b>
 <ul>
@@ -1262,7 +1284,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:50:15 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 1f783689010c5e53ab9a44c8ab8d672f72688e41</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1f783689010c5e53ab9a44c8ab8d672f72688e41")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1f783689010c5e53ab9a44c8ab8d672f72688e41")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Finally fixed a bunch of crap that just randomly happened to my code from git</p>
 <b>Files modified:</b>
 <ul>
@@ -1279,7 +1301,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:37:17 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> ef73bc5590359b863771d68384a534294ab31dd9</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/ef73bc5590359b863771d68384a534294ab31dd9")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/ef73bc5590359b863771d68384a534294ab31dd9")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Trying to fix git</p>
 <b>Files deleted:</b>
 <ul>
@@ -1288,7 +1310,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:35:06 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> e5141102db8af40aea4118a544d7d9175c9e9efe</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e5141102db8af40aea4118a544d7d9175c9e9efe")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e5141102db8af40aea4118a544d7d9175c9e9efe")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Updated files</p>
 <b>Files added:</b>
 <ul>
@@ -1319,7 +1341,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:30:47 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 277f3eaccbab5e120b9066c5a697b1cf6d97347f</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/277f3eaccbab5e120b9066c5a697b1cf6d97347f")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/277f3eaccbab5e120b9066c5a697b1cf6d97347f")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Gave up on lift position management (mostly unneeded) to focus on position management of the drive (far more important)</p>
 <b>Files modified:</b>
 <ul>
@@ -1334,7 +1356,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 22:20:46 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> cd08e32c1bad627eceec54fad7ec902eb65af50c</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cd08e32c1bad627eceec54fad7ec902eb65af50c")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cd08e32c1bad627eceec54fad7ec902eb65af50c")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>corrected spelling</p>
 <b>Files modified:</b>
 <ul>
@@ -1343,7 +1365,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 22:13:03 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 5ba4117fbd7258d9b67af12d4fd23d82be95aee6</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/5ba4117fbd7258d9b67af12d4fd23d82be95aee6")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/5ba4117fbd7258d9b67af12d4fd23d82be95aee6")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Added opcontrol selection on LCD menu (and storage of choice)</p>
 <b>Files modified:</b>
 <ul>
@@ -1356,13 +1378,13 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 21:27:22 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> d0e9eab0fb73092a8a2289d3dc0226cc97987269</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d0e9eab0fb73092a8a2289d3dc0226cc97987269")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d0e9eab0fb73092a8a2289d3dc0226cc97987269")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Made some stuff on my last </p>
 <br></div>
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 21:20:01 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 8b16ac1d6eaabb7605762e5e55308d993151ccb4</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8b16ac1d6eaabb7605762e5e55308d993151ccb4")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8b16ac1d6eaabb7605762e5e55308d993151ccb4")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Worked on lcdDisplayTme task to include autonomous mode selection and storage of selected autonomous mode between cortex power cycles using the filesystem that my usage of PROS allows me to have (can't do THAT in RobotC)</p>
 <b>Files added:</b>
 <ul>
@@ -1376,7 +1398,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 19:34:18 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> a5918c431d1fcc9fcb495bbe999013bdce314da0</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a5918c431d1fcc9fcb495bbe999013bdce314da0")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a5918c431d1fcc9fcb495bbe999013bdce314da0")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>cleaned up code a little bit (still needs testing)</p>
 <b>Files modified:</b>
 <ul>
@@ -1391,7 +1413,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 21:30:04 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 1c0bcfcd48723a83f8860c9848354addca1fac6a</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1c0bcfcd48723a83f8860c9848354addca1fac6a")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1c0bcfcd48723a83f8860c9848354addca1fac6a")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Changed a little bit of the auton such that running into the wall also uses position management</p>
 <b>Files modified:</b>
 <ul>
@@ -1400,7 +1422,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 21:23:31 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 1d746f6e8831c3588d079d65c17880ff317714ba</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1d746f6e8831c3588d079d65c17880ff317714ba")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1d746f6e8831c3588d079d65c17880ff317714ba")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Finished first draft of position management. still needs testing</p>
 <b>Files modified:</b>
 <ul>
@@ -1410,7 +1432,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 19:32:23 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>worked on new theory</p>
 <b>Files modified:</b>
 <ul>
@@ -1421,7 +1443,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 19:29:05 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> 3316adf197b7610c6363e79ad4bfaa078481f65d</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3316adf197b7610c6363e79ad4bfaa078481f65d")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3316adf197b7610c6363e79ad4bfaa078481f65d")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Set theme jekyll-theme-hacker</p>
 <b>Files added:</b>
 <ul>
@@ -1430,7 +1452,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 22:07:09 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 7869a313d4ec3783c1d839c91788f762a8ca3c5c</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7869a313d4ec3783c1d839c91788f762a8ca3c5c")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7869a313d4ec3783c1d839c91788f762a8ca3c5c")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Lots of stuff - Auton presicion on regular project, new project created to test some constant PID-like code I created that shoul hopefully help a great deal. Have not tested new project yet, tomorrow probably if homework permits. Very glad I had a snow day today and was able to do work with this and FTC - got a lot done</p>
 <b>Files modified:</b>
 <ul>
@@ -1462,7 +1484,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 20:05:32 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Added a stopDrive() function</p>
 <b>Files modified:</b>
 <ul>
@@ -1471,7 +1493,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 18:10:59 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 1b07a401b002c22d68d231f662b11d66413d166f</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1b07a401b002c22d68d231f662b11d66413d166f")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1b07a401b002c22d68d231f662b11d66413d166f")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>test commit</p>
 <b>Files modified:</b>
 <ul>
@@ -1482,7 +1504,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 15:08:56 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 2256fbe99e06b57607b0595820a3bc12648f951a</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2256fbe99e06b57607b0595820a3bc12648f951a")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2256fbe99e06b57607b0595820a3bc12648f951a")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Changes all sensor values in driveTo() to absolute values</p>
 <b>Files modified:</b>
 <ul>
@@ -1491,7 +1513,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 15:04:04 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 5f15ab824413886b74ef4228d3f2840f6d0d8147</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/5f15ab824413886b74ef4228d3f2840f6d0d8147")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/5f15ab824413886b74ef4228d3f2840f6d0d8147")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Added printf of sensor values (will comment out in real competitions)</p>
 <b>Files modified:</b>
 <ul>
@@ -1500,7 +1522,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 15:00:48 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 35320e906b19aef7719d7a9ed853554f2a987650</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/35320e906b19aef7719d7a9ed853554f2a987650")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/35320e906b19aef7719d7a9ed853554f2a987650")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Compiled code</p>
 <b>Files modified:</b>
 <ul>
@@ -1509,7 +1531,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 13:21:00 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 28475d6259e44910b254601172244ab22077d1d2</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/28475d6259e44910b254601172244ab22077d1d2")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/28475d6259e44910b254601172244ab22077d1d2")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>#pragma once in constants.h, added stopDriveAfter to FunctionVars.h</p>
 <b>Files modified:</b>
 <ul>
@@ -1521,7 +1543,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 12:54:49 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> bb911123245b766542d7cd18431538144000239d</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/bb911123245b766542d7cd18431538144000239d")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/bb911123245b766542d7cd18431538144000239d")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Made it more descriptive</p>
 <b>Files modified:</b>
 <ul>
@@ -1530,7 +1552,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 12:47:54 2017 -0500</p>
 <p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
 <p><b>KEY:</b> 71481b048e21a0b15dd46e2fadce190b95f70d4b</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/71481b048e21a0b15dd46e2fadce190b95f70d4b")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/71481b048e21a0b15dd46e2fadce190b95f70d4b")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>real first commit</p>
 <b>Files added:</b>
 <ul>
@@ -1712,7 +1734,7 @@
 <div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 12:13:20 2017 -0500</p>
 <p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
 <p><b>KEY:</b> fe43977f55feedd713467930ee031068371215b0</p>
-<button style='color: #0000EE; shape: round;' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fe43977f55feedd713467930ee031068371215b0")'>Browse at this point in repo</button>
+<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fe43977f55feedd713467930ee031068371215b0")'>Browse at this point in repo</button>
 <p><b>DESCRIPTION:</b><br>Initial commit</p>
 <b>Files added:</b>
 <ul>

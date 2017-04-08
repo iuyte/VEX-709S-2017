@@ -1,10 +1,13 @@
 import sys, chardet
 
-style = """
+style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
     .body {
         align: center;
-        background-color: #bfbfbf;
+        background-color: #bfbfdf;
+        width: 100%;
+        margin: 0px;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .commit {
@@ -14,12 +17,13 @@ style = """
         align-self: center;
         align-content: center;
         align-items: center;
-        border-color: black;
-        border-style: groove;
+        border-color: #454585;
+        border-style: groove inset;
         border-radius: 25px;
         padding: 20px;
         margin-left: 25%;
         margin-right: 25%;
+        box-shadow: 10px 10px 5px #888888;
     }
 
     .em {
@@ -28,6 +32,19 @@ style = """
 
     .spacer {
         height: 5%;
+    }
+
+    .browse {
+       background-color: #454585;
+       color: white;
+       border: 2px solid #454585;
+       border-radius: 4px;
+    }
+
+    .browse:hover {
+       background-color: #bfbfdf;
+       border-color: #9d9dbf;
+       color: black;
     }
 </style>
 """
@@ -45,7 +62,7 @@ def styleContent(date, commitkey, author, description, filesModified, filesAdded
     out += "<p><b>DATE:</b> " + date + "</p>\n"
     out += "<p><b>AUTHOR:</b> " + author + "</p>\n"
     out += "<p><b>KEY:</b> " + commitkey + "</p>\n"
-    out += "<button style='color: #0000EE; shape: round;' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commitkey + "\")'>" + "Browse at this point in repo" + "</button>\n"
+    out += "<button class='browse' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commitkey + "\")'>" + "Browse at this point in repo" + "</button>\n"
     out += "<p><b>DESCRIPTION:</b><br>" + description + "</p>\n"
     if len(filesAdded) > 0:
         out += "<b>Files added:</b>\n<ul>\n"
@@ -75,7 +92,7 @@ def removeSpaces(content):
 def parseContent(content):
     if content == "":
         assert False, "File is empty or does not exist"
-    out = "<html>\n<head>\n<title>Git Commit history</title>\n</head>\n<body style='align: center; background-color: #bfbfbf; width: 100%; margin: 0px;'>" + style
+    out = "<html>\n<head>\n" + style + "<title>Git Commit history</title>\n</head>\n<body style='background-color: #bfbfdf;'>"
     count = 0
     commits = content.split("commit ")
     out += "<div class='commit'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
