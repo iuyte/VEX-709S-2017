@@ -2,32 +2,33 @@ import sys, chardet
 
 style = """
 <style>
-     .body {
-         align: center;
-         background-color: #bfbfbf;
-     }
+    .body {
+        align: center;
+        background-color: #bfbfbf;
+    }
 
-      .commit {
-          background-color: #efefef;
-          width: 50%;
-          align: center;
-          align-self: center;
-          align-content: center;
-          align-items: center;
-          border-color: black;
-          border-style: groove;
-          border-radius: 25px;
-          padding: 20px;
-     }
+    .commit {
+        background-color: #efefef;
+        width: 50%;
+        align: center;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        border-color: black;
+        border-style: groove;
+        border-radius: 25px;
+        padding: 20px;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
 
-     .em {
-       cursor: pointer;
-     }
+    .em {
+        cursor: pointer;
+    }
 
-     .spacer {
-         height: 5%;
-     }
-
+    .spacer {
+        height: 5%;
+    }
 </style>
 """
 
@@ -74,7 +75,7 @@ def removeSpaces(content):
 def parseContent(content):
     if content == "":
         assert False, "File is empty or does not exist"
-    out = "<html>\n<head>\n<title>Git Commit history</title>\n</head>\n<body style='align: center; background-color: #bfbfbf;'>" + style
+    out = "<html>\n<head>\n<title>Git Commit history</title>\n</head>\n<body style='align: center; background-color: #bfbfbf; width: 100%; margin: 0px;'>" + style
     count = 0
     commits = content.split("commit ")
     out += "<div class='commit'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
