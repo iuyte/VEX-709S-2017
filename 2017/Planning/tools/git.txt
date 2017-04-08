@@ -1,3 +1,37 @@
+commit 2a9748db2f3d5928f46a7da8629e7feda150cb16
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:03:24 2017 +0800
+
+    Deleted stray file in root directory
+
+:100644 000000 668c891... 0000000... D	git.txt
+
+commit c99aa7f32b3873bf7688d5353be633d53a6043fc
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:02:05 2017 +0800
+
+    Moved gh-pages to master branch, redirects to now pretty git in /2017/Planning/tools/git.html
+
+:100644 100644 98e2bbe... 99ed427... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 ad9ff49... 22c35d4... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 4fe0735... 24fab66... M	2017/Planning/tools/git.html
+:000000 100644 0000000... 668c891... A	git.txt
+:000000 100644 0000000... 134d7b0... A	index.html
+
+commit 60f090905023b0d3aadc60ce49900a14a306be31
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 8 23:07:08 2017 +0800
+
+    Created git whatchanged to HTML script for ease of access offline & engineering notebook purposes
+
+:000000 100644 0000000... 98e2bbe... A	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:000000 100644 0000000... 1800833... A	2017/Planning/tools/cleanup.py
+:000000 100644 0000000... ad9ff49... A	2017/Planning/tools/cleanuphelp.py
+:000000 100644 0000000... 4fe0735... A	2017/Planning/tools/git.html
+:000000 100644 0000000... e7bebcf... A	2017/Planning/tools/git.txt
+:100644 000000 89cccbf... 0000000... D	2017/Planning/~$Auto Plan.pptx
+:100644 100644 9dc5c0c... 989b537... M	2017/worlds/bin/output.bin
+
 commit 4c425ed59c7ce0d4ad6db9499825134adc254ed1
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Sat Apr 8 01:08:46 2017 +0800
