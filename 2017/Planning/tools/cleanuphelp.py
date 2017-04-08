@@ -92,7 +92,7 @@ def removeSpaces(content):
 def parseContent(content):
     if content == "":
         assert False, "File is empty or does not exist"
-    out = "<html>\n<head>\n" + style + "<title>Git Commit history</title>\n</head>\n<body style='background-color: #bfbfdf;'>"
+    out = "<html>\n<head>\n" + style + "<title>Git Commit history</title>\n</head>\n<body style='background-color: #bfbfdf;' class='body'>"
     count = 0
     commits = content.split("commit ")
     out += "<div class='commit'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
