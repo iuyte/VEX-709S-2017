@@ -1,3 +1,53 @@
+commit 52cdf9096a4731f10d401578bf22e81de7a84509
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:35:15 2017 +0800
+
+    changed font to Open Sans
+
+:100644 100644 1492bca... fcc6d92... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 bc6ac87... 6165b58... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 e6aa035... 975b146... M	2017/Planning/tools/git.html
+
+commit d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:32:11 2017 +0800
+
+    Very slight style changes
+
+:100644 100644 9bcfc4a... 1492bca... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 2edca43... bc6ac87... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 2a02340... e6aa035... M	2017/Planning/tools/git.html
+
+commit 9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:25:29 2017 +0800
+
+    minor style changes
+
+:100644 100644 6aba4c2... 9bcfc4a... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 10702e2... 2edca43... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 a2d67ca... 2a02340... M	2017/Planning/tools/git.html
+
+commit 8e3cd78e19f757d938779dc1348fddbf237c45e9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:20:57 2017 +0800
+
+    centered css for git.html
+
+:100644 100644 99ed427... 6aba4c2... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 22c35d4... 10702e2... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 9a62bec... a2d67ca... M	2017/Planning/tools/git.html
+
+commit b4578833dc62b20fb9d2382f5ed6c7b5297bacb7
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:07:42 2017 +0800
+
+    Fixed broken link in index.html, updated git.txt and git.html in tools
+
+:100644 100644 24fab66... 9a62bec... M	2017/Planning/tools/git.html
+:100644 100644 e7bebcf... f97cf8f... M	2017/Planning/tools/git.txt
+:100644 100644 134d7b0... 6010751... M	index.html
+
 commit 2a9748db2f3d5928f46a7da8629e7feda150cb16
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Sun Apr 9 00:03:24 2017 +0800
