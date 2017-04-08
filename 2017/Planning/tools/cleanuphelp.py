@@ -23,7 +23,7 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
         padding: 20px;
         margin-left: 25%;
         margin-right: 25%;
-        box-shadow: 10px 10px 5px #888888;
+        box-shadow: 10px 10px 5px #777777;
     }
 
     .em {
