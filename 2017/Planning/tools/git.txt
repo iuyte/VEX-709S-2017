@@ -1,3 +1,23 @@
+commit 5550a70727f1080d0b5118b55ea947a59a9c891b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 22:31:43 2017 +0800
+
+    changed order of elements and added a link to each commit, set prototype for new button
+
+:100644 100644 fcc6d92... 803f4f7... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 6165b58... 45bcd35... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 fdd0139... 1181e69... M	2017/Planning/tools/git.html
+:000000 100644 0000000... ae420c6... A	2017/Planning/tools/link.png
+
+commit e334e4547e5ad9f8298ef67153bbbc2dd85821d3
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:47:53 2017 +0800
+
+    updated git log
+
+:100644 100644 975b146... fdd0139... M	2017/Planning/tools/git.html
+:100644 100644 f97cf8f... 60e853b... M	2017/Planning/tools/git.txt
+
 commit 52cdf9096a4731f10d401578bf22e81de7a84509
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Sun Apr 9 01:35:15 2017 +0800
