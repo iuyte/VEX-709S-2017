@@ -7,8 +7,6 @@ f1 = args[0]
 f2 = args[1]
 
 
-en=open(f1, mode="r")
-en.close()
 r=open(f1, mode="r")
 outHTML = cleanuphelp.parseContent(r.read())
 r.close()

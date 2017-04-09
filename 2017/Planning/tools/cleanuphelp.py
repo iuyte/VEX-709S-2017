@@ -72,6 +72,11 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
 
 </style>
 """
+script="""
+<script>
+
+</script>
+"""
 
 def indexInStr(index, string):
     out = 0
@@ -83,19 +88,19 @@ def indexInStr(index, string):
 
 def styleContent(commit):
     out = "<div class='commit' id='" + commit.commitkey + "'>"
-    out += "<p><b onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "\")'>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commit.commitkey + "'>" + commit.commitkey + "</a></p>"
+    out += "<p><b onclick='window.open(\"https://github.com/iuyte/VEX-709s/commit/" + commit.commitkey + "\")'>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commit.commitkey + "'>" + commit.commitkey + "</a></p>"
     out += "<p><b>Date:</b> " + commit.date + "</p>\n"
     out += "<p><b>Author:</b> " + commit.author + "</p>\n"
     out += "<p><b>Description:</b><br>" + commit.description + "</p>\n"
     if len(commit.filesAdded) > 0:
         out += "<b>Files added:</b>\n<ul>\n"
         for i in range(len(commit.filesAdded)):
-            out += "<li>" + commit.filesAdded[i] + "</li>\n"
+            out += "<li class='link' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "/" + commit.filesAdded[i] + "\")'>" + commit.filesAdded[i] + "</li>\n"
         out += "</ul>"
     if len(commit.filesModified) > 0:
         out += "<b>Files modified:</b>\n<ul>\n"
         for i in range(len(commit.filesModified)):
-            out += "<li>" + commit.filesModified[i] + "</li>\n"
+            out += "<li class='link' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "/" + commit.filesModified[i] +"\")'>" + commit.filesModified[i] + "</li>\n"
         out += "</ul>"
     if len(commit.filesDeleted) > 0:
         out += "<b>Files deleted:</b>\n<ul>\n"
@@ -121,6 +126,7 @@ def parseContent(content):
     commits = content.split("commit ")
     out += "<div class='commit' id='top'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
     commit = 0
+    lcom = ""
     lcommits = []
     for commit in range(1, len(commits)):
         aline = 0
@@ -164,4 +170,5 @@ def parseContent(content):
         out += styleContent(tcommit) + "<div class='spacer'></div>"
     saveList(lcommits)
     out += "</body>\n</html>\n"
+    lcom = commitkey
     return out

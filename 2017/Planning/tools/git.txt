@@ -1,3 +1,15 @@
+commit 1ef684669f6b529b49d9614cbab497b268e7ff3f
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Apr 10 00:53:36 2017 +0800
+
+    Updated logs
+
+:100644 100644 d2e9838... 36d96d9... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 e82e871... f980169... M	2017/Planning/tools/commit.py
+:100644 100644 e1f688f... ff5fb1b... M	2017/Planning/tools/git.html
+:100644 100644 2d3477b... ad4a37a... M	2017/Planning/tools/git.txt
+:100644 100644 374d5d5... 164c880... M	2017/Planning/tools/log.json
+
 commit 9c95ab3515ceef27b009c2055b9683bc81b9e268
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Mon Apr 10 00:35:11 2017 +0800
