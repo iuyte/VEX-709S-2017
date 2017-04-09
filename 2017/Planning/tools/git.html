@@ -10,6 +10,21 @@
         font-family: 'Open Sans', sans-serif;
     }
 
+    .link {
+       color: black;
+       text-decoration: none;
+    }
+
+    .link:visited {
+       color: black;
+       text-decoration: none;
+    }
+
+    .link:hover {
+       color: #0000EE;
+       text-decoration: underline;
+    }
+
     .commit {
         background-color: #efefef;
         width: 50%;
@@ -34,11 +49,18 @@
         height: 5%;
     }
 
+    .bcon {
+       width: 8%;
+    }
+
     .browse {
        background-color: #454585;
        color: white;
        border: 2px solid #454585;
        border-radius: 4px;
+       position: absolute;
+       right: 25%;
+       display: none;
     }
 
     .browse:hover {
@@ -46,80 +68,85 @@
        border-color: #9d9dbf;
        color: black;
     }
+
+    .bcon:hover .browse {
+       display: inline;
+    }
+
+    .cwa {
+       width: 29px;
+       height: 29px;
+       visibility: visible;
+    }
+
+    .hid {
+       visibility: hidden;
+    }
+
+    .hid:hover {
+       visibility: visible;
+    }
+
 </style>
 <title>Git Commit history</title>
 </head>
-<body style='background-color: #bfbfdf;' class='body'><div class='commit'><h1>85 Commits</h1></div>
+<body style='background-color: #bfbfdf;' class='body'><div class='commit' id='top'><h1>85 Commits</h1></div>
 <br>
-<div class='commit'><p><b>DATE:</b>   Sun Apr 9 01:35:15 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 52cdf9096a4731f10d401578bf22e81de7a84509</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/52cdf9096a4731f10d401578bf22e81de7a84509")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>changed font to Open Sans</p>
+<div class='commit' id='52cdf9096a4731f10d401578bf22e81de7a84509'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#52cdf9096a4731f10d401578bf22e81de7a84509'>52cdf9096a4731f10d401578bf22e81de7a84509</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 01:35:15 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>changed font to Open Sans</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc</li>
 <li>2017/Planning/tools/cleanuphelp.py</li>
 <li>2017/Planning/tools/git.html</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 01:32:11 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Very slight style changes</p>
+<div class='spacer'></div><div class='commit' id='d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b'>d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 01:32:11 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Very slight style changes</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc</li>
 <li>2017/Planning/tools/cleanuphelp.py</li>
 <li>2017/Planning/tools/git.html</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 01:25:29 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>minor style changes</p>
+<div class='spacer'></div><div class='commit' id='9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9'>9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 01:25:29 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>minor style changes</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc</li>
 <li>2017/Planning/tools/cleanuphelp.py</li>
 <li>2017/Planning/tools/git.html</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 00:20:57 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 8e3cd78e19f757d938779dc1348fddbf237c45e9</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8e3cd78e19f757d938779dc1348fddbf237c45e9")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>centered css for git.html</p>
+<div class='spacer'></div><div class='commit' id='8e3cd78e19f757d938779dc1348fddbf237c45e9'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#8e3cd78e19f757d938779dc1348fddbf237c45e9'>8e3cd78e19f757d938779dc1348fddbf237c45e9</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 00:20:57 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>centered css for git.html</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc</li>
 <li>2017/Planning/tools/cleanuphelp.py</li>
 <li>2017/Planning/tools/git.html</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 00:07:42 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> b4578833dc62b20fb9d2382f5ed6c7b5297bacb7</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b4578833dc62b20fb9d2382f5ed6c7b5297bacb7")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixed broken link in index.html, updated git.txt and git.html in tools</p>
+<div class='spacer'></div><div class='commit' id='b4578833dc62b20fb9d2382f5ed6c7b5297bacb7'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#b4578833dc62b20fb9d2382f5ed6c7b5297bacb7'>b4578833dc62b20fb9d2382f5ed6c7b5297bacb7</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 00:07:42 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixed broken link in index.html, updated git.txt and git.html in tools</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Planning/tools/git.html</li>
 <li>2017/Planning/tools/git.txt</li>
 <li>index.html</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 00:03:24 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 2a9748db2f3d5928f46a7da8629e7feda150cb16</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2a9748db2f3d5928f46a7da8629e7feda150cb16")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Deleted stray file in root directory</p>
+<div class='spacer'></div><div class='commit' id='2a9748db2f3d5928f46a7da8629e7feda150cb16'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#2a9748db2f3d5928f46a7da8629e7feda150cb16'>2a9748db2f3d5928f46a7da8629e7feda150cb16</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 00:03:24 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Deleted stray file in root directory</p>
 <b>Files deleted:</b>
 <ul>
 <li>git.txt</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 9 00:02:05 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> c99aa7f32b3873bf7688d5353be633d53a6043fc</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c99aa7f32b3873bf7688d5353be633d53a6043fc")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Moved gh-pages to master branch, redirects to now pretty git in /2017/Planning/tools/git.html</p>
+<div class='spacer'></div><div class='commit' id='c99aa7f32b3873bf7688d5353be633d53a6043fc'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#c99aa7f32b3873bf7688d5353be633d53a6043fc'>c99aa7f32b3873bf7688d5353be633d53a6043fc</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 9 00:02:05 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Moved gh-pages to master branch, redirects to now pretty git in /2017/Planning/tools/git.html</p>
 <b>Files added:</b>
 <ul>
 <li>git.txt</li>
@@ -130,11 +157,9 @@
 <li>2017/Planning/tools/cleanuphelp.py</li>
 <li>2017/Planning/tools/git.html</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 23:07:08 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 60f090905023b0d3aadc60ce49900a14a306be31</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/60f090905023b0d3aadc60ce49900a14a306be31")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Created git whatchanged to HTML script for ease of access offline & engineering notebook purposes</p>
+<div class='spacer'></div><div class='commit' id='60f090905023b0d3aadc60ce49900a14a306be31'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#60f090905023b0d3aadc60ce49900a14a306be31'>60f090905023b0d3aadc60ce49900a14a306be31</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Apr 8 23:07:08 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Created git whatchanged to HTML script for ease of access offline & engineering notebook purposes</p>
 <b>Files added:</b>
 <ul>
 <li>2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc</li>
@@ -149,11 +174,9 @@
 <ul>
 <li>2017/Planning/~$Auto Plan.pptx</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 01:08:46 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 4c425ed59c7ce0d4ad6db9499825134adc254ed1</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/4c425ed59c7ce0d4ad6db9499825134adc254ed1")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Cube only auton prototype</p>
+<div class='spacer'></div><div class='commit' id='4c425ed59c7ce0d4ad6db9499825134adc254ed1'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#4c425ed59c7ce0d4ad6db9499825134adc254ed1'>4c425ed59c7ce0d4ad6db9499825134adc254ed1</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Apr 8 01:08:46 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Cube only auton prototype</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/include/functions.h</li>
@@ -162,11 +185,9 @@
 <li>2017/worlds/src/functions.c</li>
 <li>2017/worlds/src/jerk.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 00:18:45 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> c9d28ae00e5f244a01ed6488229a1250c5afc6de</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c9d28ae00e5f244a01ed6488229a1250c5afc6de")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Moved definition of DEFAULT_AUTON to defaultAuton.h so all code doesn\'t have to recompile constantly</p>
+<div class='spacer'></div><div class='commit' id='c9d28ae00e5f244a01ed6488229a1250c5afc6de'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#c9d28ae00e5f244a01ed6488229a1250c5afc6de'>c9d28ae00e5f244a01ed6488229a1250c5afc6de</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Apr 8 00:18:45 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Moved definition of DEFAULT_AUTON to defaultAuton.h so all code doesn\'t have to recompile constantly</p>
 <b>Files added:</b>
 <ul>
 <li>2017/worlds/include/defaultAuton.h</li>
@@ -176,11 +197,9 @@
 <li>2017/worlds/src/auto.c</li>
 <li>2017/worlds/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 8 00:14:37 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 849257a598f31e29de1492a0514c5445c1122d26</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/849257a598f31e29de1492a0514c5445c1122d26")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Eliminated rerun and all of it's components from code</p>
+<div class='spacer'></div><div class='commit' id='849257a598f31e29de1492a0514c5445c1122d26'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#849257a598f31e29de1492a0514c5445c1122d26'>849257a598f31e29de1492a0514c5445c1122d26</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Apr 8 00:14:37 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Eliminated rerun and all of it's components from code</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/bin/output.bin</li>
@@ -196,11 +215,9 @@
 <li>2017/worlds/src/rerun.c</li>
 <li>2017/worlds/src/rerunHelper.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Apr 7 21:59:59 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 41cde2b08e9b5b784479044bdd6fd4a4d9161898</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/41cde2b08e9b5b784479044bdd6fd4a4d9161898")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Going to give up on rerun after prioritization</p>
+<div class='spacer'></div><div class='commit' id='41cde2b08e9b5b784479044bdd6fd4a4d9161898'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#41cde2b08e9b5b784479044bdd6fd4a4d9161898'>41cde2b08e9b5b784479044bdd6fd4a4d9161898</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Apr 7 21:59:59 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Going to give up on rerun after prioritization</p>
 <b>Files added:</b>
 <ul>
 <li>2017/Planning/April 7 Priorities.docx</li>
@@ -216,11 +233,9 @@
 <li>2017/worlds/src/rerun.c</li>
 <li>2017/worlds/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Apr 7 19:21:15 2017 +0800</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 588745ae3e31d95dfdc1b4ec0174273c51a0b2a2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/588745ae3e31d95dfdc1b4ec0174273c51a0b2a2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>fixed odd function duplicate, now using extern for rerunEnabled to ensure global-ness</p>
+<div class='spacer'></div><div class='commit' id='588745ae3e31d95dfdc1b4ec0174273c51a0b2a2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#588745ae3e31d95dfdc1b4ec0174273c51a0b2a2'>588745ae3e31d95dfdc1b4ec0174273c51a0b2a2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Apr 7 19:21:15 2017 +0800</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>fixed odd function duplicate, now using extern for rerunEnabled to ensure global-ness</p>
 <b>Files added:</b>
 <ul>
 <li>2017/worlds/src/noInclude.c</li>
@@ -229,59 +244,47 @@
 <li>2017/worlds/src/functions.c</li>
 <li>2017/worlds/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 22:45:33 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>clean up motors.c</p>
+<div class='spacer'></div><div class='commit' id='9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b'>9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Apr 6 22:45:33 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>clean up motors.c</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 21:49:56 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 3e484db1f2724d419dfff6417ad73f2ea8f03c93</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3e484db1f2724d419dfff6417ad73f2ea8f03c93")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>cleaned up scaling of motor power</p>
+<div class='spacer'></div><div class='commit' id='3e484db1f2724d419dfff6417ad73f2ea8f03c93'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#3e484db1f2724d419dfff6417ad73f2ea8f03c93'>3e484db1f2724d419dfff6417ad73f2ea8f03c93</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Apr 6 21:49:56 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>cleaned up scaling of motor power</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 21:41:58 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> e79067c598c95cb651848d7cab37cf6c87bfd0a8</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e79067c598c95cb651848d7cab37cf6c87bfd0a8")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>eliminated warnings</p>
+<div class='spacer'></div><div class='commit' id='e79067c598c95cb651848d7cab37cf6c87bfd0a8'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#e79067c598c95cb651848d7cab37cf6c87bfd0a8'>e79067c598c95cb651848d7cab37cf6c87bfd0a8</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Apr 6 21:41:58 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>eliminated warnings</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/src/auto0.c</li>
 <li>2017/worlds/src/functions.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Apr 6 21:38:35 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> cae0e714f0fc5fca70618b9b65b7a3713f24d01d</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cae0e714f0fc5fca70618b9b65b7a3713f24d01d")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixed possibly unitialized variable, increased stack size of LCD task</p>
+<div class='spacer'></div><div class='commit' id='cae0e714f0fc5fca70618b9b65b7a3713f24d01d'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#cae0e714f0fc5fca70618b9b65b7a3713f24d01d'>cae0e714f0fc5fca70618b9b65b7a3713f24d01d</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Apr 6 21:38:35 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixed possibly unitialized variable, increased stack size of LCD task</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/src/functions.c</li>
 <li>2017/worlds/src/init.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Apr 5 19:50:45 2017 -0400</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@gmail.com></p>
-<p><b>KEY:</b> e8ddb674d28afec51d4172bb9153dac52aa0cd87</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e8ddb674d28afec51d4172bb9153dac52aa0cd87")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>LCD Task fix - needs test</p>
+<div class='spacer'></div><div class='commit' id='e8ddb674d28afec51d4172bb9153dac52aa0cd87'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#e8ddb674d28afec51d4172bb9153dac52aa0cd87'>e8ddb674d28afec51d4172bb9153dac52aa0cd87</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Wed Apr 5 19:50:45 2017 -0400</p>
+<p><b>Author:</b>  iuyte <iuyte@gmail.com></p>
+<p><b>Description:</b><br>LCD Task fix - needs test</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/include/tasks.h</li>
 <li>2017/worlds/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Apr 2 15:57:10 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 9ed5d3d4f1f11c2fc3840bc93689e673e32b9205</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/9ed5d3d4f1f11c2fc3840bc93689e673e32b9205")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Attempting to fix LCD handleing task, problem with RERUN ON OR OFF?</p>
+<div class='spacer'></div><div class='commit' id='9ed5d3d4f1f11c2fc3840bc93689e673e32b9205'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#9ed5d3d4f1f11c2fc3840bc93689e673e32b9205'>9ed5d3d4f1f11c2fc3840bc93689e673e32b9205</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Apr 2 15:57:10 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Attempting to fix LCD handleing task, problem with RERUN ON OR OFF?</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/bin/output.bin</li>
@@ -293,20 +296,16 @@
 <li>2017/worlds/src/rerun.c</li>
 <li>2017/worlds/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 1 19:34:33 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Decreased delay in replayF</p>
+<div class='spacer'></div><div class='commit' id='20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d'>20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Apr 1 19:34:33 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Decreased delay in replayF</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/src/rerun.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Apr 1 19:31:29 2017 -1200</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> cb6c4b7a219ac9aadc4addb1de04bd6e443919e2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cb6c4b7a219ac9aadc4addb1de04bd6e443919e2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Upgraded PROS kernel to latest, made rerun more fluent</p>
+<div class='spacer'></div><div class='commit' id='cb6c4b7a219ac9aadc4addb1de04bd6e443919e2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#cb6c4b7a219ac9aadc4addb1de04bd6e443919e2'>cb6c4b7a219ac9aadc4addb1de04bd6e443919e2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Apr 1 19:31:29 2017 -1200</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Upgraded PROS kernel to latest, made rerun more fluent</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/common.mk</li>
@@ -315,30 +314,24 @@
 <li>2017/worlds/src/rerun.c</li>
 <li>2017/worlds/src/rerunHelper.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Mar 24 15:54:34 2017 -0400</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 33b0261d96165fed5df5dc893b6ed5d0ecf2c91b</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/33b0261d96165fed5df5dc893b6ed5d0ecf2c91b")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Apparently file did not commit</p>
+<div class='spacer'></div><div class='commit' id='33b0261d96165fed5df5dc893b6ed5d0ecf2c91b'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#33b0261d96165fed5df5dc893b6ed5d0ecf2c91b'>33b0261d96165fed5df5dc893b6ed5d0ecf2c91b</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Mar 24 15:54:34 2017 -0400</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Apparently file did not commit</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Mar 23 21:04:18 2017 -0400</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 7e5da800c87bf65f1d743ccbf5bed44c121536ab</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7e5da800c87bf65f1d743ccbf5bed44c121536ab")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixed incorrect rerun.c logic</p>
+<div class='spacer'></div><div class='commit' id='7e5da800c87bf65f1d743ccbf5bed44c121536ab'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#7e5da800c87bf65f1d743ccbf5bed44c121536ab'>7e5da800c87bf65f1d743ccbf5bed44c121536ab</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Mar 23 21:04:18 2017 -0400</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixed incorrect rerun.c logic</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/bin/output.bin</li>
 <li>2017/worlds/src/rerun.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Mar 23 18:36:20 2017 -0400</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>created  rerun, untested</p>
+<div class='spacer'></div><div class='commit' id='a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df'>a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Mar 23 18:36:20 2017 -0400</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>created  rerun, untested</p>
 <b>Files added:</b>
 <ul>
 <li>2017/worlds/include/rerun.h</li>
@@ -359,31 +352,25 @@
 <li>2017/worlds/src/opcontrol.c</li>
 <li>2017/worlds/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 18 12:56:47 2017 -0400</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> c6a9753ff26144683230b8c3eaeb66c6abd63ce0</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/c6a9753ff26144683230b8c3eaeb66c6abd63ce0")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Readded 2 drive motors because passive hang works</p>
+<div class='spacer'></div><div class='commit' id='c6a9753ff26144683230b8c3eaeb66c6abd63ce0'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#c6a9753ff26144683230b8c3eaeb66c6abd63ce0'>c6a9753ff26144683230b8c3eaeb66c6abd63ce0</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 18 12:56:47 2017 -0400</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Readded 2 drive motors because passive hang works</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/bin/output.bin</li>
 <li>2017/worlds/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 13:20:10 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Made it so robot does not move unless power expander is plugged in</p>
+<div class='spacer'></div><div class='commit' id='e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29'>e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 11 13:20:10 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Made it so robot does not move unless power expander is plugged in</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/include/defines.h</li>
 <li>2017/worlds/src/mtrmgr.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:52:35 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> d5113a0c47549b770fddfbb5ab47e147083fb85a</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d5113a0c47549b770fddfbb5ab47e147083fb85a")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixing git problem with LastSTand</p>
+<div class='spacer'></div><div class='commit' id='d5113a0c47549b770fddfbb5ab47e147083fb85a'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#d5113a0c47549b770fddfbb5ab47e147083fb85a'>d5113a0c47549b770fddfbb5ab47e147083fb85a</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 11 11:52:35 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixing git problem with LastSTand</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/JINXProject/include/JINX.h</li>
@@ -461,21 +448,17 @@
 <li>2017/laststand/src/opcontrol.c</li>
 <li>2017/laststand/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:45:04 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> b3d1f80c17586a0ab55fb27a93245ced831a2db2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b3d1f80c17586a0ab55fb27a93245ced831a2db2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Switched lift motors to not truespeed</p>
+<div class='spacer'></div><div class='commit' id='b3d1f80c17586a0ab55fb27a93245ced831a2db2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#b3d1f80c17586a0ab55fb27a93245ced831a2db2'>b3d1f80c17586a0ab55fb27a93245ced831a2db2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 11 11:45:04 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Switched lift motors to not truespeed</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/bin/output.bin</li>
 <li>2017/worlds/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:40:57 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 3eeee27d63034cc166cc25991dda3e93192ed2d9</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3eeee27d63034cc166cc25991dda3e93192ed2d9")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixed JINX Support</p>
+<div class='spacer'></div><div class='commit' id='3eeee27d63034cc166cc25991dda3e93192ed2d9'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#3eeee27d63034cc166cc25991dda3e93192ed2d9'>3eeee27d63034cc166cc25991dda3e93192ed2d9</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 11 11:40:57 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixed JINX Support</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/worlds/bin/output.bin</li>
@@ -484,11 +467,9 @@
 <li>2017/worlds/src/JINX.c</li>
 <li>2017/worlds/src/init.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:30:02 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 373fc9eff1c4261c110afc2f8cd2774e9beda386</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/373fc9eff1c4261c110afc2f8cd2774e9beda386")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Duplicated the rewrite into a worlds project</p>
+<div class='spacer'></div><div class='commit' id='373fc9eff1c4261c110afc2f8cd2774e9beda386'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#373fc9eff1c4261c110afc2f8cd2774e9beda386'>373fc9eff1c4261c110afc2f8cd2774e9beda386</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 11 11:30:02 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Duplicated the rewrite into a worlds project</p>
 <b>Files added:</b>
 <ul>
 <li>2017/worlds/Makefile</li>
@@ -525,11 +506,9 @@
 <li>2017/worlds/src/opcontrol.c</li>
 <li>2017/worlds/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Mar 11 11:28:33 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 65a68a0577de8e278b432415d9dca6258bf2e1b2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/65a68a0577de8e278b432415d9dca6258bf2e1b2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Precision and bug fixes</p>
+<div class='spacer'></div><div class='commit' id='65a68a0577de8e278b432415d9dca6258bf2e1b2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#65a68a0577de8e278b432415d9dca6258bf2e1b2'>65a68a0577de8e278b432415d9dca6258bf2e1b2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Mar 11 11:28:33 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Precision and bug fixes</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/bin/output.bin</li>
@@ -537,20 +516,16 @@
 <li>2017/rewrite/src/motors.c</li>
 <li>2017/rewrite/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Mar 8 17:25:19 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 3b2b1d5c900dc354bc6bb085caf0beeae14e2898</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3b2b1d5c900dc354bc6bb085caf0beeae14e2898")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Trying to use joystick acceleraometers to drive</p>
+<div class='spacer'></div><div class='commit' id='3b2b1d5c900dc354bc6bb085caf0beeae14e2898'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#3b2b1d5c900dc354bc6bb085caf0beeae14e2898'>3b2b1d5c900dc354bc6bb085caf0beeae14e2898</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Wed Mar 8 17:25:19 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Trying to use joystick acceleraometers to drive</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/src/motors.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Mar 8 17:25:00 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> f3e5887306b3c37034976c1406ac3cbcc7386a93</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/f3e5887306b3c37034976c1406ac3cbcc7386a93")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Trying to use joystick acceleraometers to drive</p>
+<div class='spacer'></div><div class='commit' id='f3e5887306b3c37034976c1406ac3cbcc7386a93'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#f3e5887306b3c37034976c1406ac3cbcc7386a93'>f3e5887306b3c37034976c1406ac3cbcc7386a93</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Wed Mar 8 17:25:00 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Trying to use joystick acceleraometers to drive</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/bin/output.bin</li>
@@ -561,11 +536,9 @@
 <li>2017/rewrite/src/motors.c</li>
 <li>2017/rewrite/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Mar 7 06:42:46 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> efd51a2048e6090ff7bbf4962df072ed9effeae3</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/efd51a2048e6090ff7bbf4962df072ed9effeae3")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixed  magic, needs testing</p>
+<div class='spacer'></div><div class='commit' id='efd51a2048e6090ff7bbf4962df072ed9effeae3'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#efd51a2048e6090ff7bbf4962df072ed9effeae3'>efd51a2048e6090ff7bbf4962df072ed9effeae3</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Mar 7 06:42:46 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixed  magic, needs testing</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/bin/output.bin</li>
@@ -579,11 +552,9 @@
 <li>2017/rewrite/src/motors.c</li>
 <li>2017/rewrite/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 14:47:26 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> d95384d6234fe00e20bd9971071ef1a6ae6e00c2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d95384d6234fe00e20bd9971071ef1a6ae6e00c2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Still fixing magic</p>
+<div class='spacer'></div><div class='commit' id='d95384d6234fe00e20bd9971071ef1a6ae6e00c2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#d95384d6234fe00e20bd9971071ef1a6ae6e00c2'>d95384d6234fe00e20bd9971071ef1a6ae6e00c2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Mar 5 14:47:26 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Still fixing magic</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/bin/output.bin</li>
@@ -592,21 +563,17 @@
 <li>2017/rewrite/src/functions.c</li>
 <li>2017/rewrite/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 14:20:56 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> a4a3a2ded632523328d5d2371831d1512c6dc219</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a4a3a2ded632523328d5d2371831d1512c6dc219")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Still attempting to fix magic</p>
+<div class='spacer'></div><div class='commit' id='a4a3a2ded632523328d5d2371831d1512c6dc219'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#a4a3a2ded632523328d5d2371831d1512c6dc219'>a4a3a2ded632523328d5d2371831d1512c6dc219</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Mar 5 14:20:56 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Still attempting to fix magic</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/rewrite/src/functions.c</li>
 <li>2017/rewrite/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 14:18:58 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 483faf343181ec7cd5385d699c67ac66b39db30c</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/483faf343181ec7cd5385d699c67ac66b39db30c")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Worked on fixing some magic code to be logical</p>
+<div class='spacer'></div><div class='commit' id='483faf343181ec7cd5385d699c67ac66b39db30c'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#483faf343181ec7cd5385d699c67ac66b39db30c'>483faf343181ec7cd5385d699c67ac66b39db30c</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Mar 5 14:18:58 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Worked on fixing some magic code to be logical</p>
 <b>Files added:</b>
 <ul>
 <li>2017/rewrite/bin/output.bin</li>
@@ -618,21 +585,17 @@
 <li>2017/rewrite/src/functions.c</li>
 <li>2017/rewrite/src/tasks.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 13:36:17 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 40e5f90d7af260c51b0cffa1dd80d062ed65db62</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/40e5f90d7af260c51b0cffa1dd80d062ed65db62")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixing issue...?</p>
+<div class='spacer'></div><div class='commit' id='40e5f90d7af260c51b0cffa1dd80d062ed65db62'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#40e5f90d7af260c51b0cffa1dd80d062ed65db62'>40e5f90d7af260c51b0cffa1dd80d062ed65db62</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Mar 5 13:36:17 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Fixing issue...?</p>
 <b>Files deleted:</b>
 <ul>
 <li>2017/rewrite/src/JINX_Helpers.c</li>
 <li>2017/rewrite/src/main.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 13:29:51 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 57481f427bfdb7e2d7372ccb2f4c821402a72f52</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/57481f427bfdb7e2d7372ccb2f4c821402a72f52")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Working on configuring code to work with the blrslib mtmgr library</p>
+<div class='spacer'></div><div class='commit' id='57481f427bfdb7e2d7372ccb2f4c821402a72f52'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#57481f427bfdb7e2d7372ccb2f4c821402a72f52'>57481f427bfdb7e2d7372ccb2f4c821402a72f52</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Mar 5 13:29:51 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Working on configuring code to work with the blrslib mtmgr library</p>
 <b>Files added:</b>
 <ul>
 <li>2017/rewrite/include/JINX.h</li>
@@ -660,11 +623,9 @@
 <li>2017/rewrite/src/init.c</li>
 <li>2017/rewrite/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Mar 5 11:12:32 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> e4da363b47436198fd47e5827ecc6724df6faea3</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e4da363b47436198fd47e5827ecc6724df6faea3")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>After these changes were made: we placed highest at competition with 44 points prog skills and 42 driver. 86 total.</p>
+<div class='spacer'></div><div class='commit' id='e4da363b47436198fd47e5827ecc6724df6faea3'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#e4da363b47436198fd47e5827ecc6724df6faea3'>e4da363b47436198fd47e5827ecc6724df6faea3</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Mar 5 11:12:32 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>After these changes were made: we placed highest at competition with 44 points prog skills and 42 driver. 86 total.</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Indiana/bin/output.bin</li>
@@ -676,11 +637,9 @@
 <li>2017/Indiana/src/revision.c</li>
 <li>2017/Planning/Auto Plan.pptx</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Mar 2 20:43:47 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 8940b8090e10982e1b85fe31ec273c79d3854fb2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8940b8090e10982e1b85fe31ec273c79d3854fb2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Autonomous precision work</p>
+<div class='spacer'></div><div class='commit' id='8940b8090e10982e1b85fe31ec273c79d3854fb2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#8940b8090e10982e1b85fe31ec273c79d3854fb2'>8940b8090e10982e1b85fe31ec273c79d3854fb2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Mar 2 20:43:47 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Autonomous precision work</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/Indiana/bin/output.bin</li>
@@ -690,11 +649,9 @@
 <li>2017/Indiana/src/ethanlib.c</li>
 <li>2017/Indiana/src/init.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Wed Mar 1 15:50:54 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 8c1e8961a79f4dff05d8746ebfc687ce8403abd4</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8c1e8961a79f4dff05d8746ebfc687ce8403abd4")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Nearly confirmed travel to Indiana skills-only competition. Created project. Going to try for last cube as well as 4 stars left in middle of fence</p>
+<div class='spacer'></div><div class='commit' id='8c1e8961a79f4dff05d8746ebfc687ce8403abd4'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#8c1e8961a79f4dff05d8746ebfc687ce8403abd4'>8c1e8961a79f4dff05d8746ebfc687ce8403abd4</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Wed Mar 1 15:50:54 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Nearly confirmed travel to Indiana skills-only competition. Created project. Going to try for last cube as well as 4 stars left in middle of fence</p>
 <b>Files added:</b>
 <ul>
 <li>2017/CalibrateGyros/Makefile</li>
@@ -846,11 +803,9 @@
 <li>2017/laststand/src/auto14.c</li>
 <li>2017/laststand/src/revision.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 26 15:17:13 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Implemented a motorSlew task to go easier on motors. This could potentially free up 2 motors for the drive to use</p>
+<div class='spacer'></div><div class='commit' id='229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c'>229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 26 15:17:13 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Implemented a motorSlew task to go easier on motors. This could potentially free up 2 motors for the drive to use</p>
 <b>Files added:</b>
 <ul>
 <li>2017/Post-season(pre-worlds)/include/motorSlew.h</li>
@@ -874,11 +829,9 @@
 <li>2017/Post-season(pre-worlds)/src/init.c</li>
 <li>2017/Post-season(pre-worlds)/src/revision.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 26 11:54:09 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> e16ce1fdb96a5dcefeaad3d9097bba692261d9b0</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e16ce1fdb96a5dcefeaad3d9097bba692261d9b0")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>We did well at the competition and won. In addition, we nailed a 77 point skills (35 programming and 42 driver), the highest in the state prior to this being 66. Our fingers are crossed for this to hold</p>
+<div class='spacer'></div><div class='commit' id='e16ce1fdb96a5dcefeaad3d9097bba692261d9b0'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#e16ce1fdb96a5dcefeaad3d9097bba692261d9b0'>e16ce1fdb96a5dcefeaad3d9097bba692261d9b0</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 26 11:54:09 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>We did well at the competition and won. In addition, we nailed a 77 point skills (35 programming and 42 driver), the highest in the state prior to this being 66. Our fingers are crossed for this to hold</p>
 <b>Files added:</b>
 <ul>
 <li>2017/Post-season(pre-worlds)/Makefile</li>
@@ -922,11 +875,9 @@
 <li>2017/Post-season(pre-worlds)/src/revision.c</li>
 <li>2017/Post-season(pre-worlds)/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 25 14:25:50 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 67f85e65f4560dd89e3361f2fe82832a1938c1d8</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/67f85e65f4560dd89e3361f2fe82832a1938c1d8")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Final competition preparations & improvements for</p>
+<div class='spacer'></div><div class='commit' id='67f85e65f4560dd89e3361f2fe82832a1938c1d8'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#67f85e65f4560dd89e3361f2fe82832a1938c1d8'>67f85e65f4560dd89e3361f2fe82832a1938c1d8</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Feb 25 14:25:50 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Final competition preparations & improvements for</p>
 <b>Files added:</b>
 <ul>
 <li>2017/LastStand/src/auto15.c</li>
@@ -945,11 +896,9 @@
 <li>2017/laststand/src/jerk.c</li>
 <li>2017/laststand/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 23:32:25 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 6af53e635c48d70d72b4f03e4a8a579f03fecdc9</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/6af53e635c48d70d72b4f03e4a8a579f03fecdc9")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>skills work. Nothing in particular, except I found out now after about a month that my timer functions dont work. Going to look into it.</p>
+<div class='spacer'></div><div class='commit' id='6af53e635c48d70d72b4f03e4a8a579f03fecdc9'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#6af53e635c48d70d72b4f03e4a8a579f03fecdc9'>6af53e635c48d70d72b4f03e4a8a579f03fecdc9</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 21 23:32:25 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>skills work. Nothing in particular, except I found out now after about a month that my timer functions dont work. Going to look into it.</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/laststand/bin/auto14.o</li>
@@ -978,11 +927,9 @@
 <li>2017/laststand/src/opcontrol.c</li>
 <li>2017/laststand/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:38:06 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> 913b661f221172823483bec1e103f78e79e50f82</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/913b661f221172823483bec1e103f78e79e50f82")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixing git</p>
+<div class='spacer'></div><div class='commit' id='913b661f221172823483bec1e103f78e79e50f82'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#913b661f221172823483bec1e103f78e79e50f82'>913b661f221172823483bec1e103f78e79e50f82</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 21 22:38:06 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>Fixing git</p>
 <b>Files added:</b>
 <ul>
 <li>2017/laststand/Makefile</li>
@@ -1017,11 +964,9 @@
 <li>2017/laststand/project.pros</li>
 <li>2017/laststand/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:37:08 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> 3a9ed0660e85b661a4d4680c4ea5f01a45db6349</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3a9ed0660e85b661a4d4680c4ea5f01a45db6349")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Fixing weird git upload</p>
+<div class='spacer'></div><div class='commit' id='3a9ed0660e85b661a4d4680c4ea5f01a45db6349'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#3a9ed0660e85b661a4d4680c4ea5f01a45db6349'>3a9ed0660e85b661a4d4680c4ea5f01a45db6349</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 21 22:37:08 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>Fixing weird git upload</p>
 <b>Files added:</b>
 <ul>
 <li>2017/laststand/include/API.h</li>
@@ -1035,11 +980,9 @@
 <ul>
 <li>2017/laststand/include/revision.h</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:36:31 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> d0dd230861cd1ba7e8c01690ab263bca8d293c76</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d0dd230861cd1ba7e8c01690ab263bca8d293c76")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Uploading code that didnt</p>
+<div class='spacer'></div><div class='commit' id='d0dd230861cd1ba7e8c01690ab263bca8d293c76'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#d0dd230861cd1ba7e8c01690ab263bca8d293c76'>d0dd230861cd1ba7e8c01690ab263bca8d293c76</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 21 22:36:31 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>Uploading code that didnt</p>
 <b>Files added:</b>
 <ul>
 <li>2017/laststand/src/JINX.c</li>
@@ -1067,11 +1010,9 @@
 <li>2017/laststand/src/auto14.c</li>
 <li>2017/laststand/src/revision.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 22:19:17 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> fba518aa32e9ca518dcacbaa3fc1eb252798e3e3</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fba518aa32e9ca518dcacbaa3fc1eb252798e3e3")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Auton precision  work</p>
+<div class='spacer'></div><div class='commit' id='fba518aa32e9ca518dcacbaa3fc1eb252798e3e3'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#fba518aa32e9ca518dcacbaa3fc1eb252798e3e3'>fba518aa32e9ca518dcacbaa3fc1eb252798e3e3</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 21 22:19:17 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Auton precision  work</p>
 <b>Files added:</b>
 <ul>
 <li>2017/laststand/output.txt</li>
@@ -1092,11 +1033,9 @@
 <li>2017/LastStand/src/jerk.c</li>
 <li>2017/Planning/ideas.txt</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 21 14:59:56 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 357490c31f04dfc75b61f79a5444e4acf89d1f68</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/357490c31f04dfc75b61f79a5444e4acf89d1f68")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Working on our code for 709s's 'last stand', trying to make a very good skills program so we can be top in NYS and qualify for worlds. My re-engineered code includes my encDep library as well as JINX support (when enabled from constants.h)</p>
+<div class='spacer'></div><div class='commit' id='357490c31f04dfc75b61f79a5444e4acf89d1f68'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#357490c31f04dfc75b61f79a5444e4acf89d1f68'>357490c31f04dfc75b61f79a5444e4acf89d1f68</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 21 14:59:56 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Working on our code for 709s's 'last stand', trying to make a very good skills program so we can be top in NYS and qualify for worlds. My re-engineered code includes my encDep library as well as JINX support (when enabled from constants.h)</p>
 <b>Files added:</b>
 <ul>
 <li>2017/JINXProject/Makefile</li>
@@ -1153,11 +1092,9 @@
 <li>2017/LastStand/src/opcontrol.c</li>
 <li>2017/LastStand/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 19 09:32:01 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 2e77ad68889b69231d5eff153bbeea31d70c67fc</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2e77ad68889b69231d5eff153bbeea31d70c67fc")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>my code post-states</p>
+<div class='spacer'></div><div class='commit' id='2e77ad68889b69231d5eff153bbeea31d70c67fc'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#2e77ad68889b69231d5eff153bbeea31d70c67fc'>2e77ad68889b69231d5eff153bbeea31d70c67fc</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 19 09:32:01 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>my code post-states</p>
 <b>Files added:</b>
 <ul>
 <li>2017/Planning/~$Auto Plan.pptx</li>
@@ -1183,11 +1120,9 @@
 <li>2017/States17BETA/src/jerk.c</li>
 <li>2017/States17BETA/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 17 10:44:21 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> d2ec322d54f6891dd980703661b8aa468c1d13d1</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d2ec322d54f6891dd980703661b8aa468c1d13d1")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Added first - draft skills in auto2.c, moved standard auton to auto0.c, and auto1.c is now standard auton minus the cube</p>
+<div class='spacer'></div><div class='commit' id='d2ec322d54f6891dd980703661b8aa468c1d13d1'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#d2ec322d54f6891dd980703661b8aa468c1d13d1'>d2ec322d54f6891dd980703661b8aa468c1d13d1</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Feb 17 10:44:21 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Added first - draft skills in auto2.c, moved standard auton to auto0.c, and auto1.c is now standard auton minus the cube</p>
 <b>Files added:</b>
 <ul>
 <li>2017/Planning/Auto Plan.pptx</li>
@@ -1206,11 +1141,9 @@
 <li>2017/States17BETA/src/init.c</li>
 <li>2017/States17BETA/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 14 21:28:57 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> aa9d3e50a2145046325c6b41de84f81ba2592b1d</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/aa9d3e50a2145046325c6b41de84f81ba2592b1d")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Seperated different autons into respective files for ease of access</p>
+<div class='spacer'></div><div class='commit' id='aa9d3e50a2145046325c6b41de84f81ba2592b1d'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#aa9d3e50a2145046325c6b41de84f81ba2592b1d'>aa9d3e50a2145046325c6b41de84f81ba2592b1d</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 14 21:28:57 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Seperated different autons into respective files for ease of access</p>
 <b>Files added:</b>
 <ul>
 <li>2017/States17BETA/include/autonomous.h</li>
@@ -1224,11 +1157,9 @@
 <ul>
 <li>2017/States17BETA/src/auto.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Tue Feb 14 12:28:36 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 016e583e5f2318aa12181e5e1367fa4e9802d5d1</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/016e583e5f2318aa12181e5e1367fa4e9802d5d1")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Autonomous precision, added function turnNoFix to get within 15 second time, not completely within yet</p>
+<div class='spacer'></div><div class='commit' id='016e583e5f2318aa12181e5e1367fa4e9802d5d1'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#016e583e5f2318aa12181e5e1367fa4e9802d5d1'>016e583e5f2318aa12181e5e1367fa4e9802d5d1</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Tue Feb 14 12:28:36 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Autonomous precision, added function turnNoFix to get within 15 second time, not completely within yet</p>
 <b>Files added:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
@@ -1238,11 +1169,9 @@
 <li>2017/States17BETA/src/auto.c</li>
 <li>2017/States17BETA/src/ethanlib.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Mon Feb 6 21:21:16 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 85e5c49b4893e4d66d3a1e8797c70485569d7fc3</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/85e5c49b4893e4d66d3a1e8797c70485569d7fc3")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Worked on auto1() precision</p>
+<div class='spacer'></div><div class='commit' id='85e5c49b4893e4d66d3a1e8797c70485569d7fc3'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#85e5c49b4893e4d66d3a1e8797c70485569d7fc3'>85e5c49b4893e4d66d3a1e8797c70485569d7fc3</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Mon Feb 6 21:21:16 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Worked on auto1() precision</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/include/constants.h</li>
@@ -1252,11 +1181,9 @@
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Mon Feb 6 20:48:51 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 7db0b59587d6c4c14656ca0de2b091a0f9b51506</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7db0b59587d6c4c14656ca0de2b091a0f9b51506")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>The auto0() kind-of works, so I left it as is, copied code into auto1(), and am working on it from there. New idea: with all these autonomous options, I should be able to make a few more (and more simple) autonomouses. Ideas currently include:\n -Go get cube and dump, \n -beyond the cube, go knock off stars from the fence\n -Get stars and dump, knock from fence\n -Go straight to fence and block opposing alliance from scoring</p>
+<div class='spacer'></div><div class='commit' id='7db0b59587d6c4c14656ca0de2b091a0f9b51506'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#7db0b59587d6c4c14656ca0de2b091a0f9b51506'>7db0b59587d6c4c14656ca0de2b091a0f9b51506</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Mon Feb 6 20:48:51 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>The auto0() kind-of works, so I left it as is, copied code into auto1(), and am working on it from there. New idea: with all these autonomous options, I should be able to make a few more (and more simple) autonomouses. Ideas currently include:\n -Go get cube and dump, \n -beyond the cube, go knock off stars from the fence\n -Get stars and dump, knock from fence\n -Go straight to fence and block opposing alliance from scoring</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
@@ -1266,11 +1193,9 @@
 <li>2017/States17BETA/src/ethanlib.c</li>
 <li>2017/States17BETA/src/init.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Mon Feb 6 13:14:38 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> b89cc76c17d89a65df45d144502c6a2b56d0e7b2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b89cc76c17d89a65df45d144502c6a2b56d0e7b2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>WOrked on perfecting autonomous</p>
+<div class='spacer'></div><div class='commit' id='b89cc76c17d89a65df45d144502c6a2b56d0e7b2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#b89cc76c17d89a65df45d144502c6a2b56d0e7b2'>b89cc76c17d89a65df45d144502c6a2b56d0e7b2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Mon Feb 6 13:14:38 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>WOrked on perfecting autonomous</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
@@ -1281,22 +1206,18 @@
 <li>2017/States17BETA/src/init.c</li>
 <li>2017/StatesSkills/src/FuntionVars.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 14:16:47 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 19fb75eab1e2aa6e6602a80574ce78018f93526e</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/19fb75eab1e2aa6e6602a80574ce78018f93526e")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br> 1) Added support for as many autonomous programs as I want (and selection) \n 2) Added some stuff to the end of my position-based driving and turning funtions to fix going over values</p>
+<div class='spacer'></div><div class='commit' id='19fb75eab1e2aa6e6602a80574ce78018f93526e'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#19fb75eab1e2aa6e6602a80574ce78018f93526e'>19fb75eab1e2aa6e6602a80574ce78018f93526e</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 5 14:16:47 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br> 1) Added support for as many autonomous programs as I want (and selection) \n 2) Added some stuff to the end of my position-based driving and turning funtions to fix going over values</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/include/constants.h</li>
 <li>2017/States17BETA/src/auto.c</li>
 <li>2017/States17BETA/src/ethanlib.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 13:54:47 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> b79cc4dee672bd7ea67cc6c5b26805e857c9f044</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/b79cc4dee672bd7ea67cc6c5b26805e857c9f044")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Gave up on 'position management' to opt for simply better code for moving to a certain gyro or encoder position, created new BETA after renaming old code DEAD and dating, added all improvements to new BETA code</p>
+<div class='spacer'></div><div class='commit' id='b79cc4dee672bd7ea67cc6c5b26805e857c9f044'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#b79cc4dee672bd7ea67cc6c5b26805e857c9f044'>b79cc4dee672bd7ea67cc6c5b26805e857c9f044</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 5 13:54:47 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Gave up on 'position management' to opt for simply better code for moving to a certain gyro or encoder position, created new BETA after renaming old code DEAD and dating, added all improvements to new BETA code</p>
 <b>Files added:</b>
 <ul>
 <li>2017/2017States17BETAdeadD2M5Yr17/bin/output.bin</li>
@@ -1331,11 +1252,9 @@
 <li>2017/States17BETA/bin/output.elf</li>
 <li>2017/States17BETA/firmware/libpros.a</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:50:15 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 1f783689010c5e53ab9a44c8ab8d672f72688e41</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1f783689010c5e53ab9a44c8ab8d672f72688e41")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Finally fixed a bunch of crap that just randomly happened to my code from git</p>
+<div class='spacer'></div><div class='commit' id='1f783689010c5e53ab9a44c8ab8d672f72688e41'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#1f783689010c5e53ab9a44c8ab8d672f72688e41'>1f783689010c5e53ab9a44c8ab8d672f72688e41</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 5 12:50:15 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Finally fixed a bunch of crap that just randomly happened to my code from git</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/bin/ethanlib.o</li>
@@ -1348,20 +1267,16 @@
 <li>2017/States17BETA/src/init.c</li>
 <li>2017/States17BETA/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:37:17 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> ef73bc5590359b863771d68384a534294ab31dd9</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/ef73bc5590359b863771d68384a534294ab31dd9")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Trying to fix git</p>
+<div class='spacer'></div><div class='commit' id='ef73bc5590359b863771d68384a534294ab31dd9'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#ef73bc5590359b863771d68384a534294ab31dd9'>ef73bc5590359b863771d68384a534294ab31dd9</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 5 12:37:17 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Trying to fix git</p>
 <b>Files deleted:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:35:06 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> e5141102db8af40aea4118a544d7d9175c9e9efe</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/e5141102db8af40aea4118a544d7d9175c9e9efe")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Updated files</p>
+<div class='spacer'></div><div class='commit' id='e5141102db8af40aea4118a544d7d9175c9e9efe'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#e5141102db8af40aea4118a544d7d9175c9e9efe'>e5141102db8af40aea4118a544d7d9175c9e9efe</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 5 12:35:06 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>Updated files</p>
 <b>Files added:</b>
 <ul>
 <li>2017/States17BETA/bin/auto.o</li>
@@ -1388,11 +1303,9 @@
 <li>2017/States17BETA/src/opcontrol.c</li>
 <li>2017/States17BETA/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sun Feb 5 12:30:47 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 277f3eaccbab5e120b9066c5a697b1cf6d97347f</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/277f3eaccbab5e120b9066c5a697b1cf6d97347f")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Gave up on lift position management (mostly unneeded) to focus on position management of the drive (far more important)</p>
+<div class='spacer'></div><div class='commit' id='277f3eaccbab5e120b9066c5a697b1cf6d97347f'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#277f3eaccbab5e120b9066c5a697b1cf6d97347f'>277f3eaccbab5e120b9066c5a697b1cf6d97347f</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sun Feb 5 12:30:47 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Gave up on lift position management (mostly unneeded) to focus on position management of the drive (far more important)</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
@@ -1403,20 +1316,16 @@
 <li>2017/States17BETA/src/init.c</li>
 <li>2017/States17BETA/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 22:20:46 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> cd08e32c1bad627eceec54fad7ec902eb65af50c</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/cd08e32c1bad627eceec54fad7ec902eb65af50c")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>corrected spelling</p>
+<div class='spacer'></div><div class='commit' id='cd08e32c1bad627eceec54fad7ec902eb65af50c'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#cd08e32c1bad627eceec54fad7ec902eb65af50c'>cd08e32c1bad627eceec54fad7ec902eb65af50c</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Feb 4 22:20:46 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>corrected spelling</p>
 <b>Files modified:</b>
 <ul>
 <li>README.md</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 22:13:03 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 5ba4117fbd7258d9b67af12d4fd23d82be95aee6</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/5ba4117fbd7258d9b67af12d4fd23d82be95aee6")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Added opcontrol selection on LCD menu (and storage of choice)</p>
+<div class='spacer'></div><div class='commit' id='5ba4117fbd7258d9b67af12d4fd23d82be95aee6'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#5ba4117fbd7258d9b67af12d4fd23d82be95aee6'>5ba4117fbd7258d9b67af12d4fd23d82be95aee6</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Feb 4 22:13:03 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Added opcontrol selection on LCD menu (and storage of choice)</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
@@ -1425,17 +1334,13 @@
 <li>2017/States17BETA/src/ethanlib.c</li>
 <li>2017/States17BETA/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 21:27:22 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> d0e9eab0fb73092a8a2289d3dc0226cc97987269</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/d0e9eab0fb73092a8a2289d3dc0226cc97987269")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Made some stuff on my last </p>
+<div class='spacer'></div><div class='commit' id='d0e9eab0fb73092a8a2289d3dc0226cc97987269'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#d0e9eab0fb73092a8a2289d3dc0226cc97987269'>d0e9eab0fb73092a8a2289d3dc0226cc97987269</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Feb 4 21:27:22 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Made some stuff on my last </p>
 <br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 21:20:01 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 8b16ac1d6eaabb7605762e5e55308d993151ccb4</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/8b16ac1d6eaabb7605762e5e55308d993151ccb4")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Worked on lcdDisplayTme task to include autonomous mode selection and storage of selected autonomous mode between cortex power cycles using the filesystem that my usage of PROS allows me to have (can't do THAT in RobotC)</p>
+<div class='spacer'></div><div class='commit' id='8b16ac1d6eaabb7605762e5e55308d993151ccb4'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#8b16ac1d6eaabb7605762e5e55308d993151ccb4'>8b16ac1d6eaabb7605762e5e55308d993151ccb4</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Feb 4 21:20:01 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Worked on lcdDisplayTme task to include autonomous mode selection and storage of selected autonomous mode between cortex power cycles using the filesystem that my usage of PROS allows me to have (can't do THAT in RobotC)</p>
 <b>Files added:</b>
 <ul>
 <li>2017/States17BETA/bin/output.bin</li>
@@ -1445,11 +1350,9 @@
 <li>2017/States17BETA/src/ethanlib.c</li>
 <li>2017/States17BETA/src/init.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Sat Feb 4 19:34:18 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> a5918c431d1fcc9fcb495bbe999013bdce314da0</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/a5918c431d1fcc9fcb495bbe999013bdce314da0")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>cleaned up code a little bit (still needs testing)</p>
+<div class='spacer'></div><div class='commit' id='a5918c431d1fcc9fcb495bbe999013bdce314da0'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#a5918c431d1fcc9fcb495bbe999013bdce314da0'>a5918c431d1fcc9fcb495bbe999013bdce314da0</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Sat Feb 4 19:34:18 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>cleaned up code a little bit (still needs testing)</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/include/constants.h</li>
@@ -1460,50 +1363,40 @@
 <ul>
 <li>_config.yml</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 21:30:04 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 1c0bcfcd48723a83f8860c9848354addca1fac6a</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1c0bcfcd48723a83f8860c9848354addca1fac6a")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Changed a little bit of the auton such that running into the wall also uses position management</p>
+<div class='spacer'></div><div class='commit' id='1c0bcfcd48723a83f8860c9848354addca1fac6a'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#1c0bcfcd48723a83f8860c9848354addca1fac6a'>1c0bcfcd48723a83f8860c9848354addca1fac6a</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Feb 3 21:30:04 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Changed a little bit of the auton such that running into the wall also uses position management</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/src/auto.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 21:23:31 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 1d746f6e8831c3588d079d65c17880ff317714ba</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1d746f6e8831c3588d079d65c17880ff317714ba")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Finished first draft of position management. still needs testing</p>
+<div class='spacer'></div><div class='commit' id='1d746f6e8831c3588d079d65c17880ff317714ba'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#1d746f6e8831c3588d079d65c17880ff317714ba'>1d746f6e8831c3588d079d65c17880ff317714ba</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Feb 3 21:23:31 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Finished first draft of position management. still needs testing</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/src/FuntionVars.c</li>
 <li>2017/States17BETA/src/auto.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 19:32:23 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>worked on new theory</p>
+<div class='spacer'></div><div class='commit' id='2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc'>2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Feb 3 19:32:23 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>worked on new theory</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17BETA/include/FunctionVars.h</li>
 <li>2017/States17BETA/src/FuntionVars.c</li>
 <li>2017/States17BETA/src/auto.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Fri Feb 3 19:29:05 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> 3316adf197b7610c6363e79ad4bfaa078481f65d</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/3316adf197b7610c6363e79ad4bfaa078481f65d")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Set theme jekyll-theme-hacker</p>
+<div class='spacer'></div><div class='commit' id='3316adf197b7610c6363e79ad4bfaa078481f65d'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#3316adf197b7610c6363e79ad4bfaa078481f65d'>3316adf197b7610c6363e79ad4bfaa078481f65d</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Fri Feb 3 19:29:05 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>Set theme jekyll-theme-hacker</p>
 <b>Files added:</b>
 <ul>
 <li>_config.yml</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 22:07:09 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 7869a313d4ec3783c1d839c91788f762a8ca3c5c</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/7869a313d4ec3783c1d839c91788f762a8ca3c5c")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Lots of stuff - Auton presicion on regular project, new project created to test some constant PID-like code I created that shoul hopefully help a great deal. Have not tested new project yet, tomorrow probably if homework permits. Very glad I had a snow day today and was able to do work with this and FTC - got a lot done</p>
+<div class='spacer'></div><div class='commit' id='7869a313d4ec3783c1d839c91788f762a8ca3c5c'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#7869a313d4ec3783c1d839c91788f762a8ca3c5c'>7869a313d4ec3783c1d839c91788f762a8ca3c5c</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 22:07:09 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Lots of stuff - Auton presicion on regular project, new project created to test some constant PID-like code I created that shoul hopefully help a great deal. Have not tested new project yet, tomorrow probably if homework permits. Very glad I had a snow day today and was able to do work with this and FTC - got a lot done</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/bin/output.bin</li>
@@ -1531,58 +1424,46 @@
 <li>2017/States17TaskParameters/project.pros</li>
 <li>2017/States17TaskParameters/src/Makefile</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 20:05:32 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Added a stopDrive() function</p>
+<div class='spacer'></div><div class='commit' id='eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35'>eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 20:05:32 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Added a stopDrive() function</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/include/FunctionVars.h</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 18:10:59 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 1b07a401b002c22d68d231f662b11d66413d166f</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/1b07a401b002c22d68d231f662b11d66413d166f")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>test commit</p>
+<div class='spacer'></div><div class='commit' id='1b07a401b002c22d68d231f662b11d66413d166f'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#1b07a401b002c22d68d231f662b11d66413d166f'>1b07a401b002c22d68d231f662b11d66413d166f</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 18:10:59 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>test commit</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/bin/output.bin</li>
 <li>2017/States17/include/FunctionVars.h</li>
 <li>2017/States17/src/auto.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 15:08:56 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 2256fbe99e06b57607b0595820a3bc12648f951a</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/2256fbe99e06b57607b0595820a3bc12648f951a")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Changes all sensor values in driveTo() to absolute values</p>
+<div class='spacer'></div><div class='commit' id='2256fbe99e06b57607b0595820a3bc12648f951a'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#2256fbe99e06b57607b0595820a3bc12648f951a'>2256fbe99e06b57607b0595820a3bc12648f951a</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 15:08:56 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Changes all sensor values in driveTo() to absolute values</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/src/FuntionVars.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 15:04:04 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 5f15ab824413886b74ef4228d3f2840f6d0d8147</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/5f15ab824413886b74ef4228d3f2840f6d0d8147")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Added printf of sensor values (will comment out in real competitions)</p>
+<div class='spacer'></div><div class='commit' id='5f15ab824413886b74ef4228d3f2840f6d0d8147'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#5f15ab824413886b74ef4228d3f2840f6d0d8147'>5f15ab824413886b74ef4228d3f2840f6d0d8147</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 15:04:04 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Added printf of sensor values (will comment out in real competitions)</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 15:00:48 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 35320e906b19aef7719d7a9ed853554f2a987650</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/35320e906b19aef7719d7a9ed853554f2a987650")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Compiled code</p>
+<div class='spacer'></div><div class='commit' id='35320e906b19aef7719d7a9ed853554f2a987650'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#35320e906b19aef7719d7a9ed853554f2a987650'>35320e906b19aef7719d7a9ed853554f2a987650</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 15:00:48 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Compiled code</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/bin/output.bin</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 13:21:00 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 28475d6259e44910b254601172244ab22077d1d2</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/28475d6259e44910b254601172244ab22077d1d2")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>#pragma once in constants.h, added stopDriveAfter to FunctionVars.h</p>
+<div class='spacer'></div><div class='commit' id='28475d6259e44910b254601172244ab22077d1d2'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#28475d6259e44910b254601172244ab22077d1d2'>28475d6259e44910b254601172244ab22077d1d2</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 13:21:00 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>#pragma once in constants.h, added stopDriveAfter to FunctionVars.h</p>
 <b>Files modified:</b>
 <ul>
 <li>2017/States17/bin/output.bin</li>
@@ -1590,20 +1471,16 @@
 <li>2017/States17/include/constants.h</li>
 <li>2017/States17/src/opcontrol.c</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 12:54:49 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> bb911123245b766542d7cd18431538144000239d</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/bb911123245b766542d7cd18431538144000239d")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Made it more descriptive</p>
+<div class='spacer'></div><div class='commit' id='bb911123245b766542d7cd18431538144000239d'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#bb911123245b766542d7cd18431538144000239d'>bb911123245b766542d7cd18431538144000239d</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 12:54:49 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>Made it more descriptive</p>
 <b>Files modified:</b>
 <ul>
 <li>README.md</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 12:47:54 2017 -0500</p>
-<p><b>AUTHOR:</b>  Ethan Wells <ethanialw@gmail.com></p>
-<p><b>KEY:</b> 71481b048e21a0b15dd46e2fadce190b95f70d4b</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/71481b048e21a0b15dd46e2fadce190b95f70d4b")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>real first commit</p>
+<div class='spacer'></div><div class='commit' id='71481b048e21a0b15dd46e2fadce190b95f70d4b'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#71481b048e21a0b15dd46e2fadce190b95f70d4b'>71481b048e21a0b15dd46e2fadce190b95f70d4b</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 12:47:54 2017 -0500</p>
+<p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
+<p><b>Description:</b><br>real first commit</p>
 <b>Files added:</b>
 <ul>
 <li>2017/BVille17/Makefile</li>
@@ -1781,11 +1658,9 @@
 <li>2017/StatesSkills/src/opcontrol.c</li>
 <li>2017/StatesSkills/true.exe.stackdump</li>
 </ul><br></div>
-<div class='spacer'></div><div class='commit'><p><b>DATE:</b>   Thu Feb 2 12:13:20 2017 -0500</p>
-<p><b>AUTHOR:</b>  iuyte <iuyte@users.noreply.github.com></p>
-<p><b>KEY:</b> fe43977f55feedd713467930ee031068371215b0</p>
-<button class='browse' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fe43977f55feedd713467930ee031068371215b0")'>Browse at this point in repo</button>
-<p><b>DESCRIPTION:</b><br>Initial commit</p>
+<div class='spacer'></div><div class='commit' id='fe43977f55feedd713467930ee031068371215b0'><p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#fe43977f55feedd713467930ee031068371215b0'>fe43977f55feedd713467930ee031068371215b0</a>&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p><p><b>Date:</b>   Thu Feb 2 12:13:20 2017 -0500</p>
+<p><b>Author:</b>  iuyte <iuyte@users.noreply.github.com></p>
+<p><b>Description:</b><br>Initial commit</p>
 <b>Files added:</b>
 <ul>
 <li>.gitignore</li>

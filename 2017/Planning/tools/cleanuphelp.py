@@ -10,6 +10,21 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
         font-family: 'Open Sans', sans-serif;
     }
 
+    .link {
+       color: black;
+       text-decoration: none;
+    }
+
+    .link:visited {
+       color: black;
+       text-decoration: none;
+    }
+
+    .link:hover {
+       color: #0000EE;
+       text-decoration: underline;
+    }
+
     .commit {
         background-color: #efefef;
         width: 50%;
@@ -34,11 +49,18 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
         height: 5%;
     }
 
+    .bcon {
+       width: 8%;
+    }
+
     .browse {
        background-color: #454585;
        color: white;
        border: 2px solid #454585;
        border-radius: 4px;
+       position: absolute;
+       right: 25%;
+       display: none;
     }
 
     .browse:hover {
@@ -46,6 +68,25 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
        border-color: #9d9dbf;
        color: black;
     }
+
+    .bcon:hover .browse {
+       display: inline;
+    }
+
+    .cwa {
+       width: 29px;
+       height: 29px;
+       visibility: visible;
+    }
+
+    .hid {
+       visibility: hidden;
+    }
+
+    .hid:hover {
+       visibility: visible;
+    }
+
 </style>
 """
 
@@ -58,12 +99,13 @@ def indexInStr(index, string):
     return out
 
 def styleContent(date, commitkey, author, description, filesModified, filesAdded, filesDeleted):
-    out = "<div class='commit'>"
-    out += "<p><b>DATE:</b> " + date + "</p>\n"
-    out += "<p><b>AUTHOR:</b> " + author + "</p>\n"
-    out += "<p><b>KEY:</b> " + commitkey + "</p>\n"
-    out += "<button class='browse' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commitkey + "\")'>" + "Browse at this point in repo" + "</button>\n"
-    out += "<p><b>DESCRIPTION:</b><br>" + description + "</p>\n"
+    out = "<div class='commit' id='" + commitkey + "'>"
+    out += "<p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commitkey + "'>" + commitkey + "</a>"
+    out += "&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p>"
+    #out += "<div class='bcon'><button class='browse' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commitkey + "\")'>" + "Browse at this point in repo" + "</button></div></p>\n"
+    out += "<p><b>Date:</b> " + date + "</p>\n"
+    out += "<p><b>Author:</b> " + author + "</p>\n"
+    out += "<p><b>Description:</b><br>" + description + "</p>\n"
     if len(filesAdded) > 0:
         out += "<b>Files added:</b>\n<ul>\n"
         for i in range(len(filesAdded)):
@@ -79,7 +121,8 @@ def styleContent(date, commitkey, author, description, filesModified, filesAdded
         for i in range(len(filesDeleted)):
             out += "<li>" + filesDeleted[i] + "</li>\n"
         out += "</ul>"
-    out += "<br></div>\n"
+    script = ""#script1 + script2.format(commitkey) + script3
+    out += script + "<br></div>\n"
     return out
 
 def removeSpaces(content):
@@ -95,7 +138,7 @@ def parseContent(content):
     out = "<html>\n<head>\n" + style + "<title>Git Commit history</title>\n</head>\n<body style='background-color: #bfbfdf;' class='body'>"
     count = 0
     commits = content.split("commit ")
-    out += "<div class='commit'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
+    out += "<div class='commit' id='top'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
     commit = 0
     for commit in range(1, len(commits)):
         aline = 0
