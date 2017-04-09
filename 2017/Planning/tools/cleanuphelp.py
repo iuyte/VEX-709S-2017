@@ -69,24 +69,6 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
        color: black;
     }
 
-    .bcon:hover .browse {
-       display: inline;
-    }
-
-    .cwa {
-       width: 29px;
-       height: 29px;
-       visibility: visible;
-    }
-
-    .hid {
-       visibility: hidden;
-    }
-
-    .hid:hover {
-       visibility: visible;
-    }
-
 </style>
 """
 
@@ -100,9 +82,7 @@ def indexInStr(index, string):
 
 def styleContent(date, commitkey, author, description, filesModified, filesAdded, filesDeleted):
     out = "<div class='commit' id='" + commitkey + "'>"
-    out += "<p><b>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commitkey + "'>" + commitkey + "</a>"
-    out += "&nbsp&nbsp<span class='cwa'><img class='hid' src='link.png'></span></p>"
-    #out += "<div class='bcon'><button class='browse' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commitkey + "\")'>" + "Browse at this point in repo" + "</button></div></p>\n"
+    out += "<p><b onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commitkey + "\")'>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commitkey + "'>" + commitkey + "</a></p>"
     out += "<p><b>Date:</b> " + date + "</p>\n"
     out += "<p><b>Author:</b> " + author + "</p>\n"
     out += "<p><b>Description:</b><br>" + description + "</p>\n"
