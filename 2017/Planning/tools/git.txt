@@ -1,3 +1,18 @@
+commit 213b86c59c78f492306a60f5656b0c2d06b92184
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Apr 10 06:46:36 2017 +0800
+
+    Changed and added files now link to them at that commit in repo, commit label goes to commit page
+
+:100644 100644 63b1694... acfd8f2... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 36d96d9... 0492b3d... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:000000 100644 0000000... 76b394b... A	2017/Planning/tools/__pycache__/dif.cpython-36.pyc
+:100644 100644 1800833... 8427266... M	2017/Planning/tools/cleanup.py
+:100644 100644 418630a... 9f19e6d... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 ff5fb1b... adbffbc... M	2017/Planning/tools/git.html
+:100644 100644 ad4a37a... 180893c... M	2017/Planning/tools/git.txt
+:100644 100644 164c880... 8c22669... M	2017/Planning/tools/log.json
+
 commit 1ef684669f6b529b49d9614cbab497b268e7ff3f
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Mon Apr 10 00:53:36 2017 +0800
