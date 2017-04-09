@@ -1,3 +1,52 @@
+commit 9c95ab3515ceef27b009c2055b9683bc81b9e268
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Apr 10 00:35:11 2017 +0800
+
+    Prettied json
+
+:100644 100644 aeccb13... d2e9838... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 dfccce0... e82e871... M	2017/Planning/tools/commit.py
+:100644 100644 9825bd6... 374d5d5... M	2017/Planning/tools/log.json
+
+commit c06e3ace411eff1fa7b52c315a0fa755713a392b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 23:38:59 2017 +0800
+
+    deleted link.png
+
+:100644 000000 ae420c6... 0000000... D	2017/Planning/tools/link.png
+
+commit eaf25edb4793de4118ac51ab7bc8b988f0645eb8
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 23:35:33 2017 +0800
+
+    Added a Commit class for making commit objects, added creation of log.json for the script
+
+:100644 100644 22dfa4a... 63b1694... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:000000 100644 0000000... aeccb13... A	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 de33369... 418630a... M	2017/Planning/tools/cleanuphelp.py
+:000000 100644 0000000... dfccce0... A	2017/Planning/tools/commit.py
+:000000 100644 0000000... 9825bd6... A	2017/Planning/tools/log.json
+
+commit fbf4b72506a3227ffa70766a598bad151deb5080
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 22:53:12 2017 +0800
+
+    Clicking on 'commit' will take the user to the repository at that commit
+
+:100644 100644 803f4f7... 22dfa4a... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 45bcd35... de33369... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 bb913f3... e1f688f... M	2017/Planning/tools/git.html
+
+commit 350748cdfd3ff8a5d2e5e1e6d13acff0b15a5b94
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 22:35:23 2017 +0800
+
+    updated git.html and git.txt
+
+:100644 100644 1181e69... bb913f3... M	2017/Planning/tools/git.html
+:100644 100644 60e853b... 2d3477b... M	2017/Planning/tools/git.txt
+
 commit 5550a70727f1080d0b5118b55ea947a59a9c891b
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Sun Apr 9 22:31:43 2017 +0800

@@ -25,9 +25,3 @@ def saveList(listOfCommits):
     toWrite = jsonpickle.encode(listOfCommits)
     f.write(toWrite)
     f.close()
-
-class Commits(object):
-    def __init__(self, *commits):
-        i = 0
-        for commit in commits:
-            print(commit)
