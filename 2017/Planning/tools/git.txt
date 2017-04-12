@@ -1,3 +1,25 @@
+commit 5dba7319a121cc4b2f39ee82d1405ea7f9755263
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Apr 12 09:32:27 2017 +0800
+
+    Auton work
+
+:100644 100644 989b537... 40e713d... M	2017/worlds/bin/output.bin
+:100644 100644 59707f0... ffb5d26... M	2017/worlds/src/auto2.c
+:100644 100644 7ecf44b... c39855c... M	2017/worlds/src/auto3.c
+
+commit f246cf0a76ea3134b6ef6866ec7b2fa3db0faffb
+Author: iuyte <iuyte@gmail.com>
+Date:   Sun Apr 9 20:40:15 2017 -0400
+
+    Updated logs once again
+
+:000000 100644 0000000... 54ee455... A	2017/Planning/tools/__pycache__/cleanuphelp.cpython-35.pyc
+:000000 100644 0000000... e8ad7c6... A	2017/Planning/tools/__pycache__/commit.cpython-35.pyc
+:100644 100644 78c6a7e... 2b5797a... M	2017/Planning/tools/git.html
+:100644 100644 0459500... 9d82216... M	2017/Planning/tools/git.txt
+:100644 100644 2c16498... 1ba3d16... M	2017/Planning/tools/log.json
+
 commit d855dd3b10d116e9fab219f2c993cabd764e8591
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Mon Apr 10 06:47:26 2017 +0800
@@ -1052,18 +1074,16 @@ Date:   Tue Feb 21 22:19:17 2017 -0500
 :100644 100644 e917792... 8b3a2b9... M	2017/LastStand/bin/output.bin
 :100644 100644 49e5382... dc80367... M	2017/LastStand/include/autonomous.h
 :100644 100644 ac86fd3... 4d30acb... M	2017/LastStand/include/constants.h
-:100644 000000 149f13a... 0000000... D	2017/LastStand/include/encDep.h
 :100644 100644 b39042a... ab36966... M	2017/LastStand/src/auto.c
 :100644 100644 87dc167... db28c1e... M	2017/LastStand/src/auto13.c
-:100644 000000 0a062d0... 0000000... D	2017/LastStand/src/encDep.c
 :100644 100644 bd479dc... 1dc9853... M	2017/LastStand/src/ethanlib.c
 :100644 100644 ba999a2... 1129e84... M	2017/LastStand/src/init.c
 :100644 100644 4f7da37... d380221... M	2017/LastStand/src/jerk.c
 :100644 100644 2fd7569... bbf78aa... M	2017/Planning/ideas.txt
-:000000 100644 0000000... aef5210... A	2017/laststand/include/revision.h
+:100644 100644 149f13a... aef5210... R093	2017/LastStand/include/encDep.h	2017/laststand/include/revision.h
 :000000 100644 0000000... 8d0e534... A	2017/laststand/output.txt
 :000000 100644 0000000... 5409c69... A	2017/laststand/src/auto14.c
-:000000 100644 0000000... b9bc853... A	2017/laststand/src/revision.c
+:100644 100644 0a062d0... b9bc853... R096	2017/LastStand/src/encDep.c	2017/laststand/src/revision.c
 
 commit 357490c31f04dfc75b61f79a5444e4acf89d1f68
 Author: Ethan Wells <ethanialw@gmail.com>
@@ -1252,40 +1272,26 @@ Date:   Sun Feb 5 13:54:47 2017 -0500
 
     Gave up on 'position management' to opt for simply better code for moving to a certain gyro or encoder position, created new BETA after renaming old code DEAD and dating, added all improvements to new BETA code
 
-:000000 100644 0000000... ca53ff6... A	2017/2017States17BETAdeadD2M5Yr17/Makefile
+:100644 100644 ca53ff6... ca53ff6... R100	2017/States17/Makefile	2017/2017States17BETAdeadD2M5Yr17/Makefile
 :000000 100644 0000000... 5c4833c... A	2017/2017States17BETAdeadD2M5Yr17/bin/output.bin
-:000000 100644 0000000... 3ae70f7... A	2017/2017States17BETAdeadD2M5Yr17/common.mk
-:000000 100644 0000000... 28e36ad... A	2017/2017States17BETAdeadD2M5Yr17/firmware/STM32F10x.ld
-:000000 100644 0000000... 8c800b9... A	2017/2017States17BETAdeadD2M5Yr17/firmware/cortex.ld
-:000000 100644 0000000... a922ae9... A	2017/2017States17BETAdeadD2M5Yr17/firmware/uniflash.jar
-:000000 100644 0000000... 9210d99... A	2017/2017States17BETAdeadD2M5Yr17/include/API.h
-:000000 100644 0000000... 755b503... A	2017/2017States17BETAdeadD2M5Yr17/include/constants.h
-:000000 100644 0000000... bf8be56... A	2017/2017States17BETAdeadD2M5Yr17/include/ethanlib.h
-:000000 100644 0000000... 96afb02... A	2017/2017States17BETAdeadD2M5Yr17/include/main.h
-:000000 100644 0000000... f43e6af... A	2017/2017States17BETAdeadD2M5Yr17/project.pros
-:000000 100644 0000000... 9e5b952... A	2017/2017States17BETAdeadD2M5Yr17/src/Makefile
-:000000 100644 0000000... eb3a7f6... A	2017/2017States17BETAdeadD2M5Yr17/src/auto.c
+:100644 100644 3ae70f7... 3ae70f7... R100	2017/States17/common.mk	2017/2017States17BETAdeadD2M5Yr17/common.mk
+:100644 100644 28e36ad... 28e36ad... R100	2017/States17/firmware/STM32F10x.ld	2017/2017States17BETAdeadD2M5Yr17/firmware/STM32F10x.ld
+:100644 100644 8c800b9... 8c800b9... R100	2017/States17/firmware/cortex.ld	2017/2017States17BETAdeadD2M5Yr17/firmware/cortex.ld
+:100644 100644 a922ae9... a922ae9... R100	2017/States17/firmware/uniflash.jar	2017/2017States17BETAdeadD2M5Yr17/firmware/uniflash.jar
+:100644 100644 9210d99... 9210d99... R100	2017/States17/include/API.h	2017/2017States17BETAdeadD2M5Yr17/include/API.h
+:100644 100644 eaef91b... 755b503... R092	2017/States17/include/constants.h	2017/2017States17BETAdeadD2M5Yr17/include/constants.h
+:100644 100644 76ee2a2... bf8be56... R085	2017/States17/include/FunctionVars.h	2017/2017States17BETAdeadD2M5Yr17/include/ethanlib.h
+:100644 100644 96afb02... 96afb02... R100	2017/States17/include/main.h	2017/2017States17BETAdeadD2M5Yr17/include/main.h
+:100644 100644 f43e6af... f43e6af... R100	2017/States17/project.pros	2017/2017States17BETAdeadD2M5Yr17/project.pros
+:100644 100644 9e5b952... 9e5b952... R100	2017/States17/src/Makefile	2017/2017States17BETAdeadD2M5Yr17/src/Makefile
+:100644 100644 62def3d... eb3a7f6... R060	2017/States17/src/auto.c	2017/2017States17BETAdeadD2M5Yr17/src/auto.c
 :000000 100644 0000000... 0de6f9a... A	2017/2017States17BETAdeadD2M5Yr17/src/ethanlib.c
-:000000 100644 0000000... c92aa05... A	2017/2017States17BETAdeadD2M5Yr17/src/init.c
+:100644 100644 42dc9e5... c92aa05... R082	2017/States17/src/init.c	2017/2017States17BETAdeadD2M5Yr17/src/init.c
 :000000 100644 0000000... 222dcc4... A	2017/2017States17BETAdeadD2M5Yr17/src/opcontrol.c
-:000000 100644 0000000... 385e788... A	2017/2017States17BETAdeadD2M5Yr17/true.exe.stackdump
-:100644 000000 ca53ff6... 0000000... D	2017/States17/Makefile
+:100644 100644 385e788... 385e788... R100	2017/States17/true.exe.stackdump	2017/2017States17BETAdeadD2M5Yr17/true.exe.stackdump
 :100644 000000 486d366... 0000000... D	2017/States17/bin/output.bin
-:100644 000000 3ae70f7... 0000000... D	2017/States17/common.mk
-:100644 000000 28e36ad... 0000000... D	2017/States17/firmware/STM32F10x.ld
-:100644 000000 8c800b9... 0000000... D	2017/States17/firmware/cortex.ld
-:100644 000000 a922ae9... 0000000... D	2017/States17/firmware/uniflash.jar
-:100644 000000 9210d99... 0000000... D	2017/States17/include/API.h
-:100644 000000 76ee2a2... 0000000... D	2017/States17/include/FunctionVars.h
-:100644 000000 eaef91b... 0000000... D	2017/States17/include/constants.h
-:100644 000000 96afb02... 0000000... D	2017/States17/include/main.h
-:100644 000000 f43e6af... 0000000... D	2017/States17/project.pros
 :100644 000000 2a8aec9... 0000000... D	2017/States17/src/FuntionVars.c
-:100644 000000 9e5b952... 0000000... D	2017/States17/src/Makefile
-:100644 000000 62def3d... 0000000... D	2017/States17/src/auto.c
-:100644 000000 42dc9e5... 0000000... D	2017/States17/src/init.c
 :100644 000000 a039f9c... 0000000... D	2017/States17/src/opcontrol.c
-:100644 000000 385e788... 0000000... D	2017/States17/true.exe.stackdump
 :100644 100644 89368c7... ca53ff6... M	2017/States17BETA/Makefile
 :100644 000000 0e752ba... 0000000... D	2017/States17BETA/bin/auto.o
 :100644 000000 91884ca... 0000000... D	2017/States17BETA/bin/ethanlib.o
@@ -1420,12 +1426,10 @@ Date:   Sat Feb 4 19:34:18 2017 -0500
 
     cleaned up code a little bit (still needs testing)
 
-:100644 000000 0bd4dd1... 0000000... D	2017/States17BETA/include/FunctionVars.h
 :100644 100644 8446d48... 0f7a5a0... M	2017/States17BETA/include/constants.h
-:000000 100644 0000000... 0bd4dd1... A	2017/States17BETA/include/ethanlib.h
-:100644 000000 4c65ca1... 0000000... D	2017/States17BETA/src/FuntionVars.c
+:100644 100644 0bd4dd1... 0bd4dd1... R100	2017/States17BETA/include/FunctionVars.h	2017/States17BETA/include/ethanlib.h
 :100644 100644 2eab1fa... 42b178d... M	2017/States17BETA/src/auto.c
-:000000 100644 0000000... 17e7593... A	2017/States17BETA/src/ethanlib.c
+:100644 100644 4c65ca1... 17e7593... R097	2017/States17BETA/src/FuntionVars.c	2017/States17BETA/src/ethanlib.c
 :100644 100644 52a3fe2... 8d6445d... M	2017/States17BETA/src/init.c
 :100644 100644 a039f9c... efaa053... M	2017/States17BETA/src/opcontrol.c
 :100644 000000 fc24e7a... 0000000... D	_config.yml
@@ -1471,19 +1475,11 @@ Date:   Thu Feb 2 22:07:09 2017 -0500
 
     Lots of stuff - Auton presicion on regular project, new project created to test some constant PID-like code I created that shoul hopefully help a great deal. Have not tested new project yet, tomorrow probably if homework permits. Very glad I had a snow day today and was able to do work with this and FTC - got a lot done
 
-:100644 000000 ca53ff6... 0000000... D	2017/Freezing/PROS-FreezingCode-master/Makefile
 :100644 000000 a931e41... 0000000... D	2017/Freezing/PROS-FreezingCode-master/bin/output.bin
-:100644 000000 3ae70f7... 0000000... D	2017/Freezing/PROS-FreezingCode-master/common.mk
-:100644 000000 28e36ad... 0000000... D	2017/Freezing/PROS-FreezingCode-master/firmware/STM32F10x.ld
-:100644 000000 8c800b9... 0000000... D	2017/Freezing/PROS-FreezingCode-master/firmware/cortex.ld
-:100644 000000 a922ae9... 0000000... D	2017/Freezing/PROS-FreezingCode-master/firmware/uniflash.jar
-:100644 000000 9210d99... 0000000... D	2017/Freezing/PROS-FreezingCode-master/include/API.h
 :100644 000000 edbbcd9... 0000000... D	2017/Freezing/PROS-FreezingCode-master/include/main.h
-:100644 000000 f43e6af... 0000000... D	2017/Freezing/PROS-FreezingCode-master/project.pros
 :100644 000000 0d773c9... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/Claw.c
 :100644 000000 656573f... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/DriveBase.c
 :100644 000000 21fe41e... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/Lift.c
-:100644 000000 9e5b952... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/Makefile
 :100644 000000 531ccc5... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/auto.c
 :100644 000000 fdbb3aa... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/init.c
 :100644 000000 e20567f... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/main.c
@@ -1492,22 +1488,22 @@ Date:   Thu Feb 2 22:07:09 2017 -0500
 :100644 100644 a38321e... 76ee2a2... M	2017/States17/include/FunctionVars.h
 :100644 100644 934918b... 2a8aec9... M	2017/States17/src/FuntionVars.c
 :100644 100644 ab8511e... 62def3d... M	2017/States17/src/auto.c
-:000000 100644 0000000... ca53ff6... A	2017/States17BETA/Makefile
-:000000 100644 0000000... 3ae70f7... A	2017/States17BETA/common.mk
-:000000 100644 0000000... 28e36ad... A	2017/States17BETA/firmware/STM32F10x.ld
-:000000 100644 0000000... 8c800b9... A	2017/States17BETA/firmware/cortex.ld
-:000000 100644 0000000... a922ae9... A	2017/States17BETA/firmware/uniflash.jar
-:000000 100644 0000000... 9210d99... A	2017/States17BETA/include/API.h
-:000000 100644 0000000... 1e8ef31... A	2017/States17BETA/include/FunctionVars.h
-:000000 100644 0000000... 8446d48... A	2017/States17BETA/include/constants.h
-:000000 100644 0000000... 96afb02... A	2017/States17BETA/include/main.h
-:000000 100644 0000000... f43e6af... A	2017/States17BETA/project.pros
-:000000 100644 0000000... 2ecfa1f... A	2017/States17BETA/src/FuntionVars.c
-:000000 100644 0000000... 9e5b952... A	2017/States17BETA/src/Makefile
-:000000 100644 0000000... 62def3d... A	2017/States17BETA/src/auto.c
-:000000 100644 0000000... 52a3fe2... A	2017/States17BETA/src/init.c
-:000000 100644 0000000... a039f9c... A	2017/States17BETA/src/opcontrol.c
-:000000 100644 0000000... 385e788... A	2017/States17BETA/true.exe.stackdump
+:100644 100644 ca53ff6... ca53ff6... R100	2017/Freezing/PROS-FreezingCode-master/Makefile	2017/States17BETA/Makefile
+:100644 100644 3ae70f7... 3ae70f7... R100	2017/Freezing/PROS-FreezingCode-master/common.mk	2017/States17BETA/common.mk
+:100644 100644 28e36ad... 28e36ad... R100	2017/Freezing/PROS-FreezingCode-master/firmware/STM32F10x.ld	2017/States17BETA/firmware/STM32F10x.ld
+:100644 100644 8c800b9... 8c800b9... R100	2017/Freezing/PROS-FreezingCode-master/firmware/cortex.ld	2017/States17BETA/firmware/cortex.ld
+:100644 100644 a922ae9... a922ae9... R100	2017/Freezing/PROS-FreezingCode-master/firmware/uniflash.jar	2017/States17BETA/firmware/uniflash.jar
+:100644 100644 9210d99... 9210d99... R100	2017/Freezing/PROS-FreezingCode-master/include/API.h	2017/States17BETA/include/API.h
+:100644 100644 8fddc95... 1e8ef31... R066	2017/States17TaskParameters/include/FunctionVars.h	2017/States17BETA/include/FunctionVars.h
+:100644 100644 874710e... 8446d48... R094	2017/States17TaskParameters/include/constants.h	2017/States17BETA/include/constants.h
+:100644 100644 96afb02... 96afb02... R100	2017/States17TaskParameters/include/main.h	2017/States17BETA/include/main.h
+:100644 100644 f43e6af... f43e6af... R100	2017/Freezing/PROS-FreezingCode-master/project.pros	2017/States17BETA/project.pros
+:100644 100644 5e98169... 2ecfa1f... R066	2017/States17TaskParameters/src/FuntionVars.c	2017/States17BETA/src/FuntionVars.c
+:100644 100644 9e5b952... 9e5b952... R100	2017/Freezing/PROS-FreezingCode-master/src/Makefile	2017/States17BETA/src/Makefile
+:100644 100644 711e1f0... 62def3d... R067	2017/States17TaskParameters/src/auto.c	2017/States17BETA/src/auto.c
+:100644 100644 42dc9e5... 52a3fe2... R088	2017/States17TaskParameters/src/init.c	2017/States17BETA/src/init.c
+:100644 100644 6861862... a039f9c... R082	2017/States17TaskParameters/src/opcontrol.c	2017/States17BETA/src/opcontrol.c
+:100644 100644 385e788... 385e788... R100	2017/States17TaskParameters/true.exe.stackdump	2017/States17BETA/true.exe.stackdump
 :100644 000000 ca53ff6... 0000000... D	2017/States17TaskParameters/Makefile
 :100644 000000 c9c6bdb... 0000000... D	2017/States17TaskParameters/bin/output.bin
 :100644 000000 3ae70f7... 0000000... D	2017/States17TaskParameters/common.mk
@@ -1515,16 +1511,8 @@ Date:   Thu Feb 2 22:07:09 2017 -0500
 :100644 000000 8c800b9... 0000000... D	2017/States17TaskParameters/firmware/cortex.ld
 :100644 000000 a922ae9... 0000000... D	2017/States17TaskParameters/firmware/uniflash.jar
 :100644 000000 9210d99... 0000000... D	2017/States17TaskParameters/include/API.h
-:100644 000000 8fddc95... 0000000... D	2017/States17TaskParameters/include/FunctionVars.h
-:100644 000000 874710e... 0000000... D	2017/States17TaskParameters/include/constants.h
-:100644 000000 96afb02... 0000000... D	2017/States17TaskParameters/include/main.h
 :100644 000000 f43e6af... 0000000... D	2017/States17TaskParameters/project.pros
-:100644 000000 5e98169... 0000000... D	2017/States17TaskParameters/src/FuntionVars.c
 :100644 000000 9e5b952... 0000000... D	2017/States17TaskParameters/src/Makefile
-:100644 000000 711e1f0... 0000000... D	2017/States17TaskParameters/src/auto.c
-:100644 000000 42dc9e5... 0000000... D	2017/States17TaskParameters/src/init.c
-:100644 000000 6861862... 0000000... D	2017/States17TaskParameters/src/opcontrol.c
-:100644 000000 385e788... 0000000... D	2017/States17TaskParameters/true.exe.stackdump
 
 commit eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35
 Author: Ethan Wells <ethanialw@gmail.com>
