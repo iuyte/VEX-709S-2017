@@ -28,7 +28,7 @@ void auto2() {
     }
   }
   {
-    int startp = -10;
+    int startp = 10;
     int startEnc = encoderGet(lencoder);
     long power = 110;
     long lpower = power;
