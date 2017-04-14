@@ -1,3 +1,42 @@
+commit 2f66fce03f1be7409592800069e45f56a1fbe813
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 14 22:10:05 2017 +0800
+
+    major autonomous work, especially for regular. Very fast + efficient auton #3, working on cube as well
+
+:100644 100644 40e713d... f3486a0... M	2017/worlds/bin/output.bin
+:100644 100644 9fd5ec0... d127662... M	2017/worlds/include/defaultAuton.h
+:100644 100644 343be75... f4ce890... M	2017/worlds/include/defines.h
+:100644 100644 c39855c... 84eebf2... M	2017/worlds/src/auto3.c
+:000000 100644 0000000... 75b589d... A	2017/worlds/src/auto5.c
+:100644 100644 2e3349d... 9218640... M	2017/worlds/src/functions.c
+:100644 100644 8f27b91... 3302dc9... M	2017/worlds/src/init.c
+:100644 100644 4185790... 02e03a6... M	2017/worlds/src/mtrmgr.c
+:100644 100644 4f7d293... 118bba9... M	2017/worlds/src/opcontrol.c
+
+commit 9adae0ae2b15534bed7341a49e2d29bc9152e20f
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 14 21:40:08 2017 +0800
+
+    Made json file cleaner:
+
+:100644 100644 acfd8f2... 787e48c... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 0492b3d... 144b978... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 9f19e6d... 4d65c5e... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 f980169... 7f74080... M	2017/Planning/tools/commit.py
+:100644 100644 b123439... 36b54d6... M	2017/Planning/tools/git.html
+:100644 100644 421870c... 8618507... M	2017/Planning/tools/log.json
+
+commit d212ee999cf5b61c51a14af2d8c376c907f29a54
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Apr 12 09:36:38 2017 +0800
+
+    Updated logs
+
+:100644 100644 2b5797a... b123439... M	2017/Planning/tools/git.html
+:100644 100644 9d82216... 77e8f9b... M	2017/Planning/tools/git.txt
+:100644 100644 1ba3d16... 421870c... M	2017/Planning/tools/log.json
+
 commit 5dba7319a121cc4b2f39ee82d1405ea7f9755263
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Wed Apr 12 09:32:27 2017 +0800
