@@ -154,6 +154,7 @@ void calibrate(void) {
   encoderReset(rencoder);
   gyroReset(gyro);
   gyroReset(gyra);
+  potZero = analogReadCalibrated(POT) + 20;
 }
 
 void printValues(void) {

@@ -1,34 +1,22 @@
 #include "lib.h"
 
 void auto3() {
-calibrate();
+  calibrate();
   jerk();     // This is intended to drop and lock the intake
-  // GO FORWARD & PICK UP 1-3 STARS (+ intake), BACK UP TO PREVIOUS POSITION
+  // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION
 
-  /////////////BEGIN PART 0 (count from 0 in CS)/////////////
-
-  driveInchNoFix(38, 127); // Drives 40
+  driveInchNoFix(20, 127); // Drives 38 inches forward at 127 power
 
   rLiftTo(0, POTHALF);
 
-  driveInch(14, 127); // 6
+  driveInch(13, 90); // 6 14
 
-  int j = analogReadCalibrated(POT);
-  while (j < POTHALF / 1.5) {
-    j = analogReadCalibrated(POT);
-    delay(1);
-  }
+  wLift(POTHALF * .75);
 
-  driveInch(-51, 127); // -43
+  driveInch(-26, 127); // -43
 
   // TURN BACK OF ROBOT TO WALL, LIFT UP, HIT WALL, DUMP
-  turnNoFix(77, 100);
-  driveSet(-100, 100);
-  delay(50);
-  driveStop();
-  driveSet(50, -50);
-  while (rGyros() < 85) delay(20);
-  delay(50);
+  smartTurnTo(90, 80);
 
   rLiftTo(735, POTTOP); // 650 550 600 675
 
@@ -50,8 +38,7 @@ calibrate();
 
   checknum = 6;
 
-  while (analogReadCalibrated(POT) < POTTOP - 50)
-    delay(20);
+  wLift(POTTOP);
   checknum = 7;
 
   delay(600);
@@ -60,7 +47,7 @@ calibrate();
   wLift(POTHALF * 1.5);
   driveSet(-65, -65);
   while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-         timer(1) < 500) { // Repeats until the button on the robot
+         timer(1) < 750) { // Repeats until the button on the robot
                                         // is pressed
                                         // or 4 seconds pass
     delay(5);
@@ -71,14 +58,7 @@ calibrate();
 
   delay(300);
 
-  turnNoFix(-53, 90);
-  driveSet(100, -100);
-  delay(40);
-  driveStop();
-  turnNoFix(-10, 55);
-  driveSet(100, -100);
-  delay(40);
-  driveStop();
+  smartTurnTo(-53, 80);
 
   driveInchNoFix(36, 127);
   rLiftTo(0, POTHALF + 200);

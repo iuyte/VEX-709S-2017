@@ -12,6 +12,7 @@
  */
 
 #include "lib.h"
+#include "defaultAuton.h"
 
 void operatorControl() {
   bool tank=true;
@@ -33,6 +34,8 @@ void operatorControl() {
       while (!joystickGetDigital(1, 8, JOY_RIGHT) && !mutexTake(isThisDone, 5)) delay (20);
       taskDelete(dumpHandle);
     }
+
+    if (joystickGetDigital(1, 8, JOY_DOWN)) calibrate();
 
     if (tank) {
       driveSet(joystickGetAnalog(1, 3), joystickGetAnalog(1, 2));

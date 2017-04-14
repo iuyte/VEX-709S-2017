@@ -37,9 +37,9 @@
 #define SONICGET ultrasonicGet(sonic)
 // ANALOG INPUT//
 #define POT 4 // Potentiometer on lift in analog port 4
-
+extern int potZero;
 #define POTTOP 2000
-#define POTBOTTOM 15 // when the POTentiometer is all the way down, this is it's position  // 10
+#define POTBOTTOM potZero // when the POTentiometer is all the way down, this is it's position  // 10
 #define POTHALF 650 // When the lift is halfway up // 800
 
 #define GYROPORT 2  // Sets the gyroscope ports
@@ -52,7 +52,6 @@
 #define expandedPowerLevel analogRead(6)
 
 //////////////////////////////////////////////////////
-#define NUMBER_OF_AUTON 7
 #define TURN_CORRECTION (1.2 - ((double)powerLevelMain()) / 30000)
 #define SMART_TURN_MULT 0.67
 #define ENCO_CORRECTION 3

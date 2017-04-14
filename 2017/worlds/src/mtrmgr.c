@@ -14,7 +14,7 @@ static Motor motor[10];
 static Mutex mutex[10];
 static TaskHandle motorManagerTaskHandle;
 
-
+int potZero=15;
 /**
  * @brief The default recalculate function for RecalculateCommanded (takes input and returns it)
  *        This method is only accessible to this file for organizational purposes and may be opened to other files.

@@ -12,7 +12,6 @@
  */
 #include "lib.h"
 
-
 void initializeIO() {
   pinMode(isWall, INPUT);
   pinMode(isWall2, INPUT);
