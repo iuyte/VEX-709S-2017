@@ -22,6 +22,6 @@ def printCommit(commit):
 
 def saveList(listOfCommits):
     f = open("log.json", mode="w")
-    toWrite = jsonpickle.encode(listOfCommits)
+    toWrite = jsonpickle.encode(listOfCommits, unpicklable=False)
     f.write(toWrite)
     f.close()

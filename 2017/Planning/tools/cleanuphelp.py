@@ -19,11 +19,13 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
     .link:visited {
        color: black;
        text-decoration: none;
+       cursor: auto;
     }
 
     .link:hover {
        color: #0000EE;
        text-decoration: underline;
+       cursor: pointer;
     }
 
     .commit {
@@ -88,19 +90,19 @@ def indexInStr(index, string):
 
 def styleContent(commit):
     out = "<div class='commit' id='" + commit.commitkey + "'>"
-    out += "<p><b onclick='window.open(\"https://github.com/iuyte/VEX-709s/commit/" + commit.commitkey + "\")'>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commit.commitkey + "'>" + commit.commitkey + "</a></p>"
+    out += "<p><b style='cursor: pointer;' onclick='window.open(\"https://github.com/iuyte/VEX-709s/commit/" + commit.commitkey + "\")'>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#" + commit.commitkey + "'>" + commit.commitkey + "</a></p>"
     out += "<p><b>Date:</b> " + commit.date + "</p>\n"
     out += "<p><b>Author:</b> " + commit.author + "</p>\n"
     out += "<p><b>Description:</b><br>" + commit.description + "</p>\n"
     if len(commit.filesAdded) > 0:
         out += "<b>Files added:</b>\n<ul>\n"
         for i in range(len(commit.filesAdded)):
-            out += "<li class='link' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "/" + commit.filesAdded[i] + "\")'>" + commit.filesAdded[i] + "</li>\n"
+            out += "<li><span class='link' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "/" + commit.filesAdded[i] + "\")'>" + commit.filesAdded[i] + "</span></li>\n"
         out += "</ul>"
     if len(commit.filesModified) > 0:
         out += "<b>Files modified:</b>\n<ul>\n"
         for i in range(len(commit.filesModified)):
-            out += "<li class='link' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "/" + commit.filesModified[i] +"\")'>" + commit.filesModified[i] + "</li>\n"
+            out += "<li><span class='link' onclick='window.open(\"https://github.com/iuyte/VEX-709s/tree/" + commit.commitkey + "/" + commit.filesModified[i] +"\")'>" + commit.filesModified[i] + "</span></li>\n"
         out += "</ul>"
     if len(commit.filesDeleted) > 0:
         out += "<b>Files deleted:</b>\n<ul>\n"
