@@ -176,8 +176,6 @@ void lcdDisplayTime(void *none) {
   while (true) {
     timerReset(8);
     if (isAutonomous()) {
-      // TaskHandle upplayHandle = taskCreate(uptownPlay,
-      // TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT);
       while (timer(8) <= 15000 && isAutonomous()) {
         tim = 15000 - timer(8);
         if (lcdMode == 1) {
@@ -190,7 +188,6 @@ void lcdDisplayTime(void *none) {
         printValues();
         delay(20);
       }
-      // taskDelete(upplayHandle);
     } else if (isEnabled()) {
       while (timer(8) <= 105000 && isEnabled() && isAutonomous() == false) {
         min = 0;
@@ -275,6 +272,7 @@ void lcdDisplayTime(void *none) {
           lcdSetText(uart2, 1, "Calibrating");
           lcdSetText(uart2, 2, "Please Wait...");
           calibrate();
+          potZero = analogReadCalibrated(POT) + 7;
           wait(1024);
         } else if (lcdReadButtons(uart2) == 2) {
           if (lcdMode == 1) {

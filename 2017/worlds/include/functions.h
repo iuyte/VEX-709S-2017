@@ -124,4 +124,13 @@ void rLiftTo(long wait, int position);
  */
 void wLift(int position);
 
+/*
+ *Brakes the drive for a specified amount of time
+ */
+void brake(unsigned int time);
+
+void turn(float degrees, int power);
+
+void turnToNoFix(float degrees, int power);
+
 #endif

@@ -35,7 +35,11 @@ void operatorControl() {
       taskDelete(dumpHandle);
     }
 
-    if (joystickGetDigital(1, 8, JOY_DOWN)) calibrate();
+    if (joystickGetDigital(1, 8, JOY_DOWN)) {
+      liftSet(-20);
+      delay(60);
+      potZero = analogReadCalibrated(POT);
+    }
 
     if (tank) {
       driveSet(joystickGetAnalog(1, 3), joystickGetAnalog(1, 2));

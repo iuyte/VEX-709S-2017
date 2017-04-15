@@ -3,7 +3,7 @@
 void auto0() {
   calibrate();
   jerk();     // This is intended to drop and lock the intake
-  // GO FORWARD & PICK UP 1-3 STARS (+ intake), BACK UP TO PREVIOUS POSITION
+  // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION
 
   /////////////BEGIN PART 0 (count from 0 in CS)/////////////
 

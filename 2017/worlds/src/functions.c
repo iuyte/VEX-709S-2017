@@ -33,11 +33,15 @@ void rLiftTo(long wait, int position) {
 }
 
 void wLift(int position) {
-  if (position > analogCalibrate(POT)) {
-    while (analogReadCalibrated(POT) < position) delay(20);
+  if (analogReadCalibrated(POT) > position) {
+    while (analogReadCalibrated(POT) > position) delay(5);
   } else {
-    while (analogReadCalibrated(POT) > position) delay(20);
+    while (analogReadCalibrated(POT) < position) delay(5);
   }
+}
+
+void brake(unsigned int time) {
+  return;
 }
 
 int trueSpeedf(int speed) {
@@ -154,7 +158,6 @@ void calibrate(void) {
   encoderReset(rencoder);
   gyroReset(gyro);
   gyroReset(gyra);
-  potZero = analogReadCalibrated(POT) + 20;
 }
 
 void printValues(void) {
@@ -365,7 +368,6 @@ void driveToNoFix(float targetPosition, int power) {
       delay(5);
     }
     driveStop();
-    // driveSet(0 - power / 2, 0 - power / 2);
   } else if (targetPosition < 0) {
     int leftAt = 0 - power;
     int rightAt = 0 - power;
@@ -380,7 +382,6 @@ void driveToNoFix(float targetPosition, int power) {
       driveSet(leftAt, rightAt);
       delay(5);
     }
-    // driveSet(power / 2, power / 2);
     driveStop();
   }
   // delay(100);
@@ -399,29 +400,27 @@ void driveInchNoFix(float inches, int power) {
 
 void turn(float degrees, int power) {
   int gyroZero = rGyros();
-  if (degrees > 0) {
-    while (rGyros() - gyroZero < degrees) {
+  if (degrees > rGyros()) {
+    while (rGyros() - gyroZero < degrees - 5) {
       driveSet(power, -power);
       delay(5);
     }
     driveStop();
-    delay(250);
-    // driveSet(0 - power / 2, power / 2);
+    delay(200);
     while (rGyros() - gyroZero > degrees) {
-      driveSet(power * TURN_CORRECTION, power / TURN_CORRECTION);
+      driveSet(-power * TURN_CORRECTION, power * TURN_CORRECTION);
       delay(5);
     }
 
-  } else if (degrees < 0) {
-    while (rGyros() - gyroZero > degrees) {
+  } else if (degrees < rGyros()) {
+    while (rGyros() - gyroZero > degrees + 5) {
       driveSet(-power, power);
       delay(5);
     }
     driveStop();
-    delay(250);
-    // driveSet(power / 2, 0 - power / 2);
+    delay(200);
     while (rGyros() - gyroZero < degrees) {
-      driveSet(power * TURN_CORRECTION, power / -TURN_CORRECTION);
+      driveSet(power * TURN_CORRECTION, power * -TURN_CORRECTION);
       delay(5);
     }
   }
@@ -437,6 +436,24 @@ void turnNoFix(float degrees, int power) {
     }
   } else if (degrees < 0) {
     while (rGyros() - gyroZero > degrees) {
+      driveSet(-power, power);
+      delay(5);
+    }
+  }
+  driveStop();
+}
+
+void turnToNoFix(float degrees, int power) {
+  int gyroZero = 0;
+  if (degrees > rGyros()) {
+    while (rGyros() - gyroZero < degrees - 5) {
+      driveSet(power, -power);
+      delay(5);
+    }
+    driveStop();
+
+  } else if (degrees < rGyros()) {
+    while (rGyros() - gyroZero > degrees + 5) {
       driveSet(-power, power);
       delay(5);
     }
@@ -494,10 +511,10 @@ void smartTurn(float degrees, int power) {
 }
 
 void smartTurnTo(float degrees, int power) {
-  turnNoFix(degrees * SMART_TURN_MULT, power);
+  turnNoFix(degrees - rGyros() * SMART_TURN_MULT, power);
   driveStop();
   delay(250);
-  int diff = sqrt(pow((abs(degrees - rGyros())), 3));
+  int diff = sqrt(pow((abs(degrees - rGyros())), 3)) * .66;
   if (degrees > rGyros()) {
     while (rGyros() > degrees + TURN_TOLERANCE) {
       driveSet(-diff, diff);

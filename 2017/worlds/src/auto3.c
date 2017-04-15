@@ -5,20 +5,26 @@ void auto3() {
   jerk();     // This is intended to drop and lock the intake
   // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION
 
-  driveInchNoFix(20, 127); // Drives 38 inches forward at 127 power
+  driveInchNoFix(27, 127); // Drives 38 inches forward at 127 power
 
   rLiftTo(0, POTHALF);
 
-  driveInch(13, 90); // 6 14
+  driveInchNoFix(16, 90); // 6 14
 
   wLift(POTHALF * .75);
 
-  driveInch(-26, 127); // -43
+  driveInch(-48, 127); // -43
 
   // TURN BACK OF ROBOT TO WALL, LIFT UP, HIT WALL, DUMP
-  smartTurnTo(90, 80);
 
-  rLiftTo(735, POTTOP); // 650 550 600 675
+  {
+    turnToNoFix(86, 80);
+    driveSet(-158, 158);
+    delay(250);
+    driveStop();
+  }
+
+  rLiftTo(900, POTTOP); // 650 550 600 675 735
 
   checknum = 3;
 
@@ -38,13 +44,13 @@ void auto3() {
 
   checknum = 6;
 
-  wLift(POTTOP);
+  delay(250);
   checknum = 7;
 
   delay(600);
 
+  liftTo(POTHALF * 1.5);
   rLiftTo(0, POTHALF);
-  wLift(POTHALF * 1.5);
   driveSet(-65, -65);
   while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
          timer(1) < 750) { // Repeats until the button on the robot
@@ -58,16 +64,27 @@ void auto3() {
 
   delay(300);
 
-  smartTurnTo(-53, 80);
+  {
+    turnToNoFix(-63.25, 110);
+    driveSet(158, -158);
+    delay(175);
+    driveStop();
+  }
 
-  driveInchNoFix(36, 127);
-  rLiftTo(0, POTHALF + 200);
-  driveInchNoFix(12, 127);
+  liftSet(-127);
+  delay(50);
+  liftSet(-10);
+
+  driveInchNoFix(34, 127);
+  rLiftTo(0, POTHALF);
+  driveInchNoFix(14, 127);
 
   wLift(POTHALF);
   driveInchNoFix(-12, 127);
-  rLiftTo(0, POTTOP);
-  driveInch(-30, 157);
+  turnNoFix(15, 110);
+  driveInchNoFix(-20, 157);
+  rLiftTo(200, POTTOP);
+  driveInchNoFix(-15, 157);
 
   wLift(POTTOP);
   delay(650);

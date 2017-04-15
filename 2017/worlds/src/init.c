@@ -22,7 +22,7 @@ void initialize() {
   initVars();
   initSensors();
 
-  delay(100);
+  delay(1000);
   showTime = taskCreate(&lcdDisplayTime, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
   setTeamName("709s");
   if (USE_JINX) {
