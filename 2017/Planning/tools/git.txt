@@ -1,3 +1,29 @@
+commit 3b5e0769801078b4516ae56666b9efec5a5e81dd
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 16 03:44:01 2017 +0800
+
+    Autonomous fixes, #3 gets cube, very fast
+
+:100644 100644 f3486a0... f0744a6... M	2017/worlds/bin/output.bin
+:100644 100644 afb9f56... 697d417... M	2017/worlds/include/functions.h
+:100644 100644 0589ee1... 38e82ad... M	2017/worlds/src/auto0.c
+:100644 100644 84eebf2... 8132266... M	2017/worlds/src/auto3.c
+:100644 100644 9218640... 631db35... M	2017/worlds/src/functions.c
+:100644 100644 3302dc9... 4ab09b6... M	2017/worlds/src/init.c
+:100644 100644 02e03a6... 742ad47... M	2017/worlds/src/mtrmgr.c
+:100644 100644 118bba9... d3ef487... M	2017/worlds/src/opcontrol.c
+:100644 100644 c4164cb... 6752d1e... M	2017/worlds/src/tasks.c
+
+commit c7468669f2577e23b317c1f88594f81638f81c92
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 14 22:11:16 2017 +0800
+
+    update logs
+
+:100644 100644 36b54d6... 53680c5... M	2017/Planning/tools/git.html
+:100644 100644 77e8f9b... f9fc87e... M	2017/Planning/tools/git.txt
+:100644 100644 8618507... cdab528... M	2017/Planning/tools/log.json
+
 commit 2f66fce03f1be7409592800069e45f56a1fbe813
 Author: Ethan Wells <ethanialw@gmail.com>
 Date:   Fri Apr 14 22:10:05 2017 +0800

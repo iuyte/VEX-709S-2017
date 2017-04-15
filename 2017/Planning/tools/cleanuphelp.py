@@ -14,6 +14,7 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
     .link {
        color: black;
        text-decoration: none;
+       word-wrap: break-word; 
     }
 
     .link:visited {
