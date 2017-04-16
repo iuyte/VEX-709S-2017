@@ -1,6 +1,6 @@
 #include "lib.h"
 
-void auto0() {
+void auto6() {
   calibrate();
   jerk();     // This is intended to drop and lock the intake
   // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION

@@ -14,7 +14,7 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
     .link {
        color: black;
        text-decoration: none;
-       word-wrap: break-word; 
+       word-wrap: break-word;
     }
 
     .link:visited {
@@ -73,11 +73,34 @@ style = """<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="s
        color: black;
     }
 
+    h1 {
+       font-size: 275%;
+    }
+
+    h2 {
+       font-size: 170%;
+    }
+
+    .centered {
+       text-align: center;
+    }
+
 </style>
 """
 script="""
 <script>
-
+    window.onload = function() {
+       if (window.location.href[0] == "f") {
+           var elements = document.querySelectorAll('h1');
+            for(var i=0; i<elements.length; i++){
+                elements[i].style.font-size = "188%";
+            }
+            elements = document.querySelectorAll('h2');
+            for(var ii=0; i<elements.length; i++){
+                elements[i].style.font-size = "117%";
+            }
+       }
+    }
 </script>
 """
 
@@ -110,8 +133,7 @@ def styleContent(commit):
         for i in range(len(commit.filesDeleted)):
             out += "<li>" + commit.filesDeleted[i] + "</li>\n"
         out += "</ul>"
-    script = ""#script1 + script2.format(commitkey) + script3
-    out += script + "<br></div>\n"
+    out += "<br></div>\n"
     return out
 
 def removeSpaces(content):
@@ -127,7 +149,7 @@ def parseContent(content):
     out = "<html>\n<head>\n" + style + "<title>Git Commit history</title>\n</head>\n<body style='background-color: #bfbfdf;' class='body'>"
     count = 0
     commits = content.split("commit ")
-    out += "<div class='commit' id='top'><h1>" + str(len(commits)) + " Commits</h1></div>\n<br>\n"
+    out += "<div class='commit' id='top'>\n<h1 class='centered'>VEX Robotics Competition</h1>\n<h2 class='centered'>Team 709S Programming Log / Notebook<h2>\n</div>\n<br>\n"
     commit = 0
     lcom = ""
     lcommits = []
@@ -172,6 +194,6 @@ def parseContent(content):
         lcommits.append(tcommit)
         out += styleContent(tcommit) + "<div class='spacer'></div>"
     saveList(lcommits)
-    out += "</body>\n</html>\n"
+    out += script + "</body>\n</html>\n"
     lcom = commitkey
     return out

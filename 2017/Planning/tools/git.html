@@ -13,7 +13,7 @@
     .link {
        color: black;
        text-decoration: none;
-       word-wrap: break-word; 
+       word-wrap: break-word;
     }
 
     .link:visited {
@@ -72,10 +72,25 @@
        color: black;
     }
 
+    h1 {
+       font-size: 275%;
+    }
+
+    h2 {
+       font-size: 170%;
+    }
+
+    .centered {
+       text-align: center;
+    }
+
 </style>
 <title>Git Commit history</title>
 </head>
-<body style='background-color: #bfbfdf;' class='body'><div class='commit' id='top'><h1>106 Commits</h1></div>
+<body style='background-color: #bfbfdf;' class='body'><div class='commit' id='top'>
+<h1 class='centered'>VEX Robotics Competition</h1>
+<h2 class='centered'>Team 709S Programming Log / Notebook<h2>
+</div>
 <br>
 <div class='commit' id='3b5e0769801078b4516ae56666b9efec5a5e81dd'><p><b style='cursor: pointer;' onclick='window.open("https://github.com/iuyte/VEX-709s/commit/3b5e0769801078b4516ae56666b9efec5a5e81dd")'>Commit:</b> <a class='link' href='https://iuyte.github.io/VEX-709s/2017/Planning/tools/git.html#3b5e0769801078b4516ae56666b9efec5a5e81dd'>3b5e0769801078b4516ae56666b9efec5a5e81dd</a></p><p><b>Date:</b>   Sun Apr 16 03:44:01 2017 +0800</p>
 <p><b>Author:</b>  Ethan Wells <ethanialw@gmail.com></p>
@@ -1817,5 +1832,20 @@
 <li><span class='link' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fe43977f55feedd713467930ee031068371215b0/LICENSE")'>LICENSE</span></li>
 <li><span class='link' onclick='window.open("https://github.com/iuyte/VEX-709s/tree/fe43977f55feedd713467930ee031068371215b0/README.md")'>README.md</span></li>
 </ul><br></div>
-<div class='spacer'></div></body>
+<div class='spacer'></div>
+<script>
+    window.onload = function() {
+       if (window.location.href[0] == "f") {
+           var elements = document.querySelectorAll('h1');
+            for(var i=0; i<elements.length; i++){
+                elements[i].style.font-size = "188%";
+            }
+            elements = document.querySelectorAll('h2');
+            for(var ii=0; i<elements.length; i++){
+                elements[i].style.font-size = "117%";
+            }
+       }
+    }
+</script>
+</body>
 </html>

@@ -34,4 +34,6 @@ typedef struct { int a; int b; } Foo;
 void initVars(void);
 void initSensors(void);
 
+double avg(double a, double b);
+
 #endif
