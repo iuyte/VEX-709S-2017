@@ -329,7 +329,6 @@ void auto6() {
 
   smartTurn(73, 60); // 67 68 70 72 too little
 
-  calibrate();
   driveStop();
 
   delay(250);
@@ -367,7 +366,9 @@ void auto6() {
   }
   driveStop();
 
-  liftTo(POTTOP);
+  rliftTo(0, POTHALF);
+  driveInchNoFix(6, 127);
+  driveInchNoFix(-6, 127);
 
   liftTo(POTHALF);
 
@@ -384,10 +385,47 @@ void auto6() {
     delay(5);
   }
   driveStop();
+  calibrate();
+
+  {
+    turnToNoFix(-40, 80);
+    driveSet(138, -138);
+    delay(260);
+    driveStop();
+  }
+  driveInch(30, 127);
+
+  liftSet(30);
+  {
+    turnToNoFix(-126, 80);
+    driveSet(158, -158);
+    delay(260);
+    driveStop();
+  }
+  liftSet(LIFTZERO);
+
+  timerReset(3);
+  driveSet(-127, -127);
+  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+         timer(3) < 750) { // Repeats until the button on the robot is pressed
+                           // or 1 seconds pass
+    delay(5);
+  }
+  driveStop();
+  calibrate();
+
+  driveInch(12, 110);
+  {
+    turnToNoFix(-40, 80);
+    driveSet(138, -138);
+    delay(260);
+    driveStop();
+  }
 
   liftTo(POTTOP);
+  delay(400);
+  liftTo(POTBOTTOM);
 
-  liftTo(POTHALF);
 
   driveStop();
   calibrate();
