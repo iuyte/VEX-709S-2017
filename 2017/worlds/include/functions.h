@@ -36,6 +36,7 @@ void auto1();
 void auto2();
 void auto3();
 void auto4();
+void auto6();
 
 void sendValues(void);
 void printValues(void);

@@ -43,10 +43,11 @@ void autonomous() {
     auto4();
     break;
   case 5:
-    jerk();
     break;
   case 6:
-    encoderValues();
+    auto6();
+  case 7:
+    auto7();
     break;
   }
   while (isAutonomous())

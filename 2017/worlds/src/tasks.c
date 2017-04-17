@@ -150,7 +150,7 @@ void rightTo(void *none) {
 void quickDump(void *none) {
   mutexGive(isThisDone);
   mutexTake(isThisDone, -1);
-  rLiftTo(250, POTTOP); // 100
+  rLiftTo(175, POTTOP); // 250
   driveInchNoFix(5, 127);
   timerReset(6);
   driveSet(-127, -127);

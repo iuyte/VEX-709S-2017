@@ -142,7 +142,7 @@ void auto6() {
     delay(10);
   }
   driveSet(50, -50);
-  delay(60);
+  delay(80);
   driveStop();
 
   check(22);
@@ -176,8 +176,8 @@ void auto6() {
   startp = rGyros() - 8; // 7
   startEnc = encoderGet(lencoder);
   timerReset(3);
-  while (encoderGet(lencoder) - startEnc < 25 * INCHESMULTIPLIER &&
-         timer(3) < (MAX_TIME_TO_WALL / 3) + 750) { // 23
+  while (encoderGet(lencoder) - startEnc < 15 * INCHESMULTIPLIER &&
+         timer(3) < (MAX_TIME_TO_WALL / 3) + 750) { // 23 25
     changer = (abs(rGyros() - startp) - tolerance) * 15;
     if (rGyros() - startp > tolerance) {
       lpower = power - changer;
@@ -190,17 +190,18 @@ void auto6() {
     delay(50);
   }
 
-  driveInch(8, 127);
+  driveInch(6, 127);
 
-  turnNoFix(3, 60);
+  turnNoFix(2, 70);
 
   check(24);
 
-  rLiftTo(0, POTHALF);
+  mutexGive(potMutex);
+  rLiftTo(0, POTHALF + 10);
   delay(300);
   driveInch(-5, 100);
 
-  int stp = analogReadCalibrated(POT);
+  int stp = analogReadCalibrated(POT) + 10;
   while (analogReadCalibrated(POT) < POTHALF) {
     delay(75);
     if (analogReadCalibrated(POT) <= stp) {
@@ -213,7 +214,7 @@ void auto6() {
   }
   check(25);
 
-  smartTurnTo(0, 60);
+  smartTurn(90, 65);
 
   TaskHandle dumpHandle = taskCreate(quickDump, TASK_DEFAULT_STACK_SIZE, NULL,
                                      TASK_PRIORITY_DEFAULT);
@@ -238,7 +239,7 @@ void auto6() {
   }
   driveStop();
 
-  smartTurnTo(-8, 50); // -3, 40 45 too low
+  smartTurnTo(-3, 65); // -3, 40 45 too low
 
   startp = rGyros() + 2;
   power = 110;
@@ -270,8 +271,6 @@ void auto6() {
     driveInch(3, 127);
   check(41);
 
-  turnNoFix(4, 60);
-
   stp = analogReadCalibrated(POT);
   while (analogReadCalibrated(POT) < POTHALF) {
     delay(75);
@@ -285,6 +284,7 @@ void auto6() {
   }
 
   driveInchNoFix(-4, 127);
+  turnNoFix(-2, 70);
   check(42);
 
   while (analogReadCalibrated(POT) < POTHALF)
@@ -292,8 +292,6 @@ void auto6() {
   check(425);
 
   delay(600);
-
-  turnNoFix(2, 60);
 
   driveSet(-158, -158);
   timerReset(1);
@@ -309,124 +307,114 @@ void auto6() {
 
   fastDumpFromWall();
 
-/////////////////
-// BEGIN PART 2
-////////////////
+  /////////////////
+  // BEGIN PART 2
+  ////////////////
 
-  rLiftTo(0, POTBOTTOM);
-  timerReset(3);
-  driveSet(-100, -100);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-         timer(3) < 675) { // Repeats until the button on the robot is pressed
-                           // or 1 seconds pass
-    delay(5);
-  }
-  driveStop();
-  check(50);
-  calibrate();
-
-  delay(750);
-
-  smartTurn(73, 60); // 67 68 70 72 too little
-
-  driveStop();
-
-  delay(250);
-
-  driveInchNoFix(43, 127); // 38
-  rLiftTo(0, POTHALF);
-  driveInchNoFix(11, 150);
-  driveStop();
-
-  turnNoFix(-10, 80);
-
-  rLiftTo(400, POTTOP);
-  delay(450);
-  timerReset(3);
-  driveSet(-127, -127);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-         timer(3) < 1500) { // Repeats until the button on the robot is pressed
-                            // or 1 seconds pass
-    delay(5);
-  }
-  driveStop();
-
-  liftTo(POTHALF);
-  driveInchNoFix(.5, 127);
-  turnNoFix(-30, 60); // 20
-  rLiftTo(0, POTTOP);
-  delay(200);
-
-  timerReset(3);
-  driveSet(-127, -127);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-         timer(3) < 750) { // Repeats until the button on the robot is pressed
-                           // or 1 seconds pass
-    delay(5);
-  }
-  driveStop();
-
-  rliftTo(0, POTHALF);
-  driveInchNoFix(6, 127);
-  driveInchNoFix(-6, 127);
-
-  liftTo(POTHALF);
-
-  driveInchNoFix(.5, 127);
-  turnNoFix(-30, 60); // 20
-  rLiftTo(0, POTTOP);
-  delay(200);
-
-  timerReset(3);
-  driveSet(-127, -127);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-         timer(3) < 750) { // Repeats until the button on the robot is pressed
-                           // or 1 seconds pass
-    delay(5);
-  }
-  driveStop();
-  calibrate();
-
-  {
-    turnToNoFix(-40, 80);
-    driveSet(138, -138);
-    delay(260);
+    rLiftTo(0, POTBOTTOM);
+    timerReset(3);
+    driveSet(-100, -100);
+    while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+           timer(3) < 675) { // Repeats until the button on the robot is pressed
+                             // or 1 seconds pass
+      delay(5);
+    }
     driveStop();
-  }
-  driveInch(30, 127);
+    check(50);
+    calibrate();
 
-  liftSet(30);
-  {
-    turnToNoFix(-126, 80);
-    driveSet(158, -158);
-    delay(260);
+    delay(750);
+
+    smartTurn(73, 60); // 67 68 70 72 73 too little
+
     driveStop();
-  }
-  liftSet(LIFTZERO);
 
-  timerReset(3);
-  driveSet(-127, -127);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
-         timer(3) < 750) { // Repeats until the button on the robot is pressed
-                           // or 1 seconds pass
-    delay(5);
-  }
-  driveStop();
-  calibrate();
+    delay(250);
 
-  driveInch(12, 110);
-  {
-    turnToNoFix(-40, 80);
-    driveSet(138, -138);
-    delay(260);
+    driveInchNoFix(43, 127); // 38
+    rLiftTo(0, POTHALF);
+    driveInchNoFix(11, 150);
     driveStop();
+
+    turnNoFix(-10, 80);
+
+    rLiftTo(700, POTTOP);
+    delay(450);
+    timerReset(3);
+    driveSet(-127, -127);
+    while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+           timer(3) < 1500) { // Repeats until the button on the robot is pressed
+                              // or 1 seconds pass
+      delay(5);
+    }
+    driveStop();
+    if (analogReadCalibrated(POT) < POTTOP - 52)
+      wLift(POTTOP - 50);
+    delay(600);
+    liftTo(POTBOTTOM);
+    timerReset(3);
+    driveSet(-127, -127);
+    while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+           timer(3) < 1500) { // Repeats until the button on the robot is pressed
+                              // or 1 seconds pass
+      delay(5);
+    }
+    driveStop();
+    calibrate();
+
+    {
+      turnToNoFix(-51.5, 90);
+      driveSet(138, -138);
+      delay(150);
+      driveStop();
+    }
+
+    driveSet(127, 127);
+    timerReset(4);
+    encoderReset(lencoder);
+    while ((ultrasonicGet(sonic) > 60 || ultrasonicGet(sonic) == 0) &&
+           timer(4) < (MAX_TIME_TO_WALL * sqrt(2) + 5) + 500 && encoderGet(lencoder) < (95 * INCHESMULTIPLIER))
+      delay(10);
+    driveStop();
+    driveInchNoFix(9, 127);
+    delay(50);
+
+    liftTo(POTHALF);
+    {
+      turnToNoFix(-212, 90);
+      driveSet(158, -158);
+      delay(200);
+      driveStop();
+    }
+    liftSet(LIFTZERO);
+
+    timerReset(3);
+    driveSet(-127, -127);
+    delay(900);
+    driveStop();
+    calibrate();
+
+    liftTo(POTTOP);
+    delay(700);
+    liftTo(POTBOTTOM);
+    liftSet(-127);
+    delay(50);
+    liftSet(0);
+    int lastLift = analogReadCalibrated(POT);
+    while (true) {
+      delay(400);
+      if (analogReadCalibrated(POT) > lastLift - 15 && analogReadCalibrated(POT) < lastLift + 15) {
+        liftTo(POTHALF);
+        turnNoFix(-2.5, 65);
+        delay(700);
+        liftTo(POTTOP);
+        liftTo(POTBOTTOM);
+        lastLift = analogReadCalibrated(POT);
+      } else  {
+        break;
+      }
+    }
+
+    driveStop();
+    calibrate();
   }
-
-  liftTo(POTTOP);
-  delay(400);
-  liftTo(POTBOTTOM);
-
-
-  driveStop();
-  calibrate();
-}
