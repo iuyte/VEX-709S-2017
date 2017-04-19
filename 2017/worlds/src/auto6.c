@@ -25,7 +25,7 @@ void auto6() {
   {
     turnToNoFix(85, 80);
     driveSet(-158, 158);
-    delay(260);
+    delay(240);
     driveStop();
   }
 
