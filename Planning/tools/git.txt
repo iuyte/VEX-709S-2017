@@ -1,0 +1,1876 @@
+commit b29fed28f4dad9bcf7139a425e214c2a85a900b8
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Apr 19 22:14:05 2017 +0400
+
+    Minor tweaks, modified auto7 to contain a 2 or 3 star auton w/ no cube (to better comply with alliance partners)
+
+:100644 100644 f193268... c933985... M	2017/Planning/tools/log.json
+:100644 100644 8550e66... 5111d95... M	2017/worlds/bin/output.bin
+:100644 100644 2f254c6... 3aa4682... M	2017/worlds/include/defaultAuton.h
+:100644 100644 8132266... 5a7e69d... M	2017/worlds/src/auto3.c
+:100644 100644 8ea89ba... 4d50119... M	2017/worlds/src/auto4.c
+:100644 100644 a644f73... 269f62f... M	2017/worlds/src/auto6.c
+:100644 100644 165c87d... 18cfe5e... M	2017/worlds/src/auto7.c
+
+commit 10a1f01176b0d0445b75eece4ec0665a2613cb35
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Apr 18 11:05:39 2017 +0400
+
+    Last minute auton skills changes to heighten chances of working even moreso.
+
+:100644 100644 3d904bd... 8550e66... M	2017/worlds/bin/output.bin
+:100644 100644 6100135... a644f73... M	2017/worlds/src/auto6.c
+
+commit e312394a3bf274bad1ebbde0b09e361df83324e4
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Apr 18 00:49:54 2017 +0400
+
+    Auton skills now hangs fairly consistently, generally works better. Many fixes and improvements made that should make for cleaner, more efficient and more consistent code
+
+:100644 100644 6c1845a... e408991... R064	2017/Planning/Programming.pdf	2017/Planning/709S Programming Notebook.pdf
+:100644 100644 4e72952... 3d904bd... M	2017/worlds/bin/output.bin
+:100644 100644 ff37fa6... 2f254c6... M	2017/worlds/include/defaultAuton.h
+:100644 100644 697d417... e558f8c... M	2017/worlds/include/functions.h
+:100644 100644 873d8bb... 326db88... M	2017/worlds/src/auto.c
+:100644 100644 7872273... 6100135... M	2017/worlds/src/auto6.c
+:000000 100644 0000000... 165c87d... A	2017/worlds/src/auto7.c
+:100644 100644 6752d1e... 79a0a22... M	2017/worlds/src/tasks.c
+
+commit f84d9f14167ec5c8f5abf8ac14dac99d657440c2
+Author: iuyte <iuyte@gmail.com>
+Date:   Mon Apr 17 00:49:10 2017 -0400
+
+    hanging skills prototype complete
+
+:100644 100644 63d0c31... 7872273... M	2017/worlds/src/auto6.c
+
+commit 2a5acb721cd5f5cf3df4e1799d79e6a1b050bee8
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 16 23:34:45 2017 +0800
+
+    Updated webpage to include latest commit (almost ironically)
+
+:100644 100644 611c87c... c2e70ad... M	2017/Planning/tools/git.html
+:100644 100644 470082c... 463ae08... M	2017/Planning/tools/git.txt
+:100644 100644 1d4889f... f193268... M	2017/Planning/tools/log.json
+
+commit 3e314d48fb3c55128756d2f93e3578195a3e4c9c
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 16 23:30:13 2017 +0800
+
+    Now two options for regular auton - 3 star beginning or 2 star, in case of unmoving alliance partner. auto6 now contains skills copy for hanging tests. PDF for programming engineering notebook moved into repo, just finished today
+
+:000000 100644 0000000... 6c1845a... A	2017/Planning/Programming.pdf
+:100644 100644 01b1ed0... 66a55c2... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 7e70f5b... d8aff69... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 1000480... 611c87c... M	2017/Planning/tools/git.html
+:100644 100644 f0744a6... 4e72952... M	2017/worlds/bin/output.bin
+:100644 100644 d127662... ff37fa6... M	2017/worlds/include/defaultAuton.h
+:100644 100644 0583bde... 97003ca... M	2017/worlds/include/extras.h
+:100644 100644 38e82ad... 7e77c19... M	2017/worlds/src/auto0.c
+:100644 100644 75b589d... 696e2bc... M	2017/worlds/src/auto5.c
+:000000 100644 0000000... 63d0c31... A	2017/worlds/src/auto6.c
+:100644 100644 de52a2e... f25cf97... M	2017/worlds/src/extras.c
+
+commit 6708d15df12b16c17df06e36e2374682ff79ea14
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 16 03:45:56 2017 +0800
+
+    Logs now wrap lines
+
+:100644 100644 787e48c... 01b1ed0... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 4d65c5e... 7e70f5b... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 53680c5... 1000480... M	2017/Planning/tools/git.html
+:100644 100644 f9fc87e... 470082c... M	2017/Planning/tools/git.txt
+:100644 100644 cdab528... 1d4889f... M	2017/Planning/tools/log.json
+
+commit 3b5e0769801078b4516ae56666b9efec5a5e81dd
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 16 03:44:01 2017 +0800
+
+    Autonomous fixes, #3 gets cube, very fast
+
+:100644 100644 f3486a0... f0744a6... M	2017/worlds/bin/output.bin
+:100644 100644 afb9f56... 697d417... M	2017/worlds/include/functions.h
+:100644 100644 0589ee1... 38e82ad... M	2017/worlds/src/auto0.c
+:100644 100644 84eebf2... 8132266... M	2017/worlds/src/auto3.c
+:100644 100644 9218640... 631db35... M	2017/worlds/src/functions.c
+:100644 100644 3302dc9... 4ab09b6... M	2017/worlds/src/init.c
+:100644 100644 02e03a6... 742ad47... M	2017/worlds/src/mtrmgr.c
+:100644 100644 118bba9... d3ef487... M	2017/worlds/src/opcontrol.c
+:100644 100644 c4164cb... 6752d1e... M	2017/worlds/src/tasks.c
+
+
+
+
+
+
+
+
+
+
+
+commit 2f66fce03f1be7409592800069e45f56a1fbe813
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 14 22:10:05 2017 +0800
+
+    major autonomous work, especially for regular. Very fast + efficient auton #3, working on cube as well
+
+:100644 100644 40e713d... f3486a0... M	2017/worlds/bin/output.bin
+:100644 100644 9fd5ec0... d127662... M	2017/worlds/include/defaultAuton.h
+:100644 100644 343be75... f4ce890... M	2017/worlds/include/defines.h
+:100644 100644 c39855c... 84eebf2... M	2017/worlds/src/auto3.c
+:000000 100644 0000000... 75b589d... A	2017/worlds/src/auto5.c
+:100644 100644 2e3349d... 9218640... M	2017/worlds/src/functions.c
+:100644 100644 8f27b91... 3302dc9... M	2017/worlds/src/init.c
+:100644 100644 4185790... 02e03a6... M	2017/worlds/src/mtrmgr.c
+:100644 100644 4f7d293... 118bba9... M	2017/worlds/src/opcontrol.c
+
+commit 9adae0ae2b15534bed7341a49e2d29bc9152e20f
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 14 21:40:08 2017 +0800
+
+    Made json file cleaner:
+
+:100644 100644 acfd8f2... 787e48c... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 0492b3d... 144b978... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 9f19e6d... 4d65c5e... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 f980169... 7f74080... M	2017/Planning/tools/commit.py
+:100644 100644 b123439... 36b54d6... M	2017/Planning/tools/git.html
+:100644 100644 421870c... 8618507... M	2017/Planning/tools/log.json
+
+
+
+
+
+
+
+
+
+
+
+commit 5dba7319a121cc4b2f39ee82d1405ea7f9755263
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Apr 12 09:32:27 2017 +0800
+
+    Auton work
+
+:100644 100644 989b537... 40e713d... M	2017/worlds/bin/output.bin
+:100644 100644 59707f0... ffb5d26... M	2017/worlds/src/auto2.c
+:100644 100644 7ecf44b... c39855c... M	2017/worlds/src/auto3.c
+
+
+commit 213b86c59c78f492306a60f5656b0c2d06b92184
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Apr 10 06:46:36 2017 +0800
+
+    Changed and added files now link to them at that commit in repo, commit label goes to commit page
+
+:100644 100644 63b1694... acfd8f2... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 36d96d9... 0492b3d... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:000000 100644 0000000... 76b394b... A	2017/Planning/tools/__pycache__/dif.cpython-36.pyc
+:100644 100644 1800833... 8427266... M	2017/Planning/tools/cleanup.py
+:100644 100644 418630a... 9f19e6d... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 ff5fb1b... adbffbc... M	2017/Planning/tools/git.html
+:100644 100644 ad4a37a... 180893c... M	2017/Planning/tools/git.txt
+:100644 100644 164c880... 8c22669... M	2017/Planning/tools/log.json
+
+commit 9c95ab3515ceef27b009c2055b9683bc81b9e268
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Apr 10 00:35:11 2017 +0800
+
+    Prettied json
+
+:100644 100644 aeccb13... d2e9838... M	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 dfccce0... e82e871... M	2017/Planning/tools/commit.py
+:100644 100644 9825bd6... 374d5d5... M	2017/Planning/tools/log.json
+
+commit c06e3ace411eff1fa7b52c315a0fa755713a392b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 23:38:59 2017 +0800
+
+    deleted link.png
+
+:100644 000000 ae420c6... 0000000... D	2017/Planning/tools/link.png
+
+commit eaf25edb4793de4118ac51ab7bc8b988f0645eb8
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 23:35:33 2017 +0800
+
+    Added a Commit class for making commit objects, added creation of log.json for the script
+
+:100644 100644 22dfa4a... 63b1694... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:000000 100644 0000000... aeccb13... A	2017/Planning/tools/__pycache__/commit.cpython-36.pyc
+:100644 100644 de33369... 418630a... M	2017/Planning/tools/cleanuphelp.py
+:000000 100644 0000000... dfccce0... A	2017/Planning/tools/commit.py
+:000000 100644 0000000... 9825bd6... A	2017/Planning/tools/log.json
+
+commit fbf4b72506a3227ffa70766a598bad151deb5080
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 22:53:12 2017 +0800
+
+    Clicking on 'commit' will take the user to the repository at that commit
+
+:100644 100644 803f4f7... 22dfa4a... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 45bcd35... de33369... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 bb913f3... e1f688f... M	2017/Planning/tools/git.html
+
+commit 350748cdfd3ff8a5d2e5e1e6d13acff0b15a5b94
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 22:35:23 2017 +0800
+
+    updated git.html and git.txt
+
+:100644 100644 1181e69... bb913f3... M	2017/Planning/tools/git.html
+:100644 100644 60e853b... 2d3477b... M	2017/Planning/tools/git.txt
+
+commit 5550a70727f1080d0b5118b55ea947a59a9c891b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 22:31:43 2017 +0800
+
+    changed order of elements and added a link to each commit, set prototype for new button
+
+:100644 100644 fcc6d92... 803f4f7... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 6165b58... 45bcd35... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 fdd0139... 1181e69... M	2017/Planning/tools/git.html
+:000000 100644 0000000... ae420c6... A	2017/Planning/tools/link.png
+
+commit 52cdf9096a4731f10d401578bf22e81de7a84509
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:35:15 2017 +0800
+
+    changed font to Open Sans
+
+:100644 100644 1492bca... fcc6d92... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 bc6ac87... 6165b58... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 e6aa035... 975b146... M	2017/Planning/tools/git.html
+
+commit d2bf325a0e3ae2c80e8002266a4e5bb3f67e078b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:32:11 2017 +0800
+
+    Very slight style changes
+
+:100644 100644 9bcfc4a... 1492bca... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 2edca43... bc6ac87... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 2a02340... e6aa035... M	2017/Planning/tools/git.html
+
+commit 9ef053b5a04f0d62f4e8cf4a7f7bf35cee99b3f9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 01:25:29 2017 +0800
+
+    minor style changes
+
+:100644 100644 6aba4c2... 9bcfc4a... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 10702e2... 2edca43... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 a2d67ca... 2a02340... M	2017/Planning/tools/git.html
+
+commit 8e3cd78e19f757d938779dc1348fddbf237c45e9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:20:57 2017 +0800
+
+    centered css for git.html
+
+:100644 100644 99ed427... 6aba4c2... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 22c35d4... 10702e2... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 9a62bec... a2d67ca... M	2017/Planning/tools/git.html
+
+commit b4578833dc62b20fb9d2382f5ed6c7b5297bacb7
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:07:42 2017 +0800
+
+    Fixed broken link in index.html, updated git.txt and git.html in tools
+
+:100644 100644 24fab66... 9a62bec... M	2017/Planning/tools/git.html
+:100644 100644 e7bebcf... f97cf8f... M	2017/Planning/tools/git.txt
+:100644 100644 134d7b0... 6010751... M	index.html
+
+commit 2a9748db2f3d5928f46a7da8629e7feda150cb16
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:03:24 2017 +0800
+
+    Deleted stray file in root directory
+
+:100644 000000 668c891... 0000000... D	git.txt
+
+commit c99aa7f32b3873bf7688d5353be633d53a6043fc
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 9 00:02:05 2017 +0800
+
+    Moved gh-pages to master branch, redirects to now pretty git in /2017/Planning/tools/git.html
+
+:100644 100644 98e2bbe... 99ed427... M	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:100644 100644 ad9ff49... 22c35d4... M	2017/Planning/tools/cleanuphelp.py
+:100644 100644 4fe0735... 24fab66... M	2017/Planning/tools/git.html
+:000000 100644 0000000... 668c891... A	git.txt
+:000000 100644 0000000... 134d7b0... A	index.html
+
+commit 60f090905023b0d3aadc60ce49900a14a306be31
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 8 23:07:08 2017 +0800
+
+    Created git whatchanged to HTML script for ease of access offline & engineering notebook purposes
+
+:000000 100644 0000000... 98e2bbe... A	2017/Planning/tools/__pycache__/cleanuphelp.cpython-36.pyc
+:000000 100644 0000000... 1800833... A	2017/Planning/tools/cleanup.py
+:000000 100644 0000000... ad9ff49... A	2017/Planning/tools/cleanuphelp.py
+:000000 100644 0000000... 4fe0735... A	2017/Planning/tools/git.html
+:000000 100644 0000000... e7bebcf... A	2017/Planning/tools/git.txt
+:100644 000000 89cccbf... 0000000... D	2017/Planning/~$Auto Plan.pptx
+:100644 100644 9dc5c0c... 989b537... M	2017/worlds/bin/output.bin
+
+commit 4c425ed59c7ce0d4ad6db9499825134adc254ed1
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 8 01:08:46 2017 +0800
+
+    Cube only auton prototype
+
+:100644 100644 c45102f... afb9f56... M	2017/worlds/include/functions.h
+:100644 100644 c21e417... 0589ee1... M	2017/worlds/src/auto0.c
+:100644 100644 0cd46df... 59707f0... M	2017/worlds/src/auto2.c
+:100644 100644 1e30bdc... 2e3349d... M	2017/worlds/src/functions.c
+:100644 100644 f599739... 90d72c0... M	2017/worlds/src/jerk.c
+
+commit c9d28ae00e5f244a01ed6488229a1250c5afc6de
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 8 00:18:45 2017 +0800
+
+    Moved definition of DEFAULT_AUTON to defaultAuton.h so all code doesn\'t have to recompile constantly
+
+:100644 100644 6b67eab... 9dc5c0c... M	2017/worlds/bin/output.bin
+:000000 100644 0000000... 9fd5ec0... A	2017/worlds/include/defaultAuton.h
+:100644 100644 94a529a... 873d8bb... M	2017/worlds/src/auto.c
+:100644 100644 76e4db3... c4164cb... M	2017/worlds/src/tasks.c
+
+commit 849257a598f31e29de1492a0514c5445c1122d26
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 8 00:14:37 2017 +0800
+
+    Eliminated rerun and all of it's components from code
+
+:100644 100644 c67d136... 6b67eab... M	2017/worlds/bin/output.bin
+:100644 100644 665f790... 343be75... M	2017/worlds/include/defines.h
+:100644 100644 55a9433... 693779c... M	2017/worlds/include/lib.h
+:100644 000000 2300045... 0000000... D	2017/worlds/include/rerun.h
+:100644 100644 dadaba3... 94a529a... M	2017/worlds/src/auto.c
+:100644 100644 5251f53... 8f27b91... M	2017/worlds/src/init.c
+:100644 000000 6769e5f... 0000000... D	2017/worlds/src/noInclude.c
+:100644 000000 a87d4cf... 0000000... D	2017/worlds/src/rerun.c
+:100644 000000 5ce23af... 0000000... D	2017/worlds/src/rerunHelper.c
+:100644 100644 970f444... 76e4db3... M	2017/worlds/src/tasks.c
+
+commit 41cde2b08e9b5b784479044bdd6fd4a4d9161898
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 7 21:59:59 2017 +0800
+
+    Going to give up on rerun after prioritization
+
+:000000 100644 0000000... c25dad6... A	2017/Planning/April 7 Priorities.docx
+:100644 100644 d943f77... c67d136... M	2017/worlds/bin/output.bin
+:100644 100644 667379e... 665f790... M	2017/worlds/include/defines.h
+:100644 100644 21f7cc6... 73f8d39... M	2017/worlds/include/motors.h
+:100644 100644 e6b4a06... 2300045... M	2017/worlds/include/rerun.h
+:100644 100644 de64bdf... de52a2e... M	2017/worlds/src/extras.c
+:100644 100644 bf42284... 5251f53... M	2017/worlds/src/init.c
+:100644 100644 039c164... 90a1b88... M	2017/worlds/src/motors.c
+:100644 100644 c188507... a87d4cf... M	2017/worlds/src/rerun.c
+:100644 100644 5630d29... 970f444... M	2017/worlds/src/tasks.c
+
+commit 588745ae3e31d95dfdc1b4ec0174273c51a0b2a2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Apr 7 19:21:15 2017 +0800
+
+    fixed odd function duplicate, now using extern for rerunEnabled to ensure global-ness
+
+:100644 100644 9dda474... 1e30bdc... M	2017/worlds/src/functions.c
+:100644 100644 29cc8c7... 039c164... M	2017/worlds/src/motors.c
+:000000 100644 0000000... 6769e5f... A	2017/worlds/src/noInclude.c
+
+commit 9a8040ae6e3f03257ab8f8bb56bff6d4651c0e8b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Apr 6 22:45:33 2017 -1200
+
+    clean up motors.c
+
+:100644 100644 f50f77d... 29cc8c7... M	2017/worlds/src/motors.c
+
+commit 3e484db1f2724d419dfff6417ad73f2ea8f03c93
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Apr 6 21:49:56 2017 -1200
+
+    cleaned up scaling of motor power
+
+:100644 100644 3138454... f50f77d... M	2017/worlds/src/motors.c
+
+commit e79067c598c95cb651848d7cab37cf6c87bfd0a8
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Apr 6 21:41:58 2017 -1200
+
+    eliminated warnings
+
+:100644 100644 0f4ce29... c21e417... M	2017/worlds/src/auto0.c
+:100644 100644 9f2a8e6... 9dda474... M	2017/worlds/src/functions.c
+
+commit cae0e714f0fc5fca70618b9b65b7a3713f24d01d
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Apr 6 21:38:35 2017 -1200
+
+    Fixed possibly unitialized variable, increased stack size of LCD task
+
+:100644 100644 d3e42b2... 9f2a8e6... M	2017/worlds/src/functions.c
+:100644 100644 6058c7d... bf42284... M	2017/worlds/src/init.c
+
+commit e8ddb674d28afec51d4172bb9153dac52aa0cd87
+Author: iuyte <iuyte@gmail.com>
+Date:   Wed Apr 5 19:50:45 2017 -0400
+
+    LCD Task fix - needs test
+
+:100644 100644 461980f... 4fb9b8a... M	2017/worlds/include/tasks.h
+:100644 100644 1a27f76... 5630d29... M	2017/worlds/src/tasks.c
+
+commit 9ed5d3d4f1f11c2fc3840bc93689e673e32b9205
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Apr 2 15:57:10 2017 -1200
+
+    Attempting to fix LCD handleing task, problem with RERUN ON OR OFF?
+
+:100644 100644 9cd880a... d943f77... M	2017/worlds/bin/output.bin
+:100644 100644 3fe15ba... 667379e... M	2017/worlds/include/defines.h
+:100644 100644 31f76ec... e6b4a06... M	2017/worlds/include/rerun.h
+:100644 100644 d763e03... dadaba3... M	2017/worlds/src/auto.c
+:100644 100644 d9be894... de64bdf... M	2017/worlds/src/extras.c
+:100644 100644 15ba7c7... d3e42b2... M	2017/worlds/src/functions.c
+:100644 100644 6a346c0... c188507... M	2017/worlds/src/rerun.c
+:100644 100644 8a835c7... 1a27f76... M	2017/worlds/src/tasks.c
+
+commit 20bb0fe569dfccf6b767343e8d45bbd4e4f2bc1d
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 1 19:34:33 2017 -1200
+
+    Decreased delay in replayF
+
+:100644 100644 b0c6093... 6a346c0... M	2017/worlds/src/rerun.c
+
+commit cb6c4b7a219ac9aadc4addb1de04bd6e443919e2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Apr 1 19:31:29 2017 -1200
+
+    Upgraded PROS kernel to latest, made rerun more fluent
+
+:100644 100644 3ae70f7... 6c712a1... M	2017/worlds/common.mk
+:100644 100644 9210d99... 4677d93... M	2017/worlds/include/API.h
+:100644 100644 f43e6af... 8375808... M	2017/worlds/project.pros
+:100644 100644 55b7efc... b0c6093... M	2017/worlds/src/rerun.c
+:100644 100644 8617202... 5ce23af... M	2017/worlds/src/rerunHelper.c
+
+commit 33b0261d96165fed5df5dc893b6ed5d0ecf2c91b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Mar 24 15:54:34 2017 -0400
+
+    Apparently file did not commit
+
+:100644 100644 9f0e667... 6e6df8d... M	2017/rewrite/src/motors.c
+
+commit 7e5da800c87bf65f1d743ccbf5bed44c121536ab
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Mar 23 21:04:18 2017 -0400
+
+    Fixed incorrect rerun.c logic
+
+:100644 100644 3ed4377... 9cd880a... M	2017/worlds/bin/output.bin
+:100644 100644 4f39ac4... 55b7efc... M	2017/worlds/src/rerun.c
+
+commit a1b4f0595eb8cc58077ea2d9bfcf1eed4ac5d3df
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Mar 23 18:36:20 2017 -0400
+
+    created  rerun, untested
+
+:100644 100644 769b950... 3ed4377... M	2017/worlds/bin/output.bin
+:100644 100644 69fc8f0... 3fe15ba... M	2017/worlds/include/defines.h
+:100644 100644 693779c... 55a9433... M	2017/worlds/include/lib.h
+:100644 100644 c1b943d... 21f7cc6... M	2017/worlds/include/motors.h
+:000000 100644 0000000... 31f76ec... A	2017/worlds/include/rerun.h
+:100644 100644 b89751f... d763e03... M	2017/worlds/src/auto.c
+:100644 100644 7c9fee4... 8ea89ba... M	2017/worlds/src/auto4.c
+:100644 100644 06de12f... 15ba7c7... M	2017/worlds/src/functions.c
+:100644 100644 c5b30c6... 6058c7d... M	2017/worlds/src/init.c
+:100644 100644 b3753d3... 3138454... M	2017/worlds/src/motors.c
+:100644 100644 5206971... 4185790... M	2017/worlds/src/mtrmgr.c
+:100644 100644 86cf439... 4f7d293... M	2017/worlds/src/opcontrol.c
+:000000 100644 0000000... 4f39ac4... A	2017/worlds/src/rerun.c
+:000000 100644 0000000... 8617202... A	2017/worlds/src/rerunHelper.c
+:100644 100644 79270de... 8a835c7... M	2017/worlds/src/tasks.c
+
+commit c6a9753ff26144683230b8c3eaeb66c6abd63ce0
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 18 12:56:47 2017 -0400
+
+    Readded 2 drive motors because passive hang works
+
+:100644 100644 530741e... 769b950... M	2017/worlds/bin/output.bin
+:100644 100644 a1af11f... b3753d3... M	2017/worlds/src/motors.c
+
+commit e1507a3d1d0635e7fa08dd4ca9ab409fb6f08d29
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 11 13:20:10 2017 -0500
+
+    Made it so robot does not move unless power expander is plugged in
+
+:100644 100644 4d50900... 69fc8f0... M	2017/worlds/include/defines.h
+:100644 100644 082b99c... 5206971... M	2017/worlds/src/mtrmgr.c
+
+commit d5113a0c47549b770fddfbb5ab47e147083fb85a
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 11 11:52:35 2017 -0500
+
+    Fixing git problem with LastSTand
+
+:100644 100644 952374f... 29d916a... M	2017/JINXProject/include/JINX.h
+:100644 000000 ca53ff6... 0000000... D	2017/LastStand/Makefile
+:100644 000000 8b3a2b9... 0000000... D	2017/LastStand/bin/output.bin
+:100644 000000 3ae70f7... 0000000... D	2017/LastStand/common.mk
+:100644 000000 28e36ad... 0000000... D	2017/LastStand/firmware/STM32F10x.ld
+:100644 000000 8c800b9... 0000000... D	2017/LastStand/firmware/cortex.ld
+:100644 000000 a922ae9... 0000000... D	2017/LastStand/firmware/uniflash.jar
+:100644 000000 9210d99... 0000000... D	2017/LastStand/include/API.h
+:100644 000000 952374f... 0000000... D	2017/LastStand/include/JINX.h
+:100644 000000 299a27e... 0000000... D	2017/LastStand/include/MyJinx.h
+:100644 000000 dc80367... 0000000... D	2017/LastStand/include/autonomous.h
+:100644 000000 4d30acb... 0000000... D	2017/LastStand/include/constants.h
+:100644 000000 46f6cec... 0000000... D	2017/LastStand/include/ethanlib.h
+:100644 000000 989a579... 0000000... D	2017/LastStand/include/main.h
+:100644 000000 f43e6af... 0000000... D	2017/LastStand/project.pros
+:100644 000000 1e54aad... 0000000... D	2017/LastStand/src/JINX.c
+:100644 000000 71c88e0... 0000000... D	2017/LastStand/src/JINX_Helpers.c
+:100644 000000 9e5b952... 0000000... D	2017/LastStand/src/Makefile
+:100644 000000 ab36966... 0000000... D	2017/LastStand/src/auto.c
+:100644 000000 f27c96f... 0000000... D	2017/LastStand/src/auto0.c
+:100644 000000 ee30cbd... 0000000... D	2017/LastStand/src/auto1.c
+:100644 000000 ae48a1e... 0000000... D	2017/LastStand/src/auto10.c
+:100644 000000 db28c1e... 0000000... D	2017/LastStand/src/auto13.c
+:100644 000000 21862f3... 0000000... D	2017/LastStand/src/auto15.c
+:100644 000000 a5efd0d... 0000000... D	2017/LastStand/src/auto2.c
+:100644 000000 c65a2db... 0000000... D	2017/LastStand/src/auto3.c
+:100644 000000 aaa1142... 0000000... D	2017/LastStand/src/auto4.c
+:100644 000000 061c9f2... 0000000... D	2017/LastStand/src/auto5.c
+:100644 000000 0bd4195... 0000000... D	2017/LastStand/src/auto6.c
+:100644 000000 ac174e3... 0000000... D	2017/LastStand/src/auto7.c
+:100644 000000 4e0f622... 0000000... D	2017/LastStand/src/auto8.c
+:100644 000000 d415823... 0000000... D	2017/LastStand/src/auto9.c
+:100644 000000 1dc9853... 0000000... D	2017/LastStand/src/ethanlib.c
+:100644 000000 1129e84... 0000000... D	2017/LastStand/src/init.c
+:100644 000000 d380221... 0000000... D	2017/LastStand/src/jerk.c
+:100644 000000 f4910f4... 0000000... D	2017/LastStand/src/opcontrol.c
+:100644 000000 385e788... 0000000... D	2017/LastStand/true.exe.stackdump
+:100644 000000 89368c7... 0000000... D	2017/laststand/Makefile
+:100644 000000 d654c46... 0000000... D	2017/laststand/bin/output.bin
+:100644 000000 948fe38... 0000000... D	2017/laststand/common.mk
+:100644 000000 e6caa0d... 0000000... D	2017/laststand/firmware/STM32F10x.ld
+:100644 000000 36d5aa5... 0000000... D	2017/laststand/firmware/cortex.ld
+:100644 000000 a922ae9... 0000000... D	2017/laststand/firmware/uniflash.jar
+:100644 000000 2718240... 0000000... D	2017/laststand/include/API.h
+:100644 000000 952374f... 0000000... D	2017/laststand/include/JINX.h
+:100644 000000 ae1df9c... 0000000... D	2017/laststand/include/MyJinx.h
+:100644 000000 215c008... 0000000... D	2017/laststand/include/autonomous.h
+:100644 000000 bc0f342... 0000000... D	2017/laststand/include/constants.h
+:100644 000000 5a1ac27... 0000000... D	2017/laststand/include/ethanlib.h
+:100644 000000 b3e9b75... 0000000... D	2017/laststand/include/main.h
+:100644 000000 f43e6af... 0000000... D	2017/laststand/project.pros
+:100644 000000 1e54aad... 0000000... D	2017/laststand/src/JINX.c
+:100644 000000 71c88e0... 0000000... D	2017/laststand/src/JINX_Helpers.c
+:100644 000000 865f1e7... 0000000... D	2017/laststand/src/Makefile
+:100644 000000 ea13aeb... 0000000... D	2017/laststand/src/auto.c
+:100644 000000 f27c96f... 0000000... D	2017/laststand/src/auto0.c
+:100644 000000 ee30cbd... 0000000... D	2017/laststand/src/auto1.c
+:100644 000000 ae48a1e... 0000000... D	2017/laststand/src/auto10.c
+:100644 000000 f14657e... 0000000... D	2017/laststand/src/auto13.c
+:100644 000000 a5efd0d... 0000000... D	2017/laststand/src/auto2.c
+:100644 000000 c65a2db... 0000000... D	2017/laststand/src/auto3.c
+:100644 000000 aaa1142... 0000000... D	2017/laststand/src/auto4.c
+:100644 000000 441e3cc... 0000000... D	2017/laststand/src/auto5.c
+:100644 000000 0bd4195... 0000000... D	2017/laststand/src/auto6.c
+:100644 000000 0a574dd... 0000000... D	2017/laststand/src/auto7.c
+:100644 000000 4e0f622... 0000000... D	2017/laststand/src/auto8.c
+:100644 000000 d415823... 0000000... D	2017/laststand/src/auto9.c
+:100644 000000 674f3b8... 0000000... D	2017/laststand/src/ethanlib.c
+:100644 000000 408d2e6... 0000000... D	2017/laststand/src/init.c
+:100644 000000 82e8bd9... 0000000... D	2017/laststand/src/jerk.c
+:100644 000000 5d7a8e5... 0000000... D	2017/laststand/src/opcontrol.c
+:100644 000000 385e788... 0000000... D	2017/laststand/true.exe.stackdump
+
+commit b3d1f80c17586a0ab55fb27a93245ced831a2db2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 11 11:45:04 2017 -0500
+
+    Switched lift motors to not truespeed
+
+:100644 100644 b38dbc1... 530741e... M	2017/worlds/bin/output.bin
+:100644 100644 9f0e667... a1af11f... M	2017/worlds/src/motors.c
+
+commit 3eeee27d63034cc166cc25991dda3e93192ed2d9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 11 11:40:57 2017 -0500
+
+    Fixed JINX Support
+
+:100644 100644 1f076aa... b38dbc1... M	2017/worlds/bin/output.bin
+:100644 100644 952374f... 78f24c2... M	2017/worlds/include/JINX.h
+:100644 100644 2a24309... 4d50900... M	2017/worlds/include/defines.h
+:100644 100644 1e54aad... 19dabee... M	2017/worlds/src/JINX.c
+:100644 100644 d9cedaa... c5b30c6... M	2017/worlds/src/init.c
+
+commit 373fc9eff1c4261c110afc2f8cd2774e9beda386
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 11 11:30:02 2017 -0500
+
+    Duplicated the rewrite into a worlds project
+
+:000000 100644 0000000... ca53ff6... A	2017/worlds/Makefile
+:000000 100644 0000000... 1f076aa... A	2017/worlds/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/worlds/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/worlds/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/worlds/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/worlds/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/worlds/include/API.h
+:000000 100644 0000000... 952374f... A	2017/worlds/include/JINX.h
+:000000 100644 0000000... 2a24309... A	2017/worlds/include/defines.h
+:000000 100644 0000000... 0583bde... A	2017/worlds/include/extras.h
+:000000 100644 0000000... c45102f... A	2017/worlds/include/functions.h
+:000000 100644 0000000... 693779c... A	2017/worlds/include/lib.h
+:000000 100644 0000000... 0aec0a2... A	2017/worlds/include/main.h
+:000000 100644 0000000... c1b943d... A	2017/worlds/include/motors.h
+:000000 100644 0000000... db095a5... A	2017/worlds/include/mtrmgr.h
+:000000 100644 0000000... 461980f... A	2017/worlds/include/tasks.h
+:000000 100644 0000000... f43e6af... A	2017/worlds/project.pros
+:000000 100644 0000000... 1e54aad... A	2017/worlds/src/JINX.c
+:000000 100644 0000000... 9e5b952... A	2017/worlds/src/Makefile
+:000000 100644 0000000... b89751f... A	2017/worlds/src/auto.c
+:000000 100644 0000000... 0f4ce29... A	2017/worlds/src/auto0.c
+:000000 100644 0000000... eca8c4c... A	2017/worlds/src/auto1.c
+:000000 100644 0000000... 0cd46df... A	2017/worlds/src/auto2.c
+:000000 100644 0000000... 7ecf44b... A	2017/worlds/src/auto3.c
+:000000 100644 0000000... 7c9fee4... A	2017/worlds/src/auto4.c
+:000000 100644 0000000... d9be894... A	2017/worlds/src/extras.c
+:000000 100644 0000000... 06de12f... A	2017/worlds/src/functions.c
+:000000 100644 0000000... d9cedaa... A	2017/worlds/src/init.c
+:000000 100644 0000000... f599739... A	2017/worlds/src/jerk.c
+:000000 100644 0000000... 9f0e667... A	2017/worlds/src/motors.c
+:000000 100644 0000000... 082b99c... A	2017/worlds/src/mtrmgr.c
+:000000 100644 0000000... 86cf439... A	2017/worlds/src/opcontrol.c
+:000000 100644 0000000... 79270de... A	2017/worlds/src/tasks.c
+
+commit 65a68a0577de8e278b432415d9dca6258bf2e1b2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Mar 11 11:28:33 2017 -0500
+
+    Precision and bug fixes
+
+:100644 100644 7dfa92c... 1f076aa... M	2017/rewrite/bin/output.bin
+:100644 100644 3292b08... 06de12f... M	2017/rewrite/src/functions.c
+:100644 100644 1fc043a... 9f0e667... M	2017/rewrite/src/motors.c
+:100644 100644 ca7a1e7... 86cf439... M	2017/rewrite/src/opcontrol.c
+
+commit 3b2b1d5c900dc354bc6bb085caf0beeae14e2898
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Mar 8 17:25:19 2017 -0500
+
+    Trying to use joystick acceleraometers to drive
+
+:100644 100644 cb3570b... 1fc043a... M	2017/rewrite/src/motors.c
+
+commit f3e5887306b3c37034976c1406ac3cbcc7386a93
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Mar 8 17:25:00 2017 -0500
+
+    Trying to use joystick acceleraometers to drive
+
+:100644 100644 8b2b69d... 7dfa92c... M	2017/rewrite/bin/output.bin
+:100644 100644 8ef8b3e... 2a24309... M	2017/rewrite/include/defines.h
+:100644 100644 b9d900c... 0583bde... M	2017/rewrite/include/extras.h
+:100644 100644 6112ba5... c1b943d... M	2017/rewrite/include/motors.h
+:100644 100644 aa556f8... d9be894... M	2017/rewrite/src/extras.c
+:100644 100644 11a3174... cb3570b... M	2017/rewrite/src/motors.c
+:100644 100644 31971b7... ca7a1e7... M	2017/rewrite/src/opcontrol.c
+
+commit efd51a2048e6090ff7bbf4962df072ed9effeae3
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Mar 7 06:42:46 2017 -0500
+
+    Fixed  magic, needs testing
+
+:100644 100644 11fd960... 8b2b69d... M	2017/rewrite/bin/output.bin
+:100644 100644 7c9a15c... 8ef8b3e... M	2017/rewrite/include/defines.h
+:100644 100644 688f042... b9d900c... M	2017/rewrite/include/extras.h
+:100644 100644 bd21daa... 693779c... M	2017/rewrite/include/lib.h
+:100644 100644 0544680... 6112ba5... M	2017/rewrite/include/motors.h
+:100644 100644 a847efd... 461980f... M	2017/rewrite/include/tasks.h
+:100644 100644 ac0ddb7... aa556f8... M	2017/rewrite/src/extras.c
+:100644 100644 6e4c352... 3292b08... M	2017/rewrite/src/functions.c
+:100644 100644 264a936... 11a3174... M	2017/rewrite/src/motors.c
+:100644 100644 819145b... 79270de... M	2017/rewrite/src/tasks.c
+
+commit d95384d6234fe00e20bd9971071ef1a6ae6e00c2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Mar 5 14:47:26 2017 -0500
+
+    Still fixing magic
+
+:100644 100644 8ba185c... 11fd960... M	2017/rewrite/bin/output.bin
+:100644 100644 46b5eb3... 688f042... M	2017/rewrite/include/extras.h
+:100644 100644 128f279... a847efd... M	2017/rewrite/include/tasks.h
+:100644 100644 a663405... 6e4c352... M	2017/rewrite/src/functions.c
+:100644 100644 045057e... 819145b... M	2017/rewrite/src/tasks.c
+
+commit a4a3a2ded632523328d5d2371831d1512c6dc219
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Mar 5 14:20:56 2017 -0500
+
+    Still attempting to fix magic
+
+:100644 100644 f9258fb... a663405... M	2017/rewrite/src/functions.c
+:100644 100644 4f2ef49... 045057e... M	2017/rewrite/src/tasks.c
+
+commit 483faf343181ec7cd5385d699c67ac66b39db30c
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Mar 5 14:18:58 2017 -0500
+
+    Worked on fixing some magic code to be logical
+
+:000000 100644 0000000... 8ba185c... A	2017/rewrite/bin/output.bin
+:100644 100644 1e9ca96... 128f279... M	2017/rewrite/include/tasks.h
+:100644 100644 0cd46df... 7ecf44b... M	2017/rewrite/src/auto3.c
+:100644 100644 0cd46df... 7c9fee4... M	2017/rewrite/src/auto4.c
+:100644 100644 572530a... f9258fb... M	2017/rewrite/src/functions.c
+:100644 100644 b64fdc1... 4f2ef49... M	2017/rewrite/src/tasks.c
+
+commit 40e5f90d7af260c51b0cffa1dd80d062ed65db62
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Mar 5 13:36:17 2017 -0500
+
+    Fixing issue...?
+
+:100644 000000 71c88e0... 0000000... D	2017/rewrite/src/JINX_Helpers.c
+:100644 000000 17f0277... 0000000... D	2017/rewrite/src/main.c
+
+commit 57481f427bfdb7e2d7372ccb2f4c821402a72f52
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Mar 5 13:29:51 2017 -0500
+
+    Working on configuring code to work with the blrslib mtmgr library
+
+:000000 100644 0000000... 952374f... A	2017/rewrite/include/JINX.h
+:000000 100644 0000000... 7c9a15c... A	2017/rewrite/include/defines.h
+:000000 100644 0000000... 46b5eb3... A	2017/rewrite/include/extras.h
+:000000 100644 0000000... c45102f... A	2017/rewrite/include/functions.h
+:100644 100644 9ff787d... bd21daa... M	2017/rewrite/include/lib.h
+:000000 100644 0000000... 0544680... A	2017/rewrite/include/motors.h
+:000000 100644 0000000... 1e9ca96... A	2017/rewrite/include/tasks.h
+:000000 100644 0000000... 1e54aad... A	2017/rewrite/src/JINX.c
+:000000 100644 0000000... 71c88e0... A	2017/rewrite/src/JINX_Helpers.c
+:100644 100644 f317312... b89751f... M	2017/rewrite/src/auto.c
+:000000 100644 0000000... 0f4ce29... A	2017/rewrite/src/auto0.c
+:000000 100644 0000000... eca8c4c... A	2017/rewrite/src/auto1.c
+:000000 100644 0000000... 0cd46df... A	2017/rewrite/src/auto2.c
+:000000 100644 0000000... 0cd46df... A	2017/rewrite/src/auto3.c
+:000000 100644 0000000... 0cd46df... A	2017/rewrite/src/auto4.c
+:000000 100644 0000000... ac0ddb7... A	2017/rewrite/src/extras.c
+:000000 100644 0000000... 572530a... A	2017/rewrite/src/functions.c
+:100644 100644 a6a72e0... d9cedaa... M	2017/rewrite/src/init.c
+:000000 100644 0000000... f599739... A	2017/rewrite/src/jerk.c
+:000000 100644 0000000... 264a936... A	2017/rewrite/src/motors.c
+:100644 100644 413106f... 31971b7... M	2017/rewrite/src/opcontrol.c
+:000000 100644 0000000... b64fdc1... A	2017/rewrite/src/tasks.c
+
+commit e4da363b47436198fd47e5827ecc6724df6faea3
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Mar 5 11:12:32 2017 -0500
+
+    After these changes were made: we placed highest at competition with 44 points prog skills and 42 driver. 86 total.
+
+:100644 100644 de9f0cb... 7c446ed... M	2017/Indiana/bin/output.bin
+:100644 100644 dd7b42f... 97ae4cf... M	2017/Indiana/include/revision.h
+:100644 100644 823229d... da45c46... M	2017/Indiana/src/auto0.c
+:100644 100644 d968ad7... 1b6518d... M	2017/Indiana/src/auto1.c
+:100644 100644 c5f4193... ab26640... M	2017/Indiana/src/auto14.c
+:100644 100644 21862f3... 3fa4c85... M	2017/Indiana/src/auto15.c
+:100644 100644 75865f6... 1ed8b23... M	2017/Indiana/src/revision.c
+:100644 100644 9c62296... 598b27c... M	2017/Planning/Auto Plan.pptx
+
+commit 8940b8090e10982e1b85fe31ec273c79d3854fb2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Mar 2 20:43:47 2017 -0500
+
+    Autonomous precision work
+
+:100644 100644 9d931f3... de9f0cb... M	2017/Indiana/bin/output.bin
+:100644 100644 070ce93... 20249b3... M	2017/Indiana/include/constants.h
+:100644 100644 4ec5007... 4939468... M	2017/Indiana/output.txt
+:100644 100644 d1b593a... 823229d... M	2017/Indiana/src/auto0.c
+:100644 100644 81b3635... 4b16e40... M	2017/Indiana/src/ethanlib.c
+:100644 100644 bfe8174... d9a2edf... M	2017/Indiana/src/init.c
+
+commit 8c1e8961a79f4dff05d8746ebfc687ce8403abd4
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Wed Mar 1 15:50:54 2017 -0500
+
+    Nearly confirmed travel to Indiana skills-only competition. Created project. Going to try for last cube as well as 4 stars left in middle of fence
+
+:000000 100644 0000000... ca53ff6... A	2017/CalibrateGyros/Makefile
+:000000 100644 0000000... 9e61f14... A	2017/CalibrateGyros/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/CalibrateGyros/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/CalibrateGyros/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/CalibrateGyros/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/CalibrateGyros/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/CalibrateGyros/include/API.h
+:000000 100644 0000000... 23e9206... A	2017/CalibrateGyros/include/constants.h
+:000000 100644 0000000... 931383f... A	2017/CalibrateGyros/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/CalibrateGyros/project.pros
+:000000 100644 0000000... 9e5b952... A	2017/CalibrateGyros/src/Makefile
+:000000 100644 0000000... f317312... A	2017/CalibrateGyros/src/auto.c
+:000000 100644 0000000... d89de8a... A	2017/CalibrateGyros/src/init.c
+:000000 100644 0000000... 3dd2c4e... A	2017/CalibrateGyros/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/Indiana/Makefile
+:000000 100644 0000000... 9d931f3... A	2017/Indiana/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Indiana/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Indiana/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Indiana/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Indiana/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Indiana/include/API.h
+:000000 100644 0000000... 952374f... A	2017/Indiana/include/JINX.h
+:000000 100644 0000000... 299a27e... A	2017/Indiana/include/MyJinx.h
+:000000 100644 0000000... 215c008... A	2017/Indiana/include/autonomous.h
+:000000 100644 0000000... 070ce93... A	2017/Indiana/include/constants.h
+:000000 100644 0000000... 5a1ac27... A	2017/Indiana/include/ethanlib.h
+:000000 100644 0000000... 989a579... A	2017/Indiana/include/main.h
+:000000 100644 0000000... c67fd83... A	2017/Indiana/include/motorSlew.h
+:000000 100644 0000000... dd7b42f... A	2017/Indiana/include/revision.h
+:000000 100644 0000000... 4ec5007... A	2017/Indiana/output.txt
+:000000 100644 0000000... f43e6af... A	2017/Indiana/project.pros
+:000000 100644 0000000... 1e54aad... A	2017/Indiana/src/JINX.c
+:000000 100644 0000000... 71c88e0... A	2017/Indiana/src/JINX_Helpers.c
+:000000 100644 0000000... 9e5b952... A	2017/Indiana/src/Makefile
+:000000 100644 0000000... ea13aeb... A	2017/Indiana/src/auto.c
+:000000 100644 0000000... d1b593a... A	2017/Indiana/src/auto0.c
+:000000 100644 0000000... d968ad7... A	2017/Indiana/src/auto1.c
+:000000 100644 0000000... bfafbd3... A	2017/Indiana/src/auto10.c
+:000000 100644 0000000... d4fae45... A	2017/Indiana/src/auto13.c
+:000000 100644 0000000... c5f4193... A	2017/Indiana/src/auto14.c
+:000000 100644 0000000... 21862f3... A	2017/Indiana/src/auto15.c
+:000000 100644 0000000... 29ffced... A	2017/Indiana/src/auto2.c
+:000000 100644 0000000... cbf5b97... A	2017/Indiana/src/auto3.c
+:000000 100644 0000000... f29aa84... A	2017/Indiana/src/auto4.c
+:000000 100644 0000000... 441e3cc... A	2017/Indiana/src/auto5.c
+:000000 100644 0000000... bd2881b... A	2017/Indiana/src/auto6.c
+:000000 100644 0000000... 329d09a... A	2017/Indiana/src/auto7.c
+:000000 100644 0000000... 4e0f622... A	2017/Indiana/src/auto8.c
+:000000 100644 0000000... 7e13e57... A	2017/Indiana/src/auto9.c
+:000000 100644 0000000... 81b3635... A	2017/Indiana/src/ethanlib.c
+:000000 100644 0000000... bfe8174... A	2017/Indiana/src/init.c
+:000000 100644 0000000... 82e8bd9... A	2017/Indiana/src/jerk.c
+:000000 100644 0000000... 74de0d2... A	2017/Indiana/src/motorSlew.c
+:000000 100644 0000000... 5d7a8e5... A	2017/Indiana/src/opcontrol.c
+:000000 100644 0000000... 75865f6... A	2017/Indiana/src/revision.c
+:000000 100644 0000000... 385e788... A	2017/Indiana/true.exe.stackdump
+:100644 100644 aa9a063... 21862f3... M	2017/LastStand/src/auto15.c
+:100644 100644 bbf78aa... b36b50c... M	2017/Planning/ideas.txt
+:100644 100644 db1c0c1... 9d931f3... M	2017/Post-season(pre-worlds)/bin/output.bin
+:100644 100644 c147671... d1b593a... M	2017/Post-season(pre-worlds)/src/auto0.c
+:100644 100644 a3f9b20... 81b3635... M	2017/Post-season(pre-worlds)/src/ethanlib.c
+:100644 100644 6df9a18... 74de0d2... M	2017/Post-season(pre-worlds)/src/motorSlew.c
+:000000 100644 0000000... ca53ff6... A	2017/Sandbox/Makefile
+:000000 100644 0000000... 9d931f3... A	2017/Sandbox/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Sandbox/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Sandbox/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Sandbox/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Sandbox/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Sandbox/include/API.h
+:000000 100644 0000000... 952374f... A	2017/Sandbox/include/JINX.h
+:000000 100644 0000000... 299a27e... A	2017/Sandbox/include/MyJinx.h
+:000000 100644 0000000... 215c008... A	2017/Sandbox/include/autonomous.h
+:000000 100644 0000000... 070ce93... A	2017/Sandbox/include/constants.h
+:000000 100644 0000000... 5a1ac27... A	2017/Sandbox/include/ethanlib.h
+:000000 100644 0000000... 989a579... A	2017/Sandbox/include/main.h
+:000000 100644 0000000... 59d6c1c... A	2017/Sandbox/include/motorSlew.h
+:000000 100644 0000000... dd7b42f... A	2017/Sandbox/include/revision.h
+:000000 100644 0000000... 4ec5007... A	2017/Sandbox/output.txt
+:000000 100644 0000000... f43e6af... A	2017/Sandbox/project.pros
+:000000 100644 0000000... 1e54aad... A	2017/Sandbox/src/JINX.c
+:000000 100644 0000000... 71c88e0... A	2017/Sandbox/src/JINX_Helpers.c
+:000000 100644 0000000... 9e5b952... A	2017/Sandbox/src/Makefile
+:000000 100644 0000000... ea13aeb... A	2017/Sandbox/src/auto.c
+:000000 100644 0000000... d1b593a... A	2017/Sandbox/src/auto0.c
+:000000 100644 0000000... d968ad7... A	2017/Sandbox/src/auto1.c
+:000000 100644 0000000... bfafbd3... A	2017/Sandbox/src/auto10.c
+:000000 100644 0000000... d4fae45... A	2017/Sandbox/src/auto13.c
+:000000 100644 0000000... c5f4193... A	2017/Sandbox/src/auto14.c
+:000000 100644 0000000... 21862f3... A	2017/Sandbox/src/auto15.c
+:000000 100644 0000000... 29ffced... A	2017/Sandbox/src/auto2.c
+:000000 100644 0000000... cbf5b97... A	2017/Sandbox/src/auto3.c
+:000000 100644 0000000... f29aa84... A	2017/Sandbox/src/auto4.c
+:000000 100644 0000000... 441e3cc... A	2017/Sandbox/src/auto5.c
+:000000 100644 0000000... bd2881b... A	2017/Sandbox/src/auto6.c
+:000000 100644 0000000... 329d09a... A	2017/Sandbox/src/auto7.c
+:000000 100644 0000000... 4e0f622... A	2017/Sandbox/src/auto8.c
+:000000 100644 0000000... 7e13e57... A	2017/Sandbox/src/auto9.c
+:000000 100644 0000000... 81b3635... A	2017/Sandbox/src/ethanlib.c
+:000000 100644 0000000... bfe8174... A	2017/Sandbox/src/init.c
+:000000 100644 0000000... 82e8bd9... A	2017/Sandbox/src/jerk.c
+:000000 100644 0000000... 74de0d2... A	2017/Sandbox/src/motorSlew.c
+:000000 100644 0000000... 5d7a8e5... A	2017/Sandbox/src/opcontrol.c
+:000000 100644 0000000... 75865f6... A	2017/Sandbox/src/revision.c
+:000000 100644 0000000... 385e788... A	2017/Sandbox/true.exe.stackdump
+:100644 100644 f98521a... 204eef9... M	2017/laststand/bin/JINX_Helpers.o
+:100644 100644 de71c51... 6ae5668... M	2017/laststand/bin/auto.o
+:100644 100644 465a235... 909a2a9... M	2017/laststand/bin/auto0.o
+:100644 100644 11b4cb7... 5768cb0... M	2017/laststand/bin/auto1.o
+:100644 100644 79ef65b... 64c90d8... M	2017/laststand/bin/auto10.o
+:100644 100644 9f6a4f0... ae0d7fe... M	2017/laststand/bin/auto13.o
+:100644 100644 213fb51... 4aed2dd... M	2017/laststand/bin/auto14.o
+:100644 100644 e99bdb5... 84a9380... M	2017/laststand/bin/auto2.o
+:100644 100644 4836b27... 9c1b860... M	2017/laststand/bin/auto3.o
+:100644 100644 2555674... f5d311d... M	2017/laststand/bin/auto4.o
+:100644 100644 229e2f9... a723042... M	2017/laststand/bin/auto5.o
+:100644 100644 162a8c5... 30092b9... M	2017/laststand/bin/auto6.o
+:100644 100644 428dc8f... a47858c... M	2017/laststand/bin/auto7.o
+:100644 100644 b4c51e1... c76c7de... M	2017/laststand/bin/auto8.o
+:100644 100644 670b4cf... 39a666e... M	2017/laststand/bin/auto9.o
+:100644 100644 8222ce4... cbc5ddb... M	2017/laststand/bin/ethanlib.o
+:100644 100644 9e6a261... 29ad084... M	2017/laststand/bin/init.o
+:100644 100644 c383001... 1e90d0f... M	2017/laststand/bin/jerk.o
+:100644 100644 1ff8072... a929835... M	2017/laststand/bin/opcontrol.o
+:100644 100644 2e020f5... d654c46... M	2017/laststand/bin/output.bin
+:100644 100644 84880f8... 8b06448... M	2017/laststand/bin/output.elf
+:100644 100644 fa32ace... b753c35... M	2017/laststand/bin/revision.o
+:100644 100644 87643f5... 0ba0cd9... M	2017/laststand/include/revision.h
+:100644 100644 cc89a3a... 4ec5007... M	2017/laststand/output.txt
+:100644 100644 0383319... 7320466... M	2017/laststand/src/auto14.c
+:100644 100644 f6a4440... 45d6092... M	2017/laststand/src/revision.c
+:000000 100644 0000000... ca53ff6... A	2017/rewrite/Makefile
+:000000 100644 0000000... 3ae70f7... A	2017/rewrite/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/rewrite/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/rewrite/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/rewrite/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/rewrite/include/API.h
+:000000 100644 0000000... 9ff787d... A	2017/rewrite/include/lib.h
+:000000 100644 0000000... 0aec0a2... A	2017/rewrite/include/main.h
+:000000 100644 0000000... db095a5... A	2017/rewrite/include/mtrmgr.h
+:000000 100644 0000000... f43e6af... A	2017/rewrite/project.pros
+:000000 100644 0000000... 9e5b952... A	2017/rewrite/src/Makefile
+:000000 100644 0000000... f317312... A	2017/rewrite/src/auto.c
+:000000 100644 0000000... a6a72e0... A	2017/rewrite/src/init.c
+:000000 100644 0000000... 17f0277... A	2017/rewrite/src/main.c
+:000000 100644 0000000... 082b99c... A	2017/rewrite/src/mtrmgr.c
+:000000 100644 0000000... 413106f... A	2017/rewrite/src/opcontrol.c
+
+commit 229b443f7b1f120df380f7b58a2f1dfe8e1a8c4c
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 26 15:17:13 2017 -0500
+
+    Implemented a motorSlew task to go easier on motors. This could potentially free up 2 motors for the drive to use
+
+:100644 100644 d654c46... db1c0c1... M	2017/Post-season(pre-worlds)/bin/output.bin
+:100644 100644 bc0f342... 070ce93... M	2017/Post-season(pre-worlds)/include/constants.h
+:000000 100644 0000000... c67fd83... A	2017/Post-season(pre-worlds)/include/motorSlew.h
+:100644 100644 606b06e... dd7b42f... M	2017/Post-season(pre-worlds)/include/revision.h
+:100644 100644 f27c96f... c147671... M	2017/Post-season(pre-worlds)/src/auto0.c
+:100644 100644 ee30cbd... d968ad7... M	2017/Post-season(pre-worlds)/src/auto1.c
+:100644 100644 ae48a1e... bfafbd3... M	2017/Post-season(pre-worlds)/src/auto10.c
+:100644 100644 f14657e... d4fae45... M	2017/Post-season(pre-worlds)/src/auto13.c
+:100644 100644 a5efd0d... 29ffced... M	2017/Post-season(pre-worlds)/src/auto2.c
+:100644 100644 c65a2db... cbf5b97... M	2017/Post-season(pre-worlds)/src/auto3.c
+:100644 100644 aaa1142... f29aa84... M	2017/Post-season(pre-worlds)/src/auto4.c
+:100644 100644 0bd4195... bd2881b... M	2017/Post-season(pre-worlds)/src/auto6.c
+:100644 100644 0a574dd... 329d09a... M	2017/Post-season(pre-worlds)/src/auto7.c
+:100644 100644 d415823... 7e13e57... M	2017/Post-season(pre-worlds)/src/auto9.c
+:100644 100644 674f3b8... a3f9b20... M	2017/Post-season(pre-worlds)/src/ethanlib.c
+:100644 100644 408d2e6... bfe8174... M	2017/Post-season(pre-worlds)/src/init.c
+:000000 100644 0000000... 6df9a18... A	2017/Post-season(pre-worlds)/src/motorSlew.c
+:100644 100644 46298f3... 75865f6... M	2017/Post-season(pre-worlds)/src/revision.c
+
+commit e16ce1fdb96a5dcefeaad3d9097bba692261d9b0
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 26 11:54:09 2017 -0500
+
+    We did well at the competition and won. In addition, we nailed a 77 point skills (35 programming and 42 driver), the highest in the state prior to this being 66. Our fingers are crossed for this to hold
+
+:000000 100644 0000000... ca53ff6... A	2017/Post-season(pre-worlds)/Makefile
+:000000 100644 0000000... d654c46... A	2017/Post-season(pre-worlds)/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Post-season(pre-worlds)/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Post-season(pre-worlds)/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Post-season(pre-worlds)/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Post-season(pre-worlds)/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Post-season(pre-worlds)/include/API.h
+:000000 100644 0000000... 952374f... A	2017/Post-season(pre-worlds)/include/JINX.h
+:000000 100644 0000000... 299a27e... A	2017/Post-season(pre-worlds)/include/MyJinx.h
+:000000 100644 0000000... 215c008... A	2017/Post-season(pre-worlds)/include/autonomous.h
+:000000 100644 0000000... bc0f342... A	2017/Post-season(pre-worlds)/include/constants.h
+:000000 100644 0000000... 5a1ac27... A	2017/Post-season(pre-worlds)/include/ethanlib.h
+:000000 100644 0000000... 989a579... A	2017/Post-season(pre-worlds)/include/main.h
+:000000 100644 0000000... 606b06e... A	2017/Post-season(pre-worlds)/include/revision.h
+:000000 100644 0000000... 4ec5007... A	2017/Post-season(pre-worlds)/output.txt
+:000000 100644 0000000... f43e6af... A	2017/Post-season(pre-worlds)/project.pros
+:000000 100644 0000000... 1e54aad... A	2017/Post-season(pre-worlds)/src/JINX.c
+:000000 100644 0000000... 71c88e0... A	2017/Post-season(pre-worlds)/src/JINX_Helpers.c
+:000000 100644 0000000... 9e5b952... A	2017/Post-season(pre-worlds)/src/Makefile
+:000000 100644 0000000... ea13aeb... A	2017/Post-season(pre-worlds)/src/auto.c
+:000000 100644 0000000... f27c96f... A	2017/Post-season(pre-worlds)/src/auto0.c
+:000000 100644 0000000... ee30cbd... A	2017/Post-season(pre-worlds)/src/auto1.c
+:000000 100644 0000000... ae48a1e... A	2017/Post-season(pre-worlds)/src/auto10.c
+:000000 100644 0000000... f14657e... A	2017/Post-season(pre-worlds)/src/auto13.c
+:000000 100644 0000000... c5f4193... A	2017/Post-season(pre-worlds)/src/auto14.c
+:000000 100644 0000000... 21862f3... A	2017/Post-season(pre-worlds)/src/auto15.c
+:000000 100644 0000000... a5efd0d... A	2017/Post-season(pre-worlds)/src/auto2.c
+:000000 100644 0000000... c65a2db... A	2017/Post-season(pre-worlds)/src/auto3.c
+:000000 100644 0000000... aaa1142... A	2017/Post-season(pre-worlds)/src/auto4.c
+:000000 100644 0000000... 441e3cc... A	2017/Post-season(pre-worlds)/src/auto5.c
+:000000 100644 0000000... 0bd4195... A	2017/Post-season(pre-worlds)/src/auto6.c
+:000000 100644 0000000... 0a574dd... A	2017/Post-season(pre-worlds)/src/auto7.c
+:000000 100644 0000000... 4e0f622... A	2017/Post-season(pre-worlds)/src/auto8.c
+:000000 100644 0000000... d415823... A	2017/Post-season(pre-worlds)/src/auto9.c
+:000000 100644 0000000... 674f3b8... A	2017/Post-season(pre-worlds)/src/ethanlib.c
+:000000 100644 0000000... 408d2e6... A	2017/Post-season(pre-worlds)/src/init.c
+:000000 100644 0000000... 82e8bd9... A	2017/Post-season(pre-worlds)/src/jerk.c
+:000000 100644 0000000... 5d7a8e5... A	2017/Post-season(pre-worlds)/src/opcontrol.c
+:000000 100644 0000000... 46298f3... A	2017/Post-season(pre-worlds)/src/revision.c
+:000000 100644 0000000... 385e788... A	2017/Post-season(pre-worlds)/true.exe.stackdump
+
+commit 67f85e65f4560dd89e3361f2fe82832a1938c1d8
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Feb 25 14:25:50 2017 -0500
+
+    Final competition preparations & improvements for
+
+:000000 100644 0000000... aa9a063... A	2017/LastStand/src/auto15.c
+:100644 100644 6df840f... 2e020f5... M	2017/laststand/bin/output.bin
+:100644 100644 c01e5d5... 215c008... M	2017/laststand/include/autonomous.h
+:100644 100644 0d93475... bc0f342... M	2017/laststand/include/constants.h
+:100644 100644 e8c8e49... 5a1ac27... M	2017/laststand/include/ethanlib.h
+:100644 100644 ab36966... ea13aeb... M	2017/laststand/src/auto.c
+:100644 100644 db28c1e... f14657e... M	2017/laststand/src/auto13.c
+:100644 100644 061c9f2... 441e3cc... M	2017/laststand/src/auto5.c
+:100644 100644 ac174e3... 0a574dd... M	2017/laststand/src/auto7.c
+:100644 100644 1dc9853... 674f3b8... M	2017/laststand/src/ethanlib.c
+:100644 100644 1129e84... 408d2e6... M	2017/laststand/src/init.c
+:100644 100644 d380221... 82e8bd9... M	2017/laststand/src/jerk.c
+:100644 100644 f4910f4... 5d7a8e5... M	2017/laststand/src/opcontrol.c
+
+commit 6af53e635c48d70d72b4f03e4a8a579f03fecdc9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Feb 21 23:32:25 2017 -0500
+
+    skills work. Nothing in particular, except I found out now after about a month that my timer functions dont work. Going to look into it.
+
+:100644 100644 a4faf28... 213fb51... M	2017/laststand/bin/auto14.o
+:100644 100644 ecac28b... 8222ce4... M	2017/laststand/bin/ethanlib.o
+:100644 100644 8b3a2b9... 6df840f... M	2017/laststand/bin/output.bin
+:100644 100644 0b54c57... 84880f8... M	2017/laststand/bin/output.elf
+:100644 100644 68def99... 0d93475... M	2017/laststand/include/constants.h
+:100644 100644 8d0e534... cc89a3a... M	2017/laststand/output.txt
+:100644 100644 1363fc3... ab36966... M	2017/laststand/src/auto.c
+:100644 100644 79eef0d... f27c96f... M	2017/laststand/src/auto0.c
+:100644 100644 33434db... ee30cbd... M	2017/laststand/src/auto1.c
+:100644 100644 7235942... ae48a1e... M	2017/laststand/src/auto10.c
+:100644 100644 c6665aa... db28c1e... M	2017/laststand/src/auto13.c
+:100644 100644 40bbfe9... 0383319... M	2017/laststand/src/auto14.c
+:100644 100644 ffa48cd... a5efd0d... M	2017/laststand/src/auto2.c
+:100644 100644 0c161de... c65a2db... M	2017/laststand/src/auto3.c
+:100644 100644 4877e8b... aaa1142... M	2017/laststand/src/auto4.c
+:100644 100644 bd0a88b... 061c9f2... M	2017/laststand/src/auto5.c
+:100644 100644 3a1c979... 0bd4195... M	2017/laststand/src/auto6.c
+:100644 100644 c0dc5c3... ac174e3... M	2017/laststand/src/auto7.c
+:100644 100644 9a3f0de... 4e0f622... M	2017/laststand/src/auto8.c
+:100644 100644 c3fcee2... d415823... M	2017/laststand/src/auto9.c
+:100644 100644 b41013f... 1dc9853... M	2017/laststand/src/ethanlib.c
+:100644 100644 afad0f1... 1129e84... M	2017/laststand/src/init.c
+:100644 100644 f0f7925... d380221... M	2017/laststand/src/jerk.c
+:100644 100644 d227168... f4910f4... M	2017/laststand/src/opcontrol.c
+:100644 100644 8e53b4e... 385e788... M	2017/laststand/true.exe.stackdump
+
+commit 913b661f221172823483bec1e103f78e79e50f82
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Tue Feb 21 22:38:06 2017 -0500
+
+    Fixing git
+
+:000000 100644 0000000... 89368c7... A	2017/laststand/Makefile
+:000000 100644 0000000... c3051f3... A	2017/laststand/bin/JINX.o
+:000000 100644 0000000... f98521a... A	2017/laststand/bin/JINX_Helpers.o
+:000000 100644 0000000... de71c51... A	2017/laststand/bin/auto.o
+:000000 100644 0000000... 465a235... A	2017/laststand/bin/auto0.o
+:000000 100644 0000000... 11b4cb7... A	2017/laststand/bin/auto1.o
+:000000 100644 0000000... 79ef65b... A	2017/laststand/bin/auto10.o
+:000000 100644 0000000... 9f6a4f0... A	2017/laststand/bin/auto13.o
+:000000 100644 0000000... a4faf28... A	2017/laststand/bin/auto14.o
+:000000 100644 0000000... e99bdb5... A	2017/laststand/bin/auto2.o
+:000000 100644 0000000... 4836b27... A	2017/laststand/bin/auto3.o
+:000000 100644 0000000... 2555674... A	2017/laststand/bin/auto4.o
+:000000 100644 0000000... 229e2f9... A	2017/laststand/bin/auto5.o
+:000000 100644 0000000... 162a8c5... A	2017/laststand/bin/auto6.o
+:000000 100644 0000000... 428dc8f... A	2017/laststand/bin/auto7.o
+:000000 100644 0000000... b4c51e1... A	2017/laststand/bin/auto8.o
+:000000 100644 0000000... 670b4cf... A	2017/laststand/bin/auto9.o
+:000000 100644 0000000... ecac28b... A	2017/laststand/bin/ethanlib.o
+:000000 100644 0000000... 9e6a261... A	2017/laststand/bin/init.o
+:000000 100644 0000000... c383001... A	2017/laststand/bin/jerk.o
+:000000 100644 0000000... 1ff8072... A	2017/laststand/bin/opcontrol.o
+:000000 100644 0000000... 8b3a2b9... A	2017/laststand/bin/output.bin
+:000000 100644 0000000... 0b54c57... A	2017/laststand/bin/output.elf
+:000000 100644 0000000... fa32ace... A	2017/laststand/bin/revision.o
+:000000 100644 0000000... 948fe38... A	2017/laststand/common.mk
+:000000 100644 0000000... e6caa0d... A	2017/laststand/firmware/STM32F10x.ld
+:000000 100644 0000000... 36d5aa5... A	2017/laststand/firmware/cortex.ld
+:000000 100644 0000000... 9a11a74... A	2017/laststand/firmware/libpros.a
+:000000 100644 0000000... a922ae9... A	2017/laststand/firmware/uniflash.jar
+:000000 100644 0000000... f43e6af... A	2017/laststand/project.pros
+:000000 100644 0000000... 8e53b4e... A	2017/laststand/true.exe.stackdump
+
+commit 3a9ed0660e85b661a4d4680c4ea5f01a45db6349
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Tue Feb 21 22:37:08 2017 -0500
+
+    Fixing weird git upload
+
+:000000 100644 0000000... 2718240... A	2017/laststand/include/API.h
+:000000 100644 0000000... 952374f... A	2017/laststand/include/JINX.h
+:000000 100644 0000000... ae1df9c... A	2017/laststand/include/MyJinx.h
+:000000 100644 0000000... c01e5d5... A	2017/laststand/include/autonomous.h
+:000000 100644 0000000... 68def99... A	2017/laststand/include/constants.h
+:000000 100644 0000000... e8c8e49... A	2017/laststand/include/ethanlib.h
+:000000 100644 0000000... b3e9b75... A	2017/laststand/include/main.h
+:100644 100644 aef5210... 87643f5... M	2017/laststand/include/revision.h
+
+commit d0dd230861cd1ba7e8c01690ab263bca8d293c76
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Tue Feb 21 22:36:31 2017 -0500
+
+    Uploading code that didnt
+
+:000000 100644 0000000... 1e54aad... A	2017/laststand/src/JINX.c
+:000000 100644 0000000... 71c88e0... A	2017/laststand/src/JINX_Helpers.c
+:000000 100644 0000000... 865f1e7... A	2017/laststand/src/Makefile
+:000000 100644 0000000... 1363fc3... A	2017/laststand/src/auto.c
+:000000 100644 0000000... 79eef0d... A	2017/laststand/src/auto0.c
+:000000 100644 0000000... 33434db... A	2017/laststand/src/auto1.c
+:000000 100644 0000000... 7235942... A	2017/laststand/src/auto10.c
+:000000 100644 0000000... c6665aa... A	2017/laststand/src/auto13.c
+:100644 100644 5409c69... 40bbfe9... M	2017/laststand/src/auto14.c
+:000000 100644 0000000... ffa48cd... A	2017/laststand/src/auto2.c
+:000000 100644 0000000... 0c161de... A	2017/laststand/src/auto3.c
+:000000 100644 0000000... 4877e8b... A	2017/laststand/src/auto4.c
+:000000 100644 0000000... bd0a88b... A	2017/laststand/src/auto5.c
+:000000 100644 0000000... 3a1c979... A	2017/laststand/src/auto6.c
+:000000 100644 0000000... c0dc5c3... A	2017/laststand/src/auto7.c
+:000000 100644 0000000... 9a3f0de... A	2017/laststand/src/auto8.c
+:000000 100644 0000000... c3fcee2... A	2017/laststand/src/auto9.c
+:000000 100644 0000000... b41013f... A	2017/laststand/src/ethanlib.c
+:000000 100644 0000000... afad0f1... A	2017/laststand/src/init.c
+:000000 100644 0000000... f0f7925... A	2017/laststand/src/jerk.c
+:000000 100644 0000000... d227168... A	2017/laststand/src/opcontrol.c
+:100644 100644 b9bc853... f6a4440... M	2017/laststand/src/revision.c
+
+commit fba518aa32e9ca518dcacbaa3fc1eb252798e3e3
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Feb 21 22:19:17 2017 -0500
+
+    Auton precision  work
+
+:100644 100644 1225747... b6d2cac... M	2017/JINXProject/bin/output.bin
+:100644 100644 989a579... 15e7147... M	2017/JINXProject/include/main.h
+:100644 100644 12b9584... 02a4122... M	2017/JINXProject/src/init.c
+:100644 100644 b2a43eb... 4205403... M	2017/JINXProject/src/opcontrol.c
+:100644 100644 e917792... 8b3a2b9... M	2017/LastStand/bin/output.bin
+:100644 100644 49e5382... dc80367... M	2017/LastStand/include/autonomous.h
+:100644 100644 ac86fd3... 4d30acb... M	2017/LastStand/include/constants.h
+:100644 100644 b39042a... ab36966... M	2017/LastStand/src/auto.c
+:100644 100644 87dc167... db28c1e... M	2017/LastStand/src/auto13.c
+:100644 100644 bd479dc... 1dc9853... M	2017/LastStand/src/ethanlib.c
+:100644 100644 ba999a2... 1129e84... M	2017/LastStand/src/init.c
+:100644 100644 4f7da37... d380221... M	2017/LastStand/src/jerk.c
+:100644 100644 2fd7569... bbf78aa... M	2017/Planning/ideas.txt
+:100644 100644 149f13a... aef5210... R093	2017/LastStand/include/encDep.h	2017/laststand/include/revision.h
+:000000 100644 0000000... 8d0e534... A	2017/laststand/output.txt
+:000000 100644 0000000... 5409c69... A	2017/laststand/src/auto14.c
+:100644 100644 0a062d0... b9bc853... R096	2017/LastStand/src/encDep.c	2017/laststand/src/revision.c
+
+commit 357490c31f04dfc75b61f79a5444e4acf89d1f68
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Feb 21 14:59:56 2017 -0500
+
+    Working on our code for 709s's 'last stand', trying to make a very good skills program so we can be top in NYS and qualify for worlds. My re-engineered code includes my encDep library as well as JINX support (when enabled from constants.h)
+
+:000000 100644 0000000... ca53ff6... A	2017/JINXProject/Makefile
+:000000 100644 0000000... 1225747... A	2017/JINXProject/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/JINXProject/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/JINXProject/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/JINXProject/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/JINXProject/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/JINXProject/include/API.h
+:000000 100644 0000000... 952374f... A	2017/JINXProject/include/JINX.h
+:000000 100644 0000000... 989a579... A	2017/JINXProject/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/JINXProject/project.pros
+:000000 100644 0000000... 1e54aad... A	2017/JINXProject/src/JINX.c
+:000000 100644 0000000... 004b193... A	2017/JINXProject/src/JINX_Helpers.c
+:000000 100644 0000000... 9e5b952... A	2017/JINXProject/src/Makefile
+:000000 100644 0000000... f317312... A	2017/JINXProject/src/auto.c
+:000000 100644 0000000... 12b9584... A	2017/JINXProject/src/init.c
+:000000 100644 0000000... b2a43eb... A	2017/JINXProject/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/LastStand/Makefile
+:000000 100644 0000000... e917792... A	2017/LastStand/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/LastStand/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/LastStand/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/LastStand/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/LastStand/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/LastStand/include/API.h
+:000000 100644 0000000... 952374f... A	2017/LastStand/include/JINX.h
+:000000 100644 0000000... 299a27e... A	2017/LastStand/include/MyJinx.h
+:000000 100644 0000000... 49e5382... A	2017/LastStand/include/autonomous.h
+:000000 100644 0000000... ac86fd3... A	2017/LastStand/include/constants.h
+:000000 100644 0000000... 149f13a... A	2017/LastStand/include/encDep.h
+:000000 100644 0000000... 46f6cec... A	2017/LastStand/include/ethanlib.h
+:000000 100644 0000000... 989a579... A	2017/LastStand/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/LastStand/project.pros
+:000000 100644 0000000... 1e54aad... A	2017/LastStand/src/JINX.c
+:000000 100644 0000000... 71c88e0... A	2017/LastStand/src/JINX_Helpers.c
+:000000 100644 0000000... 9e5b952... A	2017/LastStand/src/Makefile
+:000000 100644 0000000... b39042a... A	2017/LastStand/src/auto.c
+:000000 100644 0000000... f27c96f... A	2017/LastStand/src/auto0.c
+:000000 100644 0000000... ee30cbd... A	2017/LastStand/src/auto1.c
+:000000 100644 0000000... ae48a1e... A	2017/LastStand/src/auto10.c
+:000000 100644 0000000... 87dc167... A	2017/LastStand/src/auto13.c
+:000000 100644 0000000... a5efd0d... A	2017/LastStand/src/auto2.c
+:000000 100644 0000000... c65a2db... A	2017/LastStand/src/auto3.c
+:000000 100644 0000000... aaa1142... A	2017/LastStand/src/auto4.c
+:000000 100644 0000000... 061c9f2... A	2017/LastStand/src/auto5.c
+:000000 100644 0000000... 0bd4195... A	2017/LastStand/src/auto6.c
+:000000 100644 0000000... ac174e3... A	2017/LastStand/src/auto7.c
+:000000 100644 0000000... 4e0f622... A	2017/LastStand/src/auto8.c
+:000000 100644 0000000... d415823... A	2017/LastStand/src/auto9.c
+:000000 100644 0000000... 0a062d0... A	2017/LastStand/src/encDep.c
+:000000 100644 0000000... bd479dc... A	2017/LastStand/src/ethanlib.c
+:000000 100644 0000000... ba999a2... A	2017/LastStand/src/init.c
+:000000 100644 0000000... 4f7da37... A	2017/LastStand/src/jerk.c
+:000000 100644 0000000... f4910f4... A	2017/LastStand/src/opcontrol.c
+:000000 100644 0000000... 385e788... A	2017/LastStand/true.exe.stackdump
+
+commit 2e77ad68889b69231d5eff153bbeea31d70c67fc
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 19 09:32:01 2017 -0500
+
+    my code post-states
+
+:100644 100644 71bd084... 2fd7569... M	2017/Planning/ideas.txt
+:000000 100644 0000000... 89cccbf... A	2017/Planning/~$Auto Plan.pptx
+:100644 100644 cdebb0b... a304568... M	2017/States17BETA/bin/output.bin
+:100644 100644 ee7368b... 9004d5e... M	2017/States17BETA/include/autonomous.h
+:100644 100644 d65972a... c1b1b6c... M	2017/States17BETA/include/constants.h
+:100644 100644 52d012c... febf872... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 7298d2b... 1881116... M	2017/States17BETA/src/auto.c
+:100644 100644 3d73d6c... f27c96f... M	2017/States17BETA/src/auto0.c
+:000000 100644 0000000... ae48a1e... A	2017/States17BETA/src/auto10.c
+:100644 100644 90cfb18... a5efd0d... M	2017/States17BETA/src/auto2.c
+:100644 100644 0fe5341... aaa1142... M	2017/States17BETA/src/auto4.c
+:100644 100644 86d9084... 061c9f2... M	2017/States17BETA/src/auto5.c
+:000000 100644 0000000... 0bd4195... A	2017/States17BETA/src/auto6.c
+:000000 100644 0000000... ac174e3... A	2017/States17BETA/src/auto7.c
+:000000 100644 0000000... 4e0f622... A	2017/States17BETA/src/auto8.c
+:000000 100644 0000000... d415823... A	2017/States17BETA/src/auto9.c
+:100644 100644 f4da65d... 629a426... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 bf9f1ee... 3a33172... M	2017/States17BETA/src/init.c
+:100644 100644 7186171... 4f7da37... M	2017/States17BETA/src/jerk.c
+:100644 100644 65894cf... 5cc1220... M	2017/States17BETA/src/opcontrol.c
+
+commit d2ec322d54f6891dd980703661b8aa468c1d13d1
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Feb 17 10:44:21 2017 -0500
+
+    Added first - draft skills in auto2.c, moved standard auton to auto0.c, and auto1.c is now standard auton minus the cube
+
+:000000 100644 0000000... 9c62296... A	2017/Planning/Auto Plan.pptx
+:000000 100644 0000000... 71bd084... A	2017/Planning/ideas.txt
+:100644 100644 67e2f12... cdebb0b... M	2017/States17BETA/bin/output.bin
+:100644 100644 9f65d52... d65972a... M	2017/States17BETA/include/constants.h
+:100644 100644 5171d64... 52d012c... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 d98aa8d... 3d73d6c... M	2017/States17BETA/src/auto0.c
+:100644 100644 e52fc09... ee30cbd... M	2017/States17BETA/src/auto1.c
+:100644 100644 4077b62... 90cfb18... M	2017/States17BETA/src/auto2.c
+:100644 100644 bdd05bc... c65a2db... M	2017/States17BETA/src/auto3.c
+:100644 100644 044b591... f4da65d... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 08dacfb... bf9f1ee... M	2017/States17BETA/src/init.c
+:000000 100644 0000000... 7186171... A	2017/States17BETA/src/jerk.c
+:100644 100644 9cd62a4... 65894cf... M	2017/States17BETA/src/opcontrol.c
+
+commit aa9d3e50a2145046325c6b41de84f81ba2592b1d
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Feb 14 21:28:57 2017 -0500
+
+    Seperated different autons into respective files for ease of access
+
+:000000 100644 0000000... ee7368b... A	2017/States17BETA/include/autonomous.h
+:100644 100644 ee2e6ce... 7298d2b... M	2017/States17BETA/src/auto.c
+:000000 100644 0000000... d98aa8d... A	2017/States17BETA/src/auto0.c
+:000000 100644 0000000... e52fc09... A	2017/States17BETA/src/auto1.c
+:000000 100644 0000000... 4077b62... A	2017/States17BETA/src/auto2.c
+:000000 100644 0000000... bdd05bc... A	2017/States17BETA/src/auto3.c
+:000000 100644 0000000... 0fe5341... A	2017/States17BETA/src/auto4.c
+:000000 100644 0000000... 86d9084... A	2017/States17BETA/src/auto5.c
+
+commit 016e583e5f2318aa12181e5e1367fa4e9802d5d1
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Tue Feb 14 12:28:36 2017 -0500
+
+    Autonomous precision, added function turnNoFix to get within 15 second time, not completely within yet
+
+:000000 100644 0000000... 67e2f12... A	2017/States17BETA/bin/output.bin
+:100644 100644 ecef3b2... 5171d64... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 26a58ec... ee2e6ce... M	2017/States17BETA/src/auto.c
+:100644 100644 23f0125... 044b591... M	2017/States17BETA/src/ethanlib.c
+
+commit 85e5c49b4893e4d66d3a1e8797c70485569d7fc3
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Feb 6 21:21:16 2017 -0500
+
+    Worked on auto1() precision
+
+:100644 000000 30a163d... 0000000... D	2017/States17BETA/bin/output.bin
+:100644 100644 ad1ccbf... 9f65d52... M	2017/States17BETA/include/constants.h
+:100644 100644 98679b8... 26a58ec... M	2017/States17BETA/src/auto.c
+:100644 100644 d3352ca... 23f0125... M	2017/States17BETA/src/ethanlib.c
+
+commit 7db0b59587d6c4c14656ca0de2b091a0f9b51506
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Feb 6 20:48:51 2017 -0500
+
+    The auto0() kind-of works, so I left it as is, copied code into auto1(), and am working on it from there. New idea: with all these autonomous options, I should be able to make a few more (and more simple) autonomouses. Ideas currently include:\n -Go get cube and dump, \n -beyond the cube, go knock off stars from the fence\n -Get stars and dump, knock from fence\n -Go straight to fence and block opposing alliance from scoring
+
+:100644 100644 4efef71... 30a163d... M	2017/States17BETA/bin/output.bin
+:100644 100644 dc48776... ad1ccbf... M	2017/States17BETA/include/constants.h
+:100644 100644 b7d1bfb... ecef3b2... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 d5380f4... 98679b8... M	2017/States17BETA/src/auto.c
+:100644 100644 edef520... d3352ca... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 f5bc250... 08dacfb... M	2017/States17BETA/src/init.c
+
+commit b89cc76c17d89a65df45d144502c6a2b56d0e7b2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Mon Feb 6 13:14:38 2017 -0500
+
+    WOrked on perfecting autonomous
+
+:100644 100644 1cf5a65... 4efef71... M	2017/States17BETA/bin/output.bin
+:100644 100644 6ba107a... dc48776... M	2017/States17BETA/include/constants.h
+:100644 100644 c05cc45... b7d1bfb... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 581f25e... d5380f4... M	2017/States17BETA/src/auto.c
+:100644 100644 2519659... edef520... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 df15c53... f5bc250... M	2017/States17BETA/src/init.c
+:100644 100644 d0cb881... 6dfa752... M	2017/StatesSkills/src/FuntionVars.c
+
+commit 19fb75eab1e2aa6e6602a80574ce78018f93526e
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 5 14:16:47 2017 -0500
+
+     1) Added support for as many autonomous programs as I want (and selection) \n 2) Added some stuff to the end of my position-based driving and turning funtions to fix going over values
+
+:100644 100644 eac23e7... 6ba107a... M	2017/States17BETA/include/constants.h
+:100644 100644 d7383d6... 581f25e... M	2017/States17BETA/src/auto.c
+:100644 100644 7306862... 2519659... M	2017/States17BETA/src/ethanlib.c
+
+commit b79cc4dee672bd7ea67cc6c5b26805e857c9f044
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 5 13:54:47 2017 -0500
+
+    Gave up on 'position management' to opt for simply better code for moving to a certain gyro or encoder position, created new BETA after renaming old code DEAD and dating, added all improvements to new BETA code
+
+:100644 100644 ca53ff6... ca53ff6... R100	2017/States17/Makefile	2017/2017States17BETAdeadD2M5Yr17/Makefile
+:000000 100644 0000000... 5c4833c... A	2017/2017States17BETAdeadD2M5Yr17/bin/output.bin
+:100644 100644 3ae70f7... 3ae70f7... R100	2017/States17/common.mk	2017/2017States17BETAdeadD2M5Yr17/common.mk
+:100644 100644 28e36ad... 28e36ad... R100	2017/States17/firmware/STM32F10x.ld	2017/2017States17BETAdeadD2M5Yr17/firmware/STM32F10x.ld
+:100644 100644 8c800b9... 8c800b9... R100	2017/States17/firmware/cortex.ld	2017/2017States17BETAdeadD2M5Yr17/firmware/cortex.ld
+:100644 100644 a922ae9... a922ae9... R100	2017/States17/firmware/uniflash.jar	2017/2017States17BETAdeadD2M5Yr17/firmware/uniflash.jar
+:100644 100644 9210d99... 9210d99... R100	2017/States17/include/API.h	2017/2017States17BETAdeadD2M5Yr17/include/API.h
+:100644 100644 eaef91b... 755b503... R092	2017/States17/include/constants.h	2017/2017States17BETAdeadD2M5Yr17/include/constants.h
+:100644 100644 76ee2a2... bf8be56... R085	2017/States17/include/FunctionVars.h	2017/2017States17BETAdeadD2M5Yr17/include/ethanlib.h
+:100644 100644 96afb02... 96afb02... R100	2017/States17/include/main.h	2017/2017States17BETAdeadD2M5Yr17/include/main.h
+:100644 100644 f43e6af... f43e6af... R100	2017/States17/project.pros	2017/2017States17BETAdeadD2M5Yr17/project.pros
+:100644 100644 9e5b952... 9e5b952... R100	2017/States17/src/Makefile	2017/2017States17BETAdeadD2M5Yr17/src/Makefile
+:100644 100644 62def3d... eb3a7f6... R060	2017/States17/src/auto.c	2017/2017States17BETAdeadD2M5Yr17/src/auto.c
+:000000 100644 0000000... 0de6f9a... A	2017/2017States17BETAdeadD2M5Yr17/src/ethanlib.c
+:100644 100644 42dc9e5... c92aa05... R082	2017/States17/src/init.c	2017/2017States17BETAdeadD2M5Yr17/src/init.c
+:000000 100644 0000000... 222dcc4... A	2017/2017States17BETAdeadD2M5Yr17/src/opcontrol.c
+:100644 100644 385e788... 385e788... R100	2017/States17/true.exe.stackdump	2017/2017States17BETAdeadD2M5Yr17/true.exe.stackdump
+:100644 000000 486d366... 0000000... D	2017/States17/bin/output.bin
+:100644 000000 2a8aec9... 0000000... D	2017/States17/src/FuntionVars.c
+:100644 000000 a039f9c... 0000000... D	2017/States17/src/opcontrol.c
+:100644 100644 89368c7... ca53ff6... M	2017/States17BETA/Makefile
+:100644 000000 0e752ba... 0000000... D	2017/States17BETA/bin/auto.o
+:100644 000000 91884ca... 0000000... D	2017/States17BETA/bin/ethanlib.o
+:100644 000000 5cef85a... 0000000... D	2017/States17BETA/bin/init.o
+:100644 000000 35b2061... 0000000... D	2017/States17BETA/bin/opcontrol.o
+:100644 100644 3d85b0a... 1cf5a65... M	2017/States17BETA/bin/output.bin
+:100644 000000 ace65f8... 0000000... D	2017/States17BETA/bin/output.elf
+:100644 100644 948fe38... 3ae70f7... M	2017/States17BETA/common.mk
+:100644 100644 e6caa0d... 28e36ad... M	2017/States17BETA/firmware/STM32F10x.ld
+:100644 100644 36d5aa5... 8c800b9... M	2017/States17BETA/firmware/cortex.ld
+:100644 000000 9a11a74... 0000000... D	2017/States17BETA/firmware/libpros.a
+:100644 100644 2718240... 9210d99... M	2017/States17BETA/include/API.h
+:100644 100644 755b503... eac23e7... M	2017/States17BETA/include/constants.h
+:100644 100644 bf8be56... c05cc45... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 af3d463... 96afb02... M	2017/States17BETA/include/main.h
+:100644 100644 865f1e7... 9e5b952... M	2017/States17BETA/src/Makefile
+:100644 100644 eb3a7f6... d7383d6... M	2017/States17BETA/src/auto.c
+:100644 100644 e602bd0... 7306862... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 c92aa05... df15c53... M	2017/States17BETA/src/init.c
+:100644 100644 222dcc4... 9cd62a4... M	2017/States17BETA/src/opcontrol.c
+:100644 100644 8e53b4e... 385e788... M	2017/States17BETA/true.exe.stackdump
+
+commit 1f783689010c5e53ab9a44c8ab8d672f72688e41
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 5 12:50:15 2017 -0500
+
+    Finally fixed a bunch of crap that just randomly happened to my code from git
+
+:100644 100644 b8ffa4c... 91884ca... M	2017/States17BETA/bin/ethanlib.o
+:100644 100644 3fc16e4... 3d85b0a... M	2017/States17BETA/bin/output.bin
+:100644 100644 b60ff74... ace65f8... M	2017/States17BETA/bin/output.elf
+:100644 100644 ab3764a... 755b503... M	2017/States17BETA/include/constants.h
+:100644 100644 afc6b8e... bf8be56... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 6d77dd6... eb3a7f6... M	2017/States17BETA/src/auto.c
+:100644 100644 60ee4cf... e602bd0... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 b71ab3c... c92aa05... M	2017/States17BETA/src/init.c
+:100644 100644 79d9c6d... 222dcc4... M	2017/States17BETA/src/opcontrol.c
+
+commit ef73bc5590359b863771d68384a534294ab31dd9
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 5 12:37:17 2017 -0500
+
+    Trying to fix git
+
+:100644 000000 3fc16e4... 0000000... D	2017/States17BETA/bin/output.bin
+
+commit e5141102db8af40aea4118a544d7d9175c9e9efe
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Sun Feb 5 12:35:06 2017 -0500
+
+    Updated files
+
+:100644 100644 ca53ff6... 89368c7... M	2017/States17BETA/Makefile
+:000000 100644 0000000... 0e752ba... A	2017/States17BETA/bin/auto.o
+:000000 100644 0000000... b8ffa4c... A	2017/States17BETA/bin/ethanlib.o
+:000000 100644 0000000... 5cef85a... A	2017/States17BETA/bin/init.o
+:000000 100644 0000000... 35b2061... A	2017/States17BETA/bin/opcontrol.o
+:100644 100644 66d35c1... 3fc16e4... M	2017/States17BETA/bin/output.bin
+:000000 100644 0000000... b60ff74... A	2017/States17BETA/bin/output.elf
+:100644 100644 3ae70f7... 948fe38... M	2017/States17BETA/common.mk
+:100644 100644 28e36ad... e6caa0d... M	2017/States17BETA/firmware/STM32F10x.ld
+:100644 100644 8c800b9... 36d5aa5... M	2017/States17BETA/firmware/cortex.ld
+:000000 100644 0000000... 9a11a74... A	2017/States17BETA/firmware/libpros.a
+:100644 100644 9210d99... 2718240... M	2017/States17BETA/include/API.h
+:100644 100644 0f7a5a0... 98ef7b5... M	2017/States17BETA/include/constants.h
+:100644 100644 8332394... c673cee... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 96afb02... af3d463... M	2017/States17BETA/include/main.h
+:100644 100644 9e5b952... 865f1e7... M	2017/States17BETA/src/Makefile
+:100644 100644 d15c66f... 73a6c15... M	2017/States17BETA/src/auto.c
+:100644 100644 1ff0c28... 3eb74e4... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 55ed850... de14066... M	2017/States17BETA/src/init.c
+:100644 100644 6897144... e3bf4b6... M	2017/States17BETA/src/opcontrol.c
+:100644 100644 385e788... 8e53b4e... M	2017/States17BETA/true.exe.stackdump
+
+commit 277f3eaccbab5e120b9066c5a697b1cf6d97347f
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sun Feb 5 12:30:47 2017 -0500
+
+    Gave up on lift position management (mostly unneeded) to focus on position management of the drive (far more important)
+
+:100644 100644 66d35c1... 3fc16e4... M	2017/States17BETA/bin/output.bin
+:100644 100644 0f7a5a0... 755b503... M	2017/States17BETA/include/constants.h
+:100644 100644 8332394... a80e153... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 d15c66f... eb3a7f6... M	2017/States17BETA/src/auto.c
+:100644 100644 1ff0c28... a1a0ed2... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 55ed850... c92aa05... M	2017/States17BETA/src/init.c
+:100644 100644 6897144... 222dcc4... M	2017/States17BETA/src/opcontrol.c
+
+commit cd08e32c1bad627eceec54fad7ec902eb65af50c
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Sat Feb 4 22:20:46 2017 -0500
+
+    corrected spelling
+
+:100644 100644 4fb343a... 3491beb... M	README.md
+
+commit 5ba4117fbd7258d9b67af12d4fd23d82be95aee6
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Feb 4 22:13:03 2017 -0500
+
+    Added opcontrol selection on LCD menu (and storage of choice)
+
+:100644 100644 b39e18b... 66d35c1... M	2017/States17BETA/bin/output.bin
+:100644 100644 0bd4dd1... 8332394... M	2017/States17BETA/include/ethanlib.h
+:100644 100644 324d6ef... d15c66f... M	2017/States17BETA/src/auto.c
+:100644 100644 2f75852... 1ff0c28... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 efaa053... 6897144... M	2017/States17BETA/src/opcontrol.c
+
+commit d0e9eab0fb73092a8a2289d3dc0226cc97987269
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Feb 4 21:27:22 2017 -0500
+
+    Made some stuff on my last commit actually WORK! The position management does not work (just tested) and am looking into solutions
+
+:100644 100644 065e256... b39e18b... M	2017/States17BETA/bin/output.bin
+:100644 100644 4c01346... 2f75852... M	2017/States17BETA/src/ethanlib.c
+
+commit 8b16ac1d6eaabb7605762e5e55308d993151ccb4
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Feb 4 21:20:01 2017 -0500
+
+    Worked on lcdDisplayTme task to include autonomous mode selection and storage of selected autonomous mode between cortex power cycles using the filesystem that my usage of PROS allows me to have (can't do THAT in RobotC)
+
+:000000 100644 0000000... 065e256... A	2017/States17BETA/bin/output.bin
+:100644 100644 42b178d... 324d6ef... M	2017/States17BETA/src/auto.c
+:100644 100644 17e7593... 4c01346... M	2017/States17BETA/src/ethanlib.c
+:100644 100644 8d6445d... 55ed850... M	2017/States17BETA/src/init.c
+
+commit a5918c431d1fcc9fcb495bbe999013bdce314da0
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Sat Feb 4 19:34:18 2017 -0500
+
+    cleaned up code a little bit (still needs testing)
+
+:100644 100644 8446d48... 0f7a5a0... M	2017/States17BETA/include/constants.h
+:100644 100644 0bd4dd1... 0bd4dd1... R100	2017/States17BETA/include/FunctionVars.h	2017/States17BETA/include/ethanlib.h
+:100644 100644 2eab1fa... 42b178d... M	2017/States17BETA/src/auto.c
+:100644 100644 4c65ca1... 17e7593... R097	2017/States17BETA/src/FuntionVars.c	2017/States17BETA/src/ethanlib.c
+:100644 100644 52a3fe2... 8d6445d... M	2017/States17BETA/src/init.c
+:100644 100644 a039f9c... efaa053... M	2017/States17BETA/src/opcontrol.c
+:100644 000000 fc24e7a... 0000000... D	_config.yml
+
+commit 1c0bcfcd48723a83f8860c9848354addca1fac6a
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Feb 3 21:30:04 2017 -0500
+
+    Changed a little bit of the auton such that running into the wall also uses position management
+
+:100644 100644 6afea99... 2eab1fa... M	2017/States17BETA/src/auto.c
+
+commit 1d746f6e8831c3588d079d65c17880ff317714ba
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Feb 3 21:23:31 2017 -0500
+
+    Finished first draft of position management. still needs testing
+
+:100644 100644 bc96da4... 4c65ca1... M	2017/States17BETA/src/FuntionVars.c
+:100644 100644 46b7234... 6afea99... M	2017/States17BETA/src/auto.c
+
+commit 2f6dbe89c52080559ca9f549f7ef03b9b3c7f6cc
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Fri Feb 3 19:32:23 2017 -0500
+
+    worked on new theory
+
+:100644 100644 1e8ef31... 0bd4dd1... M	2017/States17BETA/include/FunctionVars.h
+:100644 100644 2ecfa1f... bc96da4... M	2017/States17BETA/src/FuntionVars.c
+:100644 100644 62def3d... 46b7234... M	2017/States17BETA/src/auto.c
+
+commit 3316adf197b7610c6363e79ad4bfaa078481f65d
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Fri Feb 3 19:29:05 2017 -0500
+
+    Set theme jekyll-theme-hacker
+
+:000000 100644 0000000... fc24e7a... A	_config.yml
+
+commit 7869a313d4ec3783c1d839c91788f762a8ca3c5c
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 22:07:09 2017 -0500
+
+    Lots of stuff - Auton presicion on regular project, new project created to test some constant PID-like code I created that shoul hopefully help a great deal. Have not tested new project yet, tomorrow probably if homework permits. Very glad I had a snow day today and was able to do work with this and FTC - got a lot done
+
+:100644 000000 a931e41... 0000000... D	2017/Freezing/PROS-FreezingCode-master/bin/output.bin
+:100644 000000 edbbcd9... 0000000... D	2017/Freezing/PROS-FreezingCode-master/include/main.h
+:100644 000000 0d773c9... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/Claw.c
+:100644 000000 656573f... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/DriveBase.c
+:100644 000000 21fe41e... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/Lift.c
+:100644 000000 531ccc5... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/auto.c
+:100644 000000 fdbb3aa... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/init.c
+:100644 000000 e20567f... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/main.c
+:100644 000000 bbb1eb7... 0000000... D	2017/Freezing/PROS-FreezingCode-master/src/opcontrol.c
+:100644 100644 7db5ed5... 486d366... M	2017/States17/bin/output.bin
+:100644 100644 a38321e... 76ee2a2... M	2017/States17/include/FunctionVars.h
+:100644 100644 934918b... 2a8aec9... M	2017/States17/src/FuntionVars.c
+:100644 100644 ab8511e... 62def3d... M	2017/States17/src/auto.c
+:100644 100644 ca53ff6... ca53ff6... R100	2017/Freezing/PROS-FreezingCode-master/Makefile	2017/States17BETA/Makefile
+:100644 100644 3ae70f7... 3ae70f7... R100	2017/Freezing/PROS-FreezingCode-master/common.mk	2017/States17BETA/common.mk
+:100644 100644 28e36ad... 28e36ad... R100	2017/Freezing/PROS-FreezingCode-master/firmware/STM32F10x.ld	2017/States17BETA/firmware/STM32F10x.ld
+:100644 100644 8c800b9... 8c800b9... R100	2017/Freezing/PROS-FreezingCode-master/firmware/cortex.ld	2017/States17BETA/firmware/cortex.ld
+:100644 100644 a922ae9... a922ae9... R100	2017/Freezing/PROS-FreezingCode-master/firmware/uniflash.jar	2017/States17BETA/firmware/uniflash.jar
+:100644 100644 9210d99... 9210d99... R100	2017/Freezing/PROS-FreezingCode-master/include/API.h	2017/States17BETA/include/API.h
+:100644 100644 8fddc95... 1e8ef31... R066	2017/States17TaskParameters/include/FunctionVars.h	2017/States17BETA/include/FunctionVars.h
+:100644 100644 874710e... 8446d48... R094	2017/States17TaskParameters/include/constants.h	2017/States17BETA/include/constants.h
+:100644 100644 96afb02... 96afb02... R100	2017/States17TaskParameters/include/main.h	2017/States17BETA/include/main.h
+:100644 100644 f43e6af... f43e6af... R100	2017/Freezing/PROS-FreezingCode-master/project.pros	2017/States17BETA/project.pros
+:100644 100644 5e98169... 2ecfa1f... R066	2017/States17TaskParameters/src/FuntionVars.c	2017/States17BETA/src/FuntionVars.c
+:100644 100644 9e5b952... 9e5b952... R100	2017/Freezing/PROS-FreezingCode-master/src/Makefile	2017/States17BETA/src/Makefile
+:100644 100644 711e1f0... 62def3d... R067	2017/States17TaskParameters/src/auto.c	2017/States17BETA/src/auto.c
+:100644 100644 42dc9e5... 52a3fe2... R088	2017/States17TaskParameters/src/init.c	2017/States17BETA/src/init.c
+:100644 100644 6861862... a039f9c... R082	2017/States17TaskParameters/src/opcontrol.c	2017/States17BETA/src/opcontrol.c
+:100644 100644 385e788... 385e788... R100	2017/States17TaskParameters/true.exe.stackdump	2017/States17BETA/true.exe.stackdump
+:100644 000000 ca53ff6... 0000000... D	2017/States17TaskParameters/Makefile
+:100644 000000 c9c6bdb... 0000000... D	2017/States17TaskParameters/bin/output.bin
+:100644 000000 3ae70f7... 0000000... D	2017/States17TaskParameters/common.mk
+:100644 000000 28e36ad... 0000000... D	2017/States17TaskParameters/firmware/STM32F10x.ld
+:100644 000000 8c800b9... 0000000... D	2017/States17TaskParameters/firmware/cortex.ld
+:100644 000000 a922ae9... 0000000... D	2017/States17TaskParameters/firmware/uniflash.jar
+:100644 000000 9210d99... 0000000... D	2017/States17TaskParameters/include/API.h
+:100644 000000 f43e6af... 0000000... D	2017/States17TaskParameters/project.pros
+:100644 000000 9e5b952... 0000000... D	2017/States17TaskParameters/src/Makefile
+
+commit eb1b0279ae7a2a0b80bc2ce206e1f38ec0591f35
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 20:05:32 2017 -0500
+
+    Added a stopDrive() function
+
+:100644 100644 1341f79... a38321e... M	2017/States17/include/FunctionVars.h
+
+commit 1b07a401b002c22d68d231f662b11d66413d166f
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 18:10:59 2017 -0500
+
+    test commit
+
+:100644 100644 33006cb... 7db5ed5... M	2017/States17/bin/output.bin
+:100644 100644 23b6f67... 1341f79... M	2017/States17/include/FunctionVars.h
+:100644 100644 c6bce0f... ab8511e... M	2017/States17/src/auto.c
+
+commit 2256fbe99e06b57607b0595820a3bc12648f951a
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 15:08:56 2017 -0500
+
+    Changes all sensor values in driveTo() to absolute values
+
+:100644 100644 2d9ce3f... 934918b... M	2017/States17/src/FuntionVars.c
+
+commit 5f15ab824413886b74ef4228d3f2840f6d0d8147
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 15:04:04 2017 -0500
+
+    Added printf of sensor values (will comment out in real competitions)
+
+:100644 100644 32b7ca1... a039f9c... M	2017/States17/src/opcontrol.c
+
+commit 35320e906b19aef7719d7a9ed853554f2a987650
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 15:00:48 2017 -0500
+
+    Compiled code
+
+:100644 100644 0552eb1... 33006cb... M	2017/States17/bin/output.bin
+
+commit 28475d6259e44910b254601172244ab22077d1d2
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 13:21:00 2017 -0500
+
+    #pragma once in constants.h, added stopDriveAfter to FunctionVars.h
+
+:100644 100644 c9c6bdb... 0552eb1... M	2017/States17/bin/output.bin
+:100644 100644 118de50... 23b6f67... M	2017/States17/include/FunctionVars.h
+:100644 100644 874710e... eaef91b... M	2017/States17/include/constants.h
+:100644 100644 6861862... 32b7ca1... M	2017/States17/src/opcontrol.c
+
+commit bb911123245b766542d7cd18431538144000239d
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 12:54:49 2017 -0500
+
+    Made it more descriptive
+
+:100644 100644 be7ca96... 4fb343a... M	README.md
+
+commit 71481b048e21a0b15dd46e2fadce190b95f70d4b
+Author: Ethan Wells <ethanialw@gmail.com>
+Date:   Thu Feb 2 12:47:54 2017 -0500
+
+    real first commit
+
+:000000 100644 0000000... ca53ff6... A	2017/BVille17/Makefile
+:000000 100644 0000000... c9c6bdb... A	2017/BVille17/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/BVille17/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/BVille17/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/BVille17/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/BVille17/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/BVille17/include/API.h
+:000000 100644 0000000... 2a8dacb... A	2017/BVille17/include/FunctionVars.h
+:000000 100644 0000000... 874710e... A	2017/BVille17/include/constants.h
+:000000 100644 0000000... 96afb02... A	2017/BVille17/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/BVille17/project.pros
+:000000 100644 0000000... 346eb57... A	2017/BVille17/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/BVille17/src/Makefile
+:000000 100644 0000000... aeb20d6... A	2017/BVille17/src/auto.c
+:000000 100644 0000000... 42dc9e5... A	2017/BVille17/src/init.c
+:000000 100644 0000000... 6a28d6e... A	2017/BVille17/src/opcontrol.c
+:000000 100644 0000000... 385e788... A	2017/BVille17/true.exe.stackdump
+:000000 100644 0000000... ca53ff6... A	2017/BVille17SKills/Makefile
+:000000 100644 0000000... 823a68a... A	2017/BVille17SKills/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/BVille17SKills/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/BVille17SKills/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/BVille17SKills/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/BVille17SKills/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/BVille17SKills/include/API.h
+:000000 100644 0000000... 2a8dacb... A	2017/BVille17SKills/include/FunctionVars.h
+:000000 100644 0000000... 874710e... A	2017/BVille17SKills/include/constants.h
+:000000 100644 0000000... 96afb02... A	2017/BVille17SKills/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/BVille17SKills/project.pros
+:000000 100644 0000000... f466b0c... A	2017/BVille17SKills/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/BVille17SKills/src/Makefile
+:000000 100644 0000000... c1fa43c... A	2017/BVille17SKills/src/auto.c
+:000000 100644 0000000... 42dc9e5... A	2017/BVille17SKills/src/init.c
+:000000 100644 0000000... 43cc7f0... A	2017/BVille17SKills/src/opcontrol.c
+:000000 100644 0000000... 385e788... A	2017/BVille17SKills/true.exe.stackdump
+:000000 100644 0000000... ca53ff6... A	2017/ConceptCodeVex2017/Makefile
+:000000 100644 0000000... 3ae70f7... A	2017/ConceptCodeVex2017/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/ConceptCodeVex2017/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/ConceptCodeVex2017/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/ConceptCodeVex2017/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/ConceptCodeVex2017/include/API.h
+:000000 100644 0000000... 0aec0a2... A	2017/ConceptCodeVex2017/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/ConceptCodeVex2017/project.pros
+:000000 100644 0000000... 9e5b952... A	2017/ConceptCodeVex2017/src/Makefile
+:000000 100644 0000000... c2b2ef4... A	2017/ConceptCodeVex2017/src/auto.c
+:000000 100644 0000000... 3680c96... A	2017/ConceptCodeVex2017/src/init.c
+:000000 100644 0000000... 2ff5a25... A	2017/ConceptCodeVex2017/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/FirstProject/Makefile
+:000000 100644 0000000... 91924ce... A	2017/FirstProject/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/FirstProject/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/FirstProject/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/FirstProject/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/FirstProject/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/FirstProject/include/API.h
+:000000 100644 0000000... d4f4352... A	2017/FirstProject/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/FirstProject/project.pros
+:000000 100644 0000000... 9e5b952... A	2017/FirstProject/src/Makefile
+:000000 100644 0000000... f317312... A	2017/FirstProject/src/auto.c
+:000000 100644 0000000... 50a3b6b... A	2017/FirstProject/src/init.c
+:000000 100644 0000000... 7e77751... A	2017/FirstProject/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/Freezing/PROS-FreezingCode-master/Makefile
+:000000 100644 0000000... a931e41... A	2017/Freezing/PROS-FreezingCode-master/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Freezing/PROS-FreezingCode-master/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Freezing/PROS-FreezingCode-master/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Freezing/PROS-FreezingCode-master/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Freezing/PROS-FreezingCode-master/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Freezing/PROS-FreezingCode-master/include/API.h
+:000000 100644 0000000... edbbcd9... A	2017/Freezing/PROS-FreezingCode-master/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/Freezing/PROS-FreezingCode-master/project.pros
+:000000 100644 0000000... 0d773c9... A	2017/Freezing/PROS-FreezingCode-master/src/Claw.c
+:000000 100644 0000000... 656573f... A	2017/Freezing/PROS-FreezingCode-master/src/DriveBase.c
+:000000 100644 0000000... 21fe41e... A	2017/Freezing/PROS-FreezingCode-master/src/Lift.c
+:000000 100644 0000000... 9e5b952... A	2017/Freezing/PROS-FreezingCode-master/src/Makefile
+:000000 100644 0000000... 531ccc5... A	2017/Freezing/PROS-FreezingCode-master/src/auto.c
+:000000 100644 0000000... fdbb3aa... A	2017/Freezing/PROS-FreezingCode-master/src/init.c
+:000000 100644 0000000... e20567f... A	2017/Freezing/PROS-FreezingCode-master/src/main.c
+:000000 100644 0000000... bbb1eb7... A	2017/Freezing/PROS-FreezingCode-master/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/Fulton17/Makefile
+:000000 100644 0000000... 5c615b6... A	2017/Fulton17/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Fulton17/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Fulton17/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Fulton17/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Fulton17/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Fulton17/include/API.h
+:000000 100644 0000000... d1c63e3... A	2017/Fulton17/include/FunctionVars.h
+:000000 100644 0000000... c734c44... A	2017/Fulton17/include/constants.h
+:000000 100644 0000000... 96afb02... A	2017/Fulton17/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/Fulton17/project.pros
+:000000 100644 0000000... b15b375... A	2017/Fulton17/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/Fulton17/src/Makefile
+:000000 100644 0000000... 289e51f... A	2017/Fulton17/src/auto.c
+:000000 100644 0000000... f72a851... A	2017/Fulton17/src/init.c
+:000000 100644 0000000... 1c30ee4... A	2017/Fulton17/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/Fulton17Skills/Makefile
+:000000 100644 0000000... 3505bd2... A	2017/Fulton17Skills/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Fulton17Skills/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Fulton17Skills/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Fulton17Skills/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Fulton17Skills/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Fulton17Skills/include/API.h
+:000000 100644 0000000... 6a25455... A	2017/Fulton17Skills/include/FunctionVars.h
+:000000 100644 0000000... 96afb02... A	2017/Fulton17Skills/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/Fulton17Skills/project.pros
+:000000 100644 0000000... b4c35f2... A	2017/Fulton17Skills/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/Fulton17Skills/src/Makefile
+:000000 100644 0000000... c6d929b... A	2017/Fulton17Skills/src/auto.c
+:000000 100644 0000000... 8bf2f3f... A	2017/Fulton17Skills/src/init.c
+:000000 100644 0000000... 35a72b7... A	2017/Fulton17Skills/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/Pushbot/Makefile
+:000000 100644 0000000... 4de5714... A	2017/Pushbot/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/Pushbot/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/Pushbot/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/Pushbot/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/Pushbot/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/Pushbot/include/API.h
+:000000 100644 0000000... 0efffde... A	2017/Pushbot/include/constants.h
+:000000 100644 0000000... 3a64894... A	2017/Pushbot/include/lib.h
+:000000 100644 0000000... d4f4352... A	2017/Pushbot/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/Pushbot/project.pros
+:000000 100644 0000000... 9e5b952... A	2017/Pushbot/src/Makefile
+:000000 100644 0000000... 587c265... A	2017/Pushbot/src/auto.c
+:000000 100644 0000000... 5eb6bb9... A	2017/Pushbot/src/init.c
+:000000 100644 0000000... 2b86025... A	2017/Pushbot/src/lib.c
+:000000 100644 0000000... b65dc81... A	2017/Pushbot/src/opcontrol.c
+:000000 100644 0000000... ca53ff6... A	2017/States17/Makefile
+:000000 100644 0000000... c9c6bdb... A	2017/States17/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/States17/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/States17/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/States17/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/States17/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/States17/include/API.h
+:000000 100644 0000000... 118de50... A	2017/States17/include/FunctionVars.h
+:000000 100644 0000000... 874710e... A	2017/States17/include/constants.h
+:000000 100644 0000000... 96afb02... A	2017/States17/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/States17/project.pros
+:000000 100644 0000000... 2d9ce3f... A	2017/States17/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/States17/src/Makefile
+:000000 100644 0000000... c6bce0f... A	2017/States17/src/auto.c
+:000000 100644 0000000... 42dc9e5... A	2017/States17/src/init.c
+:000000 100644 0000000... 6861862... A	2017/States17/src/opcontrol.c
+:000000 100644 0000000... 385e788... A	2017/States17/true.exe.stackdump
+:000000 100644 0000000... ca53ff6... A	2017/States17TaskParameters/Makefile
+:000000 100644 0000000... c9c6bdb... A	2017/States17TaskParameters/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/States17TaskParameters/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/States17TaskParameters/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/States17TaskParameters/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/States17TaskParameters/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/States17TaskParameters/include/API.h
+:000000 100644 0000000... 8fddc95... A	2017/States17TaskParameters/include/FunctionVars.h
+:000000 100644 0000000... 874710e... A	2017/States17TaskParameters/include/constants.h
+:000000 100644 0000000... 96afb02... A	2017/States17TaskParameters/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/States17TaskParameters/project.pros
+:000000 100644 0000000... 5e98169... A	2017/States17TaskParameters/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/States17TaskParameters/src/Makefile
+:000000 100644 0000000... 711e1f0... A	2017/States17TaskParameters/src/auto.c
+:000000 100644 0000000... 42dc9e5... A	2017/States17TaskParameters/src/init.c
+:000000 100644 0000000... 6861862... A	2017/States17TaskParameters/src/opcontrol.c
+:000000 100644 0000000... 385e788... A	2017/States17TaskParameters/true.exe.stackdump
+:000000 100644 0000000... ca53ff6... A	2017/StatesSkills/Makefile
+:000000 100644 0000000... 823a68a... A	2017/StatesSkills/bin/output.bin
+:000000 100644 0000000... 3ae70f7... A	2017/StatesSkills/common.mk
+:000000 100644 0000000... 28e36ad... A	2017/StatesSkills/firmware/STM32F10x.ld
+:000000 100644 0000000... 8c800b9... A	2017/StatesSkills/firmware/cortex.ld
+:000000 100644 0000000... a922ae9... A	2017/StatesSkills/firmware/uniflash.jar
+:000000 100644 0000000... 9210d99... A	2017/StatesSkills/include/API.h
+:000000 100644 0000000... 8083034... A	2017/StatesSkills/include/FunctionVars.h
+:000000 100644 0000000... 874710e... A	2017/StatesSkills/include/constants.h
+:000000 100644 0000000... 96afb02... A	2017/StatesSkills/include/main.h
+:000000 100644 0000000... f43e6af... A	2017/StatesSkills/project.pros
+:000000 100644 0000000... d0cb881... A	2017/StatesSkills/src/FuntionVars.c
+:000000 100644 0000000... 9e5b952... A	2017/StatesSkills/src/Makefile
+:000000 100644 0000000... c1fa43c... A	2017/StatesSkills/src/auto.c
+:000000 100644 0000000... 42dc9e5... A	2017/StatesSkills/src/init.c
+:000000 100644 0000000... 6861862... A	2017/StatesSkills/src/opcontrol.c
+:000000 100644 0000000... 385e788... A	2017/StatesSkills/true.exe.stackdump
+
+commit fe43977f55feedd713467930ee031068371215b0
+Author: iuyte <iuyte@users.noreply.github.com>
+Date:   Thu Feb 2 12:13:20 2017 -0500
+
+    Initial commit
+
+:000000 100644 0000000... f805e81... A	.gitignore
+:000000 100644 0000000... 9cecc1d... A	LICENSE
+:000000 100644 0000000... be7ca96... A	README.md
