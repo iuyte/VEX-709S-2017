@@ -18,7 +18,7 @@ void auto5() {
   // TURN BACK OF ROBOT TO WALL, LIFT UP, HIT WALL, DUMP
 
   {
-    turnToNoFix(86, 80);
+    turnToNoFix(87, 80);
     driveSet(-158, 158);
     delay(250);
     driveStop();
@@ -65,7 +65,7 @@ void auto5() {
   delay(300);
 
   {
-    turnToNoFix(-63.25, 110);
+    turnToNoFix(-62, 110);
     driveSet(158, -158);
     delay(175);
     driveStop();
@@ -82,9 +82,9 @@ void auto5() {
   wLift(POTHALF);
   driveInchNoFix(-12, 127);
   turnNoFix(15, 110);
-  driveInchNoFix(-20, 157);
-  rLiftTo(200, POTTOP);
-  driveInchNoFix(-15, 157);
+  driveInchNoFix(-5, 157);
+  rLiftTo(0, POTTOP);
+  driveInchNoFix(-30, 157);
 
   wLift(POTTOP);
   delay(650);

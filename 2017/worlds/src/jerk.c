@@ -56,6 +56,7 @@ void jerk(void) {
   TURN_TOLERANCE = 1;
   //smartTurn(gyroGet(gyro) * -1, 37);
   TURN_TOLERANCE = 4;
+  driveInchNoFix(-0.25, 95);
 }
 
 void revisedJerk() {

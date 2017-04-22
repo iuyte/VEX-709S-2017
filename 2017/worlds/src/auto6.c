@@ -3,11 +3,12 @@
 void auto6() {
   calibrate();
   jerk();     // This is intended to drop and lock the intake
+  delay(100);
   // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION
 
   /////////////BEGIN PART 0 (count from 0 in CS)/////////////
 
-  driveInchNoFix(38, 127); // Drives 40
+  driveInchNoFix(36, 127); // Drives 40
 
   rLiftTo(0, POTHALF);
 
@@ -19,13 +20,19 @@ void auto6() {
     delay(1);
   }
 
-  driveInch(-51, 127); // -43
+  driveInchNoFix(-42, 127); // -43
+  {
+    driveSet(100, 100);
+    delay(50);
+    driveStop();
+  }
+  driveInch(-10, 70);
 
   // TURN BACK OF ROBOT TO WALL, LIFT UP, HIT WALL, DUMP
   {
-    turnToNoFix(85, 80);
+    turnToNoFix(83.5, 70);
     driveSet(-158, 158);
-    delay(240);
+    delay(220);
     driveStop();
   }
 
@@ -35,13 +42,13 @@ void auto6() {
 
   checknum = 2;
 
-  rLiftTo(800, POTTOP); // 650 550 600 675 735
+  rLiftTo(850, POTTOP); // 650 550 600 675 735
 
   checknum = 3;
 
   timerReset(1);
   driveSet(-157, -157);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+  while ((digitalRead(isWall) == 1 && digitalRead(isWall2) == 1) &&
          timer(1) < MAX_TIME_TO_WALL) { // Repeats until the button on the robot
                                         // is pressed
                                         // or 4 seconds pass
@@ -59,7 +66,7 @@ void auto6() {
 
   delay(600);
 
-  liftTo(POTHALF + 600);
+  liftTo(POTHALF + 700);
 
   driveSet(100, 100);
   checknum = 100;
@@ -73,7 +80,8 @@ void auto6() {
   driveStop();
   checknum = 155;
 
-  turnNoFix(-1, 40); // 6
+  //turnNoFix(-1, 50); // 6
+  //turnToNoFix(87, 50);
 
   driveSet(100, -100);
   delay(50);
@@ -239,7 +247,7 @@ void auto6() {
   }
   driveStop();
 
-  smartTurnTo(-3, 65); // -3, 40 45 too low
+  smartTurnTo(3, 65); // -3, 40 45 too low
 
   startp = rGyros() + 2;
   power = 110;

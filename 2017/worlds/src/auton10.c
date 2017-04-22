@@ -1,6 +1,6 @@
 #include "lib.h"
 
-void auto3() {
+void auto10() {
   calibrate();
   jerk();     // This is intended to drop and lock the intake
   // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION
@@ -14,7 +14,7 @@ void auto3() {
   long rpower = power;
   int tolerance = 2;
   float changer;
-  while (encoderGet(lencoder) - startEnc < 27 * INCHESMULTIPLIER) { // 45
+  while (encoderGet(lencoder) - startEnc < 19 * INCHESMULTIPLIER) { // 45
     changer = (abs(rGyros() - startp) - tolerance) * 15;
     if (rGyros() - startp > tolerance) {
       lpower = power - changer;
@@ -33,7 +33,8 @@ void auto3() {
 
   wLift(POTHALF * .6);
 
-  driveInchNoFix(-38, 127); // -43
+  driveInchNoFix(-30
+    , 127); // -43
   {
     driveSet(100, 100);
     delay(50);
@@ -56,7 +57,7 @@ void auto3() {
 
   timerReset(1);
   driveSet(-157, -157);
-  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
+  while ((digitalRead(isWall) == 1 && digitalRead(isWall2) == 1) &&
          timer(1) < MAX_TIME_TO_WALL) { // Repeats until the button on the robot
                                         // is pressed
                                         // or 4 seconds pass
@@ -68,54 +69,6 @@ void auto3() {
 
   driveStop(); // Stops the robot
 
-  checknum = 6;
-
-  checknum = 7;
-
-  delay(600);
-
-  liftTo(POTHALF * 1.6);
-  rLiftTo(0, POTHALF);
-  driveSet(-65, -65);
-  while ((digitalRead(isWall) == 1 && digitalRead(isWall2) == 1) &&
-         timer(1) < 750) { // Repeats until the button on the robot
-                                        // is pressed
-                                        // or 4 seconds pass
-    delay(5);
-    checknum = 4;
-  }
   calibrate();
-  rLiftTo(0, POTBOTTOM);
-
-  delay(300);
-
-  {
-    turnToNoFix(-34, 85);
-    /*
-    driveSet(158, -158);
-    delay(125);
-    driveStop();
-    */
-  }
-
-  liftSet(-127);
-  delay(50);
-  liftSet(-10);
-
-  driveInchNoFix(32, 157);
-  rLiftTo(0, POTHALF);
-  driveInchNoFix(8, 127);
-
-  wLift(POTHALF);
-  driveInchNoFix(-12, 157);
-  turnNoFix(15, 110);
-  driveInchNoFix(-5, 157);
-  rLiftTo(0, POTTOP);
-  driveInchNoFix(-30, 157);
-
-  wLift(POTTOP);
-  delay(650);
-  liftTo(POTHALF);
-  liftTo(POTTOP);
-
+  delay(15000);
 };

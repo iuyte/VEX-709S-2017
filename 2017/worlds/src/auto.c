@@ -43,11 +43,21 @@ void autonomous() {
     auto4();
     break;
   case 5:
+    auto5();
     break;
   case 6:
     auto6();
   case 7:
     auto7();
+    break;
+  case 8:
+    auto8();
+    break;
+  case 10:
+    auto10();
+    break;
+  case 11:
+    auto11();
     break;
   }
   while (isAutonomous())

@@ -3,7 +3,7 @@
 void initMotors(void) {
   motorManagerInit();
 
-  int driveRate = 10;
+  int driveRate = 1.75;
 
   blrsMotorInit(OLL, true, MOTOR_DEFAULT_SLEW_RATE, fakeSpeed);
   blrsMotorInit(ORL, false, MOTOR_DEFAULT_SLEW_RATE,fakeSpeed);
@@ -39,11 +39,11 @@ int getMotor(int motorPort) { return blrsMotorGet(motorPort); }
 
 void driveSet(int Lpower, int Rpower) {
   motorRek(TLD, Lpower);
-  motorRek(MLD, Lpower);
-  motorRek(BLD, Lpower);
+  motorRek(MLD, Lpower * .9);
+  motorRek(BLD, Lpower * .9);
   motorRek(TRD, Rpower);
-  motorRek(MRD, Rpower);
-  motorRek(BRD, Rpower);
+  motorRek(MRD, Rpower * .9);
+  motorRek(BRD, Rpower * .9);
 }
 
 void driveSetBack(int Lpower, int Rpower) {

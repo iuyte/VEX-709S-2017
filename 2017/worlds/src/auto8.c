@@ -1,51 +1,25 @@
 #include "lib.h"
 
-void auto3() {
+void auto8() {
   calibrate();
   jerk();     // This is intended to drop and lock the intake
   // GO FORWARD & PICK UP 1-3 STARS (+ preload), BACK UP TO PREVIOUS POSITION
 
-  // driveInchNoFix(27, 127); // Drives 38 inches forward at 127 power
-
-  int startp = rGyros() - 3;
-  int startEnc = encoderGet(lencoder);
-  long power = 127;
-  long lpower = power;
-  long rpower = power;
-  int tolerance = 2;
-  float changer;
-  while (encoderGet(lencoder) - startEnc < 27 * INCHESMULTIPLIER) { // 45
-    changer = (abs(rGyros() - startp) - tolerance) * 15;
-    if (rGyros() - startp > tolerance) {
-      lpower = power - changer;
-      rpower = power + changer;
-    } else if (rGyros() - startp < -tolerance) {
-      lpower = power + changer;
-      rpower = power - changer;
-    }
-    driveSet(lpower, rpower);
-    delay(50);
-  }
+  driveInchNoFix(28, 127); // Drives 38 inches forward at 127 power
 
   rLiftTo(0, POTHALF);
 
   driveInchNoFix(16, 90); // 6 14
 
-  wLift(POTHALF * .6);
+  wLift(POTHALF * .75);
 
-  driveInchNoFix(-38, 127); // -43
-  {
-    driveSet(100, 100);
-    delay(50);
-    driveStop();
-  }
-  driveInchNoFix(-11, 70);
+  driveInch(-46, 127); // -43
 
   // TURN BACK OF ROBOT TO WALL, LIFT UP, HIT WALL, DUMP
 
   {
-    turnToNoFix(85, 77);
-    driveSet(-158, 158);
+    turnToNoFix(-86, 80);
+    driveSet(158, -158);
     delay(250);
     driveStop();
   }
@@ -63,21 +37,19 @@ void auto3() {
     delay(5);
     checknum = 4;
   }
+  driveStop();
+  calibrate();
 
-  checknum = 5;
 
-  driveStop(); // Stops the robot
-
-  checknum = 6;
-
+  delay(250);
   checknum = 7;
 
   delay(600);
 
-  liftTo(POTHALF * 1.6);
+  liftTo(POTHALF * 1.5);
   rLiftTo(0, POTHALF);
   driveSet(-65, -65);
-  while ((digitalRead(isWall) == 1 && digitalRead(isWall2) == 1) &&
+  while ((digitalRead(isWall) == 1 || digitalRead(isWall2) == 1) &&
          timer(1) < 750) { // Repeats until the button on the robot
                                         // is pressed
                                         // or 4 seconds pass
@@ -90,25 +62,23 @@ void auto3() {
   delay(300);
 
   {
-    turnToNoFix(-34, 85);
-    /*
-    driveSet(158, -158);
-    delay(125);
+    turnToNoFix(62, 110);
+    driveSet(-158, 158);
+    delay(175);
     driveStop();
-    */
   }
 
   liftSet(-127);
   delay(50);
   liftSet(-10);
 
-  driveInchNoFix(32, 157);
+  driveInchNoFix(34, 127);
   rLiftTo(0, POTHALF);
-  driveInchNoFix(8, 127);
+  driveInchNoFix(14, 127);
 
   wLift(POTHALF);
-  driveInchNoFix(-12, 157);
-  turnNoFix(15, 110);
+  driveInchNoFix(-12, 127);
+  turnNoFix(-15, 110);
   driveInchNoFix(-5, 157);
   rLiftTo(0, POTTOP);
   driveInchNoFix(-30, 157);
@@ -117,5 +87,6 @@ void auto3() {
   delay(650);
   liftTo(POTHALF);
   liftTo(POTTOP);
+
 
 };

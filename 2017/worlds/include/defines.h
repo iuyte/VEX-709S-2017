@@ -40,7 +40,7 @@
 extern int potZero;
 #define POTTOP 2000
 #define POTBOTTOM potZero // when the POTentiometer is all the way down, this is it's position  // 10
-#define POTHALF 650 // When the lift is halfway up // 800
+#define POTHALF 575 // When the lift is halfway up // 800
 
 #define GYROPORT 2  // Sets the gyroscope ports
 #define GYRAPORT 5
@@ -57,7 +57,7 @@ extern int potZero;
 #define ENCO_CORRECTION 3
 #define MAX_TIME_TO_WALL 3500
 
-#define MOTOR_DEFAULT_SLEW_RATE 1
+#define MOTOR_DEFAULT_SLEW_RATE 0.01
 #define MOTOR_FAST_SLEW_RATE 256
 
 static const bool USE_JINX = false;

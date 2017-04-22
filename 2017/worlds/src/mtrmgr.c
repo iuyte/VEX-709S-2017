@@ -72,7 +72,8 @@ static void _motorManagerTask(void *none)
                 // Grab mutex if possible, if it's not available (being changed by MotorSet()), skip the motor check.
                 if (!mutexTake(mutex[i], 5))
                     continue;
-                motorSet(i+1, out);
+                if (expandedPowerLevel > 1000)
+                  motorSet(i+1, out);
                 mutexGive(mutex[i]);
             }
             motor[i]._lastUpdate = millis();
